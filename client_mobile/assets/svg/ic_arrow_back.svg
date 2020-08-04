@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>back</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20.5532399,25.0010858 L34.9204853,10.6338403 C35.9805404,9.57378526 35.9805404,7.85509639 34.9204853,6.79504131 C33.8604302,5.73498623 32.1417413,5.73498623 31.0816863,6.79504131 L14.7950413,23.0816863 C13.7349862,24.1417413 13.7349862,25.8604302 14.7950413,26.9204853 L31.0816863,43.2071302 C32.1417413,44.2671853 33.8604302,44.2671853 34.9204853,43.2071302 C35.9805404,42.1470752 35.9805404,40.4283863 34.9204853,39.3683312 L20.5532399,25.0010858 Z" id="path-1"></path>
+    </defs>
+    <g id="返回" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="矩形备份" x="0" y="0" width="50" height="50"></rect>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Shape" fill="#333333" fill-rule="nonzero" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

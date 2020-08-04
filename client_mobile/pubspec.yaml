@@ -1,0 +1,138 @@
+name: IM
+description: Deve Messenger
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# Read more about versioning at semver.org.
+version: 1.2.1
+
+environment:
+  sdk: ">=2.2.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # self libs
+  client_core:
+    path: ../client_core/core/
+  im_sdk:
+    path: ../client_core/im_sdk/
+
+  fish_redux: ^0.3.1
+
+  intl: ^0.16.1
+  fixnum: ^0.10.11
+  path_provider: ^1.5.1
+  pull_to_refresh: ^1.5.8
+  date_format: ^1.0.8
+  webview_flutter: ^0.3.19+5
+  # 聊天
+  bubble: ^1.1.9+1
+  qr_flutter: ^3.2.0
+  qrcode: ^1.0.4
+
+  # 丰富的loading库 see more=> https://pub.flutter-io.cn/packages/flutter_spinkit
+  flutter_spinkit: ^4.1.1+1
+  image_picker: ^0.6.3+1
+  image_cropper: ^1.2.0
+  toast: ^0.1.5
+  flutter_sound: ^2.0.1
+  libphonenumber: ^1.0.1
+
+  #视频播放器;
+  video_player: ^0.10.5+2
+
+  #视频播放器的挂件，控制器
+  chewie: ^0.9.8+1
+  yaml: ^2.2.0
+  sprintf: ^4.0.2
+  package_info: ^0.4.0+13
+  permission_handler: ^4.2.0+hotfix.2
+  install_plugin: ^2.0.1
+  # install_plugin:
+  #   path: ../client_core/flutter_install_plugin/
+  http: ^0.12.0+4
+  # connectivity: ^0.4.6+1
+  url_launcher: ^5.4.1
+  flutter_local_notifications: ^1.1.5+1
+  file_picker: ^1.4.3+2
+  country_code_picker: ^1.2.2
+  rxdart: ^0.23.1
+
+  badges: ^1.1.0
+  #异常捕获
+  catcher: ^0.3.0
+  camera: ^0.5.7+3
+  #统计分析和崩溃上传递
+  # flurry_analytics: ^0.1.2
+  flutter_animation_set: ^0.0.3
+  provider: ^4.0.1
+  # thumbnails: ^1.0.1
+
+  open_file:
+    path: ../client_core/open_file/
+  connectivity:
+    path: ../client_core/connectivity/
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.7.4
+  # uncomment follow, for renew app icon
+  # only for renew app icon
+  # flutter_launcher_icons: ^0.7.4
+  pedantic: 1.8.0+1
+
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the Icons class.
+  uses-material-design: true
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/svg/
+    - assets/langs/
+    - assets/config.yaml
+    - assets/region/
+    - assets/emojis/
+
+  # #  - images/a_dot_ham.jpeg
+  # # An image asset can refer to one or more resolution-specific "variants", see
+  # # https://flutter.io/assets-and-images/#resolution-aware.
+  # # For details regarding adding assets from package dependencies, see
+  # # https://flutter.io/assets-and-images/#from-packages
+  # # To add custom fonts to your application, add a fonts section here,
+  # # in this "flutter" section. Each entry in this list should have a
+  # # "family" key with the font family name, and a "fonts" key with a
+  # # list giving the asset and other descriptors for the font. For
+  # # example:
+  # fonts:
+  #   - family: iconfont
+  #     fonts:
+  #       - asset: assets/fonts/icon_font.ttf
+  # #           - asset: fonts/Schyler-Italic.ttf
+  # #             style: italic
+  #   - family: Emojis
+  #     fonts:
+  #       - asset: assets/fonts/apple_color_emoji.ttf
+  # #           - asset: fonts/TrajanPro.ttf
+  # #           - asset: fonts/TrajanPro_Bold.ttf
+  # #             weight: 700
+  # # For details regarding fonts from package dependencies,
+  # # see https://flutter.io/custom-fonts/#from-packages
+
+# only for renew app icon
+# only for renew app icon
+# only for renew app icon
+#flutter packages pub run flutter_launcher_icons:main 替换icon 执行该命令
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"

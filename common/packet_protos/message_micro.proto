@@ -1,0 +1,167 @@
+// Package auth AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "message.proto";
+import "user.proto";
+import "a_rpc.proto";
+import "base.proto";
+
+package pkt;
+
+service MessageService {
+  rpc ServerNewDialog(ServerNewDialogsRequest) returns (RespContext);
+  rpc ServerMessageGetPinnedDialogs(ServerMessageGetPinnedDialogsRequest)
+      returns (RespContext);
+  rpc ServerMessageGetPeerDialogs(ServerMessageGetPeerDialogsRequest)
+      returns (RespContext);
+  rpc ServerMessageGetDialogs(ServerMessageGetDialogsRequest)
+      returns (RespContext);
+  rpc ServerUpdateUserDialogs(ServerMessageUpdateDialogRequest)
+      returns (RespContext);
+
+  // 消息类相关rpc
+  rpc ServerMessage(ServerMessageRequest) returns (RespContext);
+  rpc ServerMessageDel(ServerMessageDelRequest) returns (RespContext);
+  rpc ServerMessageSaveDraft(ServerMessageSaveDraftRequest)
+      returns (RespContext);
+  rpc ServerMessageSetTyping(ServerMessageSetTypingRequest)
+      returns (RespContext);
+  rpc ServerMessageDeleteHistory(ServerMessageDeleteHistoryRequest)
+      returns (RespContext);
+  rpc ServerMessageReadHistory(ServerMessageReadHistoryRequest)
+      returns (RespContext);
+  rpc ServerMessageGetHistory(ServerMessageGetHistoryRequest)
+      returns (RespContext);
+  rpc ServerMessageLoadMessages(ServerMessageLoadMessagesRequest)
+      returns (RespContext);
+  rpc ServerMessageEdit(ServerMessageEditRequest) returns (RespContext);
+  rpc ServerMessagePinned(ServerMessagePinnedRequest) returns (RespContext);
+
+  rpc ServerDialogPinned(ServerDialogPinnedRequest) returns (RespContext);
+  rpc ServerDialogUnread(ServerDialogUnreadRequest) returns (RespContext);
+
+  rpc InsideManageChatDialog(InsideManageChatDialogRequest)
+      returns (RespContext);
+
+  rpc InsideUpdateChatDialog(InsideUpdateChatDialogRequest)
+      returns (RespContext);
+
+  rpc InsideUserSystemNotify(InsideUserSystemNotifyRequest)
+      returns (RespContext);
+}
+
+message ServerNewDialogsRequest {
+  Context ctx = 1;
+  C2SMessageNewDialogReq from = 2;
+}
+
+message ServerMessageGetPinnedDialogsRequest {
+  Context ctx = 1;
+  C2SMessageGetPinnedDialogsReq from = 2;
+}
+
+message ServerMessageGetPeerDialogsRequest {
+  Context ctx = 1;
+  C2SMessageGetPeerDialogsReq from = 2;
+}
+
+message ServerMessageGetDialogsRequest {
+  Context ctx = 1;
+  C2SMessageGetDialogsReq from = 2;
+}
+
+message ServerMessageUpdateDialogRequest {
+  Context ctx = 1;
+  PeerType peerType = 2;
+  int32 peerId = 3;
+}
+
+// 发送消息服务请求
+message ServerMessageRequest {
+  Context ctx = 1;
+  C2SMessageSendMessageReq from = 2;
+}
+// 发送删除消息服务请求
+message ServerMessageDelRequest {
+  Context ctx = 1;
+  C2SMessageDelMessagesReq from = 2;
+}
+
+message ServerMessageSaveDraftRequest {
+  Context ctx = 1;
+  C2SMessageSaveDraftReq from = 2;
+}
+
+message ServerMessageSetTypingRequest {
+  Context ctx = 1;
+  C2SMessageSetTypingReq from = 2;
+}
+message InsideMessageSetTypingPeerRequest {
+  Context ctx = 1;
+  MessageTypingUpdate from = 2;
+}
+
+message ServerMessageDeleteHistoryRequest {
+  Context ctx = 1;
+  C2SMessageDeleteHistoryReq from = 2;
+}
+message InsideMessageDeleteHistoryPeerRequest {
+  Context ctx = 1;
+  bool clearDialog = 2;
+  Peer peer = 3;   // 对端
+  int32 maxId = 4; // 清除maxId之前所有消息
+}
+
+message ServerMessageReadHistoryRequest {
+  Context ctx = 1;
+  C2SMessageReadHistoryReq from = 2;
+}
+
+message ServerMessageGetHistoryRequest {
+  Context ctx = 1;
+  C2SMessageGetHistoryReq from = 2;
+}
+
+message ServerMessageLoadMessagesRequest {
+  Context ctx = 1;
+  C2SMessageLoadMessagesReq from = 2;
+}
+message ServerMessageEditRequest {
+  Context ctx = 1;
+  C2SMessageEditReq from = 2;
+}
+
+message ServerMessagePinnedRequest {
+  Context ctx = 1;
+  C2SMessagePinned from = 2;
+}
+
+message ServerDialogPinnedRequest {
+  Context ctx = 1;
+  C2SDialogPinned from = 2;
+}
+
+message ServerDialogUnreadRequest {
+  Context ctx = 1;
+  C2SDialogUnread from = 2;
+}
+
+message InsideManageChatDialogRequest {
+  int32 type = 1;           // 0:群创建  1:群解散
+  int32 chatId = 2;         // 群名称
+  int32 fromId = 3;         // 操作者
+  repeated int32 users = 4; // 成员列表
+}
+
+message InsideUpdateChatDialogRequest {
+  NotifyMessageType type = 1;
+  int32 chatId = 2; // 群名称
+  string expand = 3;
+  repeated int32 users = 4; // 成员列表
+}
+
+message InsideUserSystemNotifyRequest {
+  int32 userId = 1;
+  SystemNotifyType type = 2;
+  string message = 3;
+}

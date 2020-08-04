@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>tubiao/gou</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-启登注找" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="邮箱注册" transform="translate(-88.000000, -474.000000)">
+            <g id="图标/勾" transform="translate(88.000000, 474.000000)">
+                <g id="勾">
+                    <circle id="椭圆形" fill="#21A1E8" cx="9" cy="9" r="9"></circle>
+                    <g id="对勾" transform="translate(3.000000, 3.000000)" fill-rule="nonzero">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="12" height="12"></rect>
+                        <path d="M0.5,7.14890144 C0.5,7.14890144 3.4332639,8.36676675 4.89131198,11 C6.64259166,7.74137356 10.0041738,4.70185941 11,4.47706161 C11,3.12851321 11,2.57387291 11,0.5 C6.98767447,3.13323325 5.06099809,7.9818929 5.06099809,7.9818929 L2.95013118,5.75000596 L0.5,7.14890144 Z" id="路径" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

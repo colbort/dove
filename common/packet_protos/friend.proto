@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package pkt;
+
+import "user.proto";
+import "a_rpc.proto";
+//  ---function---
+
+// 陌生人来源类型
+enum StrangerFromType {
+  StrangerFromSearch = 0; // 通过查询发起
+  StrangerFromChat = 1;   // 通过群发起
+}
+
+// 好友编辑类型
+enum FriendEditType {
+  FriendEditType_Remark = 0;      //备注
+  FriendEditType_PhoneNumber = 1; //电话号码
+  FriendEditType_FirstName = 2;   //首名字
+}
+
+//好友邀请结果类型
+enum FriendInviteResultType {
+  FriendInviteResultType_AddStranger = 0; // 添加陌生人
+  FriendInviteResultType_AddFriend = 1;   // 添加好友
+}
+
+// 1.获取好友
+// (以后要分段处理)
+message C2SFriendGetFriendsReq {}
+
+message S2CFriendGetFriendsResp {
+  ErrorCode code = 1;      // 结果
+  repeated User users = 2; // 玩家列表
+}
+
+// 2.删除好友
+message C2SFriendDelFriendReq {
+  PeerUser peerUser = 1; // 玩家ID
+}
+
+message S2CFriendDelFriendResp {
+  ErrorCode code = 1;    // 结果
+  PeerUser peerUser = 2; // 对端用户id
+}
+
+// 3.获取陌生人stranger
+// (以后要分段处理)
+message C2SFriendGetStrangersReq {}
+
+message S2CFriendGetStrangersResp {
+  ErrorCode code = 1;              // 结果
+  repeated Stranger strangers = 2; // 玩家列表
+}
+
+// 4.删除陌生人
+message C2SFriendDelStrangerReq {
+  PeerUser peerUser = 1; // 玩家ID
+}
+
+message S2CFriendDelStrangerResp {
+  ErrorCode code = 1;    // 结果
+  PeerUser peerUser = 2; // 对端用户id
+}
+
+// 5.接受陌生人
+message C2SFriendAcceptStrangerReq {
+  PeerUser peerUser = 1; // 玩家ID
+}
+
+message S2CFriendAcceptStrangerResp {
+  ErrorCode code = 1; //结果
+  User user = 2;      // 玩家信息(这里是对方的信息)
+}
+
+// 6.编辑好友
+message C2SFriendEditFriendReq {
+  PeerUser peerUser = 1;   // 玩家ID
+  FriendEditType type = 2; //  好友编辑类型
+  oneof editInfo {
+    string remark = 3;      // 备注
+    string phoneNumber = 4; // 电话号码
+    string firstName = 5;   // 第一名称
+  }
+}
+
+message S2CFriendEditFriendResp {
+  ErrorCode code = 1; // 结果
+  User user = 2;      // 用户信息
+}
+
+// 7.邀请陌生人
+message C2SFriendInviteStrangerReq {
+  StrangerFromType param = 1;
+  int32 peerId = 2;
+}
+
+message S2CFriendInviteStrangerResp {
+  ErrorCode code = 1;              //结果
+  FriendInviteResultType type = 2; // 邀请结果类型
+  oneof addInfo {
+    Stranger addStranger = 3; // 添加陌生人
+    User addFriend = 4;       // 添加好友
+  }
+}

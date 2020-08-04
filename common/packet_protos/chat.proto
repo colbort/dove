@@ -1,0 +1,235 @@
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+import "user.proto";
+// import "file.proto";
+
+// 聊天室成员类型
+enum ChatMemberType {
+  ChatMemberType_Void = 0;  //普通成员
+  ChatMemberType_Admin = 1; //管理员
+  ChatMemberType_Lead = 2;  //群主
+}
+
+// 基础结构
+message ChatBase {
+  int32 chatId = 1;           // 聊天室ID
+  string title = 2;           //名称
+  ChatAuth chatAuth = 3;      //权限
+  UserProfilePhoto photo = 4; // 头像
+  int32 userCount = 5;        //玩家数量
+  int32 Version = 6;          //版本
+}
+
+// 基础结构
+message ChatAuth {
+  //  int32 chatId = 1;           // 聊天室ID
+  bool adminInviteMember = 1; //管理员邀请
+  bool adminDelMember = 2;    //管理员删除成员
+  bool adminChangeChat = 3;   //管理员修改聊天室资料
+  bool adminMsgtop = 4;       //管理员消息置顶
+
+  bool memberInviteMember = 5; //成员邀请
+  bool memberChangeChat = 6;   //成员修改聊天室资料
+  bool memberMsgtop = 7;       //成员消息置顶
+}
+
+// 聊天室成员
+message ChatUser {
+  int32 chatId = 1;              // 聊天室ID
+  ChatMemberType memberType = 2; // 成员类型
+  bool setMute = 3;              // 是否静音(默认: false)
+  string remarks = 4;            // 群备注
+  User user = 5;                 // 聊天室用户
+}
+
+// 1.获取所有聊天室
+message C2SChatGetAllChatsReq {}
+
+message S2CChatGetAllChatsResp {
+  ErrorCode code = 1;          // 结果
+  repeated ChatBase chats = 2; // 聊天室信息
+}
+
+// 2.获取聊天室完全信息
+message C2SChatGetChatFullReq {
+  int32 chatId = 1; // 聊天室ID
+}
+
+message S2CChatGetChatFullResp {
+  ErrorCode code = 1;              // 结果
+  ChatBase chat = 2;               // 聊天室信息
+  repeated ChatUser chatUsers = 3; // 聊天室用户
+}
+
+// 3.聊天室创建
+message C2SChatCreateReq {
+  repeated int32 userIds = 1; // 用户ID列表
+}
+
+message S2CChatCreateResp {
+  ErrorCode code = 1;              // 结果
+  ChatBase chat = 2;               // 聊天室信息
+  repeated ChatUser chatUsers = 3; // 聊天室用户
+}
+
+// 4.聊天室解散
+message C2SChatDisbandReq {
+  int32 chatId = 1; // 聊天室ID
+}
+
+message S2CChatDisbandResp {
+  ErrorCode code = 1; // 结果
+  int32 chatId = 2;   // 聊天室编号
+}
+
+// 5.聊天室添加成员
+message C2SChatAddMemberReq {
+  int32 chatId = 1;           // 聊天室ID
+  repeated int32 userIds = 2; // 用户ID列表
+}
+
+message S2CChatAddMemberResp {
+  ErrorCode code = 1;              // 结果
+  int32 chatId = 2;                // 聊天室编号
+  repeated ChatUser chatUsers = 3; // 聊天室用户
+}
+
+// 6.聊天室删除成员
+message C2SChatDelMemberReq {
+  int32 chatId = 1;           // 聊天室ID
+  repeated int32 userIds = 2; // 用户ID列表
+}
+
+message S2CChatDelMemberResp {
+  ErrorCode code = 1;         // 结果
+  int32 chatId = 2;           // 聊天室编号
+  repeated int32 userIds = 3; // 删除成员ID
+}
+
+// 7.聊天室成员退出
+message C2SChatMemberQuitReq {
+  int32 chatId = 1; // 聊天室ID
+}
+
+message S2CChatMemberQuitResp {
+  ErrorCode code = 1; // 结果
+  int32 chatId = 2;   // 聊天室编号
+}
+
+// 8.聊天室修改群名称
+message C2SChatModifyTitleReq {
+  int32 chatId = 1; // 聊天室ID
+  string title = 2; // 标题
+}
+
+message S2CChatModifyTitleResp {
+  ErrorCode code = 1; // 结果
+  ChatBase chat = 2;  // 聊天室信息
+}
+
+// 9.聊天室修改图片
+message C2SChatModifyPhotoReq {
+  int32 chatId = 1;           // 聊天室ID
+  UserProfilePhoto photo = 2; //头像
+}
+
+message S2CChatModifyPhotoResp {
+  ErrorCode code = 1; // 结果
+  ChatBase chat = 2;  // 聊天室信息
+}
+
+// 10.聊天室转让群主
+message C2SChatTransLeadReq {
+  int32 chatId = 1;     // 聊天室ID
+  int32 LeadUserId = 2; //群主用户Id
+}
+
+message S2CChatTransLeadResp {
+  ErrorCode code = 1;   // 结果
+  int32 chatId = 2;     // 聊天室ID
+  int32 LeadUserId = 3; //群主用户Id
+}
+
+// 11.群主设置管理员
+message C2SChatLeadSetAdminReq {
+  int32 chatId = 1;           // 聊天室ID
+  repeated int32 userIds = 2; // 用户ID列表
+}
+
+message S2CChatLeadSetAdminResp {
+  ErrorCode code = 1;         // 结果
+  int32 chatId = 2;           // 聊天室ID
+  repeated int32 userIds = 3; // 用户ID列表
+}
+
+// 11.1 群主取消管理员
+message C2SChatLeadCancelAdminReq {
+  int32 chatId = 1;           // 聊天室ID
+  repeated int32 userIds = 2; // 用户ID列表
+}
+
+message S2CChatLeadCancelAdminResp {
+  ErrorCode code = 1;         // 结果
+  int32 chatId = 2;           // 聊天室ID
+  repeated int32 userIds = 3; // 用户ID列表
+}
+
+// 12.群主设置权限管理
+message C2SChatLeadSetAuthReq {
+  int32 chatId = 1;      // 聊天室ID
+  ChatAuth chatAuth = 2; // 权限
+}
+
+message S2CChatLeadSetAuthResp {
+  ErrorCode code = 1;    // 结果
+  int32 chatId = 2;      // 聊天室ID
+  ChatAuth chatAuth = 3; // 验证
+}
+
+// 13.成员设置静音
+message C2SChatMemberSetAuthReq {
+  int32 chatId = 1; // 聊天室ID
+  bool setMute = 2; // 设置静音
+}
+
+message S2CChatMemberSetAuthResp {
+  ErrorCode code = 1; // 结果
+  int32 chatId = 2;   // 聊天室ID
+  bool setMute = 3;   // 设置静音
+}
+
+// 14.修改自己在群的昵称
+message C2SChatModifyRemarksReq {
+  int32 chatId = 1;   // 聊天室ID
+  string remarks = 2; // 群昵称
+}
+
+message S2CChatModifyRemarksResp {
+  ErrorCode code = 1; // 结果
+}
+
+// 15.申请加群
+message C2SChatApplyJoinReq {
+  int32 chatId = 1; // 群id
+  int32 userId = 2; // 用户ID
+  int32 fromID = 3; // 来自xx分享的二维码
+}
+
+message S2CChatApplyJoinResp {
+  ErrorCode code = 1;              // 结果
+  ChatBase chat = 2;               // 聊天室信息
+  repeated ChatUser chatUsers = 3; // 聊天室用户
+}
+
+// 16.获取聊天室基本信息
+message C2SGetChatInfoReq {
+  int32 chatId = 1; // 群id
+}
+
+message S2CGetChatInfoResp {
+  ErrorCode code = 1; // 结果
+  ChatBase chat = 2;  // 聊天室信息
+}

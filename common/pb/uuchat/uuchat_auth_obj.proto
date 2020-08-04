@@ -1,0 +1,198 @@
+// Package auth AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_help_obj.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message AuthAuth 定义 
+message AuthAuth {   
+	int32 tmpSessions = 1;	//int32 
+	UserAbsClass user = 2;	//UserAbsClass
+}
+
+// message AuthCheckedPhone 定义 
+message AuthCheckedPhone {  
+	bool phoneRegistered = 1;	//bool
+}
+
+// message AuthCodeTypeSms 定义 
+message AuthCodeTypeSms { 
+}
+
+// message AuthCodeTypeCall 定义 
+message AuthCodeTypeCall { 
+}
+
+// message AuthCodeTypeFlashCall 定义 
+message AuthCodeTypeFlashCall { 
+}
+
+// message AuthExportedAuth 定义 
+message AuthExportedAuth {  
+	int32 iD = 1;	//int32 
+	bytes bytes = 2;	//core.Bytes
+}
+
+// message AuthPasswordRecovery 定义 
+message AuthPasswordRecovery {  
+	string emailPattern = 1;	//string
+}
+
+// message AuthSentCode 定义 
+message AuthSentCode {   
+	bool phoneRegistered = 1;	//bool 
+	AuthSentCodeTypeAbsClass typ = 2;	//Auth.SentCodeTypeAbsClass 
+	string phoneCodeHash = 3;	//string 
+	AuthCodeTypeAbsClass nextType = 4;	//Auth.CodeTypeAbsClass 
+	int32 timeout = 5;	//int32 
+	HelpTermsOfService termsOfService = 6;	//Help.TermsOfService
+}
+
+// message AuthSentCodeTypeApp 定义 
+message AuthSentCodeTypeApp {  
+	int32 length = 1;	//int32
+}
+
+// message AuthSentCodeTypeSms 定义 
+message AuthSentCodeTypeSms {  
+	int32 length = 1;	//int32
+}
+
+// message AuthSentCodeTypeCall 定义 
+message AuthSentCodeTypeCall {  
+	int32 length = 1;	//int32
+}
+
+// message AuthSentCodeTypeFlashCall 定义 
+message AuthSentCodeTypeFlashCall {  
+	string pattern = 1;	//string
+}
+
+
+
+
+// ExyAuthAuth 枚举
+enum ExyAuthAuth { 
+	EVVAuthAuth = 0;
+}
+
+
+message AuthAuthAbsClass { 
+  ExyAuthAuth type = 1;
+    oneof value { 
+		AuthAuth authAuth= 2;
+    }
+}
+
+
+
+// ExyAuthCheckedPhone 枚举
+enum ExyAuthCheckedPhone { 
+	EVVAuthCheckedPhone = 0;
+}
+
+
+message AuthCheckedPhoneAbsClass { 
+  ExyAuthCheckedPhone type = 1;
+    oneof value { 
+		AuthCheckedPhone authCheckedPhone= 2;
+    }
+}
+
+
+
+// ExyAuthCodeType 枚举
+enum ExyAuthCodeType { 
+	EVVAuthCodeTypeSms = 0;
+	EVVAuthCodeTypeCall = 1;
+	EVVAuthCodeTypeFlashCall = 2;
+}
+
+
+message AuthCodeTypeAbsClass { 
+  ExyAuthCodeType type = 1;
+    oneof value { 
+		AuthCodeTypeSms authCodeTypeSms= 2;
+		AuthCodeTypeCall authCodeTypeCall= 3;
+		AuthCodeTypeFlashCall authCodeTypeFlashCall= 4;
+    }
+}
+
+
+
+
+
+
+// ExyAuthExportedAuth 枚举
+enum ExyAuthExportedAuth { 
+	EVVAuthExportedAuth = 0;
+}
+
+
+message AuthExportedAuthAbsClass { 
+  ExyAuthExportedAuth type = 1;
+    oneof value { 
+		AuthExportedAuth authExportedAuth= 2;
+    }
+}
+
+
+
+// ExyAuthPasswordRecovery 枚举
+enum ExyAuthPasswordRecovery { 
+	EVVAuthPasswordRecovery = 0;
+}
+
+
+message AuthPasswordRecoveryAbsClass { 
+  ExyAuthPasswordRecovery type = 1;
+    oneof value { 
+		AuthPasswordRecovery authPasswordRecovery= 2;
+    }
+}
+
+
+
+// ExyAuthSentCode 枚举
+enum ExyAuthSentCode { 
+	EVVAuthSentCode = 0;
+}
+
+
+message AuthSentCodeAbsClass { 
+  ExyAuthSentCode type = 1;
+    oneof value { 
+		AuthSentCode authSentCode= 2;
+    }
+}
+
+
+
+// ExyAuthSentCodeType 枚举
+enum ExyAuthSentCodeType { 
+	EVVAuthSentCodeTypeApp = 0;
+	EVVAuthSentCodeTypeSms = 1;
+	EVVAuthSentCodeTypeCall = 2;
+	EVVAuthSentCodeTypeFlashCall = 3;
+}
+
+
+message AuthSentCodeTypeAbsClass { 
+  ExyAuthSentCodeType type = 1;
+    oneof value { 
+		AuthSentCodeTypeApp authSentCodeTypeApp= 2;
+		AuthSentCodeTypeSms authSentCodeTypeSms= 3;
+		AuthSentCodeTypeCall authSentCodeTypeCall= 4;
+		AuthSentCodeTypeFlashCall authSentCodeTypeFlashCall= 5;
+    }
+}
+
+
+
+
+
+
+

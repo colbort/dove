@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="182px" height="3px" viewBox="0 0 182 3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>saoma</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-8.78797743%" y1="50%" x2="103.919271%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#EEEEEE" stop-opacity="0.341209572" offset="0%"></stop>
+            <stop stop-color="#6DD400" offset="51.0768581%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="扫一扫icon" transform="translate(-923.000000, -195.000000)">
+            <g id="扫描" transform="translate(924.000000, 195.000000)">
+                <rect id="矩形" fill-opacity="0.6" fill="url(#linearGradient-1)" opacity="0.452380952" x="0" y="0" width="180" height="3" rx="1.5"></rect>
+                <line x1="3.12250226e-16" y1="1.5" x2="180" y2="1.5" id="直线" stroke="#6DD400" stroke-linecap="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

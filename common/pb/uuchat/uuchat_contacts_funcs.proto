@@ -1,0 +1,225 @@
+// Package contacts AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+service contactsServer { 
+    rpc ContactsBlock (ContactsBlockReq) returns (ContactsBlockResp) {} 
+    rpc ContactsDeleteContact (ContactsDeleteContactReq) returns (ContactsDeleteContactResp) {} 
+    rpc ContactsDeleteContacts (ContactsDeleteContactsReq) returns (ContactsDeleteContactsResp) {} 
+    rpc ContactsExportCard (ContactsExportCardReq) returns (ContactsExportCardResp) {} 
+    rpc ContactsGetBlocked (ContactsGetBlockedReq) returns (ContactsGetBlockedResp) {} 
+    rpc ContactsGetContacts (ContactsGetContactsReq) returns (ContactsGetContactsResp) {} 
+    rpc ContactsGetSaved (ContactsGetSavedReq) returns (ContactsGetSavedResp) {} 
+    rpc ContactsGetStatuses (ContactsGetStatusesReq) returns (ContactsGetStatusesResp) {} 
+    rpc ContactsGetTopPeers (ContactsGetTopPeersReq) returns (ContactsGetTopPeersResp) {} 
+    rpc ContactsImportCard (ContactsImportCardReq) returns (ContactsImportCardResp) {} 
+    rpc ContactsImportContacts (ContactsImportContactsReq) returns (ContactsImportContactsResp) {} 
+    rpc ContactsResetSaved (ContactsResetSavedReq) returns (ContactsResetSavedResp) {} 
+    rpc ContactsResetTopPeerRating (ContactsResetTopPeerRatingReq) returns (ContactsResetTopPeerRatingResp) {} 
+    rpc ContactsResolveUsername (ContactsResolveUsernameReq) returns (ContactsResolveUsernameResp) {} 
+    rpc ContactsSearch (ContactsSearchReq) returns (ContactsSearchResp) {} 
+    rpc ContactsToggleTopPeers (ContactsToggleTopPeersReq) returns (ContactsToggleTopPeersResp) {} 
+    rpc ContactsUnblock (ContactsUnblockReq) returns (ContactsUnblockResp) {} 
+}
+
+// message req
+message ContactsBlockReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass iD = 2 ;
+}
+
+message ContactsDeleteContactReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass iD = 2 ;
+}
+
+message ContactsDeleteContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputUserAbsClass iD = 2 ;
+		
+}
+
+message ContactsExportCardReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ContactsGetBlockedReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 offset = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message ContactsGetContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message ContactsGetSavedReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ContactsGetStatusesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ContactsGetTopPeersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool correspondents = 2 ;
+		  bool botsPm = 3 ;
+		  bool botsInline = 4 ;
+		  bool phoneCalls = 5 ;
+		  bool groups = 6 ;
+		  bool superGroupV1s = 7 ;
+		  int32 offset = 8 ;
+		  int32 limit = 9 ;
+		  int32 hash = 10 ;
+		
+}
+
+message ContactsImportCardReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 exportCard = 2 ;
+		
+}
+
+message ContactsImportContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputPhoneContact contacts = 2 ;
+		
+}
+
+message ContactsResetSavedReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ContactsResetTopPeerRatingReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		TopPeerCategoryAbsClass category = 2 ;   
+		InputPeerAbsClass peer = 3 ;
+}
+
+message ContactsResolveUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string username = 2 ;
+		
+}
+
+message ContactsSearchReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string q = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message ContactsToggleTopPeersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool enabled = 2 ;
+		
+}
+
+message ContactsUnblockReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass iD = 2 ;
+}
+
+
+// message resp
+message ContactsBlockResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message ContactsDeleteContactResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ContactsLink contactsLink = 2;
+}
+
+message ContactsDeleteContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message ContactsExportCardResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated int32 int32 = 2;
+}
+
+message ContactsGetBlockedResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ContactsBlockedAbsClass contactsBlockedAbsClass = 2;
+}
+
+message ContactsGetContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ContactsContactsAbsClass contactsContactsAbsClass = 2;
+}
+
+message ContactsGetSavedResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated SavedContactAbsClass savedContactAbsClass = 2;
+}
+
+message ContactsGetStatusesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated ContactStatus contactStatus = 2;
+}
+
+message ContactsGetTopPeersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ContactsTopPeersAbsClass contactsTopPeersAbsClass = 2;
+}
+
+message ContactsImportCardResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserAbsClass userAbsClass = 2;
+}
+
+message ContactsImportContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ContactsImportedContacts contactsImportedContacts = 2;
+}
+
+message ContactsResetSavedResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message ContactsResetTopPeerRatingResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message ContactsResolveUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ContactsResolvedPeer contactsResolvedPeer = 2;
+}
+
+message ContactsSearchResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ContactsFound contactsFound = 2;
+}
+
+message ContactsToggleTopPeersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message ContactsUnblockResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+

@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+import "sticker.proto";
+
+service StickerService {
+  /******************web rpc********************/
+  // 新增一组sticker
+  rpc InsertStickerGroup(InsertStickerGroupRequest) returns (RespContext);
+  // 获取多组sticker组信息
+  rpc GetStickerGroups(GetStickerGroupsRequest) returns (GetStickerGroupsResp);
+  // 获取一组表情包中具体的多个表情信息
+  rpc GetStickerGroupStickers(GetStickerGroupStickersRequest)
+      returns (GetStickerGroupStickersResp);
+  // 编辑一组sticker
+  rpc EditStickerGroup(EditStickerGroupRequest) returns (RespContext);
+  /******************web rpc********************/
+
+  /******************app rpc********************/
+  // 获取用户收藏stikcer 列表
+  rpc GetUserFavoriteStickers(GetUserFavoriteStickersRequest)
+      returns (RespContext);
+  // 编辑用户收藏stikcer 列表
+  rpc EditUserFavoriteStickers(EditUserFavoriteStickersRequest)
+      returns (RespContext);
+  // 获取用户聊天面板官方stickerGroups 列表（有序）
+  rpc GetUserStickerGroups(GetUserStickerGroupsRequest) returns (RespContext);
+  // 编辑用户聊天面板官方stickerGroups 列表（有序）
+  rpc EditUserStickerGroups(EditUserStickerGroupsRequest) returns (RespContext);
+  // 获取表情商店官方stickerGroups 列表 （搜索）
+  rpc GetUserStoreStickerGroups(GetUserStoreStickerGroupsRequest)
+      returns (RespContext);
+  // 获取官方一个组内具体的表情列表
+  rpc GetUserStoreStickerGroup(GetUserStoreStickerGroupRequest)
+      returns (RespContext);
+  /******************app rpc********************/
+}
+message GetStickerGroupStickersRequest {
+  Context ctx = 1;
+  int64 id = 2; // 组id
+}
+message GetStickerGroupStickersResp {
+  RespContext respContext = 1;
+  repeated Sticker stickers = 2; // 一组内的多个 sticker
+}
+
+message EditStickerGroupRequest {
+  Context ctx = 1;
+  StickerGroup stickerGroupInfo = 2;  // stciker组信息
+  repeated Sticker groupStickers = 3; // 组包含多个sticker信息
+}
+
+message GetUserStoreStickerGroupRequest {
+  Context ctx = 1;
+  C2SGetUserStoreStickerGroupReq from = 2;
+}
+
+message GetUserStoreStickerGroupsRequest {
+  Context ctx = 1;
+  C2SGetUserStoreStickerGroupsReq from = 2; // 用户ID
+}
+
+// message GetUserStoreStickerGroupsResp { RespContext respContext = 1; }
+
+message EditUserStickerGroupsRequest {
+  Context ctx = 1;
+  C2SEditUserStickerGroupsReq from = 2; // 用户ID
+}
+
+// message EditUserStickerGroupsResp { RespContext respContext = 1; }
+
+message GetUserStickerGroupsRequest {
+  Context ctx = 1;
+  C2SGetUserStickerGroupsReq from = 2; // 用户ID
+}
+
+// message GetUserStickerGroupsResp { RespContext respContext = 1; }
+
+// message EditUserFavoriteStickersResp { RespContext respContext = 1; }
+
+message EditUserFavoriteStickersRequest {
+  Context ctx = 1;
+  C2SEditUserFavoriteStickersReq from = 2; // 用户ID
+}
+
+message GetUserFavoriteStickersRequest {
+  Context ctx = 1;
+  C2SGetUserFavoriteStickersReq from = 2; // 用户ID
+}
+// message GetUserFavoriteStickersResp { RespContext respContext = 1; }
+
+message InsertStickerGroupRequest {
+  Context ctx = 1;
+  StickerGroup stickerGroupInfo = 2;  // stciker组信息
+  repeated Sticker groupStickers = 3; // 组包含多个sticker信息
+}
+
+message GetStickerGroupsRequest {
+  Context ctx = 1;
+  string stickerName = 2; // 表情包名称搜索
+  int32 pageSize = 3;     // 页面查询量
+  int32 pageNum = 4;      // 第几个页
+}
+message GetStickerGroupsResp {
+  RespContext respContext = 1;
+  repeated StickerGroup stickerGroups = 2; //  返回多组stickerGroup
+}

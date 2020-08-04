@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package pkt;
+
+message C2SGetPqReq { bytes nonce = 1; }
+
+message S2CGetPqResp {
+  bytes nonce = 1;
+  bytes serverNonce = 2;
+  bytes pq = 3;
+  repeated int64 publicKeyFingerprints = 4;
+}
+
+message C2SGetDhReq {
+
+  message InnerData {
+    bytes pq = 1;
+    bytes p = 2;
+    bytes q = 3;
+    bytes nonce = 4;
+    bytes serverNonce = 5;
+    bytes newNonce = 6;
+  }
+
+  bytes nonce = 1;
+  bytes serverNonce = 2;
+  bytes p = 3;
+  bytes q = 4;
+  int64 publicKeyFingerprint = 5;
+
+  // encrypted(InnerData)
+  bytes encryptedData = 6;
+}
+
+message S2CGetDhResp {
+
+  message InnerData {
+    bytes nonce = 1;
+    bytes serverNonce = 2;
+    int32 g = 3;
+    bytes dhPrime = 4;
+    bytes gA = 5;
+    int32 serverTime = 6;
+  }
+
+  bytes nonce = 1;
+  bytes serverNonce = 2;
+
+  // 服务器返回成功，此参数不为空, encrypted(InnerData)
+  bytes encryptedAnswer = 3;
+
+  // 返回失败，会原样回传 newHonceHash
+  bytes newNonceHash = 4;
+}
+
+message C2SSetClientDhReq {
+
+  message InnerData {
+    bytes nonce = 1;
+    bytes serverNonce = 2;
+    int64 retryId = 3;
+    bytes gB = 4;
+  }
+
+  bytes nonce = 1;
+  bytes serverNonce = 2;
+
+  // encrypted(InnerData)
+  bytes encryptedData = 3;
+}
+
+// DH Exchange 最后一步
+message S2CSetClientDhResp {
+  // 1: ok,  2: failed, 3: retry
+  int32 result = 1;
+  bytes nonce = 2;
+  bytes serverNonce = 3;
+  bytes newNonceHash = 4;
+}

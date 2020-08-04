@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>gointo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M28.9289322,62 L57.9289322,62 C60.6903559,62 62.9289322,64.2385763 62.9289322,67 C62.9289322,69.7614237 60.6903559,72 57.9289322,72 L23.9289322,72 C22.5482203,72 21.2982203,71.4403559 20.3933983,70.5355339 C19.4885763,69.6307119 18.9289322,68.3807119 18.9289322,67 L18.9289322,33 C18.9289322,30.2385763 21.1675084,28 23.9289322,28 C26.6903559,28 28.9289322,30.2385763 28.9289322,33 L28.9289322,62 Z" id="path-1"></path>
+    </defs>
+    <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标/原型/进入">
+            <g id="进入">
+                <circle id="椭圆形" fill="#F2F2F2" cx="50" cy="50" r="50"></circle>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#34363A" transform="translate(40.928932, 50.000000) scale(-1, 1) rotate(-315.000000) translate(-40.928932, -50.000000) " xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

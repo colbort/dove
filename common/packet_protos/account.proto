@@ -1,0 +1,165 @@
+syntax = "proto3";
+
+package pkt;
+
+import "user.proto";
+import "file.proto";
+import "a_rpc.proto";
+
+message InputCheckPasswordSrp {
+  int64 srpId = 1;
+  bytes a = 2;
+  bytes m1 = 3;
+}
+
+message PasswordKdfAlgo {
+  bytes salt1 = 1;
+  bytes salt2 = 2;
+  int32 g = 3;
+  bytes p = 4;
+}
+
+message SecureSecretSettings {
+  PasswordKdfAlgo secureAlgo = 1;
+  bytes secureSecret = 2;
+  int64 secureSecretId = 3;
+}
+
+message PasswordInputSettings {
+  PasswordKdfAlgo newAlgo = 1;
+  bytes hash = 2;
+  SecureSecretSettings newSecureSettings = 3;
+}
+
+message PhoneInfo {
+  string phone = 1;
+  string code = 2; // 验证码
+  string langCode = 3;
+  PasswordInputSettings newSetting = 4;
+  string password = 5;
+}
+
+message EmailInfo {
+  string email = 1;
+  string code = 2;                      // 验证码
+  PasswordInputSettings newSetting = 3; // 密码设置，延后实现
+  InputCheckPasswordSrp password1 = 4;
+  string password = 5;
+}
+
+message AccountInfo {
+  string Account = 1;
+  PasswordInputSettings newSetting = 3; // 密码设置，延后实现
+  InputCheckPasswordSrp password1 = 4;
+  string password = 5;
+}
+
+message LoginAccount {
+  string account = 1;
+  string password = 2;
+  InputCheckPasswordSrp password1 = 3;
+}
+
+message LoginPhone {
+  string phone = 1;
+  string password = 2;
+  InputCheckPasswordSrp password1 = 3;
+}
+
+message LoginEmail {
+  string email = 1;
+  string password = 2;
+  InputCheckPasswordSrp password1 = 3;
+}
+
+message photoInfo {
+  bytes fileMd5 = 1;    // 文件的Md5
+  bytes accessHash = 2; // 文件的Sha1
+  uint64 fileSize = 3;  // 文件的大小
+  bytes photo = 4;
+  EnumMimeType mimeType = 5; // 文件类型
+}
+// ---func---
+// C2SSignUpReq 注册请求
+message C2SSignUpReq {
+  oneof data {
+    PhoneInfo phone = 1;
+    EmailInfo email = 2;
+  }
+  photoInfo photo = 3;
+  string username = 4;
+}
+
+message S2CSignUpResp {
+  ErrorCode code = 1;
+  User user = 2; //用户基本信息
+}
+
+// C2SUpdateAccount
+message C2SUpdateAccountReq {
+  oneof data {
+    PhoneInfo phone = 1;
+    EmailInfo email = 2;
+    AccountInfo account = 3;
+  }
+}
+message S2CUpdateAccountResp {
+  ErrorCode code = 1;
+  User user = 2; //用户基本信息
+}
+
+// C2SLoginReq 登录请求
+message C2SLoginReq {
+  oneof data {
+    LoginAccount account = 1;
+    LoginPhone phone = 2;
+    LoginEmail email = 3;
+  }
+}
+
+message S2CLoginResp {
+  ErrorCode code = 1;
+  User user = 2; //用户基本信息
+}
+
+// C2SLogoutReq 登出
+message C2SLogoutReq {}
+
+message S2CLogoutResp { ErrorCode code = 1; }
+
+enum SendCodeType {
+  SendCodeTypeInit = 0;
+  SendCodeTypeSignUp = 1;
+}
+// C2SSendPhoneCodeReq 获取手机验证码
+message C2SSendPhoneCodeReq {
+  string phone = 1;
+  SendCodeType userd = 2;
+}
+message S2CSendPhoneCodeResp { ErrorCode code = 1; }
+
+// C2SSendEmailCodeReq 获取邮箱验证码
+message C2SSendEmailCodeReq {
+  string email = 1;
+  SendCodeType userd = 2;
+}
+message S2CSendEmailCodeResp { ErrorCode code = 1; }
+
+// C2SUpdatePasswordReq 修改密码
+message C2SUpdatePasswordReq {
+  string nowPassword = 1;
+  string oldPassword = 2;
+  PasswordInputSettings newSetting = 3; // 密码设置，延后实现
+  InputCheckPasswordSrp password1 = 4;
+}
+message S2CUpdatePasswordResp { ErrorCode code = 1; }
+
+// C2SUpdatePasswordReq 找回密码
+message C2SFindPasswordReq {
+  string email = 1;
+  string code = 2;
+  PasswordInputSettings newSetting = 3; // 密码设置，延后实现
+  InputCheckPasswordSrp password1 = 4;
+  string password = 5;
+}
+message S2CFindPasswordResp { ErrorCode code = 1; }

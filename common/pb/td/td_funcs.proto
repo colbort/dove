@@ -1,0 +1,3874 @@
+// Package td AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/td/td_obj.proto";
+
+package pb_td;
+
+service tdServer { 
+    rpc AcceptCall (AcceptCallReq) returns (AcceptCallResp) {} 
+    rpc AcceptTermsOfService (AcceptTermsOfServiceReq) returns (AcceptTermsOfServiceResp) {} 
+    rpc AddChatMember (AddChatMemberReq) returns (AddChatMemberResp) {} 
+    rpc AddChatMembers (AddChatMembersReq) returns (AddChatMembersResp) {} 
+    rpc AddFavoriteSticker (AddFavoriteStickerReq) returns (AddFavoriteStickerResp) {} 
+    rpc AddLocalInfo (AddLocalInfoReq) returns (AddLocalInfoResp) {} 
+    rpc AddNetworkStatistics (AddNetworkStatisticsReq) returns (AddNetworkStatisticsResp) {} 
+    rpc AddProxy (AddProxyReq) returns (AddProxyResp) {} 
+    rpc AddRecentSticker (AddRecentStickerReq) returns (AddRecentStickerResp) {} 
+    rpc AddRecentlyFoundChat (AddRecentlyFoundChatReq) returns (AddRecentlyFoundChatResp) {} 
+    rpc AddSavedAnimation (AddSavedAnimationReq) returns (AddSavedAnimationResp) {} 
+    rpc AddStickerToSet (AddStickerToSetReq) returns (AddStickerToSetResp) {} 
+    rpc AnswerCallbackQuery (AnswerCallbackQueryReq) returns (AnswerCallbackQueryResp) {} 
+    rpc AnswerCustomQuery (AnswerCustomQueryReq) returns (AnswerCustomQueryResp) {} 
+    rpc AnswerInlineQuery (AnswerInlineQueryReq) returns (AnswerInlineQueryResp) {} 
+    rpc AnswerPreCheckoutQuery (AnswerPreCheckoutQueryReq) returns (AnswerPreCheckoutQueryResp) {} 
+    rpc AnswerShippingQuery (AnswerShippingQueryReq) returns (AnswerShippingQueryResp) {} 
+    rpc BlockUser (BlockUserReq) returns (BlockUserResp) {} 
+    rpc CancelDownloadFile (CancelDownloadFileReq) returns (CancelDownloadFileResp) {} 
+    rpc CancelUploadFile (CancelUploadFileReq) returns (CancelUploadFileResp) {} 
+    rpc ChangeChatReportSpamState (ChangeChatReportSpamStateReq) returns (ChangeChatReportSpamStateResp) {} 
+    rpc ChangeImportedContacts (ChangeImportedContactsReq) returns (ChangeImportedContactsResp) {} 
+    rpc ChangePhoneNumber (ChangePhoneNumberReq) returns (ChangePhoneNumberResp) {} 
+    rpc ChangeStickerSet (ChangeStickerSetReq) returns (ChangeStickerSetResp) {} 
+    rpc CheckAuthenticationBotToken (CheckAuthenticationBotTokenReq) returns (CheckAuthenticationBotTokenResp) {} 
+    rpc CheckAuthenticationCode (CheckAuthenticationCodeReq) returns (CheckAuthenticationCodeResp) {} 
+    rpc CheckAuthenticationPassword (CheckAuthenticationPasswordReq) returns (CheckAuthenticationPasswordResp) {} 
+    rpc CheckChangePhoneNumberCode (CheckChangePhoneNumberCodeReq) returns (CheckChangePhoneNumberCodeResp) {} 
+    rpc CheckChatInviteLink (CheckChatInviteLinkReq) returns (CheckChatInviteLinkResp) {} 
+    rpc CheckChatUsername (CheckChatUsernameReq) returns (CheckChatUsernameResp) {} 
+    rpc CheckDatabaseEncryptionKey (CheckDatabaseEncryptionKeyReq) returns (CheckDatabaseEncryptionKeyResp) {} 
+    rpc CheckEmailAddressVerificationCode (CheckEmailAddressVerificationCodeReq) returns (CheckEmailAddressVerificationCodeResp) {} 
+    rpc CheckPhoneNumberConfirmationCode (CheckPhoneNumberConfirmationCodeReq) returns (CheckPhoneNumberConfirmationCodeResp) {} 
+    rpc CheckPhoneNumberVerificationCode (CheckPhoneNumberVerificationCodeReq) returns (CheckPhoneNumberVerificationCodeResp) {} 
+    rpc CleanFileName (CleanFileNameReq) returns (CleanFileNameResp) {} 
+    rpc ClearAllDraftInfos (ClearAllDraftInfosReq) returns (ClearAllDraftInfosResp) {} 
+    rpc ClearImportedContacts (ClearImportedContactsReq) returns (ClearImportedContactsResp) {} 
+    rpc ClearRecentStickers (ClearRecentStickersReq) returns (ClearRecentStickersResp) {} 
+    rpc ClearRecentlyFoundChats (ClearRecentlyFoundChatsReq) returns (ClearRecentlyFoundChatsResp) {} 
+    rpc Close (CloseReq) returns (CloseResp) {} 
+    rpc CloseChat (CloseChatReq) returns (CloseChatResp) {} 
+    rpc CloseSecretChat (CloseSecretChatReq) returns (CloseSecretChatResp) {} 
+    rpc CreateBasicGroupChat (CreateBasicGroupChatReq) returns (CreateBasicGroupChatResp) {} 
+    rpc CreateCall (CreateCallReq) returns (CreateCallResp) {} 
+    rpc CreateNewBasicGroupChat (CreateNewBasicGroupChatReq) returns (CreateNewBasicGroupChatResp) {} 
+    rpc CreateNewSecretChat (CreateNewSecretChatReq) returns (CreateNewSecretChatResp) {} 
+    rpc CreateNewStickerSet (CreateNewStickerSetReq) returns (CreateNewStickerSetResp) {} 
+    rpc CreateNewSupergroupChat (CreateNewSupergroupChatReq) returns (CreateNewSupergroupChatResp) {} 
+    rpc CreatePrivateChat (CreatePrivateChatReq) returns (CreatePrivateChatResp) {} 
+    rpc CreateSecretChat (CreateSecretChatReq) returns (CreateSecretChatResp) {} 
+    rpc CreateSupergroupChat (CreateSupergroupChatReq) returns (CreateSupergroupChatResp) {} 
+    rpc CreateTemporaryPassword (CreateTemporaryPasswordReq) returns (CreateTemporaryPasswordResp) {} 
+    rpc DeleteAccount (DeleteAccountReq) returns (DeleteAccountResp) {} 
+    rpc DeleteChatHistory (DeleteChatHistoryReq) returns (DeleteChatHistoryResp) {} 
+    rpc DeleteChatInfosFromUser (DeleteChatInfosFromUserReq) returns (DeleteChatInfosFromUserResp) {} 
+    rpc DeleteChatReplyMarkup (DeleteChatReplyMarkupReq) returns (DeleteChatReplyMarkupResp) {} 
+    rpc DeleteFile (DeleteFileReq) returns (DeleteFileResp) {} 
+    rpc DeleteLanguagePack (DeleteLanguagePackReq) returns (DeleteLanguagePackResp) {} 
+    rpc DeleteInfos (DeleteInfosReq) returns (DeleteInfosResp) {} 
+    rpc DeletePassportElement (DeletePassportElementReq) returns (DeletePassportElementResp) {} 
+    rpc DeleteProfilePhoto (DeleteProfilePhotoReq) returns (DeleteProfilePhotoResp) {} 
+    rpc DeleteSavedCredentials (DeleteSavedCredentialsReq) returns (DeleteSavedCredentialsResp) {} 
+    rpc DeleteSavedOrderInfo (DeleteSavedOrderInfoReq) returns (DeleteSavedOrderInfoResp) {} 
+    rpc DeleteSupergroup (DeleteSupergroupReq) returns (DeleteSupergroupResp) {} 
+    rpc Destroy (DestroyReq) returns (DestroyResp) {} 
+    rpc DisableProxy (DisableProxyReq) returns (DisableProxyResp) {} 
+    rpc DiscardCall (DiscardCallReq) returns (DiscardCallResp) {} 
+    rpc DisconnectAllWebsites (DisconnectAllWebsitesReq) returns (DisconnectAllWebsitesResp) {} 
+    rpc DisconnectWebsite (DisconnectWebsiteReq) returns (DisconnectWebsiteResp) {} 
+    rpc DownloadFile (DownloadFileReq) returns (DownloadFileResp) {} 
+    rpc EditCustomLanguagePackInfo (EditCustomLanguagePackInfoReq) returns (EditCustomLanguagePackInfoResp) {} 
+    rpc EditInlineInfoCaption (EditInlineInfoCaptionReq) returns (EditInlineInfoCaptionResp) {} 
+    rpc EditInlineInfoLiveLocation (EditInlineInfoLiveLocationReq) returns (EditInlineInfoLiveLocationResp) {} 
+    rpc EditInlineInfoMedia (EditInlineInfoMediaReq) returns (EditInlineInfoMediaResp) {} 
+    rpc EditInlineInfoReplyMarkup (EditInlineInfoReplyMarkupReq) returns (EditInlineInfoReplyMarkupResp) {} 
+    rpc EditInlineInfoText (EditInlineInfoTextReq) returns (EditInlineInfoTextResp) {} 
+    rpc EditInfoCaption (EditInfoCaptionReq) returns (EditInfoCaptionResp) {} 
+    rpc EditInfoLiveLocation (EditInfoLiveLocationReq) returns (EditInfoLiveLocationResp) {} 
+    rpc EditInfoMedia (EditInfoMediaReq) returns (EditInfoMediaResp) {} 
+    rpc EditInfoReplyMarkup (EditInfoReplyMarkupReq) returns (EditInfoReplyMarkupResp) {} 
+    rpc EditInfoText (EditInfoTextReq) returns (EditInfoTextResp) {} 
+    rpc EditProxy (EditProxyReq) returns (EditProxyResp) {} 
+    rpc EnableProxy (EnableProxyReq) returns (EnableProxyResp) {} 
+    rpc FinishFileGeneration (FinishFileGenerationReq) returns (FinishFileGenerationResp) {} 
+    rpc ForwardInfos (ForwardInfosReq) returns (ForwardInfosResp) {} 
+    rpc GenerateChatInviteLink (GenerateChatInviteLinkReq) returns (GenerateChatInviteLinkResp) {} 
+    rpc GetAccountTTL (GetAccountTTLReq) returns (GetAccountTTLResp) {} 
+    rpc GetActiveLiveLocationInfos (GetActiveLiveLocationInfosReq) returns (GetActiveLiveLocationInfosResp) {} 
+    rpc GetActiveSessions (GetActiveSessionsReq) returns (GetActiveSessionsResp) {} 
+    rpc GetAllPassportElements (GetAllPassportElementsReq) returns (GetAllPassportElementsResp) {} 
+    rpc GetArchivedStickerSets (GetArchivedStickerSetsReq) returns (GetArchivedStickerSetsResp) {} 
+    rpc GetAttachedStickerSets (GetAttachedStickerSetsReq) returns (GetAttachedStickerSetsResp) {} 
+    rpc GetAuthState (GetAuthStateReq) returns (GetAuthStateResp) {} 
+    rpc GetBasicGroup (GetBasicGroupReq) returns (GetBasicGroupResp) {} 
+    rpc GetBasicGroupFullInfo (GetBasicGroupFullInfoReq) returns (GetBasicGroupFullInfoResp) {} 
+    rpc GetBlockedUsers (GetBlockedUsersReq) returns (GetBlockedUsersResp) {} 
+    rpc GetCallbackQueryAnswer (GetCallbackQueryAnswerReq) returns (GetCallbackQueryAnswerResp) {} 
+    rpc GetChat (GetChatReq) returns (GetChatResp) {} 
+    rpc GetChatAdministrators (GetChatAdministratorsReq) returns (GetChatAdministratorsResp) {} 
+    rpc GetChatEventLog (GetChatEventLogReq) returns (GetChatEventLogResp) {} 
+    rpc GetChatHistory (GetChatHistoryReq) returns (GetChatHistoryResp) {} 
+    rpc GetChatMember (GetChatMemberReq) returns (GetChatMemberResp) {} 
+    rpc GetChatInfoByDate (GetChatInfoByDateReq) returns (GetChatInfoByDateResp) {} 
+    rpc GetChatInfoCount (GetChatInfoCountReq) returns (GetChatInfoCountResp) {} 
+    rpc GetChatPinnedInfo (GetChatPinnedInfoReq) returns (GetChatPinnedInfoResp) {} 
+    rpc GetChatReportSpamState (GetChatReportSpamStateReq) returns (GetChatReportSpamStateResp) {} 
+    rpc GetChats (GetChatsReq) returns (GetChatsResp) {} 
+    rpc GetConnectedWebsites (GetConnectedWebsitesReq) returns (GetConnectedWebsitesResp) {} 
+    rpc GetContacts (GetContactsReq) returns (GetContactsResp) {} 
+    rpc GetCountryCode (GetCountryCodeReq) returns (GetCountryCodeResp) {} 
+    rpc GetCreatedPublicChats (GetCreatedPublicChatsReq) returns (GetCreatedPublicChatsResp) {} 
+    rpc GetDeepLinkInfo (GetDeepLinkInfoReq) returns (GetDeepLinkInfoResp) {} 
+    rpc GetFavoriteStickers (GetFavoriteStickersReq) returns (GetFavoriteStickersResp) {} 
+    rpc GetFile (GetFileReq) returns (GetFileResp) {} 
+    rpc GetFileExtension (GetFileExtensionReq) returns (GetFileExtensionResp) {} 
+    rpc GetFileMimeType (GetFileMimeTypeReq) returns (GetFileMimeTypeResp) {} 
+    rpc GetGameHighScores (GetGameHighScoresReq) returns (GetGameHighScoresResp) {} 
+    rpc GetGroupsInCommon (GetGroupsInCommonReq) returns (GetGroupsInCommonResp) {} 
+    rpc GetImportedContactCount (GetImportedContactCountReq) returns (GetImportedContactCountResp) {} 
+    rpc GetInlineGameHighScores (GetInlineGameHighScoresReq) returns (GetInlineGameHighScoresResp) {} 
+    rpc GetInlineQueryResults (GetInlineQueryResultsReq) returns (GetInlineQueryResultsResp) {} 
+    rpc GetInstalledStickerSets (GetInstalledStickerSetsReq) returns (GetInstalledStickerSetsResp) {} 
+    rpc GetInviteText (GetInviteTextReq) returns (GetInviteTextResp) {} 
+    rpc GetLanguagePackString (GetLanguagePackStringReq) returns (GetLanguagePackStringResp) {} 
+    rpc GetLanguagePackStrings (GetLanguagePackStringsReq) returns (GetLanguagePackStringsResp) {} 
+    rpc GetLocalizationTargetInfo (GetLocalizationTargetInfoReq) returns (GetLocalizationTargetInfoResp) {} 
+    rpc GetMapThumbnailFile (GetMapThumbnailFileReq) returns (GetMapThumbnailFileResp) {} 
+    rpc GetMe (GetMeReq) returns (GetMeResp) {} 
+    rpc GetInfo (GetInfoReq) returns (GetInfoResp) {} 
+    rpc GetInfos (GetInfosReq) returns (GetInfosResp) {} 
+    rpc GetNetworkStatistics (GetNetworkStatisticsReq) returns (GetNetworkStatisticsResp) {} 
+    rpc GetOption (GetOptionReq) returns (GetOptionResp) {} 
+    rpc GetPassportAuthForm (GetPassportAuthFormReq) returns (GetPassportAuthFormResp) {} 
+    rpc GetPassportElement (GetPassportElementReq) returns (GetPassportElementResp) {} 
+    rpc GetPasswordState (GetPasswordStateReq) returns (GetPasswordStateResp) {} 
+    rpc GetPaymentForm (GetPaymentFormReq) returns (GetPaymentFormResp) {} 
+    rpc GetPaymentReceipt (GetPaymentReceiptReq) returns (GetPaymentReceiptResp) {} 
+    rpc GetPreferredCountryLanguage (GetPreferredCountryLanguageReq) returns (GetPreferredCountryLanguageResp) {} 
+    rpc GetProxies (GetProxiesReq) returns (GetProxiesResp) {} 
+    rpc GetProxyLink (GetProxyLinkReq) returns (GetProxyLinkResp) {} 
+    rpc GetPublicInfoLink (GetPublicInfoLinkReq) returns (GetPublicInfoLinkResp) {} 
+    rpc GetRecentInlineBots (GetRecentInlineBotsReq) returns (GetRecentInlineBotsResp) {} 
+    rpc GetRecentStickers (GetRecentStickersReq) returns (GetRecentStickersResp) {} 
+    rpc GetRecentlyVisitedTMeUrls (GetRecentlyVisitedTMeUrlsReq) returns (GetRecentlyVisitedTMeUrlsResp) {} 
+    rpc GetRecoveryEmailAddress (GetRecoveryEmailAddressReq) returns (GetRecoveryEmailAddressResp) {} 
+    rpc GetRemoteFile (GetRemoteFileReq) returns (GetRemoteFileResp) {} 
+    rpc GetRepliedInfo (GetRepliedInfoReq) returns (GetRepliedInfoResp) {} 
+    rpc GetSavedAnimations (GetSavedAnimationsReq) returns (GetSavedAnimationsResp) {} 
+    rpc GetSavedOrderInfo (GetSavedOrderInfoReq) returns (GetSavedOrderInfoResp) {} 
+    rpc GetScopeNotificationSettings (GetScopeNotificationSettingsReq) returns (GetScopeNotificationSettingsResp) {} 
+    rpc GetSecretChat (GetSecretChatReq) returns (GetSecretChatResp) {} 
+    rpc GetStickerEmojis (GetStickerEmojisReq) returns (GetStickerEmojisResp) {} 
+    rpc GetStickerSet (GetStickerSetReq) returns (GetStickerSetResp) {} 
+    rpc GetStickers (GetStickersReq) returns (GetStickersResp) {} 
+    rpc GetStorageStatistics (GetStorageStatisticsReq) returns (GetStorageStatisticsResp) {} 
+    rpc GetStorageStatisticsFast (GetStorageStatisticsFastReq) returns (GetStorageStatisticsFastResp) {} 
+    rpc GetSupergroup (GetSupergroupReq) returns (GetSupergroupResp) {} 
+    rpc GetSupergroupFullInfo (GetSupergroupFullInfoReq) returns (GetSupergroupFullInfoResp) {} 
+    rpc GetSupergroupMembers (GetSupergroupMembersReq) returns (GetSupergroupMembersResp) {} 
+    rpc GetSupportUser (GetSupportUserReq) returns (GetSupportUserResp) {} 
+    rpc GetTemporaryPasswordState (GetTemporaryPasswordStateReq) returns (GetTemporaryPasswordStateResp) {} 
+    rpc GetTextEntities (GetTextEntitiesReq) returns (GetTextEntitiesResp) {} 
+    rpc GetTopChats (GetTopChatsReq) returns (GetTopChatsResp) {} 
+    rpc GetTrendingStickerSets (GetTrendingStickerSetsReq) returns (GetTrendingStickerSetsResp) {} 
+    rpc GetUser (GetUserReq) returns (GetUserResp) {} 
+    rpc GetUserFullInfo (GetUserFullInfoReq) returns (GetUserFullInfoResp) {} 
+    rpc GetUserPrivacySettingRules (GetUserPrivacySettingRulesReq) returns (GetUserPrivacySettingRulesResp) {} 
+    rpc GetUserProfilePhotos (GetUserProfilePhotosReq) returns (GetUserProfilePhotosResp) {} 
+    rpc GetWallpapers (GetWallpapersReq) returns (GetWallpapersResp) {} 
+    rpc GetWebPageInstantView (GetWebPageInstantViewReq) returns (GetWebPageInstantViewResp) {} 
+    rpc GetWebPagePreview (GetWebPagePreviewReq) returns (GetWebPagePreviewResp) {} 
+    rpc ImportContacts (ImportContactsReq) returns (ImportContactsResp) {} 
+    rpc JoinChat (JoinChatReq) returns (JoinChatResp) {} 
+    rpc JoinChatByInviteLink (JoinChatByInviteLinkReq) returns (JoinChatByInviteLinkResp) {} 
+    rpc LeaveChat (LeaveChatReq) returns (LeaveChatResp) {} 
+    rpc LogOut (LogOutReq) returns (LogOutResp) {} 
+    rpc OpenChat (OpenChatReq) returns (OpenChatResp) {} 
+    rpc OpenInfoContent (OpenInfoContentReq) returns (OpenInfoContentResp) {} 
+    rpc OptimizeStorage (OptimizeStorageReq) returns (OptimizeStorageResp) {} 
+    rpc ParseTextEntities (ParseTextEntitiesReq) returns (ParseTextEntitiesResp) {} 
+    rpc PinSupergroupInfo (PinSupergroupInfoReq) returns (PinSupergroupInfoResp) {} 
+    rpc PingProxy (PingProxyReq) returns (PingProxyResp) {} 
+    rpc ProcessDcUpdate (ProcessDcUpdateReq) returns (ProcessDcUpdateResp) {} 
+    rpc ReadAllChatMentions (ReadAllChatMentionsReq) returns (ReadAllChatMentionsResp) {} 
+    rpc RecoverAuthenticationPassword (RecoverAuthenticationPasswordReq) returns (RecoverAuthenticationPasswordResp) {} 
+    rpc RecoverPassword (RecoverPasswordReq) returns (RecoverPasswordResp) {} 
+    rpc RegisterDevice (RegisterDeviceReq) returns (RegisterDeviceResp) {} 
+    rpc RemoveContacts (RemoveContactsReq) returns (RemoveContactsResp) {} 
+    rpc RemoveFavoriteSticker (RemoveFavoriteStickerReq) returns (RemoveFavoriteStickerResp) {} 
+    rpc RemoveProxy (RemoveProxyReq) returns (RemoveProxyResp) {} 
+    rpc RemoveRecentHashtag (RemoveRecentHashtagReq) returns (RemoveRecentHashtagResp) {} 
+    rpc RemoveRecentSticker (RemoveRecentStickerReq) returns (RemoveRecentStickerResp) {} 
+    rpc RemoveRecentlyFoundChat (RemoveRecentlyFoundChatReq) returns (RemoveRecentlyFoundChatResp) {} 
+    rpc RemoveSavedAnimation (RemoveSavedAnimationReq) returns (RemoveSavedAnimationResp) {} 
+    rpc RemoveStickerFromSet (RemoveStickerFromSetReq) returns (RemoveStickerFromSetResp) {} 
+    rpc RemoveTopChat (RemoveTopChatReq) returns (RemoveTopChatResp) {} 
+    rpc ReorderInstalledStickerSets (ReorderInstalledStickerSetsReq) returns (ReorderInstalledStickerSetsResp) {} 
+    rpc ReportChat (ReportChatReq) returns (ReportChatResp) {} 
+    rpc ReportSupergroupSpam (ReportSupergroupSpamReq) returns (ReportSupergroupSpamResp) {} 
+    rpc ReqAuthenticationPasswordRecovery (ReqAuthenticationPasswordRecoveryReq) returns (ReqAuthenticationPasswordRecoveryResp) {} 
+    rpc ReqPasswordRecovery (ReqPasswordRecoveryReq) returns (ReqPasswordRecoveryResp) {} 
+    rpc ResendAuthenticationCode (ResendAuthenticationCodeReq) returns (ResendAuthenticationCodeResp) {} 
+    rpc ResendChangePhoneNumberCode (ResendChangePhoneNumberCodeReq) returns (ResendChangePhoneNumberCodeResp) {} 
+    rpc ResendEmailAddressVerificationCode (ResendEmailAddressVerificationCodeReq) returns (ResendEmailAddressVerificationCodeResp) {} 
+    rpc ResendPhoneNumberConfirmationCode (ResendPhoneNumberConfirmationCodeReq) returns (ResendPhoneNumberConfirmationCodeResp) {} 
+    rpc ResendPhoneNumberVerificationCode (ResendPhoneNumberVerificationCodeReq) returns (ResendPhoneNumberVerificationCodeResp) {} 
+    rpc ResetAllNotificationSettings (ResetAllNotificationSettingsReq) returns (ResetAllNotificationSettingsResp) {} 
+    rpc ResetNetworkStatistics (ResetNetworkStatisticsReq) returns (ResetNetworkStatisticsResp) {} 
+    rpc SearchCallInfos (SearchCallInfosReq) returns (SearchCallInfosResp) {} 
+    rpc SearchChatMembers (SearchChatMembersReq) returns (SearchChatMembersResp) {} 
+    rpc SearchChatInfos (SearchChatInfosReq) returns (SearchChatInfosResp) {} 
+    rpc SearchChatRecentLocationInfos (SearchChatRecentLocationInfosReq) returns (SearchChatRecentLocationInfosResp) {} 
+    rpc SearchChats (SearchChatsReq) returns (SearchChatsResp) {} 
+    rpc SearchChatsOnServer (SearchChatsOnServerReq) returns (SearchChatsOnServerResp) {} 
+    rpc SearchContacts (SearchContactsReq) returns (SearchContactsResp) {} 
+    rpc SearchHashtags (SearchHashtagsReq) returns (SearchHashtagsResp) {} 
+    rpc SearchInstalledStickerSets (SearchInstalledStickerSetsReq) returns (SearchInstalledStickerSetsResp) {} 
+    rpc SearchInfos (SearchInfosReq) returns (SearchInfosResp) {} 
+    rpc SearchPublicChat (SearchPublicChatReq) returns (SearchPublicChatResp) {} 
+    rpc SearchPublicChats (SearchPublicChatsReq) returns (SearchPublicChatsResp) {} 
+    rpc SearchSecretInfos (SearchSecretInfosReq) returns (SearchSecretInfosResp) {} 
+    rpc SearchStickerSet (SearchStickerSetReq) returns (SearchStickerSetResp) {} 
+    rpc SearchStickerSets (SearchStickerSetsReq) returns (SearchStickerSetsResp) {} 
+    rpc SearchStickers (SearchStickersReq) returns (SearchStickersResp) {} 
+    rpc SendBotStartInfo (SendBotStartInfoReq) returns (SendBotStartInfoResp) {} 
+    rpc SendCallDebugInformation (SendCallDebugInformationReq) returns (SendCallDebugInformationResp) {} 
+    rpc SendCallRating (SendCallRatingReq) returns (SendCallRatingResp) {} 
+    rpc SendChatDoit (SendChatDoitReq) returns (SendChatDoitResp) {} 
+    rpc SendChatScreenshotTakenNotification (SendChatScreenshotTakenNotificationReq) returns (SendChatScreenshotTakenNotificationResp) {} 
+    rpc SendChatSetTTLInfo (SendChatSetTTLInfoReq) returns (SendChatSetTTLInfoResp) {} 
+    rpc SendCustomReq (SendCustomReqReq) returns (SendCustomReqResp) {} 
+    rpc SendEmailAddressVerificationCode (SendEmailAddressVerificationCodeReq) returns (SendEmailAddressVerificationCodeResp) {} 
+    rpc SendInlineQueryResultInfo (SendInlineQueryResultInfoReq) returns (SendInlineQueryResultInfoResp) {} 
+    rpc SendInfo (SendInfoReq) returns (SendInfoResp) {} 
+    rpc SendInfoAlbum (SendInfoAlbumReq) returns (SendInfoAlbumResp) {} 
+    rpc SendPassportAuthForm (SendPassportAuthFormReq) returns (SendPassportAuthFormResp) {} 
+    rpc SendPaymentForm (SendPaymentFormReq) returns (SendPaymentFormResp) {} 
+    rpc SendPhoneNumberConfirmationCode (SendPhoneNumberConfirmationCodeReq) returns (SendPhoneNumberConfirmationCodeResp) {} 
+    rpc SendPhoneNumberVerificationCode (SendPhoneNumberVerificationCodeReq) returns (SendPhoneNumberVerificationCodeResp) {} 
+    rpc SetAccountTTL (SetAccountTTLReq) returns (SetAccountTTLResp) {} 
+    rpc SetAlarm (SetAlarmReq) returns (SetAlarmResp) {} 
+    rpc SetAuthenticationPhoneNumber (SetAuthenticationPhoneNumberReq) returns (SetAuthenticationPhoneNumberResp) {} 
+    rpc SetBio (SetBioReq) returns (SetBioResp) {} 
+    rpc SetBotUpdatesStatus (SetBotUpdatesStatusReq) returns (SetBotUpdatesStatusResp) {} 
+    rpc SetChatClientData (SetChatClientDataReq) returns (SetChatClientDataResp) {} 
+    rpc SetChatDraftInfo (SetChatDraftInfoReq) returns (SetChatDraftInfoResp) {} 
+    rpc SetChatMemberStatus (SetChatMemberStatusReq) returns (SetChatMemberStatusResp) {} 
+    rpc SetChatNotificationSettings (SetChatNotificationSettingsReq) returns (SetChatNotificationSettingsResp) {} 
+    rpc SetChatPhoto (SetChatPhotoReq) returns (SetChatPhotoResp) {} 
+    rpc SetChatTitle (SetChatTitleReq) returns (SetChatTitleResp) {} 
+    rpc SetCustomLanguagePack (SetCustomLanguagePackReq) returns (SetCustomLanguagePackResp) {} 
+    rpc SetCustomLanguagePackString (SetCustomLanguagePackStringReq) returns (SetCustomLanguagePackStringResp) {} 
+    rpc SetDatabaseEncryptionKey (SetDatabaseEncryptionKeyReq) returns (SetDatabaseEncryptionKeyResp) {} 
+    rpc SetFileGenerationProgress (SetFileGenerationProgressReq) returns (SetFileGenerationProgressResp) {} 
+    rpc SetGameScore (SetGameScoreReq) returns (SetGameScoreResp) {} 
+    rpc SetInlineGameScore (SetInlineGameScoreReq) returns (SetInlineGameScoreResp) {} 
+    rpc SetName (SetNameReq) returns (SetNameResp) {} 
+    rpc SetNetworkType (SetNetworkTypeReq) returns (SetNetworkTypeResp) {} 
+    rpc SetOption (SetOptionReq) returns (SetOptionResp) {} 
+    rpc SetPassportElement (SetPassportElementReq) returns (SetPassportElementResp) {} 
+    rpc SetPassportElementErrors (SetPassportElementErrorsReq) returns (SetPassportElementErrorsResp) {} 
+    rpc SetPassword (SetPasswordReq) returns (SetPasswordResp) {} 
+    rpc SetPinnedChats (SetPinnedChatsReq) returns (SetPinnedChatsResp) {} 
+    rpc SetProfilePhoto (SetProfilePhotoReq) returns (SetProfilePhotoResp) {} 
+    rpc SetRecoveryEmailAddress (SetRecoveryEmailAddressReq) returns (SetRecoveryEmailAddressResp) {} 
+    rpc SetScopeNotificationSettings (SetScopeNotificationSettingsReq) returns (SetScopeNotificationSettingsResp) {} 
+    rpc SetStickerPositionInSet (SetStickerPositionInSetReq) returns (SetStickerPositionInSetResp) {} 
+    rpc SetSupergroupDescription (SetSupergroupDescriptionReq) returns (SetSupergroupDescriptionResp) {} 
+    rpc SetSupergroupStickerSet (SetSupergroupStickerSetReq) returns (SetSupergroupStickerSetResp) {} 
+    rpc SetSupergroupUsername (SetSupergroupUsernameReq) returns (SetSupergroupUsernameResp) {} 
+    rpc SetTdlibParameters (SetTdlibParametersReq) returns (SetTdlibParametersResp) {} 
+    rpc SetUserPrivacySettingRules (SetUserPrivacySettingRulesReq) returns (SetUserPrivacySettingRulesResp) {} 
+    rpc SetUsername (SetUsernameReq) returns (SetUsernameResp) {} 
+    rpc TerminateAllOtherSessions (TerminateAllOtherSessionsReq) returns (TerminateAllOtherSessionsResp) {} 
+    rpc TerminateSession (TerminateSessionReq) returns (TerminateSessionResp) {} 
+    rpc TestCallBytes (TestCallBytesReq) returns (TestCallBytesResp) {} 
+    rpc TestCallEmpty (TestCallEmptyReq) returns (TestCallEmptyResp) {} 
+    rpc TestCallString (TestCallStringReq) returns (TestCallStringResp) {} 
+    rpc TestCallVectorInt (TestCallVectorIntReq) returns (TestCallVectorIntResp) {} 
+    rpc TestCallVectorIntObject (TestCallVectorIntObjectReq) returns (TestCallVectorIntObjectResp) {} 
+    rpc TestCallVectorString (TestCallVectorStringReq) returns (TestCallVectorStringResp) {} 
+    rpc TestCallVectorStringObject (TestCallVectorStringObjectReq) returns (TestCallVectorStringObjectResp) {} 
+    rpc TestGetDifference (TestGetDifferenceReq) returns (TestGetDifferenceResp) {} 
+    rpc TestNetwork (TestNetworkReq) returns (TestNetworkResp) {} 
+    rpc TestSquareInt (TestSquareIntReq) returns (TestSquareIntResp) {} 
+    rpc TestUseError (TestUseErrorReq) returns (TestUseErrorResp) {} 
+    rpc TestUseUpdate (TestUseUpdateReq) returns (TestUseUpdateResp) {} 
+    rpc ToggleBasicGroupAdministrators (ToggleBasicGroupAdministratorsReq) returns (ToggleBasicGroupAdministratorsResp) {} 
+    rpc ToggleChatDefaultDisableNotification (ToggleChatDefaultDisableNotificationReq) returns (ToggleChatDefaultDisableNotificationResp) {} 
+    rpc ToggleChatIsMarkedAsUnread (ToggleChatIsMarkedAsUnreadReq) returns (ToggleChatIsMarkedAsUnreadResp) {} 
+    rpc ToggleChatIsPinned (ToggleChatIsPinnedReq) returns (ToggleChatIsPinnedResp) {} 
+    rpc ToggleSupergroupInvites (ToggleSupergroupInvitesReq) returns (ToggleSupergroupInvitesResp) {} 
+    rpc ToggleSupergroupIsAllHistoryAvailable (ToggleSupergroupIsAllHistoryAvailableReq) returns (ToggleSupergroupIsAllHistoryAvailableResp) {} 
+    rpc ToggleSupergroupSignInfos (ToggleSupergroupSignInfosReq) returns (ToggleSupergroupSignInfosResp) {} 
+    rpc UnblockUser (UnblockUserReq) returns (UnblockUserResp) {} 
+    rpc UnpinSupergroupInfo (UnpinSupergroupInfoReq) returns (UnpinSupergroupInfoResp) {} 
+    rpc UpgradeBasicGroupChatToSupergroupChat (UpgradeBasicGroupChatToSupergroupChatReq) returns (UpgradeBasicGroupChatToSupergroupChatResp) {} 
+    rpc UploadFile (UploadFileReq) returns (UploadFileResp) {} 
+    rpc UploadStickerFile (UploadStickerFileReq) returns (UploadStickerFileResp) {} 
+    rpc ValidateOrderInfo (ValidateOrderInfoReq) returns (ValidateOrderInfoResp) {} 
+    rpc ViewInfos (ViewInfosReq) returns (ViewInfosResp) {} 
+    rpc ViewTrendingStickerSets (ViewTrendingStickerSetsReq) returns (ViewTrendingStickerSetsResp) {} 
+}
+
+// message req
+message AcceptCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 callID = 2 ;
+		  CallProtocol protocol = 3 ;
+		
+}
+
+message AcceptTermsOfServiceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string termsOfServiceID = 2 ;
+		
+}
+
+message AddChatMemberReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 userID = 3 ;
+		  int32 forwardLimit = 4 ;
+		
+}
+
+message AddChatMembersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  repeated int32 userIds = 3 ;
+		
+}
+
+message AddFavoriteStickerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass sticker = 2 ;
+}
+
+message AddLocalInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 senderUserID = 3 ;
+		  int64 replyToInfoID = 4 ;
+		  bool disableNotification = 5 ;
+		   
+		InputInfoContentAbsClass inputInfoContent = 6 ;
+}
+
+message AddNetworkStatisticsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		NetworkStatisticsEntryAbsClass entry = 2 ;
+}
+
+message AddProxyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string server = 2 ;
+		  int32 port = 3 ;
+		  bool enable = 4 ;
+		   
+		ProxyTypeAbsClass typ = 5 ;
+}
+
+message AddRecentStickerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isAttached = 2 ;
+		   
+		InputFileAbsClass sticker = 3 ;
+}
+
+message AddRecentlyFoundChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message AddSavedAnimationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass animation = 2 ;
+}
+
+message AddStickerToSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  string name = 3 ;
+		  InputSticker sticker = 4 ;
+		
+}
+
+message AnswerCallbackQueryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 callbackQueryID = 2 ;
+		  string text = 3 ;
+		  bool showAlert = 4 ;
+		  string uRL = 5 ;
+		  int32 cacheTime = 6 ;
+		
+}
+
+message AnswerCustomQueryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 customQueryID = 2 ;
+		  string data = 3 ;
+		
+}
+
+message AnswerInlineQueryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 inlineQueryID = 2 ;
+		  bool isPersonal = 3 ;
+		  repeated InputInlineQueryResultAbsClass results = 4 ;
+		  int32 cacheTime = 5 ;
+		  string nextOffset = 6 ;
+		  string switchPmText = 7 ;
+		  string switchPmParameter = 8 ;
+		
+}
+
+message AnswerPreCheckoutQueryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 preCheckoutQueryID = 2 ;
+		  string errorInfo = 3 ;
+		
+}
+
+message AnswerShippingQueryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 shippingQueryID = 2 ;
+		  repeated ShippingOption shippingOptions = 3 ;
+		  string errorInfo = 4 ;
+		
+}
+
+message BlockUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		
+}
+
+message CancelDownloadFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 fileID = 2 ;
+		  bool onlyIfPending = 3 ;
+		
+}
+
+message CancelUploadFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 fileID = 2 ;
+		
+}
+
+message ChangeChatReportSpamStateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  bool isSpamChat = 3 ;
+		
+}
+
+message ChangeImportedContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated Contact contacts = 2 ;
+		
+}
+
+message ChangePhoneNumberReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  bool allowFlashCall = 3 ;
+		  bool isCurrentPhoneNumber = 4 ;
+		
+}
+
+message ChangeStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 setID = 2 ;
+		  bool isInstalled = 3 ;
+		  bool isArchived = 4 ;
+		
+}
+
+message CheckAuthenticationBotTokenReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string token = 2 ;
+		
+}
+
+message CheckAuthenticationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string code = 2 ;
+		  string firstName = 3 ;
+		  string lastName = 4 ;
+		
+}
+
+message CheckAuthenticationPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string password = 2 ;
+		
+}
+
+message CheckChangePhoneNumberCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string code = 2 ;
+		
+}
+
+message CheckChatInviteLinkReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inviteLink = 2 ;
+		
+}
+
+message CheckChatUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  string username = 3 ;
+		
+}
+
+message CheckDatabaseEncryptionKeyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes encryptionKey = 2 ;
+		
+}
+
+message CheckEmailAddressVerificationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string code = 2 ;
+		
+}
+
+message CheckPhoneNumberConfirmationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string code = 2 ;
+		
+}
+
+message CheckPhoneNumberVerificationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string code = 2 ;
+		
+}
+
+message CleanFileNameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string fileName = 2 ;
+		
+}
+
+message ClearAllDraftInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool excludeSecretChats = 2 ;
+		
+}
+
+message ClearImportedContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ClearRecentStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isAttached = 2 ;
+		
+}
+
+message ClearRecentlyFoundChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message CloseReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message CloseChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message CloseSecretChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 secretChatID = 2 ;
+		
+}
+
+message CreateBasicGroupChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 basicGroupID = 2 ;
+		  bool force = 3 ;
+		
+}
+
+message CreateCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  CallProtocol protocol = 3 ;
+		
+}
+
+message CreateNewBasicGroupChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 userIds = 2 ;
+		  string title = 3 ;
+		
+}
+
+message CreateNewSecretChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		
+}
+
+message CreateNewStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  string title = 3 ;
+		  string name = 4 ;
+		  bool isMasks = 5 ;
+		  repeated InputSticker stickers = 6 ;
+		
+}
+
+message CreateNewSupergroupChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string title = 2 ;
+		  bool isSuperGroupV1 = 3 ;
+		  string description = 4 ;
+		
+}
+
+message CreatePrivateChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  bool force = 3 ;
+		
+}
+
+message CreateSecretChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 secretChatID = 2 ;
+		
+}
+
+message CreateSupergroupChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  bool force = 3 ;
+		
+}
+
+message CreateTemporaryPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string password = 2 ;
+		  int32 validFor = 3 ;
+		
+}
+
+message DeleteAccountReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string reason = 2 ;
+		
+}
+
+message DeleteChatHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  bool removeFromChatList = 3 ;
+		
+}
+
+message DeleteChatInfosFromUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 userID = 3 ;
+		
+}
+
+message DeleteChatReplyMarkupReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		
+}
+
+message DeleteFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 fileID = 2 ;
+		
+}
+
+message DeleteLanguagePackReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string languagePackID = 2 ;
+		
+}
+
+message DeleteInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  repeated int64 messageIds = 3 ;
+		  bool revoke = 4 ;
+		
+}
+
+message DeletePassportElementReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		PassportElementTypeAbsClass typ = 2 ;
+}
+
+message DeleteProfilePhotoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 profilePhotoID = 2 ;
+		
+}
+
+message DeleteSavedCredentialsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message DeleteSavedOrderInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message DeleteSupergroupReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		
+}
+
+message DestroyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message DisableProxyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message DiscardCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 callID = 2 ;
+		  bool isDisconnected = 3 ;
+		  int32 duration = 4 ;
+		  int64 connectionID = 5 ;
+		
+}
+
+message DisconnectAllWebsitesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message DisconnectWebsiteReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 websiteID = 2 ;
+		
+}
+
+message DownloadFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 fileID = 2 ;
+		  int32 priority = 3 ;
+		
+}
+
+message EditCustomLanguagePackInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  LanguagePackInfo info = 2 ;
+		
+}
+
+message EditInlineInfoCaptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inlineInfoID = 2 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 3 ;  FormattedText caption = 4 ;
+		
+}
+
+message EditInlineInfoLiveLocationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inlineInfoID = 2 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 3 ;  Location location = 4 ;
+		
+}
+
+message EditInlineInfoMediaReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inlineInfoID = 2 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 3 ;   
+		InputInfoContentAbsClass inputInfoContent = 4 ;
+}
+
+message EditInlineInfoReplyMarkupReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inlineInfoID = 2 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 3 ;
+}
+
+message EditInlineInfoTextReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inlineInfoID = 2 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 3 ;   
+		InputInfoContentAbsClass inputInfoContent = 4 ;
+}
+
+message EditInfoCaptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 4 ;  FormattedText caption = 5 ;
+		
+}
+
+message EditInfoLiveLocationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 4 ;  Location location = 5 ;
+		
+}
+
+message EditInfoMediaReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 4 ;   
+		InputInfoContentAbsClass inputInfoContent = 5 ;
+}
+
+message EditInfoReplyMarkupReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 4 ;
+}
+
+message EditInfoTextReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 4 ;   
+		InputInfoContentAbsClass inputInfoContent = 5 ;
+}
+
+message EditProxyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 proxyID = 2 ;
+		  string server = 3 ;
+		  int32 port = 4 ;
+		  bool enable = 5 ;
+		   
+		ProxyTypeAbsClass typ = 6 ;
+}
+
+message EnableProxyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 proxyID = 2 ;
+		
+}
+
+message FinishFileGenerationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 generationID = 2 ;
+		  Error error = 3 ;
+		
+}
+
+message ForwardInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 fromChatID = 3 ;
+		  repeated int64 messageIds = 4 ;
+		  bool disableNotification = 5 ;
+		  bool fromBackground = 6 ;
+		  bool asAlbum = 7 ;
+		
+}
+
+message GenerateChatInviteLinkReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message GetAccountTTLReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetActiveLiveLocationInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetActiveSessionsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetAllPassportElementsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string password = 2 ;
+		
+}
+
+message GetArchivedStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isMasks = 2 ;
+		  int64 offsetStickerSetID = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message GetAttachedStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 fileID = 2 ;
+		
+}
+
+message GetAuthStateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetBasicGroupReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 basicGroupID = 2 ;
+		
+}
+
+message GetBasicGroupFullInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 basicGroupID = 2 ;
+		
+}
+
+message GetBlockedUsersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 offset = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message GetCallbackQueryAnswerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		   
+		CallbackQueryPayloadAbsClass payload = 4 ;
+}
+
+message GetChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message GetChatAdministratorsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message GetChatEventLogReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  string query = 3 ;
+		  int64 fromEventID = 4 ;
+		  int32 limit = 5 ;
+		  ChatEventLogFilters filters = 6 ;
+		  repeated int32 userIds = 7 ;
+		
+}
+
+message GetChatHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 fromInfoID = 3 ;
+		  int32 offset = 4 ;
+		  int32 limit = 5 ;
+		  bool onlyLocal = 6 ;
+		
+}
+
+message GetChatMemberReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 userID = 3 ;
+		
+}
+
+message GetChatInfoByDateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 date = 3 ;
+		
+}
+
+message GetChatInfoCountReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		   
+		SearchInfosFilterAbsClass filter = 3 ;  bool returnLocal = 4 ;
+		
+}
+
+message GetChatPinnedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message GetChatReportSpamStateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message GetChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 offsetOrder = 2 ;
+		  int64 offsetChatID = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message GetConnectedWebsitesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetCountryCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetCreatedPublicChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetDeepLinkInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string link = 2 ;
+		
+}
+
+message GetFavoriteStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 fileID = 2 ;
+		
+}
+
+message GetFileExtensionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string mimeType = 2 ;
+		
+}
+
+message GetFileMimeTypeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string fileName = 2 ;
+		
+}
+
+message GetGameHighScoresReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		  int32 userID = 4 ;
+		
+}
+
+message GetGroupsInCommonReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  int64 offsetChatID = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message GetImportedContactCountReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetInlineGameHighScoresReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inlineInfoID = 2 ;
+		  int32 userID = 3 ;
+		
+}
+
+message GetInlineQueryResultsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 botUserID = 2 ;
+		  int64 chatID = 3 ;
+		  Location userLocation = 4 ;
+		  string query = 5 ;
+		  string offset = 6 ;
+		
+}
+
+message GetInstalledStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isMasks = 2 ;
+		
+}
+
+message GetInviteTextReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetLanguagePackStringReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string languagePackDatabasePath = 2 ;
+		  string localizationTarget = 3 ;
+		  string languagePackID = 4 ;
+		  string key = 5 ;
+		
+}
+
+message GetLanguagePackStringsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string languagePackID = 2 ;
+		  repeated string keys = 3 ;
+		
+}
+
+message GetLocalizationTargetInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool onlyLocal = 2 ;
+		
+}
+
+message GetMapThumbnailFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  Location location = 2 ;
+		  int32 zoom = 3 ;
+		  int32 width = 4 ;
+		  int32 height = 5 ;
+		  int32 scale = 6 ;
+		  int64 chatID = 7 ;
+		
+}
+
+message GetMeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		
+}
+
+message GetInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  repeated int64 messageIds = 3 ;
+		
+}
+
+message GetNetworkStatisticsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool onlyCurrent = 2 ;
+		
+}
+
+message GetOptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string name = 2 ;
+		
+}
+
+message GetPassportAuthFormReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 botUserID = 2 ;
+		  string scope = 3 ;
+		  string publicKey = 4 ;
+		  string nonce = 5 ;
+		  string password = 6 ;
+		
+}
+
+message GetPassportElementReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		PassportElementTypeAbsClass typ = 2 ;  string password = 3 ;
+		
+}
+
+message GetPasswordStateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetPaymentFormReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		
+}
+
+message GetPaymentReceiptReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		
+}
+
+message GetPreferredCountryLanguageReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string countryCode = 2 ;
+		
+}
+
+message GetProxiesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetProxyLinkReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 proxyID = 2 ;
+		
+}
+
+message GetPublicInfoLinkReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		  bool forAlbum = 4 ;
+		
+}
+
+message GetRecentInlineBotsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetRecentStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isAttached = 2 ;
+		
+}
+
+message GetRecentlyVisitedTMeUrlsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string referrer = 2 ;
+		
+}
+
+message GetRecoveryEmailAddressReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string password = 2 ;
+		
+}
+
+message GetRemoteFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string remoteFileID = 2 ;
+		   
+		FileTypeAbsClass fileType = 3 ;
+}
+
+message GetRepliedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		
+}
+
+message GetSavedAnimationsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetSavedOrderInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetScopeNotificationSettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		NotificationSettingsScopeAbsClass scope = 2 ;
+}
+
+message GetSecretChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 secretChatID = 2 ;
+		
+}
+
+message GetStickerEmojisReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass sticker = 2 ;
+}
+
+message GetStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 setID = 2 ;
+		
+}
+
+message GetStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string emoji = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message GetStorageStatisticsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatLimit = 2 ;
+		
+}
+
+message GetStorageStatisticsFastReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetSupergroupReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		
+}
+
+message GetSupergroupFullInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		
+}
+
+message GetSupergroupMembersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		   
+		SupergroupMembersFilterAbsClass filter = 3 ;  int32 offset = 4 ;
+		  int32 limit = 5 ;
+		
+}
+
+message GetSupportUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetTemporaryPasswordStateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetTextEntitiesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string text = 2 ;
+		
+}
+
+message GetTopChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		TopChatCategoryAbsClass category = 2 ;  int32 limit = 3 ;
+		
+}
+
+message GetTrendingStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		
+}
+
+message GetUserFullInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		
+}
+
+message GetUserPrivacySettingRulesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		UserPrivacySettingAbsClass setting = 2 ;
+}
+
+message GetUserProfilePhotosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  int32 offset = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message GetWallpapersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message GetWebPageInstantViewReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string uRL = 2 ;
+		  bool forceFull = 3 ;
+		
+}
+
+message GetWebPagePreviewReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  FormattedText text = 2 ;
+		
+}
+
+message ImportContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated Contact contacts = 2 ;
+		
+}
+
+message JoinChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message JoinChatByInviteLinkReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inviteLink = 2 ;
+		
+}
+
+message LeaveChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message LogOutReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message OpenChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message OpenInfoContentReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		
+}
+
+message OptimizeStorageReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 size = 2 ;
+		  int32 tTL = 3 ;
+		  int32 count = 4 ;
+		  int32 immunityDelay = 5 ;
+		  repeated FileTypeAbsClass fileTypes = 6 ;
+		  repeated int64 chatIds = 7 ;
+		  repeated int64 excludeChatIds = 8 ;
+		  int32 chatLimit = 9 ;
+		
+}
+
+message ParseTextEntitiesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string text = 2 ;
+		   
+		TextParseModeAbsClass parseMode = 3 ;
+}
+
+message PinSupergroupInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  int64 messageID = 3 ;
+		  bool disableNotification = 4 ;
+		
+}
+
+message PingProxyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 proxyID = 2 ;
+		
+}
+
+message ProcessDcUpdateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string dc = 2 ;
+		  string addr = 3 ;
+		
+}
+
+message ReadAllChatMentionsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message RecoverAuthenticationPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string recoveryCode = 2 ;
+		
+}
+
+message RecoverPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string recoveryCode = 2 ;
+		
+}
+
+message RegisterDeviceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		DeviceTokenAbsClass deviceToken = 2 ;  repeated int32 otherUserIds = 3 ;
+		
+}
+
+message RemoveContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 userIds = 2 ;
+		
+}
+
+message RemoveFavoriteStickerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass sticker = 2 ;
+}
+
+message RemoveProxyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 proxyID = 2 ;
+		
+}
+
+message RemoveRecentHashtagReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string hashtag = 2 ;
+		
+}
+
+message RemoveRecentStickerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isAttached = 2 ;
+		   
+		InputFileAbsClass sticker = 3 ;
+}
+
+message RemoveRecentlyFoundChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message RemoveSavedAnimationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass animation = 2 ;
+}
+
+message RemoveStickerFromSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass sticker = 2 ;
+}
+
+message RemoveTopChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		TopChatCategoryAbsClass category = 2 ;  int64 chatID = 3 ;
+		
+}
+
+message ReorderInstalledStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isMasks = 2 ;
+		  repeated int64 stickerSetIds = 3 ;
+		
+}
+
+message ReportChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		   
+		ChatReportReasonAbsClass reason = 3 ;  repeated int64 messageIds = 4 ;
+		
+}
+
+message ReportSupergroupSpamReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  int32 userID = 3 ;
+		  repeated int64 messageIds = 4 ;
+		
+}
+
+message ReqAuthenticationPasswordRecoveryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ReqPasswordRecoveryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ResendAuthenticationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ResendChangePhoneNumberCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ResendEmailAddressVerificationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ResendPhoneNumberConfirmationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ResendPhoneNumberVerificationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ResetAllNotificationSettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ResetNetworkStatisticsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message SearchCallInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 fromInfoID = 2 ;
+		  int32 limit = 3 ;
+		  bool onlyMissed = 4 ;
+		
+}
+
+message SearchChatMembersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  string query = 3 ;
+		  int32 limit = 4 ;
+		   
+		ChatMembersFilterAbsClass filter = 5 ;
+}
+
+message SearchChatInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  string query = 3 ;
+		  int32 senderUserID = 4 ;
+		  int64 fromInfoID = 5 ;
+		  int32 offset = 6 ;
+		  int32 limit = 7 ;
+		   
+		SearchInfosFilterAbsClass filter = 8 ;
+}
+
+message SearchChatRecentLocationInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message SearchChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string query = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message SearchChatsOnServerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string query = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message SearchContactsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string query = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message SearchHashtagsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string prefix = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message SearchInstalledStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool isMasks = 2 ;
+		  string query = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message SearchInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string query = 2 ;
+		  int32 offsetDate = 3 ;
+		  int64 offsetChatID = 4 ;
+		  int64 offsetInfoID = 5 ;
+		  int32 limit = 6 ;
+		
+}
+
+message SearchPublicChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string username = 2 ;
+		
+}
+
+message SearchPublicChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string query = 2 ;
+		
+}
+
+message SearchSecretInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  string query = 3 ;
+		  int64 fromSearchID = 4 ;
+		  int32 limit = 5 ;
+		   
+		SearchInfosFilterAbsClass filter = 6 ;
+}
+
+message SearchStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string name = 2 ;
+		
+}
+
+message SearchStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string query = 2 ;
+		
+}
+
+message SearchStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string emoji = 2 ;
+		  int32 limit = 3 ;
+		
+}
+
+message SendBotStartInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 botUserID = 2 ;
+		  int64 chatID = 3 ;
+		  string parameter = 4 ;
+		
+}
+
+message SendCallDebugInformationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 callID = 2 ;
+		  string debugInformation = 3 ;
+		
+}
+
+message SendCallRatingReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 callID = 2 ;
+		  int32 rating = 3 ;
+		  string comment = 4 ;
+		
+}
+
+message SendChatDoitReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		   
+		ChatDoitAbsClass action = 3 ;
+}
+
+message SendChatScreenshotTakenNotificationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message SendChatSetTTLInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 tTL = 3 ;
+		
+}
+
+message SendCustomReqReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string method = 2 ;
+		  string parameters = 3 ;
+		
+}
+
+message SendEmailAddressVerificationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string emailAddress = 2 ;
+		
+}
+
+message SendInlineQueryResultInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 replyToInfoID = 3 ;
+		  bool disableNotification = 4 ;
+		  bool fromBackground = 5 ;
+		  int64 queryID = 6 ;
+		  string resultID = 7 ;
+		
+}
+
+message SendInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 replyToInfoID = 3 ;
+		  bool disableNotification = 4 ;
+		  bool fromBackground = 5 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 6 ;   
+		InputInfoContentAbsClass inputInfoContent = 7 ;
+}
+
+message SendInfoAlbumReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 replyToInfoID = 3 ;
+		  bool disableNotification = 4 ;
+		  bool fromBackground = 5 ;
+		  repeated InputInfoContentAbsClass inputInfoContents = 6 ;
+		
+}
+
+message SendPassportAuthFormReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 autorizationFormID = 2 ;
+		  repeated PassportElementTypeAbsClass types = 3 ;
+		
+}
+
+message SendPaymentFormReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		  string orderInfoID = 4 ;
+		  string shippingOptionID = 5 ;
+		   
+		InputCredentialsAbsClass credentials = 6 ;
+}
+
+message SendPhoneNumberConfirmationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string hash = 2 ;
+		  string phoneNumber = 3 ;
+		  bool allowFlashCall = 4 ;
+		  bool isCurrentPhoneNumber = 5 ;
+		
+}
+
+message SendPhoneNumberVerificationCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  bool allowFlashCall = 3 ;
+		  bool isCurrentPhoneNumber = 4 ;
+		
+}
+
+message SetAccountTTLReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  AccountTTL tTL = 2 ;
+		
+}
+
+message SetAlarmReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  double seconds = 2 ;
+		
+}
+
+message SetAuthenticationPhoneNumberReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  bool allowFlashCall = 3 ;
+		  bool isCurrentPhoneNumber = 4 ;
+		
+}
+
+message SetBioReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string bio = 2 ;
+		
+}
+
+message SetBotUpdatesStatusReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 pendingUpdateCount = 2 ;
+		  string errorInfo = 3 ;
+		
+}
+
+message SetChatClientDataReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  string clientData = 3 ;
+		
+}
+
+message SetChatDraftInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  DraftInfo draftInfo = 3 ;
+		
+}
+
+message SetChatMemberStatusReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int32 userID = 3 ;
+		   
+		ChatMemberStatusAbsClass status = 4 ;
+}
+
+message SetChatNotificationSettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  ChatNotificationSettings notificationSettings = 3 ;
+		
+}
+
+message SetChatPhotoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		   
+		InputFileAbsClass photo = 3 ;
+}
+
+message SetChatTitleReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  string title = 3 ;
+		
+}
+
+message SetCustomLanguagePackReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  LanguagePackInfo info = 2 ;
+		  repeated LanguagePackString strings = 3 ;
+		
+}
+
+message SetCustomLanguagePackStringReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string languagePackID = 2 ;
+		  LanguagePackString newString = 3 ;
+		
+}
+
+message SetDatabaseEncryptionKeyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes newEncryptionKey = 2 ;
+		
+}
+
+message SetFileGenerationProgressReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 generationID = 2 ;
+		  int32 expectedSize = 3 ;
+		  int32 localPrefixSize = 4 ;
+		
+}
+
+message SetGameScoreReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		  bool editInfo = 4 ;
+		  int32 userID = 5 ;
+		  int32 score = 6 ;
+		  bool force = 7 ;
+		
+}
+
+message SetInlineGameScoreReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string inlineInfoID = 2 ;
+		  bool editInfo = 3 ;
+		  int32 userID = 4 ;
+		  int32 score = 5 ;
+		  bool force = 6 ;
+		
+}
+
+message SetNameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string firstName = 2 ;
+		  string lastName = 3 ;
+		
+}
+
+message SetNetworkTypeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		NetworkTypeAbsClass typ = 2 ;
+}
+
+message SetOptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string name = 2 ;
+		   
+		OptionValueAbsClass value = 3 ;
+}
+
+message SetPassportElementReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPassportElementAbsClass element = 2 ;  string password = 3 ;
+		
+}
+
+message SetPassportElementErrorsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  repeated InputPassportElementError errors = 3 ;
+		
+}
+
+message SetPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string oldPassword = 2 ;
+		  string newPassword = 3 ;
+		  string newHint = 4 ;
+		  bool setRecoveryEmailAddress = 5 ;
+		  string newRecoveryEmailAddress = 6 ;
+		
+}
+
+message SetPinnedChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int64 chatIds = 2 ;
+		
+}
+
+message SetProfilePhotoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass photo = 2 ;
+}
+
+message SetRecoveryEmailAddressReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string password = 2 ;
+		  string newRecoveryEmailAddress = 3 ;
+		
+}
+
+message SetScopeNotificationSettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		NotificationSettingsScopeAbsClass scope = 2 ;  ScopeNotificationSettings notificationSettings = 3 ;
+		
+}
+
+message SetStickerPositionInSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass sticker = 2 ;  int32 position = 3 ;
+		
+}
+
+message SetSupergroupDescriptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  string description = 3 ;
+		
+}
+
+message SetSupergroupStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  int64 stickerSetID = 3 ;
+		
+}
+
+message SetSupergroupUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  string username = 3 ;
+		
+}
+
+message SetTdlibParametersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  TdlibParameters parameters = 2 ;
+		
+}
+
+message SetUserPrivacySettingRulesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		UserPrivacySettingAbsClass setting = 2 ;  UserPrivacySettingRules rules = 3 ;
+		
+}
+
+message SetUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string username = 2 ;
+		
+}
+
+message TerminateAllOtherSessionsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message TerminateSessionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 sessionID = 2 ;
+		
+}
+
+message TestCallBytesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes x = 2 ;
+		
+}
+
+message TestCallEmptyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message TestCallStringReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string x = 2 ;
+		
+}
+
+message TestCallVectorIntReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 x = 2 ;
+		
+}
+
+message TestCallVectorIntObjectReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated TestInt x = 2 ;
+		
+}
+
+message TestCallVectorStringReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated string x = 2 ;
+		
+}
+
+message TestCallVectorStringObjectReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated TestString x = 2 ;
+		
+}
+
+message TestGetDifferenceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message TestNetworkReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message TestSquareIntReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 x = 2 ;
+		
+}
+
+message TestUseErrorReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message TestUseUpdateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message ToggleBasicGroupAdministratorsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 basicGroupID = 2 ;
+		  bool everyoneIsAdministrator = 3 ;
+		
+}
+
+message ToggleChatDefaultDisableNotificationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  bool defaultDisableNotification = 3 ;
+		
+}
+
+message ToggleChatIsMarkedAsUnreadReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  bool isMarkedAsUnread = 3 ;
+		
+}
+
+message ToggleChatIsPinnedReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  bool isPinned = 3 ;
+		
+}
+
+message ToggleSupergroupInvitesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  bool anyoneCanInvite = 3 ;
+		
+}
+
+message ToggleSupergroupIsAllHistoryAvailableReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  bool isAllHistoryAvailable = 3 ;
+		
+}
+
+message ToggleSupergroupSignInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		  bool signInfos = 3 ;
+		
+}
+
+message UnblockUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		
+}
+
+message UnpinSupergroupInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 supergroupID = 2 ;
+		
+}
+
+message UpgradeBasicGroupChatToSupergroupChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		
+}
+
+message UploadFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass file = 2 ;   
+		FileTypeAbsClass fileType = 3 ;  int32 priority = 4 ;
+		
+}
+
+message UploadStickerFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		   
+		InputFileAbsClass pngSticker = 3 ;
+}
+
+message ValidateOrderInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  int64 messageID = 3 ;
+		  OrderInfo orderInfo = 4 ;
+		  bool allowSave = 5 ;
+		
+}
+
+message ViewInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 chatID = 2 ;
+		  repeated int64 messageIds = 3 ;
+		  bool forceRead = 4 ;
+		
+}
+
+message ViewTrendingStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int64 stickerSetIds = 2 ;
+		
+}
+
+
+// message resp
+message AcceptCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AcceptTermsOfServiceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AddChatMemberResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AddChatMembersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AddFavoriteStickerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AddLocalInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message AddNetworkStatisticsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AddProxyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Proxy proxy = 2;
+}
+
+message AddRecentStickerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Stickers stickers = 2;
+}
+
+message AddRecentlyFoundChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AddSavedAnimationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AddStickerToSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSet stickerSet = 2;
+}
+
+message AnswerCallbackQueryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AnswerCustomQueryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AnswerInlineQueryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AnswerPreCheckoutQueryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message AnswerShippingQueryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message BlockUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CancelDownloadFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CancelUploadFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ChangeChatReportSpamStateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ChangeImportedContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ImportedContacts importedContacts = 2;
+}
+
+message ChangePhoneNumberResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthenticationCodeInfo authenticationCodeInfo = 2;
+}
+
+message ChangeStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckAuthenticationBotTokenResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckAuthenticationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckAuthenticationPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckChangePhoneNumberCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckChatInviteLinkResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatInviteLinkInfo chatInviteLinkInfo = 2;
+}
+
+message CheckChatUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	CheckChatUsernameResultAbsClass checkChatUsernameResultAbsClass = 2;
+}
+
+message CheckDatabaseEncryptionKeyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckEmailAddressVerificationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckPhoneNumberConfirmationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CheckPhoneNumberVerificationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CleanFileNameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Text text = 2;
+}
+
+message ClearAllDraftInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ClearImportedContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ClearRecentStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ClearRecentlyFoundChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CloseResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CloseChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CloseSecretChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message CreateBasicGroupChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message CreateCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	CallID callID = 2;
+}
+
+message CreateNewBasicGroupChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message CreateNewSecretChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message CreateNewStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSet stickerSet = 2;
+}
+
+message CreateNewSupergroupChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message CreatePrivateChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message CreateSecretChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message CreateSupergroupChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message CreateTemporaryPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TemporaryPasswordState temporaryPasswordState = 2;
+}
+
+message DeleteAccountResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteChatHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteChatInfosFromUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteChatReplyMarkupResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteLanguagePackResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeletePassportElementResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteProfilePhotoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteSavedCredentialsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteSavedOrderInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DeleteSupergroupResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DestroyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DisableProxyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DiscardCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DisconnectAllWebsitesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DisconnectWebsiteResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message DownloadFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	File file = 2;
+}
+
+message EditCustomLanguagePackInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message EditInlineInfoCaptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message EditInlineInfoLiveLocationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message EditInlineInfoMediaResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message EditInlineInfoReplyMarkupResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message EditInlineInfoTextResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message EditInfoCaptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message EditInfoLiveLocationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message EditInfoMediaResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message EditInfoReplyMarkupResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message EditInfoTextResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message EditProxyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Proxy proxy = 2;
+}
+
+message EnableProxyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message FinishFileGenerationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ForwardInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message GenerateChatInviteLinkResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatInviteLink chatInviteLink = 2;
+}
+
+message GetAccountTTLResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AccountTTL accountTTL = 2;
+}
+
+message GetActiveLiveLocationInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message GetActiveSessionsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Sessions sessions = 2;
+}
+
+message GetAllPassportElementsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PassportElements passportElements = 2;
+}
+
+message GetArchivedStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSets stickerSets = 2;
+}
+
+message GetAttachedStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSets stickerSets = 2;
+}
+
+message GetAuthStateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthStateAbsClass authorizationStateAbsClass = 2;
+}
+
+message GetBasicGroupResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	BasicGroup basicGroup = 2;
+}
+
+message GetBasicGroupFullInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	BasicGroupFullInfo basicGroupFullInfo = 2;
+}
+
+message GetBlockedUsersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Users users = 2;
+}
+
+message GetCallbackQueryAnswerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	CallbackQueryAnswer callbackQueryAnswer = 2;
+}
+
+message GetChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message GetChatAdministratorsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Users users = 2;
+}
+
+message GetChatEventLogResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatEvents chatEvents = 2;
+}
+
+message GetChatHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message GetChatMemberResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatMember chatMember = 2;
+}
+
+message GetChatInfoByDateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message GetChatInfoCountResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Count count = 2;
+}
+
+message GetChatPinnedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message GetChatReportSpamStateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatReportSpamState chatReportSpamState = 2;
+}
+
+message GetChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chats chats = 2;
+}
+
+message GetConnectedWebsitesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ConnectedWebsites connectedWebsites = 2;
+}
+
+message GetContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Users users = 2;
+}
+
+message GetCountryCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Text text = 2;
+}
+
+message GetCreatedPublicChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chats chats = 2;
+}
+
+message GetDeepLinkInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	DeepLinkInfo deepLinkInfo = 2;
+}
+
+message GetFavoriteStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Stickers stickers = 2;
+}
+
+message GetFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	File file = 2;
+}
+
+message GetFileExtensionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Text text = 2;
+}
+
+message GetFileMimeTypeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Text text = 2;
+}
+
+message GetGameHighScoresResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	GameHighScores gameHighScores = 2;
+}
+
+message GetGroupsInCommonResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chats chats = 2;
+}
+
+message GetImportedContactCountResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Count count = 2;
+}
+
+message GetInlineGameHighScoresResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	GameHighScores gameHighScores = 2;
+}
+
+message GetInlineQueryResultsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InlineQueryResults inlineQueryResults = 2;
+}
+
+message GetInstalledStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSets stickerSets = 2;
+}
+
+message GetInviteTextResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Text text = 2;
+}
+
+message GetLanguagePackStringResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	LanguagePackStringValueAbsClass languagePackStringValueAbsClass = 2;
+}
+
+message GetLanguagePackStringsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	LanguagePackStrings languagePackStrings = 2;
+}
+
+message GetLocalizationTargetInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	LocalizationTargetInfo localizationTargetInfo = 2;
+}
+
+message GetMapThumbnailFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	File file = 2;
+}
+
+message GetMeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	User user = 2;
+}
+
+message GetInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message GetInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message GetNetworkStatisticsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	NetworkStatistics networkStatistics = 2;
+}
+
+message GetOptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	OptionValueAbsClass optionValueAbsClass = 2;
+}
+
+message GetPassportAuthFormResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PassportAuthForm passportAuthForm = 2;
+}
+
+message GetPassportElementResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PassportElementAbsClass passportElementAbsClass = 2;
+}
+
+message GetPasswordStateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PasswordState passwordState = 2;
+}
+
+message GetPaymentFormResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentForm paymentForm = 2;
+}
+
+message GetPaymentReceiptResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentReceipt paymentReceipt = 2;
+}
+
+message GetPreferredCountryLanguageResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Text text = 2;
+}
+
+message GetProxiesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Proxies proxies = 2;
+}
+
+message GetProxyLinkResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Text text = 2;
+}
+
+message GetPublicInfoLinkResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PublicInfoLink publicInfoLink = 2;
+}
+
+message GetRecentInlineBotsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Users users = 2;
+}
+
+message GetRecentStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Stickers stickers = 2;
+}
+
+message GetRecentlyVisitedTMeUrlsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TMeUrls tMeUrls = 2;
+}
+
+message GetRecoveryEmailAddressResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	RecoveryEmailAddress recoveryEmailAddress = 2;
+}
+
+message GetRemoteFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	File file = 2;
+}
+
+message GetRepliedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message GetSavedAnimationsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Animations animations = 2;
+}
+
+message GetSavedOrderInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	OrderInfo orderInfo = 2;
+}
+
+message GetScopeNotificationSettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ScopeNotificationSettings scopeNotificationSettings = 2;
+}
+
+message GetSecretChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	SecretChat secretChat = 2;
+}
+
+message GetStickerEmojisResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerEmojis stickerEmojis = 2;
+}
+
+message GetStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSet stickerSet = 2;
+}
+
+message GetStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Stickers stickers = 2;
+}
+
+message GetStorageStatisticsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StorageStatistics storageStatistics = 2;
+}
+
+message GetStorageStatisticsFastResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StorageStatisticsFast storageStatisticsFast = 2;
+}
+
+message GetSupergroupResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Supergroup supergroup = 2;
+}
+
+message GetSupergroupFullInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	SupergroupFullInfo supergroupFullInfo = 2;
+}
+
+message GetSupergroupMembersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatMembers chatMembers = 2;
+}
+
+message GetSupportUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	User user = 2;
+}
+
+message GetTemporaryPasswordStateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TemporaryPasswordState temporaryPasswordState = 2;
+}
+
+message GetTextEntitiesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TextEntities textEntities = 2;
+}
+
+message GetTopChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chats chats = 2;
+}
+
+message GetTrendingStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSets stickerSets = 2;
+}
+
+message GetUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	User user = 2;
+}
+
+message GetUserFullInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserFullInfo userFullInfo = 2;
+}
+
+message GetUserPrivacySettingRulesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserPrivacySettingRules userPrivacySettingRules = 2;
+}
+
+message GetUserProfilePhotosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserProfilePhotos userProfilePhotos = 2;
+}
+
+message GetWallpapersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Wallpapers wallpapers = 2;
+}
+
+message GetWebPageInstantViewResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	WebPageInstantView webPageInstantView = 2;
+}
+
+message GetWebPagePreviewResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	WebPage webPage = 2;
+}
+
+message ImportContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ImportedContacts importedContacts = 2;
+}
+
+message JoinChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message JoinChatByInviteLinkResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message LeaveChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message LogOutResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message OpenChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message OpenInfoContentResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message OptimizeStorageResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StorageStatistics storageStatistics = 2;
+}
+
+message ParseTextEntitiesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	FormattedText formattedText = 2;
+}
+
+message PinSupergroupInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message PingProxyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Seconds seconds = 2;
+}
+
+message ProcessDcUpdateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ReadAllChatMentionsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RecoverAuthenticationPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RecoverPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PasswordState passwordState = 2;
+}
+
+message RegisterDeviceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveFavoriteStickerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveProxyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveRecentHashtagResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveRecentStickerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveRecentlyFoundChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveSavedAnimationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveStickerFromSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message RemoveTopChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ReorderInstalledStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ReportChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ReportSupergroupSpamResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ReqAuthenticationPasswordRecoveryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ReqPasswordRecoveryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	EmailAddressAuthenticationCodeInfo emailAddressAuthenticationCodeInfo = 2;
+}
+
+message ResendAuthenticationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ResendChangePhoneNumberCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthenticationCodeInfo authenticationCodeInfo = 2;
+}
+
+message ResendEmailAddressVerificationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	EmailAddressAuthenticationCodeInfo emailAddressAuthenticationCodeInfo = 2;
+}
+
+message ResendPhoneNumberConfirmationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthenticationCodeInfo authenticationCodeInfo = 2;
+}
+
+message ResendPhoneNumberVerificationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthenticationCodeInfo authenticationCodeInfo = 2;
+}
+
+message ResetAllNotificationSettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ResetNetworkStatisticsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SearchCallInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message SearchChatMembersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatMembers chatMembers = 2;
+}
+
+message SearchChatInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message SearchChatRecentLocationInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message SearchChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chats chats = 2;
+}
+
+message SearchChatsOnServerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chats chats = 2;
+}
+
+message SearchContactsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Users users = 2;
+}
+
+message SearchHashtagsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Hashtags hashtags = 2;
+}
+
+message SearchInstalledStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSets stickerSets = 2;
+}
+
+message SearchInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message SearchPublicChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message SearchPublicChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chats chats = 2;
+}
+
+message SearchSecretInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	FoundInfos foundInfos = 2;
+}
+
+message SearchStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSet stickerSet = 2;
+}
+
+message SearchStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	StickerSets stickerSets = 2;
+}
+
+message SearchStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Stickers stickers = 2;
+}
+
+message SendBotStartInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message SendCallDebugInformationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SendCallRatingResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SendChatDoitResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SendChatScreenshotTakenNotificationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SendChatSetTTLInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message SendCustomReqResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	CustomReqResult customReqResult = 2;
+}
+
+message SendEmailAddressVerificationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	EmailAddressAuthenticationCodeInfo emailAddressAuthenticationCodeInfo = 2;
+}
+
+message SendInlineQueryResultInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message SendInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message SendInfoAlbumResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Infos messages = 2;
+}
+
+message SendPassportAuthFormResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SendPaymentFormResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentResult paymentResult = 2;
+}
+
+message SendPhoneNumberConfirmationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthenticationCodeInfo authenticationCodeInfo = 2;
+}
+
+message SendPhoneNumberVerificationCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthenticationCodeInfo authenticationCodeInfo = 2;
+}
+
+message SetAccountTTLResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetAlarmResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetAuthenticationPhoneNumberResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetBioResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetBotUpdatesStatusResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetChatClientDataResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetChatDraftInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetChatMemberStatusResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetChatNotificationSettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetChatPhotoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetChatTitleResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetCustomLanguagePackResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetCustomLanguagePackStringResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetDatabaseEncryptionKeyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetFileGenerationProgressResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetGameScoreResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Info message = 2;
+}
+
+message SetInlineGameScoreResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetNameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetNetworkTypeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetOptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetPassportElementResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PassportElementAbsClass passportElementAbsClass = 2;
+}
+
+message SetPassportElementErrorsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PasswordState passwordState = 2;
+}
+
+message SetPinnedChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetProfilePhotoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetRecoveryEmailAddressResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PasswordState passwordState = 2;
+}
+
+message SetScopeNotificationSettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetStickerPositionInSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetSupergroupDescriptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetSupergroupStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetSupergroupUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetTdlibParametersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetUserPrivacySettingRulesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message SetUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message TerminateAllOtherSessionsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message TerminateSessionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message TestCallBytesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TestBytes testBytes = 2;
+}
+
+message TestCallEmptyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message TestCallStringResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TestString testString = 2;
+}
+
+message TestCallVectorIntResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TestVectorInt testVectorInt = 2;
+}
+
+message TestCallVectorIntObjectResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TestVectorIntObject testVectorIntObject = 2;
+}
+
+message TestCallVectorStringResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TestVectorString testVectorString = 2;
+}
+
+message TestCallVectorStringObjectResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TestVectorStringObject testVectorStringObject = 2;
+}
+
+message TestGetDifferenceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message TestNetworkResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message TestSquareIntResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	TestInt testInt = 2;
+}
+
+message TestUseErrorResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Error error = 2;
+}
+
+message TestUseUpdateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdateAbsClass updateAbsClass = 2;
+}
+
+message ToggleBasicGroupAdministratorsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ToggleChatDefaultDisableNotificationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ToggleChatIsMarkedAsUnreadResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ToggleChatIsPinnedResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ToggleSupergroupInvitesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ToggleSupergroupIsAllHistoryAvailableResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ToggleSupergroupSignInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message UnblockUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message UnpinSupergroupInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message UpgradeBasicGroupChatToSupergroupChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Chat chat = 2;
+}
+
+message UploadFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	File file = 2;
+}
+
+message UploadStickerFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	File file = 2;
+}
+
+message ValidateOrderInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ValidatedOrderInfo validatedOrderInfo = 2;
+}
+
+message ViewInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+
+message ViewTrendingStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Ok ok = 2;
+}
+

@@ -1,0 +1,66 @@
+// Package photos AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_photos_obj.proto";
+
+package pb_uuchat;
+
+service photosServer { 
+    rpc PhotosDeletePhotos (PhotosDeletePhotosReq) returns (PhotosDeletePhotosResp) {} 
+    rpc PhotosGetUserPhotos (PhotosGetUserPhotosReq) returns (PhotosGetUserPhotosResp) {} 
+    rpc PhotosUpdateProfilePhoto (PhotosUpdateProfilePhotoReq) returns (PhotosUpdateProfilePhotoResp) {} 
+    rpc PhotosUploadProfilePhoto (PhotosUploadProfilePhotoReq) returns (PhotosUploadProfilePhotoResp) {} 
+}
+
+// message req
+message PhotosDeletePhotosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputPhotoAbsClass iD = 2 ;
+		
+}
+
+message PhotosGetUserPhotosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass userID = 2 ;  int32 offset = 3 ;
+		  int64 maxID = 4 ;
+		  int32 limit = 5 ;
+		
+}
+
+message PhotosUpdateProfilePhotoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPhotoAbsClass iD = 2 ;
+}
+
+message PhotosUploadProfilePhotoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileAbsClass file = 2 ;
+}
+
+
+// message resp
+message PhotosDeletePhotosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated int64 int64 = 2;
+}
+
+message PhotosGetUserPhotosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhotosPhotosAbsClass photosPhotosAbsClass = 2;
+}
+
+message PhotosUpdateProfilePhotoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserProfilePhotoAbsClass userProfilePhotoAbsClass = 2;
+}
+
+message PhotosUploadProfilePhotoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhotosPhoto photosPhoto = 2;
+}
+

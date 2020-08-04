@@ -1,0 +1,271 @@
+syntax = "proto3";
+
+package pkt;
+
+/*
+  0 - 999: 功能性对象编号
+
+  1000 - 4999: 客户端 发往到 服务端 的协议号
+    1001 - 1100: 不检查 是否认证，是否登录，
+    1101 - 1199: 必须检查 没有登录
+    2001 - 4998: 检查必须在登录状态
+
+  5000 - 9999: 服务端 发送到 客户端的协议号
+
+  Req => Resp
+  Push -> ...
+
+  C2sXXXXReq    --- handlerC2sXXXXReq(req) -> void
+  C2sXXXXPush   --- handlerC2sXXXXPush(push) -> void
+
+
+*/
+
+enum OType {
+  OTypeNoop = 0;
+
+  EnumMsg = 100;
+  EnumPayloads = 101;
+
+  // ---------------------------------------------
+  // for C2S
+  // ---------------------------------------------
+  OTypeC2SStart = 1000;
+
+  // Non-Check
+  EnumC2SPingReq = 1001;
+  EnumC2SGetFutureSaltsReq = 1003;
+  EnumC2SRpcDropAnswerReq = 1004;
+  EnumC2SDestroySessionReq = 1005;
+
+  // NonAuth
+  OTypeC2SNonAuthStart = 1101;
+  EnumC2SGetPqReq = 1102;
+  EnumC2SGetDhReq = 1103;
+  EnumC2SSetClientDhReq = 1104;
+  EnumC2SGetConfigReq = 1105;
+  EnumC2SGetLangsReq = 1106;
+  EnumC2SGetLangPackReq = 1107;
+  EnumC2SGetLastVerReq = 1108;
+  OTypeC2SNonAuthEnd = 1199;
+
+  // Authed
+  OTypeC2SAuthedStart = 2000;
+  EnumC2SSignUpReq = 2001;
+  EnumC2SUpdateAccountReq = 2002;
+  EnumC2SLoginReq = 2003;
+  EnumC2SUpdatePasswordReq = 2004;
+  EnumC2SSendPhoneCodeReq = 2005;
+  EnumC2SSendEmailCodeReq = 2006;
+  EnumC2SLogoutReq = 2007;
+  EnumC2SUserSearchReq = 2008;
+  EnumC2SFindPasswordReq = 2009;
+  EnumC2SUpdateProfileReq = 2010;
+  EnumC2SGetFullUserReq = 2012;
+  EnumC2SUpdateProfilePhotoReq = 2013;
+  EnumC2SReportOnlineStatusReq = 2014;
+  EnumC2SGetOnlineStatusReq = 2015;
+  EnumC2SUpdateDifferenceReq = 2016;
+  EnumC2SUpdateUserRegionReq = 2200; // 数值跨段
+  EnumC2SInitDeviceReq = 2201;
+  EnumC2SGetUserDeviceReq = 2202;
+  EnumC2SDeleteUserDeviceReq = 2203;
+  EnumC2SGetUserPrivacyReq = 2204;
+  EnumC2SModifyUserPrivacyReq = 2205;
+  EnumC2SGetUsersPrivacyByTypeReq = 2206;
+  EnumC2SGetQRCodeValueReq = 2207;
+  EnumC2SQRCodeDecodeReq = 2208;
+  EnumC2SResetQRCodeValueReq = 2209;
+
+  //黑名单
+  EnumC2SUserGetBlackReq = 2017;
+  EnumC2SUserAddBlackReq = 2018;
+  EnumC2SUserDelBlackReq = 2019;
+
+  //好友
+  EnumC2SFriendGetFriendsReq = 2020;
+  EnumC2SFriendDelFriendReq = 2021;
+  EnumC2SFriendGetStrangersReq = 2022;
+  EnumC2SFriendDelStrangerReq = 2023;
+  EnumC2SFriendAcceptStrangerReq = 2024;
+  // EnumC2SFriendShieldStrangerReq = 2025;
+  EnumC2SFriendEditFriendReq = 2026;
+  EnumC2SFriendInviteStrangerReq = 2027;
+
+  //聊天室
+  EnumC2SChatGetAllChatsReq = 2030;
+  EnumC2SChatGetChatFullReq = 2031;
+  EnumC2SChatCreateReq = 2032;
+  EnumC2SChatDisbandReq = 2033;
+  EnumC2SChatAddMemberReq = 2034;
+  EnumC2SChatDelMemberReq = 2035;
+  EnumC2SChatMemberQuitReq = 2036;
+
+  EnumC2SChatModifyTitleReq = 2037;
+  EnumC2SChatModifyPhotoReq = 2038;
+  EnumC2SChatTransLeadReq = 2039;
+  EnumC2SChatLeadSetAdminReq = 2040;
+  EnumC2SChatLeadCancelAdminReq = 2041;
+  EnumC2SChatLeadSetAuthReq = 2042;
+  EnumC2SChatMemberSetAuthReq = 2043;
+  EnumC2SChatApplyJoinReq = 2044;
+  EnumC2SGetChatInfoReq = 2045;
+
+  // 消息
+  EnumC2SMessageSendMessageReq = 2101;
+  EnumC2SMessageDelMessagesReq = 2102;
+  EnumC2SMessageSaveDraftReq = 2103;
+  EnumC2SMessageSetTypingReq = 2104;
+  EnumC2SMessageLoadMessagesReq = 2105;
+  EnumC2SMessageGetPinnedDialogsReq = 2106;
+  EnumC2SMessageGetPeerDialogsReq = 2107;
+  EnumC2SMessageGetDialogsReq = 2108;
+  EnumC2SMessageDeleteHistoryReq = 2109;
+  EnumC2SMessageGetHistoryReq = 2110;
+  EnumC2SMessageReadHistoryReq = 2111;
+  EnumC2SMessageEditReq = 2113;
+  EnumC2SMessageNewDialogReq = 2114;
+  EnumC2SChatModifyRemarksReq = 2115;
+  EnumC2SMessagePinned = 2116;
+  EnumC2SDialogPinned = 2117;
+  EnumC2SDialogUnread = 2118;
+
+  // 文件
+  EnumC2SFileUploadReq = 3001;
+  EnumC2SFileDownloadReq = 3002;
+  EnumC2SFindFileReq = 3003;
+
+  // sticker
+  EnumC2SGetUserFavoriteStickersReq = 3010;
+  EnumC2SEditUserFavoriteStickersReq = 3011;
+  EnumC2SGetUserStickerGroupsReq = 3012;
+  EnumC2SEditUserStickerGroupsReq = 3013;
+  EnumC2SGetUserStoreStickerGroupsReq = 3014;
+  EnumC2SGetUserStoreStickerGroupReq = 3015;
+
+  //消息推送
+  EnumC2SNotifyUploadDeviceTokenReq = 4001;
+  EnumC2SNotifyUserOnlineStatusReq = 4002;
+
+  OTypeC2SAuthedEnd = 4998;
+
+  OTypeC2SEnd = 4999;
+
+  // ---------------------------------------------
+  // for S2C
+  // ---------------------------------------------
+  OTypeS2CStart = 5000;
+
+  EnumS2CPingResp = 5001;
+  EnumS2CGetPqResp = 5002;
+  EnumS2CGetDhResp = 5003;
+  EnumS2CSetClientDhResp = 5004;
+  EnumS2CNewSessionPush = 5005;
+  EnumS2CGetFutureSaltsResp = 5007;
+  EnumS2CRpcDropAnswerResp = 5008;
+  EnumS2CDestroySessionResp = 5009;
+  EnumS2CGetConfigResp = 5010;
+  EnumS2CGetLangsResp = 5011;
+  EnumS2CGetLangPackResp = 5012;
+  EnumS2CGetLastVerResp = 5013;
+
+  // 登录返回
+  EnumS2CSignUpResp = 6001;
+  EnumS2CUpdateAccountResp = 6002;
+  EnumS2CLoginResp = 6003;
+  EnumS2CUpdatePasswordResp = 6004;
+  EnumS2CSendPhoneCodeResp = 6005;
+  EnumS2CSendEmailCodeResp = 6006;
+  EnumS2CLogoutResp = 6007;
+  EnumS2CFindPasswordResp = 6008;
+  EnumS2CUserSearchResp = 6009;
+  EnumS2CUpdateProfileResp = 6010;
+  EnumS2CGetFullUserResp = 6012;
+  EnumS2CUpdateProfilePhotoResp = 6013;
+  EnumS2CUpdateUserRegionResp = 6014;
+  EnumS2CInitDeviceResp = 6200;
+  EnumS2CGetUserDeviceResp = 6201;
+  EnumS2CDeleteUserDeviceResp = 6202;
+  EnumS2CGetUserPrivacyResp = 6203;
+  EnumS2CModifyUserPrivacyResp = 6204;
+  EnumS2CGetUsersPrivacyByTypeResp = 6205;
+  EnumS2CGetQRCodeValueResp = 6206;
+  EnumS2CQRCodeDecodeResp = 6207;
+  EnumS2CResetQRCodeValueResp = 6208;
+
+  //  文件
+  EnumS2CFileUploadResp = 6015;
+  EnumS2CFileDownloadResp = 6016;
+  EnumS2CFindFileResp = 6017;
+
+  EnumS2CReportOnlineStatusResp = 6018;
+  EnumS2CGetOnlineStatusResp = 6019;
+  EnumS2CUpdateDifferenceResp = 6020;
+
+  // 黑名单
+  EnumS2CUserGetBlackResp = 6021;
+  EnumS2CUserAddBlackResp = 6022;
+  EnumS2CFriendDelBlackResp = 6023;
+
+  //好友
+  EnumS2CFriendGetFriendsResp = 6040;
+  EnumS2CFriendDelFriendResp = 6041;
+  EnumS2CFriendGetStrangersResp = 6042;
+  EnumS2CFriendDelStrangerResp = 6043;
+  EnumS2CFriendAcceptStrangerResp = 6046;
+  // EnumS2CFriendShieldStrangerResp = 6047;
+  EnumS2CFriendEditFriendResp = 6048;
+  EnumS2CFriendInviteStrangerResp = 6049;
+
+  // 聊天室
+  EnumS2CChatGetAllChatsResp = 6050;
+  EnumS2CChatGetChatFullResp = 6051;
+  EnumS2CChatCreateResp = 6052;
+  EnumS2CChatDisbandResp = 6053;
+  EnumS2CChatAddMemberResp = 6054;
+  EnumS2CChatDelMemberResp = 6055;
+  EnumS2CChatMemberQuitResp = 6056;
+
+  EnumS2CChatModifyTitleResp = 6057;
+  EnumS2CChatModifyPhotoResp = 6058;
+  EnumS2CChatTransLeadResp = 6059;
+  EnumS2CChatLeadSetAdminResp = 6060;
+  EnumS2CChatLeadCancelAdminResp = 6061;
+  EnumS2CChatLeadSetAuthResp = 6062;
+  EnumS2CChatMemberSetAuthResp = 6063;
+  EnumS2CChatModifyRemarksResp = 6064;
+  EnumS2CChatApplyJoinResp = 6065;
+  EnumS2CGetChatInfoResp = 6066;
+  // 消息
+  EnumS2CMessageSendMessageResp = 6101;
+  EnumS2CMessageDelMessageResp = 6102;
+  EnumS2CMessageSaveDraftResp = 6103;
+  EnumS2CMessageSetTypingResp = 6104;
+  EnumS2CMessageLoadMessagesResp = 6105;
+  EnumS2CMessageGetPinnedDialogsResp = 6106;
+  EnumS2CMessageGetPeerDialogsResp = 6107;
+  EnumS2CMessageGetDialogsResp = 6108;
+  EnumS2CMessageDeleteHistoryResp = 6109;
+  EnumS2CMessageGetHistoryResp = 6110;
+  EnumS2CMessageReadHistoryResp = 6111;
+  EnumS2CMessageEditResp = 6113;
+  EnumS2CMessageNewDialogResp = 6114;
+  EnumS2CMessagePinnedResp = 6115;
+  EnumS2CDialogPinnedResp = 6116;
+  EnumS2CDialogUnreadResp = 6117;
+
+  // sticker
+  EnumS2CGetUserFavoriteStickersResp = 6150;
+  EnumS2CEditUserFavoriteStickersResp = 6151;
+  EnumS2CGetUserStickerGroupsResp = 6152;
+  EnumS2CEditUserStickerGroupsResp = 6153;
+  EnumS2CGetUserStoreStickerGroupsResp = 6154;
+  EnumS2CGetUserStoreStickerGroupResp = 6155;
+
+  //
+  OTypeS2CEnd = 8999;
+
+  OTypeUpdateStart = 9000;
+  EnumUpdate = 9001;
+  OTypeUpdateEnd = 9999;
+}

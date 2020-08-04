@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180px" height="50px" viewBox="0 0 180 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>shapecombination</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-群聊" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="对话框-别移除群聊" transform="translate(-48.000000, -498.000000)" fill="#FFFFFF">
+            <g id="编组" transform="translate(16.000000, 498.000000)">
+                <path d="M40.0898876,50 L32,50 L40.0898876,43.5905545 L40.0898876,39.0644645 L40.0898876,8 C40.0898876,3.581722 43.6716096,-9.64732338e-16 48.0898876,-1.77635684e-15 L204,0 C208.418278,-1.65085012e-14 212,3.581722 212,8 L212,42 C212,46.418278 208.418278,50 204,50 L40.0898876,50 Z" id="形状结合"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,180 @@
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+import "base.proto";
+import "user.proto";
+import "a_media.proto";
+
+// C2SMessageNewDialogReq
+message C2SMessageNewDialogReq { Peer peer = 1; }
+
+message S2CMessageNewDialogResp {
+  ErrorCode code = 1;
+  int64 dialogId = 2;
+}
+
+// ////////////////C2SSendMessageReq 发送文本消息 请求/////////////////////
+message C2SMessageSendMessageReq {
+  int64 dialogId = 1;                        // 会话Id
+  bool webPage = 2;                          // web消息
+  bool clearDraft = 3;                       // 是否清除输入草稿
+  string message = 4;                        // 消息内容文本消息
+  int32 randomId = 5;                        // 客户端生成的临时消息id
+  MessageType msgType = 6;                   // 消息类型
+  int64 refDialogId = 8;                     // 转发消息会话id
+  int32 refMsgId = 9;                        // 转发消息会话id(回复)
+  MessageType refMsgType = 10;               // 转发,回复消息类型
+  MessageMediaInterface mediaInterface = 11; // media 消息时必须要传入
+}
+
+// S2CMessageResp 发送文本消息 响应发送的客户端
+message S2CMessageSendMessageResp {
+  ErrorCode code = 1;
+  int32 messageId = 2; // 通知用户临时消息id变更成服务端生成的消息id
+  int32 randomId = 3; // 通知用户临时消息id变更成服务端生成的消息id
+  int32 date = 4;
+}
+// 其他端都收到MessageUpdate
+
+// C2SMessageDelMessagesReq
+message C2SMessageDelMessagesReq {
+  int64 dialogId = 1;        // 对端信息
+  bool clearSelf = 2;        // false 仅清除自己
+  repeated int32 msgIds = 3; // 需要删除的消息id  用户选择消息删除
+}
+
+// 发送删除消息 resp 响应发送端的客户端
+message S2CMessageDelMessageResp {
+  ErrorCode code = 1;
+  MessageDelUpdate update = 2;
+}
+// 如果需要删除peer 则所有端同时推送MessageDelUpdate
+
+// C2SMessageSaveDraft 保存用户输入草稿
+message C2SMessageSaveDraftReq {
+  int32 replyToMsgID = 1; // 回复消息草稿
+  int64 dialogId = 2;     // 对话框对端信息
+  bool delete = 3;        // 删除草稿
+  string message = 4;     // 草稿内容 可以为空
+}
+
+message S2CMessageSaveDraftResp { ErrorCode code = 1; }
+// 多端同步会发送 MessageDraftUpdate 进行通知  拉去dialog时，
+// 会备注是否有草稿，并显示
+
+// MessagesSetTypingReq 用户输入状态上传
+message C2SMessageSetTypingReq {
+  int64 dialogId = 1;
+  MessageTypingAction action = 2;
+}
+
+message S2CMessageSetTypingResp { ErrorCode code = 1; }
+// 其他段同步 MessageTypingUpdate
+
+// C2SMessageLoadMessagesReq 加载传入消息id
+// (做消息转发，消息回复，消息置顶时需要使用，读取原始消息)
+message C2SMessageLoadMessagesReq {
+  int64 dialogId = 1; // 会话id
+  repeated int32 msgIds = 2;
+}
+
+message S2CMessageLoadMessagesResp {
+  ErrorCode code = 1;
+  repeated Message msgs = 2;
+}
+
+// C2SMessageGetPinnedDialogsReq 获取置顶对话框
+message C2SMessageGetPinnedDialogsReq {}
+
+message S2CMessageGetPinnedDialogsResp {
+  ErrorCode code = 1;
+  repeated Dialog dialogs = 2;
+}
+
+// C2SMessageGetPeerDialogsReq 根据传入peers返回dialogs
+message C2SMessageGetPeerDialogsReq { repeated int64 dialogIds = 1; }
+message S2CMessageGetPeerDialogsResp {
+  ErrorCode code = 1;
+  repeated Dialog dialogs = 2;
+}
+
+// C2SMessageGetDialogs 根据传入参数，返回用户dialog
+message C2SMessageGetDialogsReq {
+  bool excludePinned = 1; // true 排除置顶dialog
+  int32 dialogType = 2;   // dialogType: 0 表示所有， 1:表示群
+  int32 lastTime = 3;
+  int32 limit = 4;
+}
+
+message S2CMessageGetDialogsResp {
+  ErrorCode code = 1;
+  repeated Dialog dialogs = 2;
+}
+
+// MessageDeleteHistoryReq 清除历史消息
+message C2SMessageDeleteHistoryReq {
+  bool clearSelf = 1; // true 仅清除自己
+  bool clearDialog = 2;
+  int64 dialogId = 3; // 会话框
+  int32 maxMsgId = 4; // 清除maxId之前所有消息
+}
+message S2CMessageDeleteHistoryResp { ErrorCode code = 1; }
+// 多端都推送 MessageUpdateDeleteHistoryUpdate
+
+// C2SMessageGetHistoryReq 获取历史消息
+message C2SMessageGetHistoryReq {
+  int64 dialogId = 1; // 对端信息
+  int32 offsetId = 2; // 起始消息id
+  int32 limit = 3;    // 最大多少条
+  bool add = 4;       // add == true?msgId add,else msgId reduce
+}
+
+message S2CMessageGetHistoryResp {
+  ErrorCode code = 1;
+  int32 count = 2;
+  int32 startId = 3;
+  repeated Message messages = 4;
+}
+
+// C2SMessageReadHistoryReq 标记历史消息为已读状态
+message C2SMessageReadHistoryReq {
+  int64 dialogId = 1; // 会话id
+  int32 maxId = 2;    // 已读最大消息id
+  int32 fromId = 3;   // 最大消息发送者
+}
+message S2CMessageReadHistoryResp { ErrorCode code = 1; }
+// 多端都推送 MessageUpdateReadHistoryUpdate
+
+// 20. 消息编辑
+message C2SMessageEditReq {
+  int64 dialogId = 1;                       // 对端信息
+  bool webPage = 2;                         // web消息
+  bool clearDraft = 3;                      // 是否清除输入草稿
+  string message = 4;                       // 消息内容文本消息
+  int32 msgId = 5;                          // 回复消息处理
+  MessageMediaInterface mediaInterface = 6; // media 消息时必须要传入
+}
+message S2CMessageEditResp { ErrorCode code = 1; }
+
+// 21. 消息置顶和取消
+message C2SMessagePinned {
+  int64 dialogId = 1; // 会话id
+  int32 msgId = 2;    // 消息id
+}
+message S2CMessagePinnedResp { ErrorCode code = 1; }
+
+// 22. 会话置顶和取消
+message C2SDialogPinned {
+  int64 dialogId = 1; // 会话id
+  bool pinned = 2;    // true 置顶 false 取消
+}
+message S2CDialogPinnedResp { ErrorCode code = 1; }
+
+// 23. 会话已读和未读
+message C2SDialogUnread {
+  int64 dialogId = 1; // 会话id
+  bool unread = 2;    // false 标记未读， true 标记已读
+}
+message S2CDialogUnreadResp { ErrorCode code = 1; }

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+
+message C2SNotifyUploadDeviceTokenReq {
+  int32 userId = 1;
+  int32 platform = 2;
+  string deviceId = 3;
+  string deviceToken = 4;
+  string appId = 5;
+}
+
+message C2SNotifyUploadDeviceTokenResp { ErrorCode code = 1; }
+
+message C2SNotifyUserOnlineStatusReq {
+  int32 userId = 1;
+  string deviceId = 2;
+  int32 status = 3;
+}
+
+message C2SNotifyUserOnlineStatusResp { ErrorCode code = 1; }
+
+message S2CNotifyMessageReq {
+  string title = 1;
+  string subtitle = 2;
+  string body = 3;
+  int32 badge = 4;
+}
+
+message S2CNotifyMessageResp { ErrorCode code = 1; }

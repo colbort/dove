@@ -1,0 +1,315 @@
+syntax = "proto3";
+
+package pkt;
+
+import "file.proto";
+import "a_rpc.proto";
+
+message PeerUser {
+  int32 userId = 1;
+  int64 accessId = 2;
+}
+
+message PeerChat { int32 chatId = 1; }
+
+message PeerStranger { int32 strangerId = 1; }
+
+enum PeerType {
+  EnumPeerTypeUser = 0;
+  EnumPeerTypeChat = 1;
+  EnumPeerTypeStranger = 2;
+}
+
+message Peer {
+  PeerType type = 1;
+  oneof peer {
+    PeerUser user = 4;
+    PeerChat chat = 5;
+    PeerStranger stranger = 6;
+  }
+}
+
+message SearchParamter {
+  string param = 1; // 参数
+}
+
+message UserProfilePhoto {
+  FileLocation photoSmall = 1; // 缩略图   36*36
+  FileLocation photoFull = 2;  // 原始图片     原图
+}
+
+// UserOnlineStatus 用户在线状态...
+enum OnlineStatus {
+  OnlineStatusOnlne = 0;      // 在线
+  OnlineStatusOffline = 1;    // 离线  离线时间根据time确认
+  OnlineStatusRecentTime = 2; // 最近
+  OnlineStatusLastWeek = 3;   // 最近一周在线
+  OnlineStatusLastMonth = 4;  // 最近一个月在线
+  OnlineStatusLong = 5;       // 很久不在线
+}
+
+message UserOnlineStatus {
+  int32 userId = 1;
+  OnlineStatus status = 2;
+  int32 time = 3;
+}
+
+message User {
+  bool self = 1;               // 是否是自己
+  bool friend = 2;             // 是否是好友
+  int32 id = 3;                // id
+  string username = 4;         // 昵称
+  string remarks = 5;          // 备注
+  string account = 6;          // 账号
+  string phone = 7;            // 手机
+  string email = 8;            // 邮件
+  bool verified = 9;           // 官方认证如v
+  string langCode = 10;        // 国别
+  UserProfilePhoto photo = 11; // 头像
+  bool restricted = 12;        // 限制
+  string about = 13;           // 介绍
+  int32 gender = 14;           // 性别:0 保密 1:男 2:女 3:其他
+  OnlineStatus status = 15;
+  int32 onlineTime = 16;
+  bool black = 17;
+  string region = 18; // 地区
+}
+
+message Stranger {
+  User user = 1;     // 用户
+  int32 action = 2;  // 行为 0:Ask   1:Passive
+  int32 status = 3;  // 状态   0:待验证 1:同意  2:屏蔽  3:过期
+  int32 addTime = 4; // 添加时间
+}
+
+enum UserRelationStatus {
+  UserRelationStatusNone = 0;            // 没关系
+  UserRelationStatusSelf = 1;            // 自己
+  UserRelationStatusFriend = 2;          // 好友
+  UserRelationStatusStrangerReq = 3;     // 打招呼（发起）
+  UserRelationStatusStrangerRecv = 4;    // 打招呼（接收）
+  UserRelationStatusStrangerTimeout = 5; // 打招呼（过期）
+}
+
+message UserFull {
+  UserRelationStatus status = 1;
+  User user = 2; // 用户基本信息(账号以外)
+}
+
+// 1.用户查询
+message C2SUserSearchReq { SearchParamter param = 1; }
+
+message S2CUserSearchResp {
+  ErrorCode code = 1;
+  User user = 2;
+}
+
+// 2.获取用户详细信息
+message C2SGetFullUserReq { PeerUser user = 1; }
+
+message S2CGetFullUserResp {
+  ErrorCode code = 1;
+  UserFull userFull = 2;
+}
+
+// 3.更新用户基本信息
+message C2SUpdateProfileReq {
+  string username = 1;
+  string about = 2;
+  int32 gender = 3;
+}
+
+message S2CUpdateProfileResp {
+  ErrorCode code = 1;
+  User user = 2; //用户基本信息
+}
+
+// 4.更新用户头像
+message C2SUpdateProfilePhotoReq { UserProfilePhoto photo = 1; }
+
+message S2CUpdateProfilePhotoResp {
+  ErrorCode code = 1;
+  UserProfilePhoto photo = 2;
+}
+
+// 5.用户在线状态获取
+message C2SReportOnlineStatusReq { bool online = 1; }
+message S2CReportOnlineStatusResp { ErrorCode code = 1; }
+
+// 6.获取在线状态
+message C2SGetOnlineStatusReq { repeated int32 userIds = 1; }
+
+message S2CGetOnlineStatusResp {
+  ErrorCode code = 1;
+  repeated UserOnlineStatus statuses = 2;
+}
+
+// 7.黑名单列表
+message C2SUserGetBlackReq {}
+
+message S2CUserGetBlackResp {
+  ErrorCode code = 1;      // 结果
+  repeated User users = 2; // 玩家列表
+}
+
+// 8.加入黑名单
+message C2SUserAddBlackReq {
+  repeated int32 userIds = 3; // 加入成员ID
+}
+
+message S2CUserAddBlackResp {
+  ErrorCode code = 1;      // 结果
+  repeated User users = 2; // 加入成员ID
+}
+
+// 9.删除黑名单
+message C2SUserDelBlackReq {
+  repeated int32 userIds = 3; // 删除成员ID
+}
+
+message S2CFriendDelBlackResp {
+  ErrorCode code = 1;         // 结果
+  repeated int32 userIds = 2; // 删除成员ID
+}
+
+// 10.更新用户地区
+message C2SUpdateUserRegionReq {
+  string region = 1; // 地区
+}
+message S2CUpdateUserRegionResp {
+  ErrorCode code = 1; // 结果
+}
+
+// 设备信息
+message DeviceInfo {
+  int32 apiId = 1;        // 0:iphone 1:android 2:win 3:mac
+  string deviceModel = 2; // example：iPhone7  MacBook pro
+  string systemVersion = 3;
+  string appVersion = 4;
+  int32 activeDate = 5;
+  string ip = 6;
+  int64 authkey = 7;
+  bool self = 8;
+  string channelName = 9; // 当前app的渠道名
+  string bundleId = 10;   // bundleId
+}
+// 11.上报设备信息
+message C2SInitDeviceReq { DeviceInfo info = 1; }
+
+message S2CInitDeviceResp {
+  ErrorCode code = 1; // 结果
+  bool isAudit = 2;   //  true 审核版本
+}
+
+// 12.获取用户在线设备
+message C2SGetUserDeviceReq {}
+message S2CGetUserDeviceResp {
+  ErrorCode code = 1; // 结果
+  repeated DeviceInfo devices = 2;
+}
+
+// 13.踢出在线设备
+message C2SDeleteUserDeviceReq { int64 authkey = 1; }
+message S2CDeleteUserDeviceResp {
+  ErrorCode code = 1; // 结果
+}
+
+enum PrivacyRuleType {
+  PrivacyRuleTypeInit = 0;
+  PrivacyRuleTypeOnline = 1;
+  PrivacyRuleTypePhoneCall = 2;
+  PrivacyRuleTypePhoneNumber = 3;
+  PrivacyRuleTypeEmailInfo = 4;
+  PrivacyRuleTypeAccount = 5;
+  PrivacyRuleTypeChatIsnvite = 6;
+}
+
+enum PrivacyRuleValue {
+  PrivacyRuleValueAll = 0;
+  PrivacyRuleValueFriends = 1;
+  PrivacyRuleValueDisable = 2;
+  PrivacyRuleValueNone = 3;
+}
+
+message PrivacyRule {
+  PrivacyRuleType key = 1;
+  PrivacyRuleValue value = 2;
+}
+
+// 14.获取用户隐私和安全
+message C2SGetUserPrivacyReq {
+  // 自己获取自己
+}
+
+message S2CGetUserPrivacyResp {
+  ErrorCode code = 1;
+  repeated PrivacyRule rules = 2;
+  int32 searchType = 3; // 0x01:手机号 0x02:用户名 0x04：邮箱， value = 按位求值
+                        // (0 1 2 4 5 6 7)
+}
+
+// 15.修改用户隐私和安全
+message C2SModifyUserPrivacyReq {
+  repeated PrivacyRule rules = 1;
+  int32 searchType = 2; // 每次传递当前值
+}
+
+message S2CModifyUserPrivacyResp {
+  ErrorCode code = 1; // 结果
+}
+
+// 16.获取用户隐私
+message C2SGetUsersPrivacyByTypeReq {
+  PrivacyRuleType key = 1;    // 获取隐私类型
+  repeated int32 userIds = 2; // 需要获取用户列表
+}
+
+message UserPrivacy {
+  PrivacyRuleType key = 1;
+  PrivacyRuleValue value = 2;
+  int32 userId = 3;
+}
+
+message S2CGetUsersPrivacyByTypeResp {
+  ErrorCode code = 1; // 结果
+  repeated UserPrivacy privacys = 2;
+}
+
+enum QRCodeType {
+  QRCodeTypeUserInfo = 0;      // 用户信息
+  QRCodeTypeChatInfo = 1;      // 群基本信息
+  QRCodeTypeShareChatInfo = 2; // 群基本信息(分享)
+}
+
+// 17. 获取二维码
+message C2SGetQRCodeValueReq {
+  QRCodeType key = 1; // 类型
+  int32 value = 2;    // 值, 如果是群(群id)
+}
+message S2CGetQRCodeValueResp {
+  ErrorCode code = 1; // 结果
+  string content = 2; // 内容
+}
+
+// 18. 获取二维码信息
+message C2SQRCodeDecodeReq {
+  string content = 1; // 内容
+}
+message S2CQRCodeDecodeResp {
+  ErrorCode code = 1; // 结果
+  QRCodeType key = 2; // 类型
+  int32 userId = 3;   // 用户id
+  int32 chatId = 4;   // 群id
+  int32 fromId = 5;   // 可选，群基本信息(分享)
+}
+
+// 19.重置二维码
+message C2SResetQRCodeValueReq {
+  QRCodeType key = 1;    // 类型
+  int32 value = 2;       // 值, 如果是群(群id)
+  string oldContent = 3; // 旧的二维码信息
+}
+message S2CResetQRCodeValueResp {
+  ErrorCode code = 1; // 结果
+  string content = 2; // 内容
+}

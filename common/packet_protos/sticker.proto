@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package pkt;
+
+import "file.proto";
+import "a_rpc.proto";
+
+message Sticker {
+  int64 id = 1;               // id
+  FileInfo mixStickerThm = 2; // 最小缩略图
+  FileInfo medStickerThm = 3; // 中等缩略图
+  FileInfo maxStickerPic = 4; // 最大缩略图
+  string chStickerName = 5;   // 中文名字
+  string enStickerName = 6;   // 英文名字
+  int64 stickerGroupId = 7;   // sticker 所在组id (不存在则为0)
+  bool isDeleted = 8;         // 是否已删除
+}
+enum StickerType {
+  StaticSticker = 0;  // 静态表情
+  DynamicSticker = 1; // 动态表情
+}
+
+enum EditStickerType {
+  AddStickerType = 0;    // 添加sticker
+  MoveToFrontType = 1;   // 移动到最前
+  DeleteStickerType = 2; // 删除sticker
+}
+message StickerGroup {
+  int64 id = 1;                   // 官方表情组ID
+  repeated FileInfo coverPic = 2; // 组表情的封面图列表
+  string chName = 3;              // 组表情中文名
+  string enName = 4;              // 组表情英文名
+  string chDescribe = 5;          // 组表情中文简介
+  string enDescribe = 6;          // 组表情英文简介
+  StickerType stickerType = 7;    // 类型 0：静态类型  1:动态类型
+  string uploadUserId = 8;        // 上传人id
+  bool state = 9;                 // 当前状态 true:启用  fase:禁用
+  bool isDeleted = 10;            // 是否已删除
+  int64 createTime = 11;          // 创建时间
+  int64 updateTime = 12;          // 修改时间
+}
+
+// 获取用户收藏的表情包
+message C2SGetUserFavoriteStickersReq {
+  uint32 userStickerVersion = 1; // 用户当前sticker 版本号
+}
+message S2CGetUserFavoriteStickersResp {
+  ErrorCode code = 1;
+  uint32 userStickerVersion = 2; // 用户当前sticker 版本号
+  repeated Sticker stickers = 3; // 用户单个具体表情列表
+}
+
+// 编辑用户收藏的表情包
+message C2SEditUserFavoriteStickersReq {
+  EditStickerType type = 1;
+  Sticker userSticker = 2; // 用户收藏表情列表 (新增的时候用到)
+  repeated int64 stickerIds = 3; // 操作的多个stickerId
+}
+message S2CEditUserFavoriteStickersResp {
+  ErrorCode code = 1;
+  uint32 userStickerVersion = 2; // 用户当前sticker 版本号
+}
+
+// 获取用户官方表情组
+message C2SGetUserStoreStickerGroupsReq {
+  string stickerGroupName = 1; // 用户官方表情组名字
+}
+message S2CGetUserStoreStickerGroupsResp {
+  ErrorCode code = 1;
+  repeated StickerGroup stickerGroups = 2; // 官方表情包组列表
+}
+// 获取用户添加的官方表情包组列表
+message C2SGetUserStickerGroupsReq {
+  uint32 stickerGroupVersion = 1; // 当前sticker group 版本号
+}
+message S2CGetUserStickerGroupsResp {
+  ErrorCode code = 1;
+  uint32 stickerGroupVersion = 2; // 当前sticker group 版本号
+  repeated StickerGroup userStickerGroups = 3; // 有序用户添加的官方表情包组列表
+}
+
+enum EditStickerGroupType {
+  AddVauleType = 0;  // 新增
+  MoveVauleType = 1; // 移动
+  DelVauleType = 2;  // 删除
+}
+
+// 编辑用户添加的官方表情包组列表
+message C2SEditUserStickerGroupsReq {
+  EditStickerGroupType editType = 1;
+  repeated int64 stickerGroupIds = 2; // 有序用户添加的官方表情包组列表
+}
+message S2CEditUserStickerGroupsResp {
+  ErrorCode code = 1;
+  uint32 stickerGroupVersion = 2; // 当前sticker group 版本号
+}
+
+// 获取用户添加的1组表情包内具体单个表情列表
+message C2SGetUserStoreStickerGroupReq {
+  int64 stickerGroupId = 1; // 组id
+}
+message S2CGetUserStoreStickerGroupResp {
+  ErrorCode code = 1;
+  repeated Sticker stickers = 2; // 多个组内的表情列表
+}

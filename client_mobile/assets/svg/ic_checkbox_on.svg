@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Agougou</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-群聊" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="新建群组-已选择好友" transform="translate(-318.000000, -513.000000)">
+            <g id="矩形框好友模版-A" transform="translate(0.000000, 501.000000)">
+                <g id="A-勾" transform="translate(317.000000, 11.000000)">
+                    <g id="正确,通过,对勾_jurassic">
+                        <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                        <path d="M10,1 C5.03794643,1 1,5.03794643 1,10 C1,14.9620536 5.03794643,19 10,19 C14.9620536,19 19,14.9620536 19,10 C19,5.03794643 14.9620536,1 10,1 Z M8.65401786,13.6040179 L8.65,13.6 L8.64598214,13.6040179 L5.04598214,10.0040179 L5.95401786,9.09598214 L8.65,11.7899554 L14.0459821,6.39598214 L14.9540179,7.30401786 L8.65401786,13.6040179 Z" id="形状" fill="#0091FF" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

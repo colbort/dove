@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+import "a_common.proto";
+
+message C2SGetConfigReq {}
+
+message S2CGetConfigResp {
+  ErrorCode code = 1;
+  Config config = 2;
+}
+
+// message Config 定义
+message Config {
+  int64 date = 1;                        //生效时间
+  int64 expires = 2;                     //过期时间
+  uint32 maxFileSize = 3;                //单个文件最大值
+  SmallFileConfig smallFileConfig = 4;   //小文件配置
+  MediumFileConfig mediumFileConfig = 5; //中等文件配置
+  LargeFileConfig largeFileConfig = 6;   //大文件配置
+  int32 MaxConcurrentFile = 7;           //同时最大并发上传文件个数
+}
+
+message SmallFileConfig {
+  uint32 maxFileSize = 1;    //文件大小在这个值以内 用这个配置
+  uint32 onePackageSize = 2; //单个包大小
+  uint32 downloadOnePaceageSize = 3; //下载时1个包的大小
+}
+
+message MediumFileConfig {
+  uint32 maxFileSize = 1;    //文件大小在这个值以内 用这个配置
+  uint32 onePackageSize = 2; //单个包大小
+  uint32 downloadOnePaceageSize = 43; //下载时1个包的大小
+}
+
+message LargeFileConfig {
+  uint32 maxFileSize = 1;    //文件大小在这个值以内 用这个配置
+  uint32 onePackageSize = 2; //单个包大小
+  uint32 downloadOnePaceageSize = 3; //下载时1个包的大小
+}
+
+// 获取可用语言包列表
+message C2SGetLangsReq {
+  string platfrom = 1; //平台
+}
+message S2CGetLangsResp { Langs Langs = 1; }
+
+//获取某个语言包具体内容
+message C2SGetLangPackReq {
+  string code = 1;     //语言包 code
+  int32 version = 2;   //当前语言包版本
+  string platfrom = 3; //平台
+}
+message S2CGetLangPackResp { LangPackBase Langs = 1; }
+
+message C2SGetLastVerReq {
+  string appVersion = 1;     // 当前app 版本
+  string appChannelName = 2; // 渠道名
+  string platfrom = 3;       // 手机平台 android｜ios｜mac｜win
+}
+
+enum PublishType {
+  EnumFilePublishType = 0;  // 文件id 发布类型
+  EnumURLPublishType = 1;   // URL 发布类型
+  EnumOtherPublishType = 2; // 其他发布类型
+}
+
+message BundleID {
+  string bundleid = 1;
+  string downlink = 2;
+}
+message S2CGetLastVerResp {
+  string appChannelName = 1;   // 渠道名字
+  PublishType publishType = 2; // 发布类型
+  string appVersion = 3;       // 最新版本号
+  string updateDesc = 4;       // 更新描述
+  oneof address {
+    string urlAddress = 5;   // url下载地址
+    string fileVolumeId = 6; // 文件id下载地址
+  }
+  bool isForeUpdate = 7;          // 是否强制更新
+  repeated BundleID bundleID = 8; // bundleId 和下载连接
+  bytes packMD5 = 9;              // 包MD5
+  bool isAudit = 10;              // 审核版本为true
+}

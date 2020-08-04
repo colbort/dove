@@ -1,0 +1,7768 @@
+// Package td AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_td;
+
+
+// message AccountTTL 定义 
+message AccountTTL {  
+	int32 days = 1;	//int32
+}
+
+// message Address 定义 
+message Address {  
+	string countryCode = 1;	//string 
+	string state = 2;	//string 
+	string city = 3;	//string 
+	string streetLine1 = 4;	//string 
+	string streetLine2 = 5;	//string 
+	string postalCode = 6;	//string
+}
+
+// message Animation 定义 
+message Animation {  
+	int32 duration = 1;	//int32 
+	int32 width = 2;	//int32 
+	int32 height = 3;	//int32 
+	string fileName = 4;	//string 
+	string mimeType = 5;	//string 
+	PhotoSize thumbnail = 6;	//PhotoSize 
+	File animation = 7;	//File
+}
+
+// message Animations 定义 
+message Animations {  
+	repeated Animation animations = 1;	//[]Animation
+}
+
+// message Audio 定义 
+message Audio {  
+	int32 duration = 1;	//int32 
+	string title = 2;	//string 
+	string performer = 3;	//string 
+	string fileName = 4;	//string 
+	string mimeType = 5;	//string 
+	PhotoSize albumCoverThumbnail = 6;	//PhotoSize 
+	File audio = 7;	//File
+}
+
+// message AuthenticationCodeInfo 定义 
+message AuthenticationCodeInfo {  
+	string phoneNumber = 1;	//string 
+	AuthenticationCodeTypeAbsClass typ = 2;	//AuthenticationCodeTypeAbsClass 
+	AuthenticationCodeTypeAbsClass nextType = 3;	//AuthenticationCodeTypeAbsClass 
+	int32 timeout = 4;	//int32
+}
+
+// message AuthenticationCodeTypeTelegramInfo 定义 
+message AuthenticationCodeTypeTelegramInfo {  
+	int32 length = 1;	//int32
+}
+
+// message AuthenticationCodeTypeSms 定义 
+message AuthenticationCodeTypeSms {  
+	int32 length = 1;	//int32
+}
+
+// message AuthenticationCodeTypeCall 定义 
+message AuthenticationCodeTypeCall {  
+	int32 length = 1;	//int32
+}
+
+// message AuthenticationCodeTypeFlashCall 定义 
+message AuthenticationCodeTypeFlashCall {  
+	string pattern = 1;	//string
+}
+
+// message AuthStateWaitTdlibParameters 定义 
+message AuthStateWaitTdlibParameters { 
+}
+
+// message AuthStateWaitEncryptionKey 定义 
+message AuthStateWaitEncryptionKey {  
+	bool isEncrypted = 1;	//bool
+}
+
+// message AuthStateWaitPhoneNumber 定义 
+message AuthStateWaitPhoneNumber { 
+}
+
+// message AuthStateWaitCode 定义 
+message AuthStateWaitCode {  
+	bool isRegistered = 1;	//bool 
+	TermsOfService termsOfService = 2;	//TermsOfService 
+	AuthenticationCodeInfo codeInfo = 3;	//AuthenticationCodeInfo
+}
+
+// message AuthStateWaitPassword 定义 
+message AuthStateWaitPassword {  
+	string passwordHint = 1;	//string 
+	bool hasRecoveryEmailAddress = 2;	//bool 
+	string recoveryEmailAddressPattern = 3;	//string
+}
+
+// message AuthStateReady 定义 
+message AuthStateReady { 
+}
+
+// message AuthStateLoggingOut 定义 
+message AuthStateLoggingOut { 
+}
+
+// message AuthStateClosing 定义 
+message AuthStateClosing { 
+}
+
+// message AuthStateClosed 定义 
+message AuthStateClosed { 
+}
+
+// message BasicGroup 定义 
+message BasicGroup {  
+	int32 iD = 1;	//int32 
+	int32 memberCount = 2;	//int32 
+	ChatMemberStatusAbsClass status = 3;	//ChatMemberStatusAbsClass 
+	bool everyoneIsAdministrator = 4;	//bool 
+	bool isActive = 5;	//bool 
+	int32 upgradedToSupergroupID = 6;	//int32
+}
+
+// message BasicGroupFullInfo 定义 
+message BasicGroupFullInfo {  
+	int32 creatorUserID = 1;	//int32 
+	repeated ChatMember members = 2;	//[]ChatMember 
+	string inviteLink = 3;	//string
+}
+
+// message BotInfo 定义 
+message BotInfo {  
+	string description = 1;	//string 
+	repeated pb_uuchat.BotCommand commands = 2;	//[]BotCommand
+}
+
+// message Call 定义 
+message Call {  
+	int32 iD = 1;	//int32 
+	int32 userID = 2;	//int32 
+	bool isOutgoing = 3;	//bool 
+	CallStateAbsClass state = 4;	//CallStateAbsClass
+}
+
+// message CallConnection 定义 
+message CallConnection {  
+	int64 iD = 1;	//int64 
+	string iP = 2;	//string 
+	string ipv6 = 3;	//string 
+	int32 port = 4;	//int32 
+	bytes peerTag = 5;	//core.Bytes
+}
+
+// message CallDiscardReasonEmpty 定义 
+message CallDiscardReasonEmpty { 
+}
+
+// message CallDiscardReasonMissed 定义 
+message CallDiscardReasonMissed { 
+}
+
+// message CallDiscardReasonDeclined 定义 
+message CallDiscardReasonDeclined { 
+}
+
+// message CallDiscardReasonDisconnected 定义 
+message CallDiscardReasonDisconnected { 
+}
+
+// message CallDiscardReasonHungUp 定义 
+message CallDiscardReasonHungUp { 
+}
+
+// message CallID 定义 
+message CallID {  
+	int32 iD = 1;	//int32
+}
+
+// message CallProtocol 定义 
+message CallProtocol {  
+	bool uDPP2p = 1;	//bool 
+	bool uDPReflector = 2;	//bool 
+	int32 minLayer = 3;	//int32 
+	int32 maxLayer = 4;	//int32
+}
+
+// message CallStatePending 定义 
+message CallStatePending {  
+	bool isCreated = 1;	//bool 
+	bool isReceived = 2;	//bool
+}
+
+// message CallStateExchangingKeys 定义 
+message CallStateExchangingKeys { 
+}
+
+// message CallStateReady 定义 
+message CallStateReady {  
+	CallProtocol protocol = 1;	//CallProtocol 
+	repeated CallConnection connections = 2;	//[]CallConnection 
+	string config = 3;	//string 
+	bytes encryptionKey = 4;	//core.Bytes 
+	repeated string emojis = 5;	//[]string
+}
+
+// message CallStateHangingUp 定义 
+message CallStateHangingUp { 
+}
+
+// message CallStateDiscarded 定义 
+message CallStateDiscarded {  
+	CallDiscardReasonAbsClass reason = 1;	//CallDiscardReasonAbsClass 
+	bool needRating = 2;	//bool 
+	bool needDebugInformation = 3;	//bool
+}
+
+// message CallStateError 定义 
+message CallStateError {  
+	Error error = 1;	//Error
+}
+
+// message CallbackQueryAnswer 定义 
+message CallbackQueryAnswer {  
+	string text = 1;	//string 
+	bool showAlert = 2;	//bool 
+	string uRL = 3;	//string
+}
+
+// message CallbackQueryPayloadData 定义 
+message CallbackQueryPayloadData {  
+	bytes data = 1;	//core.Bytes
+}
+
+// message CallbackQueryPayloadGame 定义 
+message CallbackQueryPayloadGame {  
+	string gameShortName = 1;	//string
+}
+
+// message Chat 定义 
+message Chat {  
+	int64 iD = 1;	//int64 
+	ChatTypeAbsClass typ = 2;	//ChatTypeAbsClass 
+	string title = 3;	//string 
+	ChatPhoto photo = 4;	//ChatPhoto 
+	Info lastInfo = 5;	//Info 
+	int64 order = 6;	//int64 
+	bool isPinned = 7;	//bool 
+	bool isMarkedAsUnread = 8;	//bool 
+	bool isSponsored = 9;	//bool 
+	bool canBeReported = 10;	//bool 
+	bool defaultDisableNotification = 11;	//bool 
+	int32 unreadCount = 12;	//int32 
+	int64 lastReadInboxInfoID = 13;	//int64 
+	int64 lastReadOutboxInfoID = 14;	//int64 
+	int32 unreadMentionCount = 15;	//int32 
+	ChatNotificationSettings notificationSettings = 16;	//ChatNotificationSettings 
+	int64 replyMarkupInfoID = 17;	//int64 
+	DraftInfo draftInfo = 18;	//DraftInfo 
+	string clientData = 19;	//string
+}
+
+// message ChatDoitTyping 定义 
+message ChatDoitTyping { 
+}
+
+// message ChatDoitRecordingVideo 定义 
+message ChatDoitRecordingVideo { 
+}
+
+// message ChatDoitUploadingVideo 定义 
+message ChatDoitUploadingVideo {  
+	int32 progress = 1;	//int32
+}
+
+// message ChatDoitRecordingVoiceNote 定义 
+message ChatDoitRecordingVoiceNote { 
+}
+
+// message ChatDoitUploadingVoiceNote 定义 
+message ChatDoitUploadingVoiceNote {  
+	int32 progress = 1;	//int32
+}
+
+// message ChatDoitUploadingPhoto 定义 
+message ChatDoitUploadingPhoto {  
+	int32 progress = 1;	//int32
+}
+
+// message ChatDoitUploadingDocument 定义 
+message ChatDoitUploadingDocument {  
+	int32 progress = 1;	//int32
+}
+
+// message ChatDoitChoosingLocation 定义 
+message ChatDoitChoosingLocation { 
+}
+
+// message ChatDoitChoosingContact 定义 
+message ChatDoitChoosingContact { 
+}
+
+// message ChatDoitStartPlayingGame 定义 
+message ChatDoitStartPlayingGame { 
+}
+
+// message ChatDoitRecordingVideoNote 定义 
+message ChatDoitRecordingVideoNote { 
+}
+
+// message ChatDoitUploadingVideoNote 定义 
+message ChatDoitUploadingVideoNote {  
+	int32 progress = 1;	//int32
+}
+
+// message ChatDoitCancel 定义 
+message ChatDoitCancel { 
+}
+
+// message ChatEvent 定义 
+message ChatEvent {  
+	int64 iD = 1;	//int64 
+	int32 date = 2;	//int32 
+	int32 userID = 3;	//int32 
+	ChatEventDoitAbsClass action = 4;	//ChatEventDoitAbsClass
+}
+
+// message ChatEventInfoEdited 定义 
+message ChatEventInfoEdited {  
+	Info oldInfo = 1;	//Info 
+	Info newInfo = 2;	//Info
+}
+
+// message ChatEventInfoDeleted 定义 
+message ChatEventInfoDeleted {  
+	Info message = 1;	//Info
+}
+
+// message ChatEventInfoPinned 定义 
+message ChatEventInfoPinned {  
+	Info message = 1;	//Info
+}
+
+// message ChatEventInfoUnpinned 定义 
+message ChatEventInfoUnpinned { 
+}
+
+// message ChatEventMemberJoined 定义 
+message ChatEventMemberJoined { 
+}
+
+// message ChatEventMemberLeft 定义 
+message ChatEventMemberLeft { 
+}
+
+// message ChatEventMemberInvited 定义 
+message ChatEventMemberInvited {  
+	int32 userID = 1;	//int32 
+	ChatMemberStatusAbsClass status = 2;	//ChatMemberStatusAbsClass
+}
+
+// message ChatEventMemberPromoted 定义 
+message ChatEventMemberPromoted {  
+	int32 userID = 1;	//int32 
+	ChatMemberStatusAbsClass oldStatus = 2;	//ChatMemberStatusAbsClass 
+	ChatMemberStatusAbsClass newStatus = 3;	//ChatMemberStatusAbsClass
+}
+
+// message ChatEventMemberRestricted 定义 
+message ChatEventMemberRestricted {  
+	int32 userID = 1;	//int32 
+	ChatMemberStatusAbsClass oldStatus = 2;	//ChatMemberStatusAbsClass 
+	ChatMemberStatusAbsClass newStatus = 3;	//ChatMemberStatusAbsClass
+}
+
+// message ChatEventTitleChanged 定义 
+message ChatEventTitleChanged {  
+	string oldTitle = 1;	//string 
+	string newTitle = 2;	//string
+}
+
+// message ChatEventDescriptionChanged 定义 
+message ChatEventDescriptionChanged {  
+	string oldDescription = 1;	//string 
+	string newDescription = 2;	//string
+}
+
+// message ChatEventUsernameChanged 定义 
+message ChatEventUsernameChanged {  
+	string oldUsername = 1;	//string 
+	string newUsername = 2;	//string
+}
+
+// message ChatEventPhotoChanged 定义 
+message ChatEventPhotoChanged {  
+	ChatPhoto oldPhoto = 1;	//ChatPhoto 
+	ChatPhoto newPhoto = 2;	//ChatPhoto
+}
+
+// message ChatEventInvitesToggled 定义 
+message ChatEventInvitesToggled {  
+	bool anyoneCanInvite = 1;	//bool
+}
+
+// message ChatEventSignInfosToggled 定义 
+message ChatEventSignInfosToggled {  
+	bool signInfos = 1;	//bool
+}
+
+// message ChatEventStickerSetChanged 定义 
+message ChatEventStickerSetChanged {  
+	int64 oldStickerSetID = 1;	//int64 
+	int64 newStickerSetID = 2;	//int64
+}
+
+// message ChatEventIsAllHistoryAvailableToggled 定义 
+message ChatEventIsAllHistoryAvailableToggled {  
+	bool isAllHistoryAvailable = 1;	//bool
+}
+
+// message ChatEventLogFilters 定义 
+message ChatEventLogFilters {  
+	bool messageEdits = 1;	//bool 
+	bool messageDeletions = 2;	//bool 
+	bool messagePins = 3;	//bool 
+	bool memberJoins = 4;	//bool 
+	bool memberLeaves = 5;	//bool 
+	bool memberInvites = 6;	//bool 
+	bool memberPromotions = 7;	//bool 
+	bool memberRestrictions = 8;	//bool 
+	bool infoChanges = 9;	//bool 
+	bool settingChanges = 10;	//bool
+}
+
+// message ChatEvents 定义 
+message ChatEvents {  
+	repeated ChatEvent events = 1;	//[]ChatEvent
+}
+
+// message ChatInviteLink 定义 
+message ChatInviteLink {  
+	string inviteLink = 1;	//string
+}
+
+// message ChatInviteLinkInfo 定义 
+message ChatInviteLinkInfo {  
+	int64 chatID = 1;	//int64 
+	ChatTypeAbsClass typ = 2;	//ChatTypeAbsClass 
+	string title = 3;	//string 
+	ChatPhoto photo = 4;	//ChatPhoto 
+	int32 memberCount = 5;	//int32 
+	repeated int32 memberUserIds = 6;	//[]int32 
+	bool isPublic = 7;	//bool
+}
+
+// message ChatMember 定义 
+message ChatMember {  
+	int32 userID = 1;	//int32 
+	int32 inviterUserID = 2;	//int32 
+	int32 joinedChatDate = 3;	//int32 
+	ChatMemberStatusAbsClass status = 4;	//ChatMemberStatusAbsClass 
+	BotInfo botInfo = 5;	//BotInfo
+}
+
+// message ChatMemberStatusCreator 定义 
+message ChatMemberStatusCreator {  
+	bool isMember = 1;	//bool
+}
+
+// message ChatMemberStatusAdministrator 定义 
+message ChatMemberStatusAdministrator {  
+	bool canBeEdited = 1;	//bool 
+	bool canChangeInfo = 2;	//bool 
+	bool canPostInfos = 3;	//bool 
+	bool canEditInfos = 4;	//bool 
+	bool canDeleteInfos = 5;	//bool 
+	bool canInviteUsers = 6;	//bool 
+	bool canRestrictMembers = 7;	//bool 
+	bool canPinInfos = 8;	//bool 
+	bool canPromoteMembers = 9;	//bool
+}
+
+// message ChatMemberStatusMember 定义 
+message ChatMemberStatusMember { 
+}
+
+// message ChatMemberStatusRestricted 定义 
+message ChatMemberStatusRestricted {  
+	bool isMember = 1;	//bool 
+	int32 restrictedUntilDate = 2;	//int32 
+	bool canSendInfos = 3;	//bool 
+	bool canSendMediaInfos = 4;	//bool 
+	bool canSendOtherInfos = 5;	//bool 
+	bool canAddWebPagePreviews = 6;	//bool
+}
+
+// message ChatMemberStatusLeft 定义 
+message ChatMemberStatusLeft { 
+}
+
+// message ChatMemberStatusBanned 定义 
+message ChatMemberStatusBanned {  
+	int32 bannedUntilDate = 1;	//int32
+}
+
+// message ChatMembers 定义 
+message ChatMembers {  
+	int32 totalCount = 1;	//int32 
+	repeated ChatMember members = 2;	//[]ChatMember
+}
+
+// message ChatMembersFilterAdministrators 定义 
+message ChatMembersFilterAdministrators { 
+}
+
+// message ChatMembersFilterMembers 定义 
+message ChatMembersFilterMembers { 
+}
+
+// message ChatMembersFilterRestricted 定义 
+message ChatMembersFilterRestricted { 
+}
+
+// message ChatMembersFilterBanned 定义 
+message ChatMembersFilterBanned { 
+}
+
+// message ChatMembersFilterBots 定义 
+message ChatMembersFilterBots { 
+}
+
+// message ChatNotificationSettings 定义 
+message ChatNotificationSettings {  
+	bool useDefaultMuteFor = 1;	//bool 
+	int32 muteFor = 2;	//int32 
+	bool useDefaultSound = 3;	//bool 
+	string sound = 4;	//string 
+	bool useDefaultShowPreview = 5;	//bool 
+	bool showPreview = 6;	//bool
+}
+
+// message ChatPhoto 定义 
+message ChatPhoto {  
+	File small = 1;	//File 
+	File big = 2;	//File
+}
+
+// message ChatReportReasonSpam 定义 
+message ChatReportReasonSpam { 
+}
+
+// message ChatReportReasonViolence 定义 
+message ChatReportReasonViolence { 
+}
+
+// message ChatReportReasonPornography 定义 
+message ChatReportReasonPornography { 
+}
+
+// message ChatReportReasonCopyright 定义 
+message ChatReportReasonCopyright { 
+}
+
+// message ChatReportReasonCustom 定义 
+message ChatReportReasonCustom {  
+	string text = 1;	//string
+}
+
+// message ChatReportSpamState 定义 
+message ChatReportSpamState {  
+	bool canReportSpam = 1;	//bool
+}
+
+// message ChatTypePrivate 定义 
+message ChatTypePrivate {  
+	int32 userID = 1;	//int32
+}
+
+// message ChatTypeBasicGroup 定义 
+message ChatTypeBasicGroup {  
+	int32 basicGroupID = 1;	//int32
+}
+
+// message ChatTypeSupergroup 定义 
+message ChatTypeSupergroup {  
+	int32 supergroupID = 1;	//int32 
+	bool isSuperGroupV1 = 2;	//bool
+}
+
+// message ChatTypeSecret 定义 
+message ChatTypeSecret {  
+	int32 secretChatID = 1;	//int32 
+	int32 userID = 2;	//int32
+}
+
+// message Chats 定义 
+message Chats {  
+	repeated int64 chatIds = 1;	//[]int64
+}
+
+// message CheckChatUsernameResultOk 定义 
+message CheckChatUsernameResultOk { 
+}
+
+// message CheckChatUsernameResultUsernameInvalid 定义 
+message CheckChatUsernameResultUsernameInvalid { 
+}
+
+// message CheckChatUsernameResultUsernameOccupied 定义 
+message CheckChatUsernameResultUsernameOccupied { 
+}
+
+// message CheckChatUsernameResultPublicChatsTooMuch 定义 
+message CheckChatUsernameResultPublicChatsTooMuch { 
+}
+
+// message CheckChatUsernameResultPublicGroupsUnavailable 定义 
+message CheckChatUsernameResultPublicGroupsUnavailable { 
+}
+
+// message ConnectedWebsite 定义 
+message ConnectedWebsite {  
+	int64 iD = 1;	//int64 
+	string domainName = 2;	//string 
+	int32 botUserID = 3;	//int32 
+	string browser = 4;	//string 
+	string platform = 5;	//string 
+	int32 logInDate = 6;	//int32 
+	int32 lastActiveDate = 7;	//int32 
+	string iP = 8;	//string 
+	string location = 9;	//string
+}
+
+// message ConnectedWebsites 定义 
+message ConnectedWebsites {  
+	repeated ConnectedWebsite websites = 1;	//[]ConnectedWebsite
+}
+
+// message ConnectionStateWaitingForNetwork 定义 
+message ConnectionStateWaitingForNetwork { 
+}
+
+// message ConnectionStateConnectingToProxy 定义 
+message ConnectionStateConnectingToProxy { 
+}
+
+// message ConnectionStateConnecting 定义 
+message ConnectionStateConnecting { 
+}
+
+// message ConnectionStateUpdating 定义 
+message ConnectionStateUpdating { 
+}
+
+// message ConnectionStateReady 定义 
+message ConnectionStateReady { 
+}
+
+// message Contact 定义 
+message Contact {  
+	string phoneNumber = 1;	//string 
+	string firstName = 2;	//string 
+	string lastName = 3;	//string 
+	string vcard = 4;	//string 
+	int32 userID = 5;	//int32
+}
+
+// message Count 定义 
+message Count {  
+	int32 count = 1;	//int32
+}
+
+// message CustomReqResult 定义 
+message CustomReqResult {  
+	string result = 1;	//string
+}
+
+// message Date 定义 
+message Date {  
+	int32 day = 1;	//int32 
+	int32 month = 2;	//int32 
+	int32 year = 3;	//int32
+}
+
+// message DatedFile 定义 
+message DatedFile {  
+	File file = 1;	//File 
+	int32 date = 2;	//int32
+}
+
+// message DeepLinkInfo 定义 
+message DeepLinkInfo {  
+	FormattedText text = 1;	//FormattedText 
+	bool needUpdateApplication = 2;	//bool
+}
+
+// message DeviceTokenGoogleCloudMessaging 定义 
+message DeviceTokenGoogleCloudMessaging {  
+	string token = 1;	//string
+}
+
+// message DeviceTokenApplePush 定义 
+message DeviceTokenApplePush {  
+	string deviceToken = 1;	//string 
+	bool isAppSandbox = 2;	//bool
+}
+
+// message DeviceTokenApplePushVoIP 定义 
+message DeviceTokenApplePushVoIP {  
+	string deviceToken = 1;	//string 
+	bool isAppSandbox = 2;	//bool
+}
+
+// message DeviceTokenWindowsPush 定义 
+message DeviceTokenWindowsPush {  
+	string accessToken = 1;	//string
+}
+
+// message DeviceTokenMicrosoftPush 定义 
+message DeviceTokenMicrosoftPush {  
+	string superGroupV1URI = 1;	//string
+}
+
+// message DeviceTokenMicrosoftPushVoIP 定义 
+message DeviceTokenMicrosoftPushVoIP {  
+	string superGroupV1URI = 1;	//string
+}
+
+// message DeviceTokenWebPush 定义 
+message DeviceTokenWebPush {  
+	string endpoint = 1;	//string 
+	string p256dhBase64url = 2;	//string 
+	string authBase64url = 3;	//string
+}
+
+// message DeviceTokenSimplePush 定义 
+message DeviceTokenSimplePush {  
+	string endpoint = 1;	//string
+}
+
+// message DeviceTokenUbuntuPush 定义 
+message DeviceTokenUbuntuPush {  
+	string token = 1;	//string
+}
+
+// message DeviceTokenBlackBerryPush 定义 
+message DeviceTokenBlackBerryPush {  
+	string token = 1;	//string
+}
+
+// message DeviceTokenTizenPush 定义 
+message DeviceTokenTizenPush {  
+	string regID = 1;	//string
+}
+
+// message Document 定义 
+message Document {  
+	string fileName = 1;	//string 
+	string mimeType = 2;	//string 
+	PhotoSize thumbnail = 3;	//PhotoSize 
+	File document = 4;	//File
+}
+
+// message DraftInfo 定义 
+message DraftInfo {  
+	int64 replyToInfoID = 1;	//int64 
+	InputInfoContentAbsClass inputInfoText = 2;	//InputInfoContentAbsClass
+}
+
+// message EmailAddressAuthenticationCodeInfo 定义 
+message EmailAddressAuthenticationCodeInfo {  
+	string emailAddressPattern = 1;	//string 
+	int32 length = 2;	//int32
+}
+
+// message EncryptedCredentials 定义 
+message EncryptedCredentials {  
+	bytes data = 1;	//core.Bytes 
+	bytes hash = 2;	//core.Bytes 
+	bytes secret = 3;	//core.Bytes
+}
+
+// message EncryptedPassportElement 定义 
+message EncryptedPassportElement {  
+	PassportElementTypeAbsClass typ = 1;	//PassportElementTypeAbsClass 
+	bytes data = 2;	//core.Bytes 
+	DatedFile frontSide = 3;	//DatedFile 
+	DatedFile reverseSide = 4;	//DatedFile 
+	DatedFile selfie = 5;	//DatedFile 
+	repeated DatedFile translation = 6;	//[]DatedFile 
+	repeated DatedFile files = 7;	//[]DatedFile 
+	string value = 8;	//string 
+	string hash = 9;	//string
+}
+
+// message Error 定义 
+message Error {  
+	int32 code = 1;	//int32 
+	string message = 2;	//string
+}
+
+// message File 定义 
+message File {  
+	int32 iD = 1;	//int32 
+	int32 size = 2;	//int32 
+	int32 expectedSize = 3;	//int32 
+	LocalFile local = 4;	//LocalFile 
+	RemoteFile remote = 5;	//RemoteFile
+}
+
+// message FileTypeNone 定义 
+message FileTypeNone { 
+}
+
+// message FileTypeAnimation 定义 
+message FileTypeAnimation { 
+}
+
+// message FileTypeAudio 定义 
+message FileTypeAudio { 
+}
+
+// message FileTypeDocument 定义 
+message FileTypeDocument { 
+}
+
+// message FileTypePhoto 定义 
+message FileTypePhoto { 
+}
+
+// message FileTypeProfilePhoto 定义 
+message FileTypeProfilePhoto { 
+}
+
+// message FileTypeSecret 定义 
+message FileTypeSecret { 
+}
+
+// message FileTypeSecretThumbnail 定义 
+message FileTypeSecretThumbnail { 
+}
+
+// message FileTypeSecure 定义 
+message FileTypeSecure { 
+}
+
+// message FileTypeSticker 定义 
+message FileTypeSticker { 
+}
+
+// message FileTypeThumbnail 定义 
+message FileTypeThumbnail { 
+}
+
+// message FileTypeUnknown 定义 
+message FileTypeUnknown { 
+}
+
+// message FileTypeVideo 定义 
+message FileTypeVideo { 
+}
+
+// message FileTypeVideoNote 定义 
+message FileTypeVideoNote { 
+}
+
+// message FileTypeVoiceNote 定义 
+message FileTypeVoiceNote { 
+}
+
+// message FileTypeWallpaper 定义 
+message FileTypeWallpaper { 
+}
+
+// message FormattedText 定义 
+message FormattedText {  
+	string text = 1;	//string 
+	repeated TextEntity entities = 2;	//[]TextEntity
+}
+
+// message FoundInfos 定义 
+message FoundInfos {  
+	repeated Info messages = 1;	//[]Info 
+	int64 nextFromSearchID = 2;	//int64
+}
+
+// message Game 定义 
+message Game {  
+	int64 iD = 1;	//int64 
+	string shortName = 2;	//string 
+	string title = 3;	//string 
+	FormattedText text = 4;	//FormattedText 
+	string description = 5;	//string 
+	Photo photo = 6;	//Photo 
+	Animation animation = 7;	//Animation
+}
+
+// message GameHighScore 定义 
+message GameHighScore {  
+	int32 position = 1;	//int32 
+	int32 userID = 2;	//int32 
+	int32 score = 3;	//int32
+}
+
+// message GameHighScores 定义 
+message GameHighScores {  
+	repeated GameHighScore scores = 1;	//[]GameHighScore
+}
+
+// message Hashtags 定义 
+message Hashtags {  
+	repeated string hashtags = 1;	//[]string
+}
+
+// message IdentityDocument 定义 
+message IdentityDocument {  
+	string number = 1;	//string 
+	Date expiryDate = 2;	//Date 
+	DatedFile frontSide = 3;	//DatedFile 
+	DatedFile reverseSide = 4;	//DatedFile 
+	DatedFile selfie = 5;	//DatedFile 
+	repeated DatedFile translation = 6;	//[]DatedFile
+}
+
+// message ImportedContacts 定义 
+message ImportedContacts {  
+	repeated int32 userIds = 1;	//[]int32 
+	repeated int32 importerCount = 2;	//[]int32
+}
+
+// message InlineKeyboardButton 定义 
+message InlineKeyboardButton {  
+	string text = 1;	//string 
+	InlineKeyboardButtonTypeAbsClass typ = 2;	//InlineKeyboardButtonTypeAbsClass
+}
+
+// message InlineKeyboardButtonTypeURL 定义 
+message InlineKeyboardButtonTypeURL {  
+	string uRL = 1;	//string
+}
+
+// message InlineKeyboardButtonTypeCallback 定义 
+message InlineKeyboardButtonTypeCallback {  
+	bytes data = 1;	//core.Bytes
+}
+
+// message InlineKeyboardButtonTypeCallbackGame 定义 
+message InlineKeyboardButtonTypeCallbackGame { 
+}
+
+// message InlineKeyboardButtonTypeSwitchInline 定义 
+message InlineKeyboardButtonTypeSwitchInline {  
+	string query = 1;	//string 
+	bool inCurrentChat = 2;	//bool
+}
+
+// message InlineKeyboardButtonTypeBuy 定义 
+message InlineKeyboardButtonTypeBuy { 
+}
+
+// message InlineQueryResultArticle 定义 
+message InlineQueryResultArticle {  
+	string iD = 1;	//string 
+	string uRL = 2;	//string 
+	bool hideURL = 3;	//bool 
+	string title = 4;	//string 
+	string description = 5;	//string 
+	PhotoSize thumbnail = 6;	//PhotoSize
+}
+
+// message InlineQueryResultContact 定义 
+message InlineQueryResultContact {  
+	string iD = 1;	//string 
+	Contact contact = 2;	//Contact 
+	PhotoSize thumbnail = 3;	//PhotoSize
+}
+
+// message InlineQueryResultLocation 定义 
+message InlineQueryResultLocation {  
+	string iD = 1;	//string 
+	Location location = 2;	//Location 
+	string title = 3;	//string 
+	PhotoSize thumbnail = 4;	//PhotoSize
+}
+
+// message InlineQueryResultVenue 定义 
+message InlineQueryResultVenue {  
+	string iD = 1;	//string 
+	Venue venue = 2;	//Venue 
+	PhotoSize thumbnail = 3;	//PhotoSize
+}
+
+// message InlineQueryResultGame 定义 
+message InlineQueryResultGame {  
+	string iD = 1;	//string 
+	Game game = 2;	//Game
+}
+
+// message InlineQueryResultAnimation 定义 
+message InlineQueryResultAnimation {  
+	string iD = 1;	//string 
+	Animation animation = 2;	//Animation 
+	string title = 3;	//string
+}
+
+// message InlineQueryResultAudio 定义 
+message InlineQueryResultAudio {  
+	string iD = 1;	//string 
+	Audio audio = 2;	//Audio
+}
+
+// message InlineQueryResultDocument 定义 
+message InlineQueryResultDocument {  
+	string iD = 1;	//string 
+	Document document = 2;	//Document 
+	string title = 3;	//string 
+	string description = 4;	//string
+}
+
+// message InlineQueryResultPhoto 定义 
+message InlineQueryResultPhoto {  
+	string iD = 1;	//string 
+	Photo photo = 2;	//Photo 
+	string title = 3;	//string 
+	string description = 4;	//string
+}
+
+// message InlineQueryResultSticker 定义 
+message InlineQueryResultSticker {  
+	string iD = 1;	//string 
+	Sticker sticker = 2;	//Sticker
+}
+
+// message InlineQueryResultVideo 定义 
+message InlineQueryResultVideo {  
+	string iD = 1;	//string 
+	Video video = 2;	//Video 
+	string title = 3;	//string 
+	string description = 4;	//string
+}
+
+// message InlineQueryResultVoiceNote 定义 
+message InlineQueryResultVoiceNote {  
+	string iD = 1;	//string 
+	VoiceNote voiceNote = 2;	//VoiceNote 
+	string title = 3;	//string
+}
+
+// message InlineQueryResults 定义 
+message InlineQueryResults {  
+	int64 inlineQueryID = 1;	//int64 
+	string nextOffset = 2;	//string 
+	repeated InlineQueryResultAbsClass results = 3;	//[]InlineQueryResultAbsClass 
+	string switchPmText = 4;	//string 
+	string switchPmParameter = 5;	//string
+}
+
+// message InputCredentialsSaved 定义 
+message InputCredentialsSaved {  
+	string savedCredentialsID = 1;	//string
+}
+
+// message InputCredentialsNew 定义 
+message InputCredentialsNew {  
+	string data = 1;	//string 
+	bool allowSave = 2;	//bool
+}
+
+// message InputCredentialsAndroidPay 定义 
+message InputCredentialsAndroidPay {  
+	string data = 1;	//string
+}
+
+// message InputCredentialsApplePay 定义 
+message InputCredentialsApplePay {  
+	string data = 1;	//string
+}
+
+// message InputFileID 定义 
+message InputFileID {  
+	int32 iD = 1;	//int32
+}
+
+// message InputFileRemote 定义 
+message InputFileRemote {  
+	string iD = 1;	//string
+}
+
+// message InputFileLocal 定义 
+message InputFileLocal {  
+	string path = 1;	//string
+}
+
+// message InputFileGenerated 定义 
+message InputFileGenerated {  
+	string originalPath = 1;	//string 
+	string conversion = 2;	//string 
+	int32 expectedSize = 3;	//int32
+}
+
+// message InputIdentityDocument 定义 
+message InputIdentityDocument {  
+	string number = 1;	//string 
+	Date expiryDate = 2;	//Date 
+	InputFileAbsClass frontSide = 3;	//InputFileAbsClass 
+	InputFileAbsClass reverseSide = 4;	//InputFileAbsClass 
+	InputFileAbsClass selfie = 5;	//InputFileAbsClass 
+	repeated InputFileAbsClass translation = 6;	//[]InputFileAbsClass
+}
+
+// message InputInlineQueryResultAnimatedGif 定义 
+message InputInlineQueryResultAnimatedGif {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	string thumbnailURL = 3;	//string 
+	string gifURL = 4;	//string 
+	int32 gifDuration = 5;	//int32 
+	int32 gifWidth = 6;	//int32 
+	int32 gifHeight = 7;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 8;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 9;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultAnimatedMpeg4 定义 
+message InputInlineQueryResultAnimatedMpeg4 {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	string thumbnailURL = 3;	//string 
+	string mpeg4Url = 4;	//string 
+	int32 mpeg4Duration = 5;	//int32 
+	int32 mpeg4Width = 6;	//int32 
+	int32 mpeg4Height = 7;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 8;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 9;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultArticle 定义 
+message InputInlineQueryResultArticle {  
+	string iD = 1;	//string 
+	string uRL = 2;	//string 
+	bool hideURL = 3;	//bool 
+	string title = 4;	//string 
+	string description = 5;	//string 
+	string thumbnailURL = 6;	//string 
+	int32 thumbnailWidth = 7;	//int32 
+	int32 thumbnailHeight = 8;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 9;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 10;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultAudio 定义 
+message InputInlineQueryResultAudio {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	string performer = 3;	//string 
+	string audioURL = 4;	//string 
+	int32 audioDuration = 5;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 6;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 7;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultContact 定义 
+message InputInlineQueryResultContact {  
+	string iD = 1;	//string 
+	Contact contact = 2;	//Contact 
+	string thumbnailURL = 3;	//string 
+	int32 thumbnailWidth = 4;	//int32 
+	int32 thumbnailHeight = 5;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 6;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 7;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultDocument 定义 
+message InputInlineQueryResultDocument {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	string description = 3;	//string 
+	string documentURL = 4;	//string 
+	string mimeType = 5;	//string 
+	string thumbnailURL = 6;	//string 
+	int32 thumbnailWidth = 7;	//int32 
+	int32 thumbnailHeight = 8;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 9;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 10;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultGame 定义 
+message InputInlineQueryResultGame {  
+	string iD = 1;	//string 
+	string gameShortName = 2;	//string 
+	ReplyMarkupAbsClass replyMarkup = 3;	//ReplyMarkupAbsClass
+}
+
+// message InputInlineQueryResultLocation 定义 
+message InputInlineQueryResultLocation {  
+	string iD = 1;	//string 
+	Location location = 2;	//Location 
+	int32 livePeriod = 3;	//int32 
+	string title = 4;	//string 
+	string thumbnailURL = 5;	//string 
+	int32 thumbnailWidth = 6;	//int32 
+	int32 thumbnailHeight = 7;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 8;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 9;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultPhoto 定义 
+message InputInlineQueryResultPhoto {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	string description = 3;	//string 
+	string thumbnailURL = 4;	//string 
+	string photoURL = 5;	//string 
+	int32 photoWidth = 6;	//int32 
+	int32 photoHeight = 7;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 8;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 9;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultSticker 定义 
+message InputInlineQueryResultSticker {  
+	string iD = 1;	//string 
+	string thumbnailURL = 2;	//string 
+	string stickerURL = 3;	//string 
+	int32 stickerWidth = 4;	//int32 
+	int32 stickerHeight = 5;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 6;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 7;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultVenue 定义 
+message InputInlineQueryResultVenue {  
+	string iD = 1;	//string 
+	Venue venue = 2;	//Venue 
+	string thumbnailURL = 3;	//string 
+	int32 thumbnailWidth = 4;	//int32 
+	int32 thumbnailHeight = 5;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 6;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 7;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultVideo 定义 
+message InputInlineQueryResultVideo {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	string description = 3;	//string 
+	string thumbnailURL = 4;	//string 
+	string videoURL = 5;	//string 
+	string mimeType = 6;	//string 
+	int32 videoWidth = 7;	//int32 
+	int32 videoHeight = 8;	//int32 
+	int32 videoDuration = 9;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 10;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 11;	//InputInfoContentAbsClass
+}
+
+// message InputInlineQueryResultVoiceNote 定义 
+message InputInlineQueryResultVoiceNote {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	string voiceNoteURL = 3;	//string 
+	int32 voiceNoteDuration = 4;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 5;	//ReplyMarkupAbsClass 
+	InputInfoContentAbsClass inputInfoContent = 6;	//InputInfoContentAbsClass
+}
+
+// message InputInfoText 定义 
+message InputInfoText {  
+	FormattedText text = 1;	//FormattedText 
+	bool disableWebPagePreview = 2;	//bool 
+	bool clearDraft = 3;	//bool
+}
+
+// message InputInfoAnimation 定义 
+message InputInfoAnimation {  
+	InputFileAbsClass animation = 1;	//InputFileAbsClass 
+	InputThumbnail thumbnail = 2;	//InputThumbnail 
+	int32 duration = 3;	//int32 
+	int32 width = 4;	//int32 
+	int32 height = 5;	//int32 
+	FormattedText caption = 6;	//FormattedText
+}
+
+// message InputInfoAudio 定义 
+message InputInfoAudio {  
+	InputFileAbsClass audio = 1;	//InputFileAbsClass 
+	InputThumbnail albumCoverThumbnail = 2;	//InputThumbnail 
+	int32 duration = 3;	//int32 
+	string title = 4;	//string 
+	string performer = 5;	//string 
+	FormattedText caption = 6;	//FormattedText
+}
+
+// message InputInfoDocument 定义 
+message InputInfoDocument {  
+	InputFileAbsClass document = 1;	//InputFileAbsClass 
+	InputThumbnail thumbnail = 2;	//InputThumbnail 
+	FormattedText caption = 3;	//FormattedText
+}
+
+// message InputInfoPhoto 定义 
+message InputInfoPhoto {  
+	InputFileAbsClass photo = 1;	//InputFileAbsClass 
+	InputThumbnail thumbnail = 2;	//InputThumbnail 
+	repeated int32 addedStickerFileIds = 3;	//[]int32 
+	int32 width = 4;	//int32 
+	int32 height = 5;	//int32 
+	FormattedText caption = 6;	//FormattedText 
+	int32 tTL = 7;	//int32
+}
+
+// message InputInfoSticker 定义 
+message InputInfoSticker {  
+	InputFileAbsClass sticker = 1;	//InputFileAbsClass 
+	InputThumbnail thumbnail = 2;	//InputThumbnail 
+	int32 width = 3;	//int32 
+	int32 height = 4;	//int32
+}
+
+// message InputInfoVideo 定义 
+message InputInfoVideo {  
+	InputFileAbsClass video = 1;	//InputFileAbsClass 
+	InputThumbnail thumbnail = 2;	//InputThumbnail 
+	repeated int32 addedStickerFileIds = 3;	//[]int32 
+	int32 duration = 4;	//int32 
+	int32 width = 5;	//int32 
+	int32 height = 6;	//int32 
+	bool supportsStreaming = 7;	//bool 
+	FormattedText caption = 8;	//FormattedText 
+	int32 tTL = 9;	//int32
+}
+
+// message InputInfoVideoNote 定义 
+message InputInfoVideoNote {  
+	InputFileAbsClass videoNote = 1;	//InputFileAbsClass 
+	InputThumbnail thumbnail = 2;	//InputThumbnail 
+	int32 duration = 3;	//int32 
+	int32 length = 4;	//int32
+}
+
+// message InputInfoVoiceNote 定义 
+message InputInfoVoiceNote {  
+	InputFileAbsClass voiceNote = 1;	//InputFileAbsClass 
+	int32 duration = 2;	//int32 
+	bytes waveform = 3;	//core.Bytes 
+	FormattedText caption = 4;	//FormattedText
+}
+
+// message InputInfoLocation 定义 
+message InputInfoLocation {  
+	Location location = 1;	//Location 
+	int32 livePeriod = 2;	//int32
+}
+
+// message InputInfoVenue 定义 
+message InputInfoVenue {  
+	Venue venue = 1;	//Venue
+}
+
+// message InputInfoContact 定义 
+message InputInfoContact {  
+	Contact contact = 1;	//Contact
+}
+
+// message InputInfoGame 定义 
+message InputInfoGame {  
+	int32 botUserID = 1;	//int32 
+	string gameShortName = 2;	//string
+}
+
+// message InputInfoInvoice 定义 
+message InputInfoInvoice {  
+	Invoice invoice = 1;	//Invoice 
+	string title = 2;	//string 
+	string description = 3;	//string 
+	string photoURL = 4;	//string 
+	int32 photoSize = 5;	//int32 
+	int32 photoWidth = 6;	//int32 
+	int32 photoHeight = 7;	//int32 
+	bytes payload = 8;	//core.Bytes 
+	string providerToken = 9;	//string 
+	string providerData = 10;	//string 
+	string startParameter = 11;	//string
+}
+
+// message InputInfoForwarded 定义 
+message InputInfoForwarded {  
+	int64 fromChatID = 1;	//int64 
+	int64 messageID = 2;	//int64 
+	bool inGameShare = 3;	//bool
+}
+
+// message InputPassportElementPersonalDetails 定义 
+message InputPassportElementPersonalDetails {  
+	PersonalDetails personalDetails = 1;	//PersonalDetails
+}
+
+// message InputPassportElementPassport 定义 
+message InputPassportElementPassport {  
+	InputIdentityDocument passport = 1;	//InputIdentityDocument
+}
+
+// message InputPassportElementDriverLicense 定义 
+message InputPassportElementDriverLicense {  
+	InputIdentityDocument driverLicense = 1;	//InputIdentityDocument
+}
+
+// message InputPassportElementIdentityCard 定义 
+message InputPassportElementIdentityCard {  
+	InputIdentityDocument identityCard = 1;	//InputIdentityDocument
+}
+
+// message InputPassportElementInternalPassport 定义 
+message InputPassportElementInternalPassport {  
+	InputIdentityDocument internalPassport = 1;	//InputIdentityDocument
+}
+
+// message InputPassportElementAddress 定义 
+message InputPassportElementAddress {  
+	Address address = 1;	//Address
+}
+
+// message InputPassportElementUtilityBill 定义 
+message InputPassportElementUtilityBill {  
+	InputPersonalDocument utilityBill = 1;	//InputPersonalDocument
+}
+
+// message InputPassportElementBankStatement 定义 
+message InputPassportElementBankStatement {  
+	InputPersonalDocument bankStatement = 1;	//InputPersonalDocument
+}
+
+// message InputPassportElementRentalAgreement 定义 
+message InputPassportElementRentalAgreement {  
+	InputPersonalDocument rentalAgreement = 1;	//InputPersonalDocument
+}
+
+// message InputPassportElementPassportRegistration 定义 
+message InputPassportElementPassportRegistration {  
+	InputPersonalDocument passportRegistration = 1;	//InputPersonalDocument
+}
+
+// message InputPassportElementTemporaryRegistration 定义 
+message InputPassportElementTemporaryRegistration {  
+	InputPersonalDocument temporaryRegistration = 1;	//InputPersonalDocument
+}
+
+// message InputPassportElementPhoneNumber 定义 
+message InputPassportElementPhoneNumber {  
+	string phoneNumber = 1;	//string
+}
+
+// message InputPassportElementEmailAddress 定义 
+message InputPassportElementEmailAddress {  
+	string emailAddress = 1;	//string
+}
+
+// message InputPassportElementError 定义 
+message InputPassportElementError {  
+	PassportElementTypeAbsClass typ = 1;	//PassportElementTypeAbsClass 
+	string message = 2;	//string 
+	InputPassportElementErrorSourceAbsClass source = 3;	//InputPassportElementErrorSourceAbsClass
+}
+
+// message InputPassportElementErrorSourceUnspecified 定义 
+message InputPassportElementErrorSourceUnspecified {  
+	bytes elementHash = 1;	//core.Bytes
+}
+
+// message InputPassportElementErrorSourceDataField 定义 
+message InputPassportElementErrorSourceDataField {  
+	string fieldName = 1;	//string 
+	bytes dataHash = 2;	//core.Bytes
+}
+
+// message InputPassportElementErrorSourceFrontSide 定义 
+message InputPassportElementErrorSourceFrontSide {  
+	bytes fileHash = 1;	//core.Bytes
+}
+
+// message InputPassportElementErrorSourceReverseSide 定义 
+message InputPassportElementErrorSourceReverseSide {  
+	bytes fileHash = 1;	//core.Bytes
+}
+
+// message InputPassportElementErrorSourceSelfie 定义 
+message InputPassportElementErrorSourceSelfie {  
+	bytes fileHash = 1;	//core.Bytes
+}
+
+// message InputPassportElementErrorSourceTranslationFile 定义 
+message InputPassportElementErrorSourceTranslationFile {  
+	bytes fileHash = 1;	//core.Bytes
+}
+
+// message InputPassportElementErrorSourceTranslationFiles 定义 
+message InputPassportElementErrorSourceTranslationFiles {  
+	repeated bytes fileHashes = 1;	//[]core.Bytes
+}
+
+// message InputPassportElementErrorSourceFile 定义 
+message InputPassportElementErrorSourceFile {  
+	bytes fileHash = 1;	//core.Bytes
+}
+
+// message InputPassportElementErrorSourceFiles 定义 
+message InputPassportElementErrorSourceFiles {  
+	repeated bytes fileHashes = 1;	//[]core.Bytes
+}
+
+// message InputPersonalDocument 定义 
+message InputPersonalDocument {  
+	repeated InputFileAbsClass files = 1;	//[]InputFileAbsClass 
+	repeated InputFileAbsClass translation = 2;	//[]InputFileAbsClass
+}
+
+// message InputSticker 定义 
+message InputSticker {  
+	InputFileAbsClass pngSticker = 1;	//InputFileAbsClass 
+	string emojis = 2;	//string 
+	MaskPosition maskPosition = 3;	//MaskPosition
+}
+
+// message InputThumbnail 定义 
+message InputThumbnail {  
+	InputFileAbsClass thumbnail = 1;	//InputFileAbsClass 
+	int32 width = 2;	//int32 
+	int32 height = 3;	//int32
+}
+
+// message Invoice 定义 
+message Invoice {  
+	string currency = 1;	//string 
+	repeated LabeledPricePart priceParts = 2;	//[]LabeledPricePart 
+	bool isTest = 3;	//bool 
+	bool needName = 4;	//bool 
+	bool needPhoneNumber = 5;	//bool 
+	bool needEmailAddress = 6;	//bool 
+	bool needShippingAddress = 7;	//bool 
+	bool sendPhoneNumberToProvider = 8;	//bool 
+	bool sendEmailAddressToProvider = 9;	//bool 
+	bool isFlexible = 10;	//bool
+}
+
+// message KeyboardButton 定义 
+message KeyboardButton {  
+	string text = 1;	//string 
+	KeyboardButtonTypeAbsClass typ = 2;	//KeyboardButtonTypeAbsClass
+}
+
+// message KeyboardButtonTypeText 定义 
+message KeyboardButtonTypeText { 
+}
+
+// message KeyboardButtonTypeReqPhoneNumber 定义 
+message KeyboardButtonTypeReqPhoneNumber { 
+}
+
+// message KeyboardButtonTypeReqLocation 定义 
+message KeyboardButtonTypeReqLocation { 
+}
+
+// message LabeledPricePart 定义 
+message LabeledPricePart {  
+	string label = 1;	//string 
+	int64 amount = 2;	//int64
+}
+
+// message LanguagePackInfo 定义 
+message LanguagePackInfo {  
+	string iD = 1;	//string 
+	string name = 2;	//string 
+	string nativeName = 3;	//string 
+	int32 localStringCount = 4;	//int32
+}
+
+// message LanguagePackString 定义 
+message LanguagePackString {  
+	string key = 1;	//string 
+	LanguagePackStringValueAbsClass value = 2;	//LanguagePackStringValueAbsClass
+}
+
+// message LanguagePackStringValueOrdinary 定义 
+message LanguagePackStringValueOrdinary {  
+	string value = 1;	//string
+}
+
+// message LanguagePackStringValuePluralized 定义 
+message LanguagePackStringValuePluralized {  
+	string zeroValue = 1;	//string 
+	string oneValue = 2;	//string 
+	string twoValue = 3;	//string 
+	string fewValue = 4;	//string 
+	string manyValue = 5;	//string 
+	string otherValue = 6;	//string
+}
+
+// message LanguagePackStringValueDeleted 定义 
+message LanguagePackStringValueDeleted { 
+}
+
+// message LanguagePackStrings 定义 
+message LanguagePackStrings {  
+	repeated LanguagePackString strings = 1;	//[]LanguagePackString
+}
+
+// message LinkStateNone 定义 
+message LinkStateNone { 
+}
+
+// message LinkStateKnowsPhoneNumber 定义 
+message LinkStateKnowsPhoneNumber { 
+}
+
+// message LinkStateIsContact 定义 
+message LinkStateIsContact { 
+}
+
+// message LocalFile 定义 
+message LocalFile {  
+	string path = 1;	//string 
+	bool canBeDownloaded = 2;	//bool 
+	bool canBeDeleted = 3;	//bool 
+	bool isDownloadingActive = 4;	//bool 
+	bool isDownloadingCompleted = 5;	//bool 
+	int32 downloadedPrefixSize = 6;	//int32 
+	int32 downloadedSize = 7;	//int32
+}
+
+// message LocalizationTargetInfo 定义 
+message LocalizationTargetInfo {  
+	repeated LanguagePackInfo languagePacks = 1;	//[]LanguagePackInfo
+}
+
+// message Location 定义 
+message Location {  
+	double latitude = 1;	//float64 
+	double longitude = 2;	//float64
+}
+
+// message MaskPointForehead 定义 
+message MaskPointForehead { 
+}
+
+// message MaskPointEyes 定义 
+message MaskPointEyes { 
+}
+
+// message MaskPointMouth 定义 
+message MaskPointMouth { 
+}
+
+// message MaskPointChin 定义 
+message MaskPointChin { 
+}
+
+// message MaskPosition 定义 
+message MaskPosition {  
+	MaskPointAbsClass point = 1;	//MaskPointAbsClass 
+	double xShift = 2;	//float64 
+	double yShift = 3;	//float64 
+	double scale = 4;	//float64
+}
+
+// message Info 定义 
+message Info {  
+	int64 iD = 1;	//int64 
+	int32 senderUserID = 2;	//int32 
+	int64 chatID = 3;	//int64 
+	InfoSendingStateAbsClass sendingState = 4;	//InfoSendingStateAbsClass 
+	bool isOutgoing = 5;	//bool 
+	bool canBeEdited = 6;	//bool 
+	bool canBeForwarded = 7;	//bool 
+	bool canBeDeletedOnlyForSelf = 8;	//bool 
+	bool canBeDeletedForAllUsers = 9;	//bool 
+	bool isSuperGroupV1Post = 10;	//bool 
+	bool containsUnreadMention = 11;	//bool 
+	int32 date = 12;	//int32 
+	int32 editDate = 13;	//int32 
+	InfoForwardInfoAbsClass forwardInfo = 14;	//InfoForwardInfoAbsClass 
+	int64 replyToInfoID = 15;	//int64 
+	int32 tTL = 16;	//int32 
+	double tTLExpiresIn = 17;	//float64 
+	int32 viaBotUserID = 18;	//int32 
+	string authorSignature = 19;	//string 
+	int32 views = 20;	//int32 
+	int64 mediaAlbumID = 21;	//int64 
+	InfoContentAbsClass content = 22;	//InfoContentAbsClass 
+	ReplyMarkupAbsClass replyMarkup = 23;	//ReplyMarkupAbsClass
+}
+
+// message InfoText 定义 
+message InfoText {  
+	FormattedText text = 1;	//FormattedText 
+	WebPage webPage = 2;	//WebPage
+}
+
+// message InfoAnimation 定义 
+message InfoAnimation {  
+	Animation animation = 1;	//Animation 
+	FormattedText caption = 2;	//FormattedText 
+	bool isSecret = 3;	//bool
+}
+
+// message InfoAudio 定义 
+message InfoAudio {  
+	Audio audio = 1;	//Audio 
+	FormattedText caption = 2;	//FormattedText
+}
+
+// message InfoDocument 定义 
+message InfoDocument {  
+	Document document = 1;	//Document 
+	FormattedText caption = 2;	//FormattedText
+}
+
+// message InfoPhoto 定义 
+message InfoPhoto {  
+	Photo photo = 1;	//Photo 
+	FormattedText caption = 2;	//FormattedText 
+	bool isSecret = 3;	//bool
+}
+
+// message InfoExpiredPhoto 定义 
+message InfoExpiredPhoto { 
+}
+
+// message InfoSticker 定义 
+message InfoSticker {  
+	Sticker sticker = 1;	//Sticker
+}
+
+// message InfoVideo 定义 
+message InfoVideo {  
+	Video video = 1;	//Video 
+	FormattedText caption = 2;	//FormattedText 
+	bool isSecret = 3;	//bool
+}
+
+// message InfoExpiredVideo 定义 
+message InfoExpiredVideo { 
+}
+
+// message InfoVideoNote 定义 
+message InfoVideoNote {  
+	VideoNote videoNote = 1;	//VideoNote 
+	bool isViewed = 2;	//bool 
+	bool isSecret = 3;	//bool
+}
+
+// message InfoVoiceNote 定义 
+message InfoVoiceNote {  
+	VoiceNote voiceNote = 1;	//VoiceNote 
+	FormattedText caption = 2;	//FormattedText 
+	bool isListened = 3;	//bool
+}
+
+// message InfoLocation 定义 
+message InfoLocation {  
+	Location location = 1;	//Location 
+	int32 livePeriod = 2;	//int32 
+	int32 expiresIn = 3;	//int32
+}
+
+// message InfoVenue 定义 
+message InfoVenue {  
+	Venue venue = 1;	//Venue
+}
+
+// message InfoContact 定义 
+message InfoContact {  
+	Contact contact = 1;	//Contact
+}
+
+// message InfoGame 定义 
+message InfoGame {  
+	Game game = 1;	//Game
+}
+
+// message InfoInvoice 定义 
+message InfoInvoice {  
+	string title = 1;	//string 
+	string description = 2;	//string 
+	Photo photo = 3;	//Photo 
+	string currency = 4;	//string 
+	int64 totalAmount = 5;	//int64 
+	string startParameter = 6;	//string 
+	bool isTest = 7;	//bool 
+	bool needShippingAddress = 8;	//bool 
+	int64 receiptInfoID = 9;	//int64
+}
+
+// message InfoCall 定义 
+message InfoCall {  
+	CallDiscardReasonAbsClass discardReason = 1;	//CallDiscardReasonAbsClass 
+	int32 duration = 2;	//int32
+}
+
+// message InfoBasicGroupChatCreate 定义 
+message InfoBasicGroupChatCreate {  
+	string title = 1;	//string 
+	repeated int32 memberUserIds = 2;	//[]int32
+}
+
+// message InfoSupergroupChatCreate 定义 
+message InfoSupergroupChatCreate {  
+	string title = 1;	//string
+}
+
+// message InfoChatChangeTitle 定义 
+message InfoChatChangeTitle {  
+	string title = 1;	//string
+}
+
+// message InfoChatChangePhoto 定义 
+message InfoChatChangePhoto {  
+	Photo photo = 1;	//Photo
+}
+
+// message InfoChatDeletePhoto 定义 
+message InfoChatDeletePhoto { 
+}
+
+// message InfoChatAddMembers 定义 
+message InfoChatAddMembers {  
+	repeated int32 memberUserIds = 1;	//[]int32
+}
+
+// message InfoChatJoinByLink 定义 
+message InfoChatJoinByLink { 
+}
+
+// message InfoChatDeleteMember 定义 
+message InfoChatDeleteMember {  
+	int32 userID = 1;	//int32
+}
+
+// message InfoChatUpgradeTo 定义 
+message InfoChatUpgradeTo {  
+	int32 supergroupID = 1;	//int32
+}
+
+// message InfoChatUpgradeFrom 定义 
+message InfoChatUpgradeFrom {  
+	string title = 1;	//string 
+	int32 basicGroupID = 2;	//int32
+}
+
+// message InfoPinInfo 定义 
+message InfoPinInfo {  
+	int64 messageID = 1;	//int64
+}
+
+// message InfoScreenshotTaken 定义 
+message InfoScreenshotTaken { 
+}
+
+// message InfoChatSetTTL 定义 
+message InfoChatSetTTL {  
+	int32 tTL = 1;	//int32
+}
+
+// message InfoCustomServiceDoit 定义 
+message InfoCustomServiceDoit {  
+	string text = 1;	//string
+}
+
+// message InfoGameScore 定义 
+message InfoGameScore {  
+	int64 gameInfoID = 1;	//int64 
+	int64 gameID = 2;	//int64 
+	int32 score = 3;	//int32
+}
+
+// message InfoPaymentSuccessful 定义 
+message InfoPaymentSuccessful {  
+	int64 invoiceInfoID = 1;	//int64 
+	string currency = 2;	//string 
+	int64 totalAmount = 3;	//int64
+}
+
+// message InfoPaymentSuccessfulBot 定义 
+message InfoPaymentSuccessfulBot {  
+	int64 invoiceInfoID = 1;	//int64 
+	string currency = 2;	//string 
+	int64 totalAmount = 3;	//int64 
+	bytes invoicePayload = 4;	//core.Bytes 
+	string shippingOptionID = 5;	//string 
+	OrderInfo orderInfo = 6;	//OrderInfo 
+	string uuchatPaymentChargeID = 7;	//string 
+	string providerPaymentChargeID = 8;	//string
+}
+
+// message InfoContactRegistered 定义 
+message InfoContactRegistered { 
+}
+
+// message InfoWebsiteConnected 定义 
+message InfoWebsiteConnected {  
+	string domainName = 1;	//string
+}
+
+// message InfoPassportDataSent 定义 
+message InfoPassportDataSent {  
+	repeated PassportElementTypeAbsClass types = 1;	//[]PassportElementTypeAbsClass
+}
+
+// message InfoPassportDataReceived 定义 
+message InfoPassportDataReceived {  
+	repeated EncryptedPassportElement elements = 1;	//[]EncryptedPassportElement 
+	EncryptedCredentials credentials = 2;	//EncryptedCredentials
+}
+
+// message InfoUnsupported 定义 
+message InfoUnsupported { 
+}
+
+// message InfoForwardedFromUser 定义 
+message InfoForwardedFromUser {  
+	int32 senderUserID = 1;	//int32 
+	int32 date = 2;	//int32 
+	int64 forwardedFromChatID = 3;	//int64 
+	int64 forwardedFromInfoID = 4;	//int64
+}
+
+// message InfoForwardedPost 定义 
+message InfoForwardedPost {  
+	int64 chatID = 1;	//int64 
+	string authorSignature = 2;	//string 
+	int32 date = 3;	//int32 
+	int64 messageID = 4;	//int64 
+	int64 forwardedFromChatID = 5;	//int64 
+	int64 forwardedFromInfoID = 6;	//int64
+}
+
+// message InfoSendingStatePending 定义 
+message InfoSendingStatePending { 
+}
+
+// message InfoSendingStateFailed 定义 
+message InfoSendingStateFailed { 
+}
+
+// message Infos 定义 
+message Infos {  
+	int32 totalCount = 1;	//int32 
+	repeated Info messages = 2;	//[]Info
+}
+
+// message NetworkStatistics 定义 
+message NetworkStatistics {  
+	int32 sinceDate = 1;	//int32 
+	repeated NetworkStatisticsEntryAbsClass entries = 2;	//[]NetworkStatisticsEntryAbsClass
+}
+
+// message NetworkStatisticsEntryFile 定义 
+message NetworkStatisticsEntryFile {  
+	FileTypeAbsClass fileType = 1;	//FileTypeAbsClass 
+	NetworkTypeAbsClass networkType = 2;	//NetworkTypeAbsClass 
+	int64 sentBytes = 3;	//int64 
+	int64 receivedBytes = 4;	//int64
+}
+
+// message NetworkStatisticsEntryCall 定义 
+message NetworkStatisticsEntryCall {  
+	NetworkTypeAbsClass networkType = 1;	//NetworkTypeAbsClass 
+	int64 sentBytes = 2;	//int64 
+	int64 receivedBytes = 3;	//int64 
+	double duration = 4;	//float64
+}
+
+// message NetworkTypeNone 定义 
+message NetworkTypeNone { 
+}
+
+// message NetworkTypeMobile 定义 
+message NetworkTypeMobile { 
+}
+
+// message NetworkTypeMobileRoaming 定义 
+message NetworkTypeMobileRoaming { 
+}
+
+// message NetworkTypeWiFi 定义 
+message NetworkTypeWiFi { 
+}
+
+// message NetworkTypeOther 定义 
+message NetworkTypeOther { 
+}
+
+// message NotificationSettingsScopePrivateChats 定义 
+message NotificationSettingsScopePrivateChats { 
+}
+
+// message NotificationSettingsScopeGroupChats 定义 
+message NotificationSettingsScopeGroupChats { 
+}
+
+// message Ok 定义 
+message Ok { 
+}
+
+// message OptionValueBoolean 定义 
+message OptionValueBoolean {  
+	bool value = 1;	//bool
+}
+
+// message OptionValueEmpty 定义 
+message OptionValueEmpty { 
+}
+
+// message OptionValueInteger 定义 
+message OptionValueInteger {  
+	int32 value = 1;	//int32
+}
+
+// message OptionValueString 定义 
+message OptionValueString {  
+	string value = 1;	//string
+}
+
+// message OrderInfo 定义 
+message OrderInfo {  
+	string name = 1;	//string 
+	string phoneNumber = 2;	//string 
+	string emailAddress = 3;	//string 
+	Address shippingAddress = 4;	//Address
+}
+
+// message PageBlockTitle 定义 
+message PageBlockTitle {  
+	RichTextAbsClass title = 1;	//RichTextAbsClass
+}
+
+// message PageBlockSubtitle 定义 
+message PageBlockSubtitle {  
+	RichTextAbsClass subtitle = 1;	//RichTextAbsClass
+}
+
+// message PageBlockAuthorDate 定义 
+message PageBlockAuthorDate {  
+	RichTextAbsClass author = 1;	//RichTextAbsClass 
+	int32 publishDate = 2;	//int32
+}
+
+// message PageBlockHeader 定义 
+message PageBlockHeader {  
+	RichTextAbsClass header = 1;	//RichTextAbsClass
+}
+
+// message PageBlockSubheader 定义 
+message PageBlockSubheader {  
+	RichTextAbsClass subheader = 1;	//RichTextAbsClass
+}
+
+// message PageBlockFooter 定义 
+message PageBlockFooter {  
+	RichTextAbsClass footer = 1;	//RichTextAbsClass
+}
+
+// message PageBlockList 定义 
+message PageBlockList {  
+	repeated RichTextAbsClass items = 1;	//[]RichTextAbsClass 
+	bool isOrdered = 2;	//bool
+}
+
+// message PageBlockBlockQuote 定义 
+message PageBlockBlockQuote {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass
+}
+
+// message PageBlockPullQuote 定义 
+message PageBlockPullQuote {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass
+}
+
+// message PageBlockAnimation 定义 
+message PageBlockAnimation {  
+	Animation animation = 1;	//Animation 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass 
+	bool needAutoplay = 3;	//bool
+}
+
+// message PageBlockAudio 定义 
+message PageBlockAudio {  
+	Audio audio = 1;	//Audio 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass
+}
+
+// message PageBlockPhoto 定义 
+message PageBlockPhoto {  
+	Photo photo = 1;	//Photo 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass
+}
+
+// message PageBlockVideo 定义 
+message PageBlockVideo {  
+	Video video = 1;	//Video 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass 
+	bool needAutoplay = 3;	//bool 
+	bool isLooped = 4;	//bool
+}
+
+// message PageBlockEmbedded 定义 
+message PageBlockEmbedded {  
+	string uRL = 1;	//string 
+	string hTML = 2;	//string 
+	Photo posterPhoto = 3;	//Photo 
+	int32 width = 4;	//int32 
+	int32 height = 5;	//int32 
+	RichTextAbsClass caption = 6;	//RichTextAbsClass 
+	bool isFullWidth = 7;	//bool 
+	bool allowScrolling = 8;	//bool
+}
+
+// message PageBlockEmbeddedPost 定义 
+message PageBlockEmbeddedPost {  
+	string uRL = 1;	//string 
+	string author = 2;	//string 
+	Photo authorPhoto = 3;	//Photo 
+	int32 date = 4;	//int32 
+	repeated PageBlockAbsClass pageBlocks = 5;	//[]PageBlockAbsClass 
+	RichTextAbsClass caption = 6;	//RichTextAbsClass
+}
+
+// message PageBlockCollage 定义 
+message PageBlockCollage {  
+	repeated PageBlockAbsClass pageBlocks = 1;	//[]PageBlockAbsClass 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass
+}
+
+// message PageBlockSlideshow 定义 
+message PageBlockSlideshow {  
+	repeated PageBlockAbsClass pageBlocks = 1;	//[]PageBlockAbsClass 
+	RichTextAbsClass caption = 2;	//RichTextAbsClass
+}
+
+// message PageBlockChatLink 定义 
+message PageBlockChatLink {  
+	string title = 1;	//string 
+	ChatPhoto photo = 2;	//ChatPhoto 
+	string username = 3;	//string
+}
+
+// message PassportAuthForm 定义 
+message PassportAuthForm {  
+	int32 iD = 1;	//int32 
+	repeated PassportRequiredElement requiredElements = 2;	//[]PassportRequiredElement 
+	repeated PassportElementAbsClass elements = 3;	//[]PassportElementAbsClass 
+	repeated PassportElementError errors = 4;	//[]PassportElementError 
+	string privacyPolicyURL = 5;	//string
+}
+
+// message PassportElementPersonalDetails 定义 
+message PassportElementPersonalDetails {  
+	PersonalDetails personalDetails = 1;	//PersonalDetails
+}
+
+// message PassportElementPassport 定义 
+message PassportElementPassport {  
+	IdentityDocument passport = 1;	//IdentityDocument
+}
+
+// message PassportElementDriverLicense 定义 
+message PassportElementDriverLicense {  
+	IdentityDocument driverLicense = 1;	//IdentityDocument
+}
+
+// message PassportElementIdentityCard 定义 
+message PassportElementIdentityCard {  
+	IdentityDocument identityCard = 1;	//IdentityDocument
+}
+
+// message PassportElementInternalPassport 定义 
+message PassportElementInternalPassport {  
+	IdentityDocument internalPassport = 1;	//IdentityDocument
+}
+
+// message PassportElementAddress 定义 
+message PassportElementAddress {  
+	Address address = 1;	//Address
+}
+
+// message PassportElementUtilityBill 定义 
+message PassportElementUtilityBill {  
+	PersonalDocument utilityBill = 1;	//PersonalDocument
+}
+
+// message PassportElementBankStatement 定义 
+message PassportElementBankStatement {  
+	PersonalDocument bankStatement = 1;	//PersonalDocument
+}
+
+// message PassportElementRentalAgreement 定义 
+message PassportElementRentalAgreement {  
+	PersonalDocument rentalAgreement = 1;	//PersonalDocument
+}
+
+// message PassportElementPassportRegistration 定义 
+message PassportElementPassportRegistration {  
+	PersonalDocument passportRegistration = 1;	//PersonalDocument
+}
+
+// message PassportElementTemporaryRegistration 定义 
+message PassportElementTemporaryRegistration {  
+	PersonalDocument temporaryRegistration = 1;	//PersonalDocument
+}
+
+// message PassportElementPhoneNumber 定义 
+message PassportElementPhoneNumber {  
+	string phoneNumber = 1;	//string
+}
+
+// message PassportElementEmailAddress 定义 
+message PassportElementEmailAddress {  
+	string emailAddress = 1;	//string
+}
+
+// message PassportElementError 定义 
+message PassportElementError {  
+	PassportElementTypeAbsClass typ = 1;	//PassportElementTypeAbsClass 
+	string message = 2;	//string 
+	PassportElementErrorSourceAbsClass source = 3;	//PassportElementErrorSourceAbsClass
+}
+
+// message PassportElementErrorSourceUnspecified 定义 
+message PassportElementErrorSourceUnspecified { 
+}
+
+// message PassportElementErrorSourceDataField 定义 
+message PassportElementErrorSourceDataField {  
+	string fieldName = 1;	//string
+}
+
+// message PassportElementErrorSourceFrontSide 定义 
+message PassportElementErrorSourceFrontSide { 
+}
+
+// message PassportElementErrorSourceReverseSide 定义 
+message PassportElementErrorSourceReverseSide { 
+}
+
+// message PassportElementErrorSourceSelfie 定义 
+message PassportElementErrorSourceSelfie { 
+}
+
+// message PassportElementErrorSourceTranslationFile 定义 
+message PassportElementErrorSourceTranslationFile { 
+}
+
+// message PassportElementErrorSourceTranslationFiles 定义 
+message PassportElementErrorSourceTranslationFiles { 
+}
+
+// message PassportElementErrorSourceFile 定义 
+message PassportElementErrorSourceFile { 
+}
+
+// message PassportElementErrorSourceFiles 定义 
+message PassportElementErrorSourceFiles { 
+}
+
+// message PassportElementTypePersonalDetails 定义 
+message PassportElementTypePersonalDetails { 
+}
+
+// message PassportElementTypePassport 定义 
+message PassportElementTypePassport { 
+}
+
+// message PassportElementTypeDriverLicense 定义 
+message PassportElementTypeDriverLicense { 
+}
+
+// message PassportElementTypeIdentityCard 定义 
+message PassportElementTypeIdentityCard { 
+}
+
+// message PassportElementTypeInternalPassport 定义 
+message PassportElementTypeInternalPassport { 
+}
+
+// message PassportElementTypeAddress 定义 
+message PassportElementTypeAddress { 
+}
+
+// message PassportElementTypeUtilityBill 定义 
+message PassportElementTypeUtilityBill { 
+}
+
+// message PassportElementTypeBankStatement 定义 
+message PassportElementTypeBankStatement { 
+}
+
+// message PassportElementTypeRentalAgreement 定义 
+message PassportElementTypeRentalAgreement { 
+}
+
+// message PassportElementTypePassportRegistration 定义 
+message PassportElementTypePassportRegistration { 
+}
+
+// message PassportElementTypeTemporaryRegistration 定义 
+message PassportElementTypeTemporaryRegistration { 
+}
+
+// message PassportElementTypePhoneNumber 定义 
+message PassportElementTypePhoneNumber { 
+}
+
+// message PassportElementTypeEmailAddress 定义 
+message PassportElementTypeEmailAddress { 
+}
+
+// message PassportElements 定义 
+message PassportElements {  
+	repeated PassportElementAbsClass elements = 1;	//[]PassportElementAbsClass
+}
+
+// message PassportRequiredElement 定义 
+message PassportRequiredElement {  
+	repeated PassportSuitableElement suitableElements = 1;	//[]PassportSuitableElement
+}
+
+// message PassportSuitableElement 定义 
+message PassportSuitableElement {  
+	PassportElementTypeAbsClass typ = 1;	//PassportElementTypeAbsClass 
+	bool isSelfieRequired = 2;	//bool 
+	bool isTranslationRequired = 3;	//bool 
+	bool isNativeNameRequired = 4;	//bool
+}
+
+// message PasswordState 定义 
+message PasswordState {  
+	bool hasPassword = 1;	//bool 
+	string passwordHint = 2;	//string 
+	bool hasRecoveryEmailAddress = 3;	//bool 
+	bool hasPassportData = 4;	//bool 
+	string unconfirmedRecoveryEmailAddressPattern = 5;	//string
+}
+
+// message PaymentForm 定义 
+message PaymentForm {  
+	Invoice invoice = 1;	//Invoice 
+	string uRL = 2;	//string 
+	PaymentsProviderStripe paymentsProvider = 3;	//PaymentsProviderStripe 
+	OrderInfo savedOrderInfo = 4;	//OrderInfo 
+	SavedCredentials savedCredentials = 5;	//SavedCredentials 
+	bool canSaveCredentials = 6;	//bool 
+	bool needPassword = 7;	//bool
+}
+
+// message PaymentReceipt 定义 
+message PaymentReceipt {  
+	int32 date = 1;	//int32 
+	int32 paymentsProviderUserID = 2;	//int32 
+	Invoice invoice = 3;	//Invoice 
+	OrderInfo orderInfo = 4;	//OrderInfo 
+	ShippingOption shippingOption = 5;	//ShippingOption 
+	string credentialsTitle = 6;	//string
+}
+
+// message PaymentResult 定义 
+message PaymentResult {  
+	bool success = 1;	//bool 
+	string verificationURL = 2;	//string
+}
+
+// message PaymentsProviderStripe 定义 
+message PaymentsProviderStripe {  
+	string publishableKey = 1;	//string 
+	bool needCountry = 2;	//bool 
+	bool needPostalCode = 3;	//bool 
+	bool needCardholderName = 4;	//bool
+}
+
+// message PersonalDetails 定义 
+message PersonalDetails {  
+	string firstName = 1;	//string 
+	string middleName = 2;	//string 
+	string lastName = 3;	//string 
+	string nativeFirstName = 4;	//string 
+	string nativeMiddleName = 5;	//string 
+	string nativeLastName = 6;	//string 
+	Date birthdate = 7;	//Date 
+	string gender = 8;	//string 
+	string countryCode = 9;	//string 
+	string residenceCountryCode = 10;	//string
+}
+
+// message PersonalDocument 定义 
+message PersonalDocument {  
+	repeated DatedFile files = 1;	//[]DatedFile 
+	repeated DatedFile translation = 2;	//[]DatedFile
+}
+
+// message Photo 定义 
+message Photo {  
+	int64 iD = 1;	//int64 
+	bool hasStickers = 2;	//bool 
+	repeated PhotoSize sizes = 3;	//[]PhotoSize
+}
+
+// message PhotoSize 定义 
+message PhotoSize {  
+	string typ = 1;	//string 
+	File photo = 2;	//File 
+	int32 width = 3;	//int32 
+	int32 height = 4;	//int32
+}
+
+// message ProfilePhoto 定义 
+message ProfilePhoto {  
+	int64 iD = 1;	//int64 
+	File small = 2;	//File 
+	File big = 3;	//File
+}
+
+// message Proxies 定义 
+message Proxies {  
+	repeated Proxy proxies = 1;	//[]Proxy
+}
+
+// message Proxy 定义 
+message Proxy {  
+	int32 iD = 1;	//int32 
+	string server = 2;	//string 
+	int32 port = 3;	//int32 
+	int32 lastUsedDate = 4;	//int32 
+	bool isEnabled = 5;	//bool 
+	ProxyTypeAbsClass typ = 6;	//ProxyTypeAbsClass
+}
+
+// message ProxyTypeSocks5 定义 
+message ProxyTypeSocks5 {  
+	string username = 1;	//string 
+	string password = 2;	//string
+}
+
+// message ProxyTypeHTTP 定义 
+message ProxyTypeHTTP {  
+	string username = 1;	//string 
+	string password = 2;	//string 
+	bool hTTPOnly = 3;	//bool
+}
+
+// message ProxyTypexyproto 定义 
+message ProxyTypexyproto {  
+	string secret = 1;	//string
+}
+
+// message PublicInfoLink 定义 
+message PublicInfoLink {  
+	string link = 1;	//string 
+	string hTML = 2;	//string
+}
+
+// message RecoveryEmailAddress 定义 
+message RecoveryEmailAddress {  
+	string recoveryEmailAddress = 1;	//string
+}
+
+// message RemoteFile 定义 
+message RemoteFile {  
+	string iD = 1;	//string 
+	bool isUploadingActive = 2;	//bool 
+	bool isUploadingCompleted = 3;	//bool 
+	int32 uploadedSize = 4;	//int32
+}
+
+// message ReplyMarkupRemoveKeyboard 定义 
+message ReplyMarkupRemoveKeyboard {  
+	bool isPersonal = 1;	//bool
+}
+
+// message ReplyMarkupForceReply 定义 
+message ReplyMarkupForceReply {  
+	bool isPersonal = 1;	//bool
+}
+
+// message ReplyMarkupShowKeyboard 定义 
+message ReplyMarkupShowKeyboard {  
+	//暂不支持二维数组 rows = 1;	//[][]td.KeyboardButton 
+	bool resizeKeyboard = 2;	//bool 
+	bool oneTime = 3;	//bool 
+	bool isPersonal = 4;	//bool
+}
+
+// message ReplyMarkupInlineKeyboard 定义 
+message ReplyMarkupInlineKeyboard {  
+	//暂不支持二维数组 rows = 1;	//[][]td.InlineKeyboardButton
+}
+
+// message RichTextPlain 定义 
+message RichTextPlain {  
+	string text = 1;	//string
+}
+
+// message RichTextBold 定义 
+message RichTextBold {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass
+}
+
+// message RichTextItalic 定义 
+message RichTextItalic {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass
+}
+
+// message RichTextUnderline 定义 
+message RichTextUnderline {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass
+}
+
+// message RichTextStrikethrough 定义 
+message RichTextStrikethrough {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass
+}
+
+// message RichTextFixed 定义 
+message RichTextFixed {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass
+}
+
+// message RichTextURL 定义 
+message RichTextURL {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass 
+	string uRL = 2;	//string
+}
+
+// message RichTextEmailAddress 定义 
+message RichTextEmailAddress {  
+	RichTextAbsClass text = 1;	//RichTextAbsClass 
+	string emailAddress = 2;	//string
+}
+
+// message RichTexts 定义 
+message RichTexts {  
+	repeated RichTextAbsClass texts = 1;	//[]RichTextAbsClass
+}
+
+// message SavedCredentials 定义 
+message SavedCredentials {  
+	string iD = 1;	//string 
+	string title = 2;	//string
+}
+
+// message ScopeNotificationSettings 定义 
+message ScopeNotificationSettings {  
+	int32 muteFor = 1;	//int32 
+	string sound = 2;	//string 
+	bool showPreview = 3;	//bool
+}
+
+// message SearchInfosFilterEmpty 定义 
+message SearchInfosFilterEmpty { 
+}
+
+// message SearchInfosFilterAnimation 定义 
+message SearchInfosFilterAnimation { 
+}
+
+// message SearchInfosFilterAudio 定义 
+message SearchInfosFilterAudio { 
+}
+
+// message SearchInfosFilterDocument 定义 
+message SearchInfosFilterDocument { 
+}
+
+// message SearchInfosFilterPhoto 定义 
+message SearchInfosFilterPhoto { 
+}
+
+// message SearchInfosFilterVideo 定义 
+message SearchInfosFilterVideo { 
+}
+
+// message SearchInfosFilterVoiceNote 定义 
+message SearchInfosFilterVoiceNote { 
+}
+
+// message SearchInfosFilterPhotoAndVideo 定义 
+message SearchInfosFilterPhotoAndVideo { 
+}
+
+// message SearchInfosFilterURL 定义 
+message SearchInfosFilterURL { 
+}
+
+// message SearchInfosFilterChatPhoto 定义 
+message SearchInfosFilterChatPhoto { 
+}
+
+// message SearchInfosFilterCall 定义 
+message SearchInfosFilterCall { 
+}
+
+// message SearchInfosFilterMissedCall 定义 
+message SearchInfosFilterMissedCall { 
+}
+
+// message SearchInfosFilterVideoNote 定义 
+message SearchInfosFilterVideoNote { 
+}
+
+// message SearchInfosFilterVoiceAndVideoNote 定义 
+message SearchInfosFilterVoiceAndVideoNote { 
+}
+
+// message SearchInfosFilterMention 定义 
+message SearchInfosFilterMention { 
+}
+
+// message SearchInfosFilterUnreadMention 定义 
+message SearchInfosFilterUnreadMention { 
+}
+
+// message Seconds 定义 
+message Seconds {  
+	double seconds = 1;	//float64
+}
+
+// message SecretChat 定义 
+message SecretChat {  
+	int32 iD = 1;	//int32 
+	int32 userID = 2;	//int32 
+	SecretChatStateAbsClass state = 3;	//SecretChatStateAbsClass 
+	bool isOutbound = 4;	//bool 
+	int32 tTL = 5;	//int32 
+	bytes keyHash = 6;	//core.Bytes 
+	int32 layer = 7;	//int32
+}
+
+// message SecretChatStatePending 定义 
+message SecretChatStatePending { 
+}
+
+// message SecretChatStateReady 定义 
+message SecretChatStateReady { 
+}
+
+// message SecretChatStateClosed 定义 
+message SecretChatStateClosed { 
+}
+
+// message Session 定义 
+message Session {  
+	int64 iD = 1;	//int64 
+	bool isCurrent = 2;	//bool 
+	int32 aPIID = 3;	//int32 
+	string applicationName = 4;	//string 
+	string applicationVersion = 5;	//string 
+	bool isOfficialApplication = 6;	//bool 
+	string deviceModel = 7;	//string 
+	string platform = 8;	//string 
+	string systemVersion = 9;	//string 
+	int32 logInDate = 10;	//int32 
+	int32 lastActiveDate = 11;	//int32 
+	string iP = 12;	//string 
+	string country = 13;	//string 
+	string region = 14;	//string
+}
+
+// message Sessions 定义 
+message Sessions {  
+	repeated Session sessions = 1;	//[]Session
+}
+
+// message ShippingOption 定义 
+message ShippingOption {  
+	string iD = 1;	//string 
+	string title = 2;	//string 
+	repeated LabeledPricePart priceParts = 3;	//[]LabeledPricePart
+}
+
+// message Sticker 定义 
+message Sticker {  
+	int64 setID = 1;	//int64 
+	int32 width = 2;	//int32 
+	int32 height = 3;	//int32 
+	string emoji = 4;	//string 
+	bool isMask = 5;	//bool 
+	MaskPosition maskPosition = 6;	//MaskPosition 
+	PhotoSize thumbnail = 7;	//PhotoSize 
+	File sticker = 8;	//File
+}
+
+// message StickerEmojis 定义 
+message StickerEmojis {  
+	repeated string emojis = 1;	//[]string
+}
+
+// message StickerSet 定义 
+message StickerSet {  
+	int64 iD = 1;	//int64 
+	string title = 2;	//string 
+	string name = 3;	//string 
+	bool isInstalled = 4;	//bool 
+	bool isArchived = 5;	//bool 
+	bool isOfficial = 6;	//bool 
+	bool isMasks = 7;	//bool 
+	bool isViewed = 8;	//bool 
+	repeated Sticker stickers = 9;	//[]Sticker 
+	repeated StickerEmojis emojis = 10;	//[]StickerEmojis
+}
+
+// message StickerSetInfo 定义 
+message StickerSetInfo {  
+	int64 iD = 1;	//int64 
+	string title = 2;	//string 
+	string name = 3;	//string 
+	bool isInstalled = 4;	//bool 
+	bool isArchived = 5;	//bool 
+	bool isOfficial = 6;	//bool 
+	bool isMasks = 7;	//bool 
+	bool isViewed = 8;	//bool 
+	int32 size = 9;	//int32 
+	repeated Sticker covers = 10;	//[]Sticker
+}
+
+// message StickerSets 定义 
+message StickerSets {  
+	int32 totalCount = 1;	//int32 
+	repeated StickerSetInfo sets = 2;	//[]StickerSetInfo
+}
+
+// message Stickers 定义 
+message Stickers {  
+	repeated Sticker stickers = 1;	//[]Sticker
+}
+
+// message StorageStatistics 定义 
+message StorageStatistics {  
+	int64 size = 1;	//int64 
+	int32 count = 2;	//int32 
+	repeated StorageStatisticsByChat byChat = 3;	//[]StorageStatisticsByChat
+}
+
+// message StorageStatisticsByChat 定义 
+message StorageStatisticsByChat {  
+	int64 chatID = 1;	//int64 
+	int64 size = 2;	//int64 
+	int32 count = 3;	//int32 
+	repeated StorageStatisticsByFileType byFileType = 4;	//[]StorageStatisticsByFileType
+}
+
+// message StorageStatisticsByFileType 定义 
+message StorageStatisticsByFileType {  
+	FileTypeAbsClass fileType = 1;	//FileTypeAbsClass 
+	int64 size = 2;	//int64 
+	int32 count = 3;	//int32
+}
+
+// message StorageStatisticsFast 定义 
+message StorageStatisticsFast {  
+	int64 filesSize = 1;	//int64 
+	int32 fileCount = 2;	//int32 
+	int64 databaseSize = 3;	//int64
+}
+
+// message Supergroup 定义 
+message Supergroup {  
+	int32 iD = 1;	//int32 
+	string username = 2;	//string 
+	int32 date = 3;	//int32 
+	ChatMemberStatusAbsClass status = 4;	//ChatMemberStatusAbsClass 
+	int32 memberCount = 5;	//int32 
+	bool anyoneCanInvite = 6;	//bool 
+	bool signInfos = 7;	//bool 
+	bool isSuperGroupV1 = 8;	//bool 
+	bool isVerified = 9;	//bool 
+	string restrictionReason = 10;	//string
+}
+
+// message SupergroupFullInfo 定义 
+message SupergroupFullInfo {  
+	string description = 1;	//string 
+	int32 memberCount = 2;	//int32 
+	int32 administratorCount = 3;	//int32 
+	int32 restrictedCount = 4;	//int32 
+	int32 bannedCount = 5;	//int32 
+	bool canGetMembers = 6;	//bool 
+	bool canSetUsername = 7;	//bool 
+	bool canSetStickerSet = 8;	//bool 
+	bool isAllHistoryAvailable = 9;	//bool 
+	int64 stickerSetID = 10;	//int64 
+	string inviteLink = 11;	//string 
+	int64 pinnedInfoID = 12;	//int64 
+	int32 upgradedFromBasicGroupID = 13;	//int32 
+	int64 upgradedFromMaxInfoID = 14;	//int64
+}
+
+// message SupergroupMembersFilterRecent 定义 
+message SupergroupMembersFilterRecent { 
+}
+
+// message SupergroupMembersFilterAdministrators 定义 
+message SupergroupMembersFilterAdministrators { 
+}
+
+// message SupergroupMembersFilterSearch 定义 
+message SupergroupMembersFilterSearch {  
+	string query = 1;	//string
+}
+
+// message SupergroupMembersFilterRestricted 定义 
+message SupergroupMembersFilterRestricted {  
+	string query = 1;	//string
+}
+
+// message SupergroupMembersFilterBanned 定义 
+message SupergroupMembersFilterBanned {  
+	string query = 1;	//string
+}
+
+// message SupergroupMembersFilterBots 定义 
+message SupergroupMembersFilterBots { 
+}
+
+// message TMeURL 定义 
+message TMeURL {  
+	string uRL = 1;	//string 
+	TMeURLTypeAbsClass typ = 2;	//TMeURLTypeAbsClass
+}
+
+// message TMeURLTypeUser 定义 
+message TMeURLTypeUser {  
+	int32 userID = 1;	//int32
+}
+
+// message TMeURLTypeSupergroup 定义 
+message TMeURLTypeSupergroup {  
+	int64 supergroupID = 1;	//int64
+}
+
+// message TMeURLTypeChatInvite 定义 
+message TMeURLTypeChatInvite {  
+	ChatInviteLinkInfo info = 1;	//ChatInviteLinkInfo
+}
+
+// message TMeURLTypeStickerSet 定义 
+message TMeURLTypeStickerSet {  
+	int64 stickerSetID = 1;	//int64
+}
+
+// message TMeUrls 定义 
+message TMeUrls {  
+	repeated TMeURL urls = 1;	//[]TMeURL
+}
+
+// message TdlibParameters 定义 
+message TdlibParameters {  
+	bool useTestDc = 1;	//bool 
+	string databaseDirectory = 2;	//string 
+	string filesDirectory = 3;	//string 
+	bool useFileDatabase = 4;	//bool 
+	bool useChatInfoDatabase = 5;	//bool 
+	bool useInfoDatabase = 6;	//bool 
+	bool useSecretChats = 7;	//bool 
+	int32 aPIID = 8;	//int32 
+	string aPIHash = 9;	//string 
+	string systemLanguageCode = 10;	//string 
+	string deviceModel = 11;	//string 
+	string systemVersion = 12;	//string 
+	string applicationVersion = 13;	//string 
+	bool enableStorageOptimizer = 14;	//bool 
+	bool ignoreFileNames = 15;	//bool
+}
+
+// message TemporaryPasswordState 定义 
+message TemporaryPasswordState {  
+	bool hasPassword = 1;	//bool 
+	int32 validFor = 2;	//int32
+}
+
+// message TermsOfService 定义 
+message TermsOfService {  
+	FormattedText text = 1;	//FormattedText 
+	int32 minUserAge = 2;	//int32 
+	bool showPopup = 3;	//bool
+}
+
+// message TestBytes 定义 
+message TestBytes {  
+	bytes value = 1;	//core.Bytes
+}
+
+// message TestInt 定义 
+message TestInt {  
+	int32 value = 1;	//int32
+}
+
+// message TestString 定义 
+message TestString {  
+	string value = 1;	//string
+}
+
+// message TestVectorInt 定义 
+message TestVectorInt {  
+	repeated int32 value = 1;	//[]int32
+}
+
+// message TestVectorIntObject 定义 
+message TestVectorIntObject {  
+	repeated TestInt value = 1;	//[]TestInt
+}
+
+// message TestVectorString 定义 
+message TestVectorString {  
+	repeated string value = 1;	//[]string
+}
+
+// message TestVectorStringObject 定义 
+message TestVectorStringObject {  
+	repeated TestString value = 1;	//[]TestString
+}
+
+// message Text 定义 
+message Text {  
+	string text = 1;	//string
+}
+
+// message TextEntities 定义 
+message TextEntities {  
+	repeated TextEntity entities = 1;	//[]TextEntity
+}
+
+// message TextEntity 定义 
+message TextEntity {  
+	int32 offset = 1;	//int32 
+	int32 length = 2;	//int32 
+	TextEntityTypeAbsClass typ = 3;	//TextEntityTypeAbsClass
+}
+
+// message TextEntityTypeMention 定义 
+message TextEntityTypeMention { 
+}
+
+// message TextEntityTypeHashtag 定义 
+message TextEntityTypeHashtag { 
+}
+
+// message TextEntityTypeCashtag 定义 
+message TextEntityTypeCashtag { 
+}
+
+// message TextEntityTypeBotCommand 定义 
+message TextEntityTypeBotCommand { 
+}
+
+// message TextEntityTypeURL 定义 
+message TextEntityTypeURL { 
+}
+
+// message TextEntityTypeEmailAddress 定义 
+message TextEntityTypeEmailAddress { 
+}
+
+// message TextEntityTypeBold 定义 
+message TextEntityTypeBold { 
+}
+
+// message TextEntityTypeItalic 定义 
+message TextEntityTypeItalic { 
+}
+
+// message TextEntityTypeCode 定义 
+message TextEntityTypeCode { 
+}
+
+// message TextEntityTypePre 定义 
+message TextEntityTypePre { 
+}
+
+// message TextEntityTypePreCode 定义 
+message TextEntityTypePreCode {  
+	string language = 1;	//string
+}
+
+// message TextEntityTypeTextURL 定义 
+message TextEntityTypeTextURL {  
+	string uRL = 1;	//string
+}
+
+// message TextEntityTypeMentionName 定义 
+message TextEntityTypeMentionName {  
+	int32 userID = 1;	//int32
+}
+
+// message TextEntityTypePhoneNumber 定义 
+message TextEntityTypePhoneNumber { 
+}
+
+// message TextParseModeMarkdown 定义 
+message TextParseModeMarkdown { 
+}
+
+// message TextParseModeHTML 定义 
+message TextParseModeHTML { 
+}
+
+// message TopChatCategoryUsers 定义 
+message TopChatCategoryUsers { 
+}
+
+// message TopChatCategoryBots 定义 
+message TopChatCategoryBots { 
+}
+
+// message TopChatCategoryGroups 定义 
+message TopChatCategoryGroups { 
+}
+
+// message TopChatCategorySuperGroupV1s 定义 
+message TopChatCategorySuperGroupV1s { 
+}
+
+// message TopChatCategoryInlineBots 定义 
+message TopChatCategoryInlineBots { 
+}
+
+// message TopChatCategoryCalls 定义 
+message TopChatCategoryCalls { 
+}
+
+// message UpdateAuthState 定义 
+message UpdateAuthState {  
+	AuthStateAbsClass authorizationState = 1;	//AuthStateAbsClass
+}
+
+// message UpdateNewInfo 定义 
+message UpdateNewInfo {  
+	Info message = 1;	//Info 
+	bool disableNotification = 2;	//bool 
+	bool containsMention = 3;	//bool
+}
+
+// message UpdateInfoSendAcknowledged 定义 
+message UpdateInfoSendAcknowledged {  
+	int64 chatID = 1;	//int64 
+	int64 messageID = 2;	//int64
+}
+
+// message UpdateInfoSendSucceeded 定义 
+message UpdateInfoSendSucceeded {  
+	Info message = 1;	//Info 
+	int64 oldInfoID = 2;	//int64
+}
+
+// message UpdateInfoSendFailed 定义 
+message UpdateInfoSendFailed {  
+	Info message = 1;	//Info 
+	int64 oldInfoID = 2;	//int64 
+	int32 errorCode = 3;	//int32 
+	string errorInfo = 4;	//string
+}
+
+// message UpdateInfoContent 定义 
+message UpdateInfoContent {  
+	int64 chatID = 1;	//int64 
+	int64 messageID = 2;	//int64 
+	InfoContentAbsClass newContent = 3;	//InfoContentAbsClass
+}
+
+// message UpdateInfoEdited 定义 
+message UpdateInfoEdited {  
+	int64 chatID = 1;	//int64 
+	int64 messageID = 2;	//int64 
+	int32 editDate = 3;	//int32 
+	ReplyMarkupAbsClass replyMarkup = 4;	//ReplyMarkupAbsClass
+}
+
+// message UpdateInfoViews 定义 
+message UpdateInfoViews {  
+	int64 chatID = 1;	//int64 
+	int64 messageID = 2;	//int64 
+	int32 views = 3;	//int32
+}
+
+// message UpdateInfoContentOpened 定义 
+message UpdateInfoContentOpened {  
+	int64 chatID = 1;	//int64 
+	int64 messageID = 2;	//int64
+}
+
+// message UpdateInfoMentionRead 定义 
+message UpdateInfoMentionRead {  
+	int64 chatID = 1;	//int64 
+	int64 messageID = 2;	//int64 
+	int32 unreadMentionCount = 3;	//int32
+}
+
+// message UpdateNewChat 定义 
+message UpdateNewChat {  
+	Chat chat = 1;	//Chat
+}
+
+// message UpdateChatTitle 定义 
+message UpdateChatTitle {  
+	int64 chatID = 1;	//int64 
+	string title = 2;	//string
+}
+
+// message UpdateChatPhoto 定义 
+message UpdateChatPhoto {  
+	int64 chatID = 1;	//int64 
+	ChatPhoto photo = 2;	//ChatPhoto
+}
+
+// message UpdateChatLastInfo 定义 
+message UpdateChatLastInfo {  
+	int64 chatID = 1;	//int64 
+	Info lastInfo = 2;	//Info 
+	int64 order = 3;	//int64
+}
+
+// message UpdateChatOrder 定义 
+message UpdateChatOrder {  
+	int64 chatID = 1;	//int64 
+	int64 order = 2;	//int64
+}
+
+// message UpdateChatIsPinned 定义 
+message UpdateChatIsPinned {  
+	int64 chatID = 1;	//int64 
+	bool isPinned = 2;	//bool 
+	int64 order = 3;	//int64
+}
+
+// message UpdateChatIsMarkedAsUnread 定义 
+message UpdateChatIsMarkedAsUnread {  
+	int64 chatID = 1;	//int64 
+	bool isMarkedAsUnread = 2;	//bool
+}
+
+// message UpdateChatIsSponsored 定义 
+message UpdateChatIsSponsored {  
+	int64 chatID = 1;	//int64 
+	bool isSponsored = 2;	//bool 
+	int64 order = 3;	//int64
+}
+
+// message UpdateChatDefaultDisableNotification 定义 
+message UpdateChatDefaultDisableNotification {  
+	int64 chatID = 1;	//int64 
+	bool defaultDisableNotification = 2;	//bool
+}
+
+// message UpdateChatReadInbox 定义 
+message UpdateChatReadInbox {  
+	int64 chatID = 1;	//int64 
+	int64 lastReadInboxInfoID = 2;	//int64 
+	int32 unreadCount = 3;	//int32
+}
+
+// message UpdateChatReadOutbox 定义 
+message UpdateChatReadOutbox {  
+	int64 chatID = 1;	//int64 
+	int64 lastReadOutboxInfoID = 2;	//int64
+}
+
+// message UpdateChatUnreadMentionCount 定义 
+message UpdateChatUnreadMentionCount {  
+	int64 chatID = 1;	//int64 
+	int32 unreadMentionCount = 2;	//int32
+}
+
+// message UpdateChatNotificationSettings 定义 
+message UpdateChatNotificationSettings {  
+	int64 chatID = 1;	//int64 
+	ChatNotificationSettings notificationSettings = 2;	//ChatNotificationSettings
+}
+
+// message UpdateScopeNotificationSettings 定义 
+message UpdateScopeNotificationSettings {  
+	NotificationSettingsScopeAbsClass scope = 1;	//NotificationSettingsScopeAbsClass 
+	ScopeNotificationSettings notificationSettings = 2;	//ScopeNotificationSettings
+}
+
+// message UpdateChatReplyMarkup 定义 
+message UpdateChatReplyMarkup {  
+	int64 chatID = 1;	//int64 
+	int64 replyMarkupInfoID = 2;	//int64
+}
+
+// message UpdateChatDraftInfo 定义 
+message UpdateChatDraftInfo {  
+	int64 chatID = 1;	//int64 
+	DraftInfo draftInfo = 2;	//DraftInfo 
+	int64 order = 3;	//int64
+}
+
+// message UpdateDeleteInfos 定义 
+message UpdateDeleteInfos {  
+	int64 chatID = 1;	//int64 
+	repeated int64 messageIds = 2;	//[]int64 
+	bool isPermanent = 3;	//bool 
+	bool fromCache = 4;	//bool
+}
+
+// message UpdateUserChatDoit 定义 
+message UpdateUserChatDoit {  
+	int64 chatID = 1;	//int64 
+	int32 userID = 2;	//int32 
+	ChatDoitAbsClass action = 3;	//ChatDoitAbsClass
+}
+
+// message UpdateUserStatus 定义 
+message UpdateUserStatus {  
+	int32 userID = 1;	//int32 
+	UserStatusAbsClass status = 2;	//UserStatusAbsClass
+}
+
+// message UpdateUser 定义 
+message UpdateUser {  
+	User user = 1;	//User
+}
+
+// message UpdateBasicGroup 定义 
+message UpdateBasicGroup {  
+	BasicGroup basicGroup = 1;	//BasicGroup
+}
+
+// message UpdateSupergroup 定义 
+message UpdateSupergroup {  
+	Supergroup supergroup = 1;	//Supergroup
+}
+
+// message UpdateSecretChat 定义 
+message UpdateSecretChat {  
+	SecretChat secretChat = 1;	//SecretChat
+}
+
+// message UpdateUserFullInfo 定义 
+message UpdateUserFullInfo {  
+	int32 userID = 1;	//int32 
+	UserFullInfo userFullInfo = 2;	//UserFullInfo
+}
+
+// message UpdateBasicGroupFullInfo 定义 
+message UpdateBasicGroupFullInfo {  
+	int32 basicGroupID = 1;	//int32 
+	BasicGroupFullInfo basicGroupFullInfo = 2;	//BasicGroupFullInfo
+}
+
+// message UpdateSupergroupFullInfo 定义 
+message UpdateSupergroupFullInfo {  
+	int32 supergroupID = 1;	//int32 
+	SupergroupFullInfo supergroupFullInfo = 2;	//SupergroupFullInfo
+}
+
+// message UpdateServiceNotification 定义 
+message UpdateServiceNotification {  
+	string typ = 1;	//string 
+	InfoContentAbsClass content = 2;	//InfoContentAbsClass
+}
+
+// message UpdateFile 定义 
+message UpdateFile {  
+	File file = 1;	//File
+}
+
+// message UpdateFileGenerationStart 定义 
+message UpdateFileGenerationStart {  
+	int64 generationID = 1;	//int64 
+	string originalPath = 2;	//string 
+	string destinationPath = 3;	//string 
+	string conversion = 4;	//string
+}
+
+// message UpdateFileGenerationStop 定义 
+message UpdateFileGenerationStop {  
+	int64 generationID = 1;	//int64
+}
+
+// message UpdateCall 定义 
+message UpdateCall {  
+	Call call = 1;	//Call
+}
+
+// message UpdateUserPrivacySettingRules 定义 
+message UpdateUserPrivacySettingRules {  
+	UserPrivacySettingAbsClass setting = 1;	//UserPrivacySettingAbsClass 
+	UserPrivacySettingRules rules = 2;	//UserPrivacySettingRules
+}
+
+// message UpdateUnreadInfoCount 定义 
+message UpdateUnreadInfoCount {  
+	int32 unreadCount = 1;	//int32 
+	int32 unreadUnmutedCount = 2;	//int32
+}
+
+// message UpdateUnreadChatCount 定义 
+message UpdateUnreadChatCount {  
+	int32 unreadCount = 1;	//int32 
+	int32 unreadUnmutedCount = 2;	//int32 
+	int32 markedAsUnreadCount = 3;	//int32 
+	int32 markedAsUnreadUnmutedCount = 4;	//int32
+}
+
+// message UpdateOption 定义 
+message UpdateOption {  
+	string name = 1;	//string 
+	OptionValueAbsClass value = 2;	//OptionValueAbsClass
+}
+
+// message UpdateInstalledStickerSets 定义 
+message UpdateInstalledStickerSets {  
+	bool isMasks = 1;	//bool 
+	repeated int64 stickerSetIds = 2;	//[]int64
+}
+
+// message UpdateTrendingStickerSets 定义 
+message UpdateTrendingStickerSets {  
+	StickerSets stickerSets = 1;	//StickerSets
+}
+
+// message UpdateRecentStickers 定义 
+message UpdateRecentStickers {  
+	bool isAttached = 1;	//bool 
+	repeated int32 stickerIds = 2;	//[]int32
+}
+
+// message UpdateFavoriteStickers 定义 
+message UpdateFavoriteStickers {  
+	repeated int32 stickerIds = 1;	//[]int32
+}
+
+// message UpdateSavedAnimations 定义 
+message UpdateSavedAnimations {  
+	repeated int32 animationIds = 1;	//[]int32
+}
+
+// message UpdateLanguagePackStrings 定义 
+message UpdateLanguagePackStrings {  
+	string localizationTarget = 1;	//string 
+	string languagePackID = 2;	//string 
+	repeated LanguagePackString strings = 3;	//[]LanguagePackString
+}
+
+// message UpdateConnectionState 定义 
+message UpdateConnectionState {  
+	ConnectionStateAbsClass state = 1;	//ConnectionStateAbsClass
+}
+
+// message UpdateTermsOfService 定义 
+message UpdateTermsOfService {  
+	string termsOfServiceID = 1;	//string 
+	TermsOfService termsOfService = 2;	//TermsOfService
+}
+
+// message UpdateNewInlineQuery 定义 
+message UpdateNewInlineQuery {  
+	int64 iD = 1;	//int64 
+	int32 senderUserID = 2;	//int32 
+	Location userLocation = 3;	//Location 
+	string query = 4;	//string 
+	string offset = 5;	//string
+}
+
+// message UpdateNewChosenInlineResult 定义 
+message UpdateNewChosenInlineResult {  
+	int32 senderUserID = 1;	//int32 
+	Location userLocation = 2;	//Location 
+	string query = 3;	//string 
+	string resultID = 4;	//string 
+	string inlineInfoID = 5;	//string
+}
+
+// message UpdateNewCallbackQuery 定义 
+message UpdateNewCallbackQuery {  
+	int64 iD = 1;	//int64 
+	int32 senderUserID = 2;	//int32 
+	int64 chatID = 3;	//int64 
+	int64 messageID = 4;	//int64 
+	int64 chatInstance = 5;	//int64 
+	CallbackQueryPayloadAbsClass payload = 6;	//CallbackQueryPayloadAbsClass
+}
+
+// message UpdateNewInlineCallbackQuery 定义 
+message UpdateNewInlineCallbackQuery {  
+	int64 iD = 1;	//int64 
+	int32 senderUserID = 2;	//int32 
+	string inlineInfoID = 3;	//string 
+	int64 chatInstance = 4;	//int64 
+	CallbackQueryPayloadAbsClass payload = 5;	//CallbackQueryPayloadAbsClass
+}
+
+// message UpdateNewShippingQuery 定义 
+message UpdateNewShippingQuery {  
+	int64 iD = 1;	//int64 
+	int32 senderUserID = 2;	//int32 
+	string invoicePayload = 3;	//string 
+	Address shippingAddress = 4;	//Address
+}
+
+// message UpdateNewPreCheckoutQuery 定义 
+message UpdateNewPreCheckoutQuery {  
+	int64 iD = 1;	//int64 
+	int32 senderUserID = 2;	//int32 
+	string currency = 3;	//string 
+	int64 totalAmount = 4;	//int64 
+	bytes invoicePayload = 5;	//core.Bytes 
+	string shippingOptionID = 6;	//string 
+	OrderInfo orderInfo = 7;	//OrderInfo
+}
+
+// message UpdateNewCustomEvent 定义 
+message UpdateNewCustomEvent {  
+	string event = 1;	//string
+}
+
+// message UpdateNewCustomQuery 定义 
+message UpdateNewCustomQuery {  
+	int64 iD = 1;	//int64 
+	string data = 2;	//string 
+	int32 timeout = 3;	//int32
+}
+
+// message User 定义 
+message User {  
+	int32 iD = 1;	//int32 
+	string firstName = 2;	//string 
+	string lastName = 3;	//string 
+	string username = 4;	//string 
+	string phoneNumber = 5;	//string 
+	UserStatusAbsClass status = 6;	//UserStatusAbsClass 
+	ProfilePhoto profilePhoto = 7;	//ProfilePhoto 
+	LinkStateAbsClass outgoingLink = 8;	//LinkStateAbsClass 
+	LinkStateAbsClass incomingLink = 9;	//LinkStateAbsClass 
+	bool isVerified = 10;	//bool 
+	string restrictionReason = 11;	//string 
+	bool haveAccess = 12;	//bool 
+	UserTypeAbsClass typ = 13;	//UserTypeAbsClass 
+	string languageCode = 14;	//string
+}
+
+// message UserFullInfo 定义 
+message UserFullInfo {  
+	bool isBlocked = 1;	//bool 
+	bool canBeCalled = 2;	//bool 
+	bool hasPrivateCalls = 3;	//bool 
+	string bio = 4;	//string 
+	string shareText = 5;	//string 
+	int32 groupInCommonCount = 6;	//int32 
+	BotInfo botInfo = 7;	//BotInfo
+}
+
+// message UserPrivacySettingShowStatus 定义 
+message UserPrivacySettingShowStatus { 
+}
+
+// message UserPrivacySettingAllowChatInvites 定义 
+message UserPrivacySettingAllowChatInvites { 
+}
+
+// message UserPrivacySettingAllowCalls 定义 
+message UserPrivacySettingAllowCalls { 
+}
+
+// message UserPrivacySettingRuleAllowAll 定义 
+message UserPrivacySettingRuleAllowAll { 
+}
+
+// message UserPrivacySettingRuleAllowContacts 定义 
+message UserPrivacySettingRuleAllowContacts { 
+}
+
+// message UserPrivacySettingRuleAllowUsers 定义 
+message UserPrivacySettingRuleAllowUsers {  
+	repeated int32 userIds = 1;	//[]int32
+}
+
+// message UserPrivacySettingRuleRestrictAll 定义 
+message UserPrivacySettingRuleRestrictAll { 
+}
+
+// message UserPrivacySettingRuleRestrictContacts 定义 
+message UserPrivacySettingRuleRestrictContacts { 
+}
+
+// message UserPrivacySettingRuleRestrictUsers 定义 
+message UserPrivacySettingRuleRestrictUsers {  
+	repeated int32 userIds = 1;	//[]int32
+}
+
+// message UserPrivacySettingRules 定义 
+message UserPrivacySettingRules {  
+	repeated UserPrivacySettingRuleAbsClass rules = 1;	//[]UserPrivacySettingRuleAbsClass
+}
+
+// message UserProfilePhotos 定义 
+message UserProfilePhotos {  
+	int32 totalCount = 1;	//int32 
+	repeated Photo photos = 2;	//[]Photo
+}
+
+// message UserStatusOnline 定义 
+message UserStatusOnline {  
+	int32 expires = 1;	//int32
+}
+
+// message UserStatusOffline 定义 
+message UserStatusOffline {  
+	int32 wasOnline = 1;	//int32
+}
+
+// message UserTypeRegular 定义 
+message UserTypeRegular { 
+}
+
+// message UserTypeDeleted 定义 
+message UserTypeDeleted { 
+}
+
+// message UserTypeBot 定义 
+message UserTypeBot {  
+	bool canJoinGroups = 1;	//bool 
+	bool canReadAllGroupInfos = 2;	//bool 
+	bool isInline = 3;	//bool 
+	string inlineQueryPlaceholder = 4;	//string 
+	bool needLocation = 5;	//bool
+}
+
+// message UserTypeUnknown 定义 
+message UserTypeUnknown { 
+}
+
+// message Users 定义 
+message Users {  
+	int32 totalCount = 1;	//int32 
+	repeated int32 userIds = 2;	//[]int32
+}
+
+// message ValidatedOrderInfo 定义 
+message ValidatedOrderInfo {  
+	string orderInfoID = 1;	//string 
+	repeated ShippingOption shippingOptions = 2;	//[]ShippingOption
+}
+
+// message Venue 定义 
+message Venue {  
+	Location location = 1;	//Location 
+	string title = 2;	//string 
+	string address = 3;	//string 
+	string provider = 4;	//string 
+	string iD = 5;	//string 
+	string typ = 6;	//string
+}
+
+// message Video 定义 
+message Video {  
+	int32 duration = 1;	//int32 
+	int32 width = 2;	//int32 
+	int32 height = 3;	//int32 
+	string fileName = 4;	//string 
+	string mimeType = 5;	//string 
+	bool hasStickers = 6;	//bool 
+	bool supportsStreaming = 7;	//bool 
+	PhotoSize thumbnail = 8;	//PhotoSize 
+	File video = 9;	//File
+}
+
+// message VideoNote 定义 
+message VideoNote {  
+	int32 duration = 1;	//int32 
+	int32 length = 2;	//int32 
+	PhotoSize thumbnail = 3;	//PhotoSize 
+	File video = 4;	//File
+}
+
+// message VoiceNote 定义 
+message VoiceNote {  
+	int32 duration = 1;	//int32 
+	bytes waveform = 2;	//core.Bytes 
+	string mimeType = 3;	//string 
+	File voice = 4;	//File
+}
+
+// message Wallpaper 定义 
+message Wallpaper {  
+	int32 iD = 1;	//int32 
+	repeated PhotoSize sizes = 2;	//[]PhotoSize 
+	int32 color = 3;	//int32
+}
+
+// message Wallpapers 定义 
+message Wallpapers {  
+	repeated Wallpaper wallpapers = 1;	//[]Wallpaper
+}
+
+// message WebPage 定义 
+message WebPage {  
+	string uRL = 1;	//string 
+	string displayURL = 2;	//string 
+	string typ = 3;	//string 
+	string siteName = 4;	//string 
+	string title = 5;	//string 
+	string description = 6;	//string 
+	Photo photo = 7;	//Photo 
+	string embedURL = 8;	//string 
+	string embedType = 9;	//string 
+	int32 embedWidth = 10;	//int32 
+	int32 embedHeight = 11;	//int32 
+	int32 duration = 12;	//int32 
+	string author = 13;	//string 
+	Animation animation = 14;	//Animation 
+	Audio audio = 15;	//Audio 
+	Document document = 16;	//Document 
+	Sticker sticker = 17;	//Sticker 
+	Video video = 18;	//Video 
+	VideoNote videoNote = 19;	//VideoNote 
+	VoiceNote voiceNote = 20;	//VoiceNote 
+	bool hasInstantView = 21;	//bool
+}
+
+// message WebPageInstantView 定义 
+message WebPageInstantView {  
+	repeated PageBlockAbsClass pageBlocks = 1;	//[]PageBlockAbsClass 
+	bool isFull = 2;	//bool
+}
+
+
+
+
+// ExyAccountTTL 枚举
+enum ExyAccountTTL { 
+	EVVAccountTTL = 0;
+}
+
+
+message AccountTTLAbsClass { 
+  ExyAccountTTL type = 1;
+    oneof value { 
+		AccountTTL accountTTL= 2;
+    }
+}
+
+
+
+// ExyAddress 枚举
+enum ExyAddress { 
+	EVVAddress = 0;
+}
+
+
+message AddressAbsClass { 
+  ExyAddress type = 1;
+    oneof value { 
+		Address address= 2;
+    }
+}
+
+
+
+// ExyAnimation 枚举
+enum ExyAnimation { 
+	EVVAnimation = 0;
+}
+
+
+message AnimationAbsClass { 
+  ExyAnimation type = 1;
+    oneof value { 
+		Animation animation= 2;
+    }
+}
+
+
+
+// ExyAnimations 枚举
+enum ExyAnimations { 
+	EVVAnimations = 0;
+}
+
+
+message AnimationsAbsClass { 
+  ExyAnimations type = 1;
+    oneof value { 
+		Animations animations= 2;
+    }
+}
+
+
+
+// ExyAudio 枚举
+enum ExyAudio { 
+	EVVAudio = 0;
+}
+
+
+message AudioAbsClass { 
+  ExyAudio type = 1;
+    oneof value { 
+		Audio audio= 2;
+    }
+}
+
+
+
+// ExyAuthenticationCodeInfo 枚举
+enum ExyAuthenticationCodeInfo { 
+	EVVAuthenticationCodeInfo = 0;
+}
+
+
+message AuthenticationCodeInfoAbsClass { 
+  ExyAuthenticationCodeInfo type = 1;
+    oneof value { 
+		AuthenticationCodeInfo authenticationCodeInfo= 2;
+    }
+}
+
+
+
+// ExyAuthenticationCodeType 枚举
+enum ExyAuthenticationCodeType { 
+	EVVAuthenticationCodeTypeTelegramInfo = 0;
+	EVVAuthenticationCodeTypeSms = 1;
+	EVVAuthenticationCodeTypeCall = 2;
+	EVVAuthenticationCodeTypeFlashCall = 3;
+}
+
+
+message AuthenticationCodeTypeAbsClass { 
+  ExyAuthenticationCodeType type = 1;
+    oneof value { 
+		AuthenticationCodeTypeTelegramInfo authenticationCodeTypeTelegramInfo= 2;
+		AuthenticationCodeTypeSms authenticationCodeTypeSms= 3;
+		AuthenticationCodeTypeCall authenticationCodeTypeCall= 4;
+		AuthenticationCodeTypeFlashCall authenticationCodeTypeFlashCall= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyAuthState 枚举
+enum ExyAuthState { 
+	EVVAuthStateWaitTdlibParameters = 0;
+	EVVAuthStateWaitEncryptionKey = 1;
+	EVVAuthStateWaitPhoneNumber = 2;
+	EVVAuthStateWaitCode = 3;
+	EVVAuthStateWaitPassword = 4;
+	EVVAuthStateReady = 5;
+	EVVAuthStateLoggingOut = 6;
+	EVVAuthStateClosing = 7;
+	EVVAuthStateClosed = 8;
+}
+
+
+message AuthStateAbsClass { 
+  ExyAuthState type = 1;
+    oneof value { 
+		AuthStateWaitTdlibParameters authorizationStateWaitTdlibParameters= 2;
+		AuthStateWaitEncryptionKey authorizationStateWaitEncryptionKey= 3;
+		AuthStateWaitPhoneNumber authorizationStateWaitPhoneNumber= 4;
+		AuthStateWaitCode authorizationStateWaitCode= 5;
+		AuthStateWaitPassword authorizationStateWaitPassword= 6;
+		AuthStateReady authorizationStateReady= 7;
+		AuthStateLoggingOut authorizationStateLoggingOut= 8;
+		AuthStateClosing authorizationStateClosing= 9;
+		AuthStateClosed authorizationStateClosed= 10;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyBasicGroup 枚举
+enum ExyBasicGroup { 
+	EVVBasicGroup = 0;
+}
+
+
+message BasicGroupAbsClass { 
+  ExyBasicGroup type = 1;
+    oneof value { 
+		BasicGroup basicGroup= 2;
+    }
+}
+
+
+
+// ExyBasicGroupFullInfo 枚举
+enum ExyBasicGroupFullInfo { 
+	EVVBasicGroupFullInfo = 0;
+}
+
+
+message BasicGroupFullInfoAbsClass { 
+  ExyBasicGroupFullInfo type = 1;
+    oneof value { 
+		BasicGroupFullInfo basicGroupFullInfo= 2;
+    }
+}
+
+
+
+// ExyBotInfo 枚举
+enum ExyBotInfo { 
+	EVVBotInfo = 0;
+}
+
+
+message BotInfoAbsClass { 
+  ExyBotInfo type = 1;
+    oneof value { 
+		BotInfo botInfo= 2;
+    }
+}
+
+
+
+// ExyCall 枚举
+enum ExyCall { 
+	EVVCall = 0;
+}
+
+
+message CallAbsClass { 
+  ExyCall type = 1;
+    oneof value { 
+		Call call= 2;
+    }
+}
+
+
+
+// ExyCallConnection 枚举
+enum ExyCallConnection { 
+	EVVCallConnection = 0;
+}
+
+
+message CallConnectionAbsClass { 
+  ExyCallConnection type = 1;
+    oneof value { 
+		CallConnection callConnection= 2;
+    }
+}
+
+
+
+// ExyCallDiscardReason 枚举
+enum ExyCallDiscardReason { 
+	EVVCallDiscardReasonEmpty = 0;
+	EVVCallDiscardReasonMissed = 1;
+	EVVCallDiscardReasonDeclined = 2;
+	EVVCallDiscardReasonDisconnected = 3;
+	EVVCallDiscardReasonHungUp = 4;
+}
+
+
+message CallDiscardReasonAbsClass { 
+  ExyCallDiscardReason type = 1;
+    oneof value { 
+		CallDiscardReasonEmpty callDiscardReasonEmpty= 2;
+		CallDiscardReasonMissed callDiscardReasonMissed= 3;
+		CallDiscardReasonDeclined callDiscardReasonDeclined= 4;
+		CallDiscardReasonDisconnected callDiscardReasonDisconnected= 5;
+		CallDiscardReasonHungUp callDiscardReasonHungUp= 6;
+    }
+}
+
+
+
+
+
+
+
+
+// ExyCallID 枚举
+enum ExyCallID { 
+	EVVCallID = 0;
+}
+
+
+message CallIDAbsClass { 
+  ExyCallID type = 1;
+    oneof value { 
+		CallID callID= 2;
+    }
+}
+
+
+
+// ExyCallProtocol 枚举
+enum ExyCallProtocol { 
+	EVVCallProtocol = 0;
+}
+
+
+message CallProtocolAbsClass { 
+  ExyCallProtocol type = 1;
+    oneof value { 
+		CallProtocol callProtocol= 2;
+    }
+}
+
+
+
+// ExyCallState 枚举
+enum ExyCallState { 
+	EVVCallStatePending = 0;
+	EVVCallStateExchangingKeys = 1;
+	EVVCallStateReady = 2;
+	EVVCallStateHangingUp = 3;
+	EVVCallStateDiscarded = 4;
+	EVVCallStateError = 5;
+}
+
+
+message CallStateAbsClass { 
+  ExyCallState type = 1;
+    oneof value { 
+		CallStatePending callStatePending= 2;
+		CallStateExchangingKeys callStateExchangingKeys= 3;
+		CallStateReady callStateReady= 4;
+		CallStateHangingUp callStateHangingUp= 5;
+		CallStateDiscarded callStateDiscarded= 6;
+		CallStateError callStateError= 7;
+    }
+}
+
+
+
+
+
+
+
+
+
+// ExyCallbackQueryAnswer 枚举
+enum ExyCallbackQueryAnswer { 
+	EVVCallbackQueryAnswer = 0;
+}
+
+
+message CallbackQueryAnswerAbsClass { 
+  ExyCallbackQueryAnswer type = 1;
+    oneof value { 
+		CallbackQueryAnswer callbackQueryAnswer= 2;
+    }
+}
+
+
+
+// ExyCallbackQueryPayload 枚举
+enum ExyCallbackQueryPayload { 
+	EVVCallbackQueryPayloadData = 0;
+	EVVCallbackQueryPayloadGame = 1;
+}
+
+
+message CallbackQueryPayloadAbsClass { 
+  ExyCallbackQueryPayload type = 1;
+    oneof value { 
+		CallbackQueryPayloadData callbackQueryPayloadData= 2;
+		CallbackQueryPayloadGame callbackQueryPayloadGame= 3;
+    }
+}
+
+
+
+
+
+// ExyChat 枚举
+enum ExyChat { 
+	EVVChat = 0;
+}
+
+
+message ChatAbsClass { 
+  ExyChat type = 1;
+    oneof value { 
+		Chat chat= 2;
+    }
+}
+
+
+
+// ExyChatDoit 枚举
+enum ExyChatDoit { 
+	EVVChatDoitTyping = 0;
+	EVVChatDoitRecordingVideo = 1;
+	EVVChatDoitUploadingVideo = 2;
+	EVVChatDoitRecordingVoiceNote = 3;
+	EVVChatDoitUploadingVoiceNote = 4;
+	EVVChatDoitUploadingPhoto = 5;
+	EVVChatDoitUploadingDocument = 6;
+	EVVChatDoitChoosingLocation = 7;
+	EVVChatDoitChoosingContact = 8;
+	EVVChatDoitStartPlayingGame = 9;
+	EVVChatDoitRecordingVideoNote = 10;
+	EVVChatDoitUploadingVideoNote = 11;
+	EVVChatDoitCancel = 12;
+}
+
+
+message ChatDoitAbsClass { 
+  ExyChatDoit type = 1;
+    oneof value { 
+		ChatDoitTyping chatDoitTyping= 2;
+		ChatDoitRecordingVideo chatDoitRecordingVideo= 3;
+		ChatDoitUploadingVideo chatDoitUploadingVideo= 4;
+		ChatDoitRecordingVoiceNote chatDoitRecordingVoiceNote= 5;
+		ChatDoitUploadingVoiceNote chatDoitUploadingVoiceNote= 6;
+		ChatDoitUploadingPhoto chatDoitUploadingPhoto= 7;
+		ChatDoitUploadingDocument chatDoitUploadingDocument= 8;
+		ChatDoitChoosingLocation chatDoitChoosingLocation= 9;
+		ChatDoitChoosingContact chatDoitChoosingContact= 10;
+		ChatDoitStartPlayingGame chatDoitStartPlayingGame= 11;
+		ChatDoitRecordingVideoNote chatDoitRecordingVideoNote= 12;
+		ChatDoitUploadingVideoNote chatDoitUploadingVideoNote= 13;
+		ChatDoitCancel chatDoitCancel= 14;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyChatEvent 枚举
+enum ExyChatEvent { 
+	EVVChatEvent = 0;
+}
+
+
+message ChatEventAbsClass { 
+  ExyChatEvent type = 1;
+    oneof value { 
+		ChatEvent chatEvent= 2;
+    }
+}
+
+
+
+// ExyChatEventDoit 枚举
+enum ExyChatEventDoit { 
+	EVVChatEventInfoEdited = 0;
+	EVVChatEventInfoDeleted = 1;
+	EVVChatEventInfoPinned = 2;
+	EVVChatEventInfoUnpinned = 3;
+	EVVChatEventMemberJoined = 4;
+	EVVChatEventMemberLeft = 5;
+	EVVChatEventMemberInvited = 6;
+	EVVChatEventMemberPromoted = 7;
+	EVVChatEventMemberRestricted = 8;
+	EVVChatEventTitleChanged = 9;
+	EVVChatEventDescriptionChanged = 10;
+	EVVChatEventUsernameChanged = 11;
+	EVVChatEventPhotoChanged = 12;
+	EVVChatEventInvitesToggled = 13;
+	EVVChatEventSignInfosToggled = 14;
+	EVVChatEventStickerSetChanged = 15;
+	EVVChatEventIsAllHistoryAvailableToggled = 16;
+}
+
+
+message ChatEventDoitAbsClass { 
+  ExyChatEventDoit type = 1;
+    oneof value { 
+		ChatEventInfoEdited chatEventInfoEdited= 2;
+		ChatEventInfoDeleted chatEventInfoDeleted= 3;
+		ChatEventInfoPinned chatEventInfoPinned= 4;
+		ChatEventInfoUnpinned chatEventInfoUnpinned= 5;
+		ChatEventMemberJoined chatEventMemberJoined= 6;
+		ChatEventMemberLeft chatEventMemberLeft= 7;
+		ChatEventMemberInvited chatEventMemberInvited= 8;
+		ChatEventMemberPromoted chatEventMemberPromoted= 9;
+		ChatEventMemberRestricted chatEventMemberRestricted= 10;
+		ChatEventTitleChanged chatEventTitleChanged= 11;
+		ChatEventDescriptionChanged chatEventDescriptionChanged= 12;
+		ChatEventUsernameChanged chatEventUsernameChanged= 13;
+		ChatEventPhotoChanged chatEventPhotoChanged= 14;
+		ChatEventInvitesToggled chatEventInvitesToggled= 15;
+		ChatEventSignInfosToggled chatEventSignInfosToggled= 16;
+		ChatEventStickerSetChanged chatEventStickerSetChanged= 17;
+		ChatEventIsAllHistoryAvailableToggled chatEventIsAllHistoryAvailableToggled= 18;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyChatEventLogFilters 枚举
+enum ExyChatEventLogFilters { 
+	EVVChatEventLogFilters = 0;
+}
+
+
+message ChatEventLogFiltersAbsClass { 
+  ExyChatEventLogFilters type = 1;
+    oneof value { 
+		ChatEventLogFilters chatEventLogFilters= 2;
+    }
+}
+
+
+
+// ExyChatEvents 枚举
+enum ExyChatEvents { 
+	EVVChatEvents = 0;
+}
+
+
+message ChatEventsAbsClass { 
+  ExyChatEvents type = 1;
+    oneof value { 
+		ChatEvents chatEvents= 2;
+    }
+}
+
+
+
+// ExyChatInviteLink 枚举
+enum ExyChatInviteLink { 
+	EVVChatInviteLink = 0;
+}
+
+
+message ChatInviteLinkAbsClass { 
+  ExyChatInviteLink type = 1;
+    oneof value { 
+		ChatInviteLink chatInviteLink= 2;
+    }
+}
+
+
+
+// ExyChatInviteLinkInfo 枚举
+enum ExyChatInviteLinkInfo { 
+	EVVChatInviteLinkInfo = 0;
+}
+
+
+message ChatInviteLinkInfoAbsClass { 
+  ExyChatInviteLinkInfo type = 1;
+    oneof value { 
+		ChatInviteLinkInfo chatInviteLinkInfo= 2;
+    }
+}
+
+
+
+// ExyChatMember 枚举
+enum ExyChatMember { 
+	EVVChatMember = 0;
+}
+
+
+message ChatMemberAbsClass { 
+  ExyChatMember type = 1;
+    oneof value { 
+		ChatMember chatMember= 2;
+    }
+}
+
+
+
+// ExyChatMemberStatus 枚举
+enum ExyChatMemberStatus { 
+	EVVChatMemberStatusCreator = 0;
+	EVVChatMemberStatusAdministrator = 1;
+	EVVChatMemberStatusMember = 2;
+	EVVChatMemberStatusRestricted = 3;
+	EVVChatMemberStatusLeft = 4;
+	EVVChatMemberStatusBanned = 5;
+}
+
+
+message ChatMemberStatusAbsClass { 
+  ExyChatMemberStatus type = 1;
+    oneof value { 
+		ChatMemberStatusCreator chatMemberStatusCreator= 2;
+		ChatMemberStatusAdministrator chatMemberStatusAdministrator= 3;
+		ChatMemberStatusMember chatMemberStatusMember= 4;
+		ChatMemberStatusRestricted chatMemberStatusRestricted= 5;
+		ChatMemberStatusLeft chatMemberStatusLeft= 6;
+		ChatMemberStatusBanned chatMemberStatusBanned= 7;
+    }
+}
+
+
+
+
+
+
+
+
+
+// ExyChatMembers 枚举
+enum ExyChatMembers { 
+	EVVChatMembers = 0;
+}
+
+
+message ChatMembersAbsClass { 
+  ExyChatMembers type = 1;
+    oneof value { 
+		ChatMembers chatMembers= 2;
+    }
+}
+
+
+
+// ExyChatMembersFilter 枚举
+enum ExyChatMembersFilter { 
+	EVVChatMembersFilterAdministrators = 0;
+	EVVChatMembersFilterMembers = 1;
+	EVVChatMembersFilterRestricted = 2;
+	EVVChatMembersFilterBanned = 3;
+	EVVChatMembersFilterBots = 4;
+}
+
+
+message ChatMembersFilterAbsClass { 
+  ExyChatMembersFilter type = 1;
+    oneof value { 
+		ChatMembersFilterAdministrators chatMembersFilterAdministrators= 2;
+		ChatMembersFilterMembers chatMembersFilterMembers= 3;
+		ChatMembersFilterRestricted chatMembersFilterRestricted= 4;
+		ChatMembersFilterBanned chatMembersFilterBanned= 5;
+		ChatMembersFilterBots chatMembersFilterBots= 6;
+    }
+}
+
+
+
+
+
+
+
+
+// ExyChatNotificationSettings 枚举
+enum ExyChatNotificationSettings { 
+	EVVChatNotificationSettings = 0;
+}
+
+
+message ChatNotificationSettingsAbsClass { 
+  ExyChatNotificationSettings type = 1;
+    oneof value { 
+		ChatNotificationSettings chatNotificationSettings= 2;
+    }
+}
+
+
+
+// ExyChatPhoto 枚举
+enum ExyChatPhoto { 
+	EVVChatPhoto = 0;
+}
+
+
+message ChatPhotoAbsClass { 
+  ExyChatPhoto type = 1;
+    oneof value { 
+		ChatPhoto chatPhoto= 2;
+    }
+}
+
+
+
+// ExyChatReportReason 枚举
+enum ExyChatReportReason { 
+	EVVChatReportReasonSpam = 0;
+	EVVChatReportReasonViolence = 1;
+	EVVChatReportReasonPornography = 2;
+	EVVChatReportReasonCopyright = 3;
+	EVVChatReportReasonCustom = 4;
+}
+
+
+message ChatReportReasonAbsClass { 
+  ExyChatReportReason type = 1;
+    oneof value { 
+		ChatReportReasonSpam chatReportReasonSpam= 2;
+		ChatReportReasonViolence chatReportReasonViolence= 3;
+		ChatReportReasonPornography chatReportReasonPornography= 4;
+		ChatReportReasonCopyright chatReportReasonCopyright= 5;
+		ChatReportReasonCustom chatReportReasonCustom= 6;
+    }
+}
+
+
+
+
+
+
+
+
+// ExyChatReportSpamState 枚举
+enum ExyChatReportSpamState { 
+	EVVChatReportSpamState = 0;
+}
+
+
+message ChatReportSpamStateAbsClass { 
+  ExyChatReportSpamState type = 1;
+    oneof value { 
+		ChatReportSpamState chatReportSpamState= 2;
+    }
+}
+
+
+
+// ExyChatType 枚举
+enum ExyChatType { 
+	EVVChatTypePrivate = 0;
+	EVVChatTypeBasicGroup = 1;
+	EVVChatTypeSupergroup = 2;
+	EVVChatTypeSecret = 3;
+}
+
+
+message ChatTypeAbsClass { 
+  ExyChatType type = 1;
+    oneof value { 
+		ChatTypePrivate chatTypePrivate= 2;
+		ChatTypeBasicGroup chatTypeBasicGroup= 3;
+		ChatTypeSupergroup chatTypeSupergroup= 4;
+		ChatTypeSecret chatTypeSecret= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyChats 枚举
+enum ExyChats { 
+	EVVChats = 0;
+}
+
+
+message ChatsAbsClass { 
+  ExyChats type = 1;
+    oneof value { 
+		Chats chats= 2;
+    }
+}
+
+
+
+// ExyCheckChatUsernameResult 枚举
+enum ExyCheckChatUsernameResult { 
+	EVVCheckChatUsernameResultOk = 0;
+	EVVCheckChatUsernameResultUsernameInvalid = 1;
+	EVVCheckChatUsernameResultUsernameOccupied = 2;
+	EVVCheckChatUsernameResultPublicChatsTooMuch = 3;
+	EVVCheckChatUsernameResultPublicGroupsUnavailable = 4;
+}
+
+
+message CheckChatUsernameResultAbsClass { 
+  ExyCheckChatUsernameResult type = 1;
+    oneof value { 
+		CheckChatUsernameResultOk checkChatUsernameResultOk= 2;
+		CheckChatUsernameResultUsernameInvalid checkChatUsernameResultUsernameInvalid= 3;
+		CheckChatUsernameResultUsernameOccupied checkChatUsernameResultUsernameOccupied= 4;
+		CheckChatUsernameResultPublicChatsTooMuch checkChatUsernameResultPublicChatsTooMuch= 5;
+		CheckChatUsernameResultPublicGroupsUnavailable checkChatUsernameResultPublicGroupsUnavailable= 6;
+    }
+}
+
+
+
+
+
+
+
+
+// ExyConnectedWebsite 枚举
+enum ExyConnectedWebsite { 
+	EVVConnectedWebsite = 0;
+}
+
+
+message ConnectedWebsiteAbsClass { 
+  ExyConnectedWebsite type = 1;
+    oneof value { 
+		ConnectedWebsite connectedWebsite= 2;
+    }
+}
+
+
+
+// ExyConnectedWebsites 枚举
+enum ExyConnectedWebsites { 
+	EVVConnectedWebsites = 0;
+}
+
+
+message ConnectedWebsitesAbsClass { 
+  ExyConnectedWebsites type = 1;
+    oneof value { 
+		ConnectedWebsites connectedWebsites= 2;
+    }
+}
+
+
+
+// ExyConnectionState 枚举
+enum ExyConnectionState { 
+	EVVConnectionStateWaitingForNetwork = 0;
+	EVVConnectionStateConnectingToProxy = 1;
+	EVVConnectionStateConnecting = 2;
+	EVVConnectionStateUpdating = 3;
+	EVVConnectionStateReady = 4;
+}
+
+
+message ConnectionStateAbsClass { 
+  ExyConnectionState type = 1;
+    oneof value { 
+		ConnectionStateWaitingForNetwork connectionStateWaitingForNetwork= 2;
+		ConnectionStateConnectingToProxy connectionStateConnectingToProxy= 3;
+		ConnectionStateConnecting connectionStateConnecting= 4;
+		ConnectionStateUpdating connectionStateUpdating= 5;
+		ConnectionStateReady connectionStateReady= 6;
+    }
+}
+
+
+
+
+
+
+
+
+// ExyContact 枚举
+enum ExyContact { 
+	EVVContact = 0;
+}
+
+
+message ContactAbsClass { 
+  ExyContact type = 1;
+    oneof value { 
+		Contact contact= 2;
+    }
+}
+
+
+
+// ExyCount 枚举
+enum ExyCount { 
+	EVVCount = 0;
+}
+
+
+message CountAbsClass { 
+  ExyCount type = 1;
+    oneof value { 
+		Count count= 2;
+    }
+}
+
+
+
+// ExyCustomReqResult 枚举
+enum ExyCustomReqResult { 
+	EVVCustomReqResult = 0;
+}
+
+
+message CustomReqResultAbsClass { 
+  ExyCustomReqResult type = 1;
+    oneof value { 
+		CustomReqResult customReqResult= 2;
+    }
+}
+
+
+
+// ExyDate 枚举
+enum ExyDate { 
+	EVVDate = 0;
+}
+
+
+message DateAbsClass { 
+  ExyDate type = 1;
+    oneof value { 
+		Date date= 2;
+    }
+}
+
+
+
+// ExyDatedFile 枚举
+enum ExyDatedFile { 
+	EVVDatedFile = 0;
+}
+
+
+message DatedFileAbsClass { 
+  ExyDatedFile type = 1;
+    oneof value { 
+		DatedFile datedFile= 2;
+    }
+}
+
+
+
+// ExyDeepLinkInfo 枚举
+enum ExyDeepLinkInfo { 
+	EVVDeepLinkInfo = 0;
+}
+
+
+message DeepLinkInfoAbsClass { 
+  ExyDeepLinkInfo type = 1;
+    oneof value { 
+		DeepLinkInfo deepLinkInfo= 2;
+    }
+}
+
+
+
+// ExyDeviceToken 枚举
+enum ExyDeviceToken { 
+	EVVDeviceTokenGoogleCloudMessaging = 0;
+	EVVDeviceTokenApplePush = 1;
+	EVVDeviceTokenApplePushVoIP = 2;
+	EVVDeviceTokenWindowsPush = 3;
+	EVVDeviceTokenMicrosoftPush = 4;
+	EVVDeviceTokenMicrosoftPushVoIP = 5;
+	EVVDeviceTokenWebPush = 6;
+	EVVDeviceTokenSimplePush = 7;
+	EVVDeviceTokenUbuntuPush = 8;
+	EVVDeviceTokenBlackBerryPush = 9;
+	EVVDeviceTokenTizenPush = 10;
+}
+
+
+message DeviceTokenAbsClass { 
+  ExyDeviceToken type = 1;
+    oneof value { 
+		DeviceTokenGoogleCloudMessaging deviceTokenGoogleCloudMessaging= 2;
+		DeviceTokenApplePush deviceTokenApplePush= 3;
+		DeviceTokenApplePushVoIP deviceTokenApplePushVoIP= 4;
+		DeviceTokenWindowsPush deviceTokenWindowsPush= 5;
+		DeviceTokenMicrosoftPush deviceTokenMicrosoftPush= 6;
+		DeviceTokenMicrosoftPushVoIP deviceTokenMicrosoftPushVoIP= 7;
+		DeviceTokenWebPush deviceTokenWebPush= 8;
+		DeviceTokenSimplePush deviceTokenSimplePush= 9;
+		DeviceTokenUbuntuPush deviceTokenUbuntuPush= 10;
+		DeviceTokenBlackBerryPush deviceTokenBlackBerryPush= 11;
+		DeviceTokenTizenPush deviceTokenTizenPush= 12;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyDocument 枚举
+enum ExyDocument { 
+	EVVDocument = 0;
+}
+
+
+message DocumentAbsClass { 
+  ExyDocument type = 1;
+    oneof value { 
+		Document document= 2;
+    }
+}
+
+
+
+// ExyDraftInfo 枚举
+enum ExyDraftInfo { 
+	EVVDraftInfo = 0;
+}
+
+
+message DraftInfoAbsClass { 
+  ExyDraftInfo type = 1;
+    oneof value { 
+		DraftInfo draftInfo= 2;
+    }
+}
+
+
+
+// ExyEmailAddressAuthenticationCodeInfo 枚举
+enum ExyEmailAddressAuthenticationCodeInfo { 
+	EVVEmailAddressAuthenticationCodeInfo = 0;
+}
+
+
+message EmailAddressAuthenticationCodeInfoAbsClass { 
+  ExyEmailAddressAuthenticationCodeInfo type = 1;
+    oneof value { 
+		EmailAddressAuthenticationCodeInfo emailAddressAuthenticationCodeInfo= 2;
+    }
+}
+
+
+
+// ExyEncryptedCredentials 枚举
+enum ExyEncryptedCredentials { 
+	EVVEncryptedCredentials = 0;
+}
+
+
+message EncryptedCredentialsAbsClass { 
+  ExyEncryptedCredentials type = 1;
+    oneof value { 
+		EncryptedCredentials encryptedCredentials= 2;
+    }
+}
+
+
+
+// ExyEncryptedPassportElement 枚举
+enum ExyEncryptedPassportElement { 
+	EVVEncryptedPassportElement = 0;
+}
+
+
+message EncryptedPassportElementAbsClass { 
+  ExyEncryptedPassportElement type = 1;
+    oneof value { 
+		EncryptedPassportElement encryptedPassportElement= 2;
+    }
+}
+
+
+
+// ExyError 枚举
+enum ExyError { 
+	EVVError = 0;
+}
+
+
+message ErrorAbsClass { 
+  ExyError type = 1;
+    oneof value { 
+		Error error= 2;
+    }
+}
+
+
+
+// ExyFile 枚举
+enum ExyFile { 
+	EVVFile = 0;
+}
+
+
+message FileAbsClass { 
+  ExyFile type = 1;
+    oneof value { 
+		File file= 2;
+    }
+}
+
+
+
+// ExyFileType 枚举
+enum ExyFileType { 
+	EVVFileTypeNone = 0;
+	EVVFileTypeAnimation = 1;
+	EVVFileTypeAudio = 2;
+	EVVFileTypeDocument = 3;
+	EVVFileTypePhoto = 4;
+	EVVFileTypeProfilePhoto = 5;
+	EVVFileTypeSecret = 6;
+	EVVFileTypeSecretThumbnail = 7;
+	EVVFileTypeSecure = 8;
+	EVVFileTypeSticker = 9;
+	EVVFileTypeThumbnail = 10;
+	EVVFileTypeUnknown = 11;
+	EVVFileTypeVideo = 12;
+	EVVFileTypeVideoNote = 13;
+	EVVFileTypeVoiceNote = 14;
+	EVVFileTypeWallpaper = 15;
+}
+
+
+message FileTypeAbsClass { 
+  ExyFileType type = 1;
+    oneof value { 
+		FileTypeNone fileTypeNone= 2;
+		FileTypeAnimation fileTypeAnimation= 3;
+		FileTypeAudio fileTypeAudio= 4;
+		FileTypeDocument fileTypeDocument= 5;
+		FileTypePhoto fileTypePhoto= 6;
+		FileTypeProfilePhoto fileTypeProfilePhoto= 7;
+		FileTypeSecret fileTypeSecret= 8;
+		FileTypeSecretThumbnail fileTypeSecretThumbnail= 9;
+		FileTypeSecure fileTypeSecure= 10;
+		FileTypeSticker fileTypeSticker= 11;
+		FileTypeThumbnail fileTypeThumbnail= 12;
+		FileTypeUnknown fileTypeUnknown= 13;
+		FileTypeVideo fileTypeVideo= 14;
+		FileTypeVideoNote fileTypeVideoNote= 15;
+		FileTypeVoiceNote fileTypeVoiceNote= 16;
+		FileTypeWallpaper fileTypeWallpaper= 17;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyFormattedText 枚举
+enum ExyFormattedText { 
+	EVVFormattedText = 0;
+}
+
+
+message FormattedTextAbsClass { 
+  ExyFormattedText type = 1;
+    oneof value { 
+		FormattedText formattedText= 2;
+    }
+}
+
+
+
+// ExyFoundInfos 枚举
+enum ExyFoundInfos { 
+	EVVFoundInfos = 0;
+}
+
+
+message FoundInfosAbsClass { 
+  ExyFoundInfos type = 1;
+    oneof value { 
+		FoundInfos foundInfos= 2;
+    }
+}
+
+
+
+// ExyGame 枚举
+enum ExyGame { 
+	EVVGame = 0;
+}
+
+
+message GameAbsClass { 
+  ExyGame type = 1;
+    oneof value { 
+		Game game= 2;
+    }
+}
+
+
+
+// ExyGameHighScore 枚举
+enum ExyGameHighScore { 
+	EVVGameHighScore = 0;
+}
+
+
+message GameHighScoreAbsClass { 
+  ExyGameHighScore type = 1;
+    oneof value { 
+		GameHighScore gameHighScore= 2;
+    }
+}
+
+
+
+// ExyGameHighScores 枚举
+enum ExyGameHighScores { 
+	EVVGameHighScores = 0;
+}
+
+
+message GameHighScoresAbsClass { 
+  ExyGameHighScores type = 1;
+    oneof value { 
+		GameHighScores gameHighScores= 2;
+    }
+}
+
+
+
+// ExyHashtags 枚举
+enum ExyHashtags { 
+	EVVHashtags = 0;
+}
+
+
+message HashtagsAbsClass { 
+  ExyHashtags type = 1;
+    oneof value { 
+		Hashtags hashtags= 2;
+    }
+}
+
+
+
+// ExyIdentityDocument 枚举
+enum ExyIdentityDocument { 
+	EVVIdentityDocument = 0;
+}
+
+
+message IdentityDocumentAbsClass { 
+  ExyIdentityDocument type = 1;
+    oneof value { 
+		IdentityDocument identityDocument= 2;
+    }
+}
+
+
+
+// ExyImportedContacts 枚举
+enum ExyImportedContacts { 
+	EVVImportedContacts = 0;
+}
+
+
+message ImportedContactsAbsClass { 
+  ExyImportedContacts type = 1;
+    oneof value { 
+		ImportedContacts importedContacts= 2;
+    }
+}
+
+
+
+// ExyInlineKeyboardButton 枚举
+enum ExyInlineKeyboardButton { 
+	EVVInlineKeyboardButton = 0;
+}
+
+
+message InlineKeyboardButtonAbsClass { 
+  ExyInlineKeyboardButton type = 1;
+    oneof value { 
+		InlineKeyboardButton inlineKeyboardButton= 2;
+    }
+}
+
+
+
+// ExyInlineKeyboardButtonType 枚举
+enum ExyInlineKeyboardButtonType { 
+	EVVInlineKeyboardButtonTypeURL = 0;
+	EVVInlineKeyboardButtonTypeCallback = 1;
+	EVVInlineKeyboardButtonTypeCallbackGame = 2;
+	EVVInlineKeyboardButtonTypeSwitchInline = 3;
+	EVVInlineKeyboardButtonTypeBuy = 4;
+}
+
+
+message InlineKeyboardButtonTypeAbsClass { 
+  ExyInlineKeyboardButtonType type = 1;
+    oneof value { 
+		InlineKeyboardButtonTypeURL inlineKeyboardButtonTypeURL= 2;
+		InlineKeyboardButtonTypeCallback inlineKeyboardButtonTypeCallback= 3;
+		InlineKeyboardButtonTypeCallbackGame inlineKeyboardButtonTypeCallbackGame= 4;
+		InlineKeyboardButtonTypeSwitchInline inlineKeyboardButtonTypeSwitchInline= 5;
+		InlineKeyboardButtonTypeBuy inlineKeyboardButtonTypeBuy= 6;
+    }
+}
+
+
+
+
+
+
+
+
+// ExyInlineQueryResult 枚举
+enum ExyInlineQueryResult { 
+	EVVInlineQueryResultArticle = 0;
+	EVVInlineQueryResultContact = 1;
+	EVVInlineQueryResultLocation = 2;
+	EVVInlineQueryResultVenue = 3;
+	EVVInlineQueryResultGame = 4;
+	EVVInlineQueryResultAnimation = 5;
+	EVVInlineQueryResultAudio = 6;
+	EVVInlineQueryResultDocument = 7;
+	EVVInlineQueryResultPhoto = 8;
+	EVVInlineQueryResultSticker = 9;
+	EVVInlineQueryResultVideo = 10;
+	EVVInlineQueryResultVoiceNote = 11;
+}
+
+
+message InlineQueryResultAbsClass { 
+  ExyInlineQueryResult type = 1;
+    oneof value { 
+		InlineQueryResultArticle inlineQueryResultArticle= 2;
+		InlineQueryResultContact inlineQueryResultContact= 3;
+		InlineQueryResultLocation inlineQueryResultLocation= 4;
+		InlineQueryResultVenue inlineQueryResultVenue= 5;
+		InlineQueryResultGame inlineQueryResultGame= 6;
+		InlineQueryResultAnimation inlineQueryResultAnimation= 7;
+		InlineQueryResultAudio inlineQueryResultAudio= 8;
+		InlineQueryResultDocument inlineQueryResultDocument= 9;
+		InlineQueryResultPhoto inlineQueryResultPhoto= 10;
+		InlineQueryResultSticker inlineQueryResultSticker= 11;
+		InlineQueryResultVideo inlineQueryResultVideo= 12;
+		InlineQueryResultVoiceNote inlineQueryResultVoiceNote= 13;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyInlineQueryResults 枚举
+enum ExyInlineQueryResults { 
+	EVVInlineQueryResults = 0;
+}
+
+
+message InlineQueryResultsAbsClass { 
+  ExyInlineQueryResults type = 1;
+    oneof value { 
+		InlineQueryResults inlineQueryResults= 2;
+    }
+}
+
+
+
+// ExyInputCredentials 枚举
+enum ExyInputCredentials { 
+	EVVInputCredentialsSaved = 0;
+	EVVInputCredentialsNew = 1;
+	EVVInputCredentialsAndroidPay = 2;
+	EVVInputCredentialsApplePay = 3;
+}
+
+
+message InputCredentialsAbsClass { 
+  ExyInputCredentials type = 1;
+    oneof value { 
+		InputCredentialsSaved inputCredentialsSaved= 2;
+		InputCredentialsNew inputCredentialsNew= 3;
+		InputCredentialsAndroidPay inputCredentialsAndroidPay= 4;
+		InputCredentialsApplePay inputCredentialsApplePay= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyInputFile 枚举
+enum ExyInputFile { 
+	EVVInputFileID = 0;
+	EVVInputFileRemote = 1;
+	EVVInputFileLocal = 2;
+	EVVInputFileGenerated = 3;
+}
+
+
+message InputFileAbsClass { 
+  ExyInputFile type = 1;
+    oneof value { 
+		InputFileID inputFileID= 2;
+		InputFileRemote inputFileRemote= 3;
+		InputFileLocal inputFileLocal= 4;
+		InputFileGenerated inputFileGenerated= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyInputIdentityDocument 枚举
+enum ExyInputIdentityDocument { 
+	EVVInputIdentityDocument = 0;
+}
+
+
+message InputIdentityDocumentAbsClass { 
+  ExyInputIdentityDocument type = 1;
+    oneof value { 
+		InputIdentityDocument inputIdentityDocument= 2;
+    }
+}
+
+
+
+// ExyInputInlineQueryResult 枚举
+enum ExyInputInlineQueryResult { 
+	EVVInputInlineQueryResultAnimatedGif = 0;
+	EVVInputInlineQueryResultAnimatedMpeg4 = 1;
+	EVVInputInlineQueryResultArticle = 2;
+	EVVInputInlineQueryResultAudio = 3;
+	EVVInputInlineQueryResultContact = 4;
+	EVVInputInlineQueryResultDocument = 5;
+	EVVInputInlineQueryResultGame = 6;
+	EVVInputInlineQueryResultLocation = 7;
+	EVVInputInlineQueryResultPhoto = 8;
+	EVVInputInlineQueryResultSticker = 9;
+	EVVInputInlineQueryResultVenue = 10;
+	EVVInputInlineQueryResultVideo = 11;
+	EVVInputInlineQueryResultVoiceNote = 12;
+}
+
+
+message InputInlineQueryResultAbsClass { 
+  ExyInputInlineQueryResult type = 1;
+    oneof value { 
+		InputInlineQueryResultAnimatedGif inputInlineQueryResultAnimatedGif= 2;
+		InputInlineQueryResultAnimatedMpeg4 inputInlineQueryResultAnimatedMpeg4= 3;
+		InputInlineQueryResultArticle inputInlineQueryResultArticle= 4;
+		InputInlineQueryResultAudio inputInlineQueryResultAudio= 5;
+		InputInlineQueryResultContact inputInlineQueryResultContact= 6;
+		InputInlineQueryResultDocument inputInlineQueryResultDocument= 7;
+		InputInlineQueryResultGame inputInlineQueryResultGame= 8;
+		InputInlineQueryResultLocation inputInlineQueryResultLocation= 9;
+		InputInlineQueryResultPhoto inputInlineQueryResultPhoto= 10;
+		InputInlineQueryResultSticker inputInlineQueryResultSticker= 11;
+		InputInlineQueryResultVenue inputInlineQueryResultVenue= 12;
+		InputInlineQueryResultVideo inputInlineQueryResultVideo= 13;
+		InputInlineQueryResultVoiceNote inputInlineQueryResultVoiceNote= 14;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyInputInfoContent 枚举
+enum ExyInputInfoContent { 
+	EVVInputInfoText = 0;
+	EVVInputInfoAnimation = 1;
+	EVVInputInfoAudio = 2;
+	EVVInputInfoDocument = 3;
+	EVVInputInfoPhoto = 4;
+	EVVInputInfoSticker = 5;
+	EVVInputInfoVideo = 6;
+	EVVInputInfoVideoNote = 7;
+	EVVInputInfoVoiceNote = 8;
+	EVVInputInfoLocation = 9;
+	EVVInputInfoVenue = 10;
+	EVVInputInfoContact = 11;
+	EVVInputInfoGame = 12;
+	EVVInputInfoInvoice = 13;
+	EVVInputInfoForwarded = 14;
+}
+
+
+message InputInfoContentAbsClass { 
+  ExyInputInfoContent type = 1;
+    oneof value { 
+		InputInfoText inputInfoText= 2;
+		InputInfoAnimation inputInfoAnimation= 3;
+		InputInfoAudio inputInfoAudio= 4;
+		InputInfoDocument inputInfoDocument= 5;
+		InputInfoPhoto inputInfoPhoto= 6;
+		InputInfoSticker inputInfoSticker= 7;
+		InputInfoVideo inputInfoVideo= 8;
+		InputInfoVideoNote inputInfoVideoNote= 9;
+		InputInfoVoiceNote inputInfoVoiceNote= 10;
+		InputInfoLocation inputInfoLocation= 11;
+		InputInfoVenue inputInfoVenue= 12;
+		InputInfoContact inputInfoContact= 13;
+		InputInfoGame inputInfoGame= 14;
+		InputInfoInvoice inputInfoInvoice= 15;
+		InputInfoForwarded inputInfoForwarded= 16;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyInputPassportElement 枚举
+enum ExyInputPassportElement { 
+	EVVInputPassportElementPersonalDetails = 0;
+	EVVInputPassportElementPassport = 1;
+	EVVInputPassportElementDriverLicense = 2;
+	EVVInputPassportElementIdentityCard = 3;
+	EVVInputPassportElementInternalPassport = 4;
+	EVVInputPassportElementAddress = 5;
+	EVVInputPassportElementUtilityBill = 6;
+	EVVInputPassportElementBankStatement = 7;
+	EVVInputPassportElementRentalAgreement = 8;
+	EVVInputPassportElementPassportRegistration = 9;
+	EVVInputPassportElementTemporaryRegistration = 10;
+	EVVInputPassportElementPhoneNumber = 11;
+	EVVInputPassportElementEmailAddress = 12;
+}
+
+
+message InputPassportElementAbsClass { 
+  ExyInputPassportElement type = 1;
+    oneof value { 
+		InputPassportElementPersonalDetails inputPassportElementPersonalDetails= 2;
+		InputPassportElementPassport inputPassportElementPassport= 3;
+		InputPassportElementDriverLicense inputPassportElementDriverLicense= 4;
+		InputPassportElementIdentityCard inputPassportElementIdentityCard= 5;
+		InputPassportElementInternalPassport inputPassportElementInternalPassport= 6;
+		InputPassportElementAddress inputPassportElementAddress= 7;
+		InputPassportElementUtilityBill inputPassportElementUtilityBill= 8;
+		InputPassportElementBankStatement inputPassportElementBankStatement= 9;
+		InputPassportElementRentalAgreement inputPassportElementRentalAgreement= 10;
+		InputPassportElementPassportRegistration inputPassportElementPassportRegistration= 11;
+		InputPassportElementTemporaryRegistration inputPassportElementTemporaryRegistration= 12;
+		InputPassportElementPhoneNumber inputPassportElementPhoneNumber= 13;
+		InputPassportElementEmailAddress inputPassportElementEmailAddress= 14;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyInputPassportElementError 枚举
+enum ExyInputPassportElementError { 
+	EVVInputPassportElementError = 0;
+}
+
+
+message InputPassportElementErrorAbsClass { 
+  ExyInputPassportElementError type = 1;
+    oneof value { 
+		InputPassportElementError inputPassportElementError= 2;
+    }
+}
+
+
+
+// ExyInputPassportElementErrorSource 枚举
+enum ExyInputPassportElementErrorSource { 
+	EVVInputPassportElementErrorSourceUnspecified = 0;
+	EVVInputPassportElementErrorSourceDataField = 1;
+	EVVInputPassportElementErrorSourceFrontSide = 2;
+	EVVInputPassportElementErrorSourceReverseSide = 3;
+	EVVInputPassportElementErrorSourceSelfie = 4;
+	EVVInputPassportElementErrorSourceTranslationFile = 5;
+	EVVInputPassportElementErrorSourceTranslationFiles = 6;
+	EVVInputPassportElementErrorSourceFile = 7;
+	EVVInputPassportElementErrorSourceFiles = 8;
+}
+
+
+message InputPassportElementErrorSourceAbsClass { 
+  ExyInputPassportElementErrorSource type = 1;
+    oneof value { 
+		InputPassportElementErrorSourceUnspecified inputPassportElementErrorSourceUnspecified= 2;
+		InputPassportElementErrorSourceDataField inputPassportElementErrorSourceDataField= 3;
+		InputPassportElementErrorSourceFrontSide inputPassportElementErrorSourceFrontSide= 4;
+		InputPassportElementErrorSourceReverseSide inputPassportElementErrorSourceReverseSide= 5;
+		InputPassportElementErrorSourceSelfie inputPassportElementErrorSourceSelfie= 6;
+		InputPassportElementErrorSourceTranslationFile inputPassportElementErrorSourceTranslationFile= 7;
+		InputPassportElementErrorSourceTranslationFiles inputPassportElementErrorSourceTranslationFiles= 8;
+		InputPassportElementErrorSourceFile inputPassportElementErrorSourceFile= 9;
+		InputPassportElementErrorSourceFiles inputPassportElementErrorSourceFiles= 10;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyInputPersonalDocument 枚举
+enum ExyInputPersonalDocument { 
+	EVVInputPersonalDocument = 0;
+}
+
+
+message InputPersonalDocumentAbsClass { 
+  ExyInputPersonalDocument type = 1;
+    oneof value { 
+		InputPersonalDocument inputPersonalDocument= 2;
+    }
+}
+
+
+
+// ExyInputSticker 枚举
+enum ExyInputSticker { 
+	EVVInputSticker = 0;
+}
+
+
+message InputStickerAbsClass { 
+  ExyInputSticker type = 1;
+    oneof value { 
+		InputSticker inputSticker= 2;
+    }
+}
+
+
+
+// ExyInputThumbnail 枚举
+enum ExyInputThumbnail { 
+	EVVInputThumbnail = 0;
+}
+
+
+message InputThumbnailAbsClass { 
+  ExyInputThumbnail type = 1;
+    oneof value { 
+		InputThumbnail inputThumbnail= 2;
+    }
+}
+
+
+
+// ExyInvoice 枚举
+enum ExyInvoice { 
+	EVVInvoice = 0;
+}
+
+
+message InvoiceAbsClass { 
+  ExyInvoice type = 1;
+    oneof value { 
+		Invoice invoice= 2;
+    }
+}
+
+
+
+// ExyKeyboardButton 枚举
+enum ExyKeyboardButton { 
+	EVVKeyboardButton = 0;
+}
+
+
+message KeyboardButtonAbsClass { 
+  ExyKeyboardButton type = 1;
+    oneof value { 
+		KeyboardButton keyboardButton= 2;
+    }
+}
+
+
+
+// ExyKeyboardButtonType 枚举
+enum ExyKeyboardButtonType { 
+	EVVKeyboardButtonTypeText = 0;
+	EVVKeyboardButtonTypeReqPhoneNumber = 1;
+	EVVKeyboardButtonTypeReqLocation = 2;
+}
+
+
+message KeyboardButtonTypeAbsClass { 
+  ExyKeyboardButtonType type = 1;
+    oneof value { 
+		KeyboardButtonTypeText keyboardButtonTypeText= 2;
+		KeyboardButtonTypeReqPhoneNumber keyboardButtonTypeReqPhoneNumber= 3;
+		KeyboardButtonTypeReqLocation keyboardButtonTypeReqLocation= 4;
+    }
+}
+
+
+
+
+
+
+// ExyLabeledPricePart 枚举
+enum ExyLabeledPricePart { 
+	EVVLabeledPricePart = 0;
+}
+
+
+message LabeledPricePartAbsClass { 
+  ExyLabeledPricePart type = 1;
+    oneof value { 
+		LabeledPricePart labeledPricePart= 2;
+    }
+}
+
+
+
+// ExyLanguagePackInfo 枚举
+enum ExyLanguagePackInfo { 
+	EVVLanguagePackInfo = 0;
+}
+
+
+message LanguagePackInfoAbsClass { 
+  ExyLanguagePackInfo type = 1;
+    oneof value { 
+		LanguagePackInfo languagePackInfo= 2;
+    }
+}
+
+
+
+// ExyLanguagePackString 枚举
+enum ExyLanguagePackString { 
+	EVVLanguagePackString = 0;
+}
+
+
+message LanguagePackStringAbsClass { 
+  ExyLanguagePackString type = 1;
+    oneof value { 
+		LanguagePackString languagePackString= 2;
+    }
+}
+
+
+
+// ExyLanguagePackStringValue 枚举
+enum ExyLanguagePackStringValue { 
+	EVVLanguagePackStringValueOrdinary = 0;
+	EVVLanguagePackStringValuePluralized = 1;
+	EVVLanguagePackStringValueDeleted = 2;
+}
+
+
+message LanguagePackStringValueAbsClass { 
+  ExyLanguagePackStringValue type = 1;
+    oneof value { 
+		LanguagePackStringValueOrdinary languagePackStringValueOrdinary= 2;
+		LanguagePackStringValuePluralized languagePackStringValuePluralized= 3;
+		LanguagePackStringValueDeleted languagePackStringValueDeleted= 4;
+    }
+}
+
+
+
+
+
+
+// ExyLanguagePackStrings 枚举
+enum ExyLanguagePackStrings { 
+	EVVLanguagePackStrings = 0;
+}
+
+
+message LanguagePackStringsAbsClass { 
+  ExyLanguagePackStrings type = 1;
+    oneof value { 
+		LanguagePackStrings languagePackStrings= 2;
+    }
+}
+
+
+
+// ExyLinkState 枚举
+enum ExyLinkState { 
+	EVVLinkStateNone = 0;
+	EVVLinkStateKnowsPhoneNumber = 1;
+	EVVLinkStateIsContact = 2;
+}
+
+
+message LinkStateAbsClass { 
+  ExyLinkState type = 1;
+    oneof value { 
+		LinkStateNone linkStateNone= 2;
+		LinkStateKnowsPhoneNumber linkStateKnowsPhoneNumber= 3;
+		LinkStateIsContact linkStateIsContact= 4;
+    }
+}
+
+
+
+
+
+
+// ExyLocalFile 枚举
+enum ExyLocalFile { 
+	EVVLocalFile = 0;
+}
+
+
+message LocalFileAbsClass { 
+  ExyLocalFile type = 1;
+    oneof value { 
+		LocalFile localFile= 2;
+    }
+}
+
+
+
+// ExyLocalizationTargetInfo 枚举
+enum ExyLocalizationTargetInfo { 
+	EVVLocalizationTargetInfo = 0;
+}
+
+
+message LocalizationTargetInfoAbsClass { 
+  ExyLocalizationTargetInfo type = 1;
+    oneof value { 
+		LocalizationTargetInfo localizationTargetInfo= 2;
+    }
+}
+
+
+
+// ExyLocation 枚举
+enum ExyLocation { 
+	EVVLocation = 0;
+}
+
+
+message LocationAbsClass { 
+  ExyLocation type = 1;
+    oneof value { 
+		Location location= 2;
+    }
+}
+
+
+
+// ExyMaskPoint 枚举
+enum ExyMaskPoint { 
+	EVVMaskPointForehead = 0;
+	EVVMaskPointEyes = 1;
+	EVVMaskPointMouth = 2;
+	EVVMaskPointChin = 3;
+}
+
+
+message MaskPointAbsClass { 
+  ExyMaskPoint type = 1;
+    oneof value { 
+		MaskPointForehead maskPointForehead= 2;
+		MaskPointEyes maskPointEyes= 3;
+		MaskPointMouth maskPointMouth= 4;
+		MaskPointChin maskPointChin= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyMaskPosition 枚举
+enum ExyMaskPosition { 
+	EVVMaskPosition = 0;
+}
+
+
+message MaskPositionAbsClass { 
+  ExyMaskPosition type = 1;
+    oneof value { 
+		MaskPosition maskPosition= 2;
+    }
+}
+
+
+
+// ExyInfo 枚举
+enum ExyInfo { 
+	EVVInfo = 0;
+}
+
+
+message InfoAbsClass { 
+  ExyInfo type = 1;
+    oneof value { 
+		Info message= 2;
+    }
+}
+
+
+
+// ExyInfoContent 枚举
+enum ExyInfoContent { 
+	EVVInfoText = 0;
+	EVVInfoAnimation = 1;
+	EVVInfoAudio = 2;
+	EVVInfoDocument = 3;
+	EVVInfoPhoto = 4;
+	EVVInfoExpiredPhoto = 5;
+	EVVInfoSticker = 6;
+	EVVInfoVideo = 7;
+	EVVInfoExpiredVideo = 8;
+	EVVInfoVideoNote = 9;
+	EVVInfoVoiceNote = 10;
+	EVVInfoLocation = 11;
+	EVVInfoVenue = 12;
+	EVVInfoContact = 13;
+	EVVInfoGame = 14;
+	EVVInfoInvoice = 15;
+	EVVInfoCall = 16;
+	EVVInfoBasicGroupChatCreate = 17;
+	EVVInfoSupergroupChatCreate = 18;
+	EVVInfoChatChangeTitle = 19;
+	EVVInfoChatChangePhoto = 20;
+	EVVInfoChatDeletePhoto = 21;
+	EVVInfoChatAddMembers = 22;
+	EVVInfoChatJoinByLink = 23;
+	EVVInfoChatDeleteMember = 24;
+	EVVInfoChatUpgradeTo = 25;
+	EVVInfoChatUpgradeFrom = 26;
+	EVVInfoPinInfo = 27;
+	EVVInfoScreenshotTaken = 28;
+	EVVInfoChatSetTTL = 29;
+	EVVInfoCustomServiceDoit = 30;
+	EVVInfoGameScore = 31;
+	EVVInfoPaymentSuccessful = 32;
+	EVVInfoPaymentSuccessfulBot = 33;
+	EVVInfoContactRegistered = 34;
+	EVVInfoWebsiteConnected = 35;
+	EVVInfoPassportDataSent = 36;
+	EVVInfoPassportDataReceived = 37;
+	EVVInfoUnsupported = 38;
+}
+
+
+message InfoContentAbsClass { 
+  ExyInfoContent type = 1;
+    oneof value { 
+		InfoText messageText= 2;
+		InfoAnimation messageAnimation= 3;
+		InfoAudio messageAudio= 4;
+		InfoDocument messageDocument= 5;
+		InfoPhoto messagePhoto= 6;
+		InfoExpiredPhoto messageExpiredPhoto= 7;
+		InfoSticker messageSticker= 8;
+		InfoVideo messageVideo= 9;
+		InfoExpiredVideo messageExpiredVideo= 10;
+		InfoVideoNote messageVideoNote= 11;
+		InfoVoiceNote messageVoiceNote= 12;
+		InfoLocation messageLocation= 13;
+		InfoVenue messageVenue= 14;
+		InfoContact messageContact= 15;
+		InfoGame messageGame= 16;
+		InfoInvoice messageInvoice= 17;
+		InfoCall messageCall= 18;
+		InfoBasicGroupChatCreate messageBasicGroupChatCreate= 19;
+		InfoSupergroupChatCreate messageSupergroupChatCreate= 20;
+		InfoChatChangeTitle messageChatChangeTitle= 21;
+		InfoChatChangePhoto messageChatChangePhoto= 22;
+		InfoChatDeletePhoto messageChatDeletePhoto= 23;
+		InfoChatAddMembers messageChatAddMembers= 24;
+		InfoChatJoinByLink messageChatJoinByLink= 25;
+		InfoChatDeleteMember messageChatDeleteMember= 26;
+		InfoChatUpgradeTo messageChatUpgradeTo= 27;
+		InfoChatUpgradeFrom messageChatUpgradeFrom= 28;
+		InfoPinInfo messagePinInfo= 29;
+		InfoScreenshotTaken messageScreenshotTaken= 30;
+		InfoChatSetTTL messageChatSetTTL= 31;
+		InfoCustomServiceDoit messageCustomServiceDoit= 32;
+		InfoGameScore messageGameScore= 33;
+		InfoPaymentSuccessful messagePaymentSuccessful= 34;
+		InfoPaymentSuccessfulBot messagePaymentSuccessfulBot= 35;
+		InfoContactRegistered messageContactRegistered= 36;
+		InfoWebsiteConnected messageWebsiteConnected= 37;
+		InfoPassportDataSent messagePassportDataSent= 38;
+		InfoPassportDataReceived messagePassportDataReceived= 39;
+		InfoUnsupported messageUnsupported= 40;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyInfoForwardInfo 枚举
+enum ExyInfoForwardInfo { 
+	EVVInfoForwardedFromUser = 0;
+	EVVInfoForwardedPost = 1;
+}
+
+
+message InfoForwardInfoAbsClass { 
+  ExyInfoForwardInfo type = 1;
+    oneof value { 
+		InfoForwardedFromUser messageForwardedFromUser= 2;
+		InfoForwardedPost messageForwardedPost= 3;
+    }
+}
+
+
+
+
+
+// ExyInfoSendingState 枚举
+enum ExyInfoSendingState { 
+	EVVInfoSendingStatePending = 0;
+	EVVInfoSendingStateFailed = 1;
+}
+
+
+message InfoSendingStateAbsClass { 
+  ExyInfoSendingState type = 1;
+    oneof value { 
+		InfoSendingStatePending messageSendingStatePending= 2;
+		InfoSendingStateFailed messageSendingStateFailed= 3;
+    }
+}
+
+
+
+
+
+// ExyInfos 枚举
+enum ExyInfos { 
+	EVVInfos = 0;
+}
+
+
+message InfosAbsClass { 
+  ExyInfos type = 1;
+    oneof value { 
+		Infos messages= 2;
+    }
+}
+
+
+
+// ExyNetworkStatistics 枚举
+enum ExyNetworkStatistics { 
+	EVVNetworkStatistics = 0;
+}
+
+
+message NetworkStatisticsAbsClass { 
+  ExyNetworkStatistics type = 1;
+    oneof value { 
+		NetworkStatistics networkStatistics= 2;
+    }
+}
+
+
+
+// ExyNetworkStatisticsEntry 枚举
+enum ExyNetworkStatisticsEntry { 
+	EVVNetworkStatisticsEntryFile = 0;
+	EVVNetworkStatisticsEntryCall = 1;
+}
+
+
+message NetworkStatisticsEntryAbsClass { 
+  ExyNetworkStatisticsEntry type = 1;
+    oneof value { 
+		NetworkStatisticsEntryFile networkStatisticsEntryFile= 2;
+		NetworkStatisticsEntryCall networkStatisticsEntryCall= 3;
+    }
+}
+
+
+
+
+
+// ExyNetworkType 枚举
+enum ExyNetworkType { 
+	EVVNetworkTypeNone = 0;
+	EVVNetworkTypeMobile = 1;
+	EVVNetworkTypeMobileRoaming = 2;
+	EVVNetworkTypeWiFi = 3;
+	EVVNetworkTypeOther = 4;
+}
+
+
+message NetworkTypeAbsClass { 
+  ExyNetworkType type = 1;
+    oneof value { 
+		NetworkTypeNone networkTypeNone= 2;
+		NetworkTypeMobile networkTypeMobile= 3;
+		NetworkTypeMobileRoaming networkTypeMobileRoaming= 4;
+		NetworkTypeWiFi networkTypeWiFi= 5;
+		NetworkTypeOther networkTypeOther= 6;
+    }
+}
+
+
+
+
+
+
+
+
+// ExyNotificationSettingsScope 枚举
+enum ExyNotificationSettingsScope { 
+	EVVNotificationSettingsScopePrivateChats = 0;
+	EVVNotificationSettingsScopeGroupChats = 1;
+}
+
+
+message NotificationSettingsScopeAbsClass { 
+  ExyNotificationSettingsScope type = 1;
+    oneof value { 
+		NotificationSettingsScopePrivateChats notificationSettingsScopePrivateChats= 2;
+		NotificationSettingsScopeGroupChats notificationSettingsScopeGroupChats= 3;
+    }
+}
+
+
+
+
+
+// ExyOk 枚举
+enum ExyOk { 
+	EVVOk = 0;
+}
+
+
+message OkAbsClass { 
+  ExyOk type = 1;
+    oneof value { 
+		Ok ok= 2;
+    }
+}
+
+
+
+// ExyOptionValue 枚举
+enum ExyOptionValue { 
+	EVVOptionValueBoolean = 0;
+	EVVOptionValueEmpty = 1;
+	EVVOptionValueInteger = 2;
+	EVVOptionValueString = 3;
+}
+
+
+message OptionValueAbsClass { 
+  ExyOptionValue type = 1;
+    oneof value { 
+		OptionValueBoolean optionValueBoolean= 2;
+		OptionValueEmpty optionValueEmpty= 3;
+		OptionValueInteger optionValueInteger= 4;
+		OptionValueString optionValueString= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyOrderInfo 枚举
+enum ExyOrderInfo { 
+	EVVOrderInfo = 0;
+}
+
+
+message OrderInfoAbsClass { 
+  ExyOrderInfo type = 1;
+    oneof value { 
+		OrderInfo orderInfo= 2;
+    }
+}
+
+
+
+// ExyPageBlock 枚举
+enum ExyPageBlock { 
+	EVVPageBlockTitle = 0;
+	EVVPageBlockSubtitle = 1;
+	EVVPageBlockAuthorDate = 2;
+	EVVPageBlockHeader = 3;
+	EVVPageBlockSubheader = 4;
+	EVVPageBlockFooter = 5;
+	EVVPageBlockList = 6;
+	EVVPageBlockBlockQuote = 7;
+	EVVPageBlockPullQuote = 8;
+	EVVPageBlockAnimation = 9;
+	EVVPageBlockAudio = 10;
+	EVVPageBlockPhoto = 11;
+	EVVPageBlockVideo = 12;
+	EVVPageBlockEmbedded = 13;
+	EVVPageBlockEmbeddedPost = 14;
+	EVVPageBlockCollage = 15;
+	EVVPageBlockSlideshow = 16;
+	EVVPageBlockChatLink = 17;
+}
+
+
+message PageBlockAbsClass { 
+  ExyPageBlock type = 1;
+    oneof value { 
+		PageBlockTitle pageBlockTitle= 2;
+		PageBlockSubtitle pageBlockSubtitle= 3;
+		PageBlockAuthorDate pageBlockAuthorDate= 4;
+		PageBlockHeader pageBlockHeader= 5;
+		PageBlockSubheader pageBlockSubheader= 6;
+		PageBlockFooter pageBlockFooter= 7;
+		PageBlockList pageBlockList= 8;
+		PageBlockBlockQuote pageBlockBlockQuote= 9;
+		PageBlockPullQuote pageBlockPullQuote= 10;
+		PageBlockAnimation pageBlockAnimation= 11;
+		PageBlockAudio pageBlockAudio= 12;
+		PageBlockPhoto pageBlockPhoto= 13;
+		PageBlockVideo pageBlockVideo= 14;
+		PageBlockEmbedded pageBlockEmbedded= 15;
+		PageBlockEmbeddedPost pageBlockEmbeddedPost= 16;
+		PageBlockCollage pageBlockCollage= 17;
+		PageBlockSlideshow pageBlockSlideshow= 18;
+		PageBlockChatLink pageBlockChatLink= 19;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyPassportAuthForm 枚举
+enum ExyPassportAuthForm { 
+	EVVPassportAuthForm = 0;
+}
+
+
+message PassportAuthFormAbsClass { 
+  ExyPassportAuthForm type = 1;
+    oneof value { 
+		PassportAuthForm passportAuthForm= 2;
+    }
+}
+
+
+
+// ExyPassportElement 枚举
+enum ExyPassportElement { 
+	EVVPassportElementPersonalDetails = 0;
+	EVVPassportElementPassport = 1;
+	EVVPassportElementDriverLicense = 2;
+	EVVPassportElementIdentityCard = 3;
+	EVVPassportElementInternalPassport = 4;
+	EVVPassportElementAddress = 5;
+	EVVPassportElementUtilityBill = 6;
+	EVVPassportElementBankStatement = 7;
+	EVVPassportElementRentalAgreement = 8;
+	EVVPassportElementPassportRegistration = 9;
+	EVVPassportElementTemporaryRegistration = 10;
+	EVVPassportElementPhoneNumber = 11;
+	EVVPassportElementEmailAddress = 12;
+}
+
+
+message PassportElementAbsClass { 
+  ExyPassportElement type = 1;
+    oneof value { 
+		PassportElementPersonalDetails passportElementPersonalDetails= 2;
+		PassportElementPassport passportElementPassport= 3;
+		PassportElementDriverLicense passportElementDriverLicense= 4;
+		PassportElementIdentityCard passportElementIdentityCard= 5;
+		PassportElementInternalPassport passportElementInternalPassport= 6;
+		PassportElementAddress passportElementAddress= 7;
+		PassportElementUtilityBill passportElementUtilityBill= 8;
+		PassportElementBankStatement passportElementBankStatement= 9;
+		PassportElementRentalAgreement passportElementRentalAgreement= 10;
+		PassportElementPassportRegistration passportElementPassportRegistration= 11;
+		PassportElementTemporaryRegistration passportElementTemporaryRegistration= 12;
+		PassportElementPhoneNumber passportElementPhoneNumber= 13;
+		PassportElementEmailAddress passportElementEmailAddress= 14;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyPassportElementError 枚举
+enum ExyPassportElementError { 
+	EVVPassportElementError = 0;
+}
+
+
+message PassportElementErrorAbsClass { 
+  ExyPassportElementError type = 1;
+    oneof value { 
+		PassportElementError passportElementError= 2;
+    }
+}
+
+
+
+// ExyPassportElementErrorSource 枚举
+enum ExyPassportElementErrorSource { 
+	EVVPassportElementErrorSourceUnspecified = 0;
+	EVVPassportElementErrorSourceDataField = 1;
+	EVVPassportElementErrorSourceFrontSide = 2;
+	EVVPassportElementErrorSourceReverseSide = 3;
+	EVVPassportElementErrorSourceSelfie = 4;
+	EVVPassportElementErrorSourceTranslationFile = 5;
+	EVVPassportElementErrorSourceTranslationFiles = 6;
+	EVVPassportElementErrorSourceFile = 7;
+	EVVPassportElementErrorSourceFiles = 8;
+}
+
+
+message PassportElementErrorSourceAbsClass { 
+  ExyPassportElementErrorSource type = 1;
+    oneof value { 
+		PassportElementErrorSourceUnspecified passportElementErrorSourceUnspecified= 2;
+		PassportElementErrorSourceDataField passportElementErrorSourceDataField= 3;
+		PassportElementErrorSourceFrontSide passportElementErrorSourceFrontSide= 4;
+		PassportElementErrorSourceReverseSide passportElementErrorSourceReverseSide= 5;
+		PassportElementErrorSourceSelfie passportElementErrorSourceSelfie= 6;
+		PassportElementErrorSourceTranslationFile passportElementErrorSourceTranslationFile= 7;
+		PassportElementErrorSourceTranslationFiles passportElementErrorSourceTranslationFiles= 8;
+		PassportElementErrorSourceFile passportElementErrorSourceFile= 9;
+		PassportElementErrorSourceFiles passportElementErrorSourceFiles= 10;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyPassportElementType 枚举
+enum ExyPassportElementType { 
+	EVVPassportElementTypePersonalDetails = 0;
+	EVVPassportElementTypePassport = 1;
+	EVVPassportElementTypeDriverLicense = 2;
+	EVVPassportElementTypeIdentityCard = 3;
+	EVVPassportElementTypeInternalPassport = 4;
+	EVVPassportElementTypeAddress = 5;
+	EVVPassportElementTypeUtilityBill = 6;
+	EVVPassportElementTypeBankStatement = 7;
+	EVVPassportElementTypeRentalAgreement = 8;
+	EVVPassportElementTypePassportRegistration = 9;
+	EVVPassportElementTypeTemporaryRegistration = 10;
+	EVVPassportElementTypePhoneNumber = 11;
+	EVVPassportElementTypeEmailAddress = 12;
+}
+
+
+message PassportElementTypeAbsClass { 
+  ExyPassportElementType type = 1;
+    oneof value { 
+		PassportElementTypePersonalDetails passportElementTypePersonalDetails= 2;
+		PassportElementTypePassport passportElementTypePassport= 3;
+		PassportElementTypeDriverLicense passportElementTypeDriverLicense= 4;
+		PassportElementTypeIdentityCard passportElementTypeIdentityCard= 5;
+		PassportElementTypeInternalPassport passportElementTypeInternalPassport= 6;
+		PassportElementTypeAddress passportElementTypeAddress= 7;
+		PassportElementTypeUtilityBill passportElementTypeUtilityBill= 8;
+		PassportElementTypeBankStatement passportElementTypeBankStatement= 9;
+		PassportElementTypeRentalAgreement passportElementTypeRentalAgreement= 10;
+		PassportElementTypePassportRegistration passportElementTypePassportRegistration= 11;
+		PassportElementTypeTemporaryRegistration passportElementTypeTemporaryRegistration= 12;
+		PassportElementTypePhoneNumber passportElementTypePhoneNumber= 13;
+		PassportElementTypeEmailAddress passportElementTypeEmailAddress= 14;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyPassportElements 枚举
+enum ExyPassportElements { 
+	EVVPassportElements = 0;
+}
+
+
+message PassportElementsAbsClass { 
+  ExyPassportElements type = 1;
+    oneof value { 
+		PassportElements passportElements= 2;
+    }
+}
+
+
+
+// ExyPassportRequiredElement 枚举
+enum ExyPassportRequiredElement { 
+	EVVPassportRequiredElement = 0;
+}
+
+
+message PassportRequiredElementAbsClass { 
+  ExyPassportRequiredElement type = 1;
+    oneof value { 
+		PassportRequiredElement passportRequiredElement= 2;
+    }
+}
+
+
+
+// ExyPassportSuitableElement 枚举
+enum ExyPassportSuitableElement { 
+	EVVPassportSuitableElement = 0;
+}
+
+
+message PassportSuitableElementAbsClass { 
+  ExyPassportSuitableElement type = 1;
+    oneof value { 
+		PassportSuitableElement passportSuitableElement= 2;
+    }
+}
+
+
+
+// ExyPasswordState 枚举
+enum ExyPasswordState { 
+	EVVPasswordState = 0;
+}
+
+
+message PasswordStateAbsClass { 
+  ExyPasswordState type = 1;
+    oneof value { 
+		PasswordState passwordState= 2;
+    }
+}
+
+
+
+// ExyPaymentForm 枚举
+enum ExyPaymentForm { 
+	EVVPaymentForm = 0;
+}
+
+
+message PaymentFormAbsClass { 
+  ExyPaymentForm type = 1;
+    oneof value { 
+		PaymentForm paymentForm= 2;
+    }
+}
+
+
+
+// ExyPaymentReceipt 枚举
+enum ExyPaymentReceipt { 
+	EVVPaymentReceipt = 0;
+}
+
+
+message PaymentReceiptAbsClass { 
+  ExyPaymentReceipt type = 1;
+    oneof value { 
+		PaymentReceipt paymentReceipt= 2;
+    }
+}
+
+
+
+// ExyPaymentResult 枚举
+enum ExyPaymentResult { 
+	EVVPaymentResult = 0;
+}
+
+
+message PaymentResultAbsClass { 
+  ExyPaymentResult type = 1;
+    oneof value { 
+		PaymentResult paymentResult= 2;
+    }
+}
+
+
+
+// ExyPaymentsProviderStripe 枚举
+enum ExyPaymentsProviderStripe { 
+	EVVPaymentsProviderStripe = 0;
+}
+
+
+message PaymentsProviderStripeAbsClass { 
+  ExyPaymentsProviderStripe type = 1;
+    oneof value { 
+		PaymentsProviderStripe paymentsProviderStripe= 2;
+    }
+}
+
+
+
+// ExyPersonalDetails 枚举
+enum ExyPersonalDetails { 
+	EVVPersonalDetails = 0;
+}
+
+
+message PersonalDetailsAbsClass { 
+  ExyPersonalDetails type = 1;
+    oneof value { 
+		PersonalDetails personalDetails= 2;
+    }
+}
+
+
+
+// ExyPersonalDocument 枚举
+enum ExyPersonalDocument { 
+	EVVPersonalDocument = 0;
+}
+
+
+message PersonalDocumentAbsClass { 
+  ExyPersonalDocument type = 1;
+    oneof value { 
+		PersonalDocument personalDocument= 2;
+    }
+}
+
+
+
+// ExyPhoto 枚举
+enum ExyPhoto { 
+	EVVPhoto = 0;
+}
+
+
+message PhotoAbsClass { 
+  ExyPhoto type = 1;
+    oneof value { 
+		Photo photo= 2;
+    }
+}
+
+
+
+// ExyPhotoSize 枚举
+enum ExyPhotoSize { 
+	EVVPhotoSize = 0;
+}
+
+
+message PhotoSizeAbsClass { 
+  ExyPhotoSize type = 1;
+    oneof value { 
+		PhotoSize photoSize= 2;
+    }
+}
+
+
+
+// ExyProfilePhoto 枚举
+enum ExyProfilePhoto { 
+	EVVProfilePhoto = 0;
+}
+
+
+message ProfilePhotoAbsClass { 
+  ExyProfilePhoto type = 1;
+    oneof value { 
+		ProfilePhoto profilePhoto= 2;
+    }
+}
+
+
+
+// ExyProxies 枚举
+enum ExyProxies { 
+	EVVProxies = 0;
+}
+
+
+message ProxiesAbsClass { 
+  ExyProxies type = 1;
+    oneof value { 
+		Proxies proxies= 2;
+    }
+}
+
+
+
+// ExyProxy 枚举
+enum ExyProxy { 
+	EVVProxy = 0;
+}
+
+
+message ProxyAbsClass { 
+  ExyProxy type = 1;
+    oneof value { 
+		Proxy proxy= 2;
+    }
+}
+
+
+
+// ExyProxyType 枚举
+enum ExyProxyType { 
+	EVVProxyTypeSocks5 = 0;
+	EVVProxyTypeHTTP = 1;
+	EVVProxyTypexyproto = 2;
+}
+
+
+message ProxyTypeAbsClass { 
+  ExyProxyType type = 1;
+    oneof value { 
+		ProxyTypeSocks5 proxyTypeSocks5= 2;
+		ProxyTypeHTTP proxyTypeHTTP= 3;
+		ProxyTypexyproto proxyTypexyproto= 4;
+    }
+}
+
+
+
+
+
+
+// ExyPublicInfoLink 枚举
+enum ExyPublicInfoLink { 
+	EVVPublicInfoLink = 0;
+}
+
+
+message PublicInfoLinkAbsClass { 
+  ExyPublicInfoLink type = 1;
+    oneof value { 
+		PublicInfoLink publicInfoLink= 2;
+    }
+}
+
+
+
+// ExyRecoveryEmailAddress 枚举
+enum ExyRecoveryEmailAddress { 
+	EVVRecoveryEmailAddress = 0;
+}
+
+
+message RecoveryEmailAddressAbsClass { 
+  ExyRecoveryEmailAddress type = 1;
+    oneof value { 
+		RecoveryEmailAddress recoveryEmailAddress= 2;
+    }
+}
+
+
+
+// ExyRemoteFile 枚举
+enum ExyRemoteFile { 
+	EVVRemoteFile = 0;
+}
+
+
+message RemoteFileAbsClass { 
+  ExyRemoteFile type = 1;
+    oneof value { 
+		RemoteFile remoteFile= 2;
+    }
+}
+
+
+
+// ExyReplyMarkup 枚举
+enum ExyReplyMarkup { 
+	EVVReplyMarkupRemoveKeyboard = 0;
+	EVVReplyMarkupForceReply = 1;
+	EVVReplyMarkupShowKeyboard = 2;
+	EVVReplyMarkupInlineKeyboard = 3;
+}
+
+
+message ReplyMarkupAbsClass { 
+  ExyReplyMarkup type = 1;
+    oneof value { 
+		ReplyMarkupRemoveKeyboard replyMarkupRemoveKeyboard= 2;
+		ReplyMarkupForceReply replyMarkupForceReply= 3;
+		ReplyMarkupShowKeyboard replyMarkupShowKeyboard= 4;
+		ReplyMarkupInlineKeyboard replyMarkupInlineKeyboard= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyRichText 枚举
+enum ExyRichText { 
+	EVVRichTextPlain = 0;
+	EVVRichTextBold = 1;
+	EVVRichTextItalic = 2;
+	EVVRichTextUnderline = 3;
+	EVVRichTextStrikethrough = 4;
+	EVVRichTextFixed = 5;
+	EVVRichTextURL = 6;
+	EVVRichTextEmailAddress = 7;
+	EVVRichTexts = 8;
+}
+
+
+message RichTextAbsClass { 
+  ExyRichText type = 1;
+    oneof value { 
+		RichTextPlain richTextPlain= 2;
+		RichTextBold richTextBold= 3;
+		RichTextItalic richTextItalic= 4;
+		RichTextUnderline richTextUnderline= 5;
+		RichTextStrikethrough richTextStrikethrough= 6;
+		RichTextFixed richTextFixed= 7;
+		RichTextURL richTextURL= 8;
+		RichTextEmailAddress richTextEmailAddress= 9;
+		RichTexts richTexts= 10;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ExySavedCredentials 枚举
+enum ExySavedCredentials { 
+	EVVSavedCredentials = 0;
+}
+
+
+message SavedCredentialsAbsClass { 
+  ExySavedCredentials type = 1;
+    oneof value { 
+		SavedCredentials savedCredentials= 2;
+    }
+}
+
+
+
+// ExyScopeNotificationSettings 枚举
+enum ExyScopeNotificationSettings { 
+	EVVScopeNotificationSettings = 0;
+}
+
+
+message ScopeNotificationSettingsAbsClass { 
+  ExyScopeNotificationSettings type = 1;
+    oneof value { 
+		ScopeNotificationSettings scopeNotificationSettings= 2;
+    }
+}
+
+
+
+// ExySearchInfosFilter 枚举
+enum ExySearchInfosFilter { 
+	EVVSearchInfosFilterEmpty = 0;
+	EVVSearchInfosFilterAnimation = 1;
+	EVVSearchInfosFilterAudio = 2;
+	EVVSearchInfosFilterDocument = 3;
+	EVVSearchInfosFilterPhoto = 4;
+	EVVSearchInfosFilterVideo = 5;
+	EVVSearchInfosFilterVoiceNote = 6;
+	EVVSearchInfosFilterPhotoAndVideo = 7;
+	EVVSearchInfosFilterURL = 8;
+	EVVSearchInfosFilterChatPhoto = 9;
+	EVVSearchInfosFilterCall = 10;
+	EVVSearchInfosFilterMissedCall = 11;
+	EVVSearchInfosFilterVideoNote = 12;
+	EVVSearchInfosFilterVoiceAndVideoNote = 13;
+	EVVSearchInfosFilterMention = 14;
+	EVVSearchInfosFilterUnreadMention = 15;
+}
+
+
+message SearchInfosFilterAbsClass { 
+  ExySearchInfosFilter type = 1;
+    oneof value { 
+		SearchInfosFilterEmpty searchInfosFilterEmpty= 2;
+		SearchInfosFilterAnimation searchInfosFilterAnimation= 3;
+		SearchInfosFilterAudio searchInfosFilterAudio= 4;
+		SearchInfosFilterDocument searchInfosFilterDocument= 5;
+		SearchInfosFilterPhoto searchInfosFilterPhoto= 6;
+		SearchInfosFilterVideo searchInfosFilterVideo= 7;
+		SearchInfosFilterVoiceNote searchInfosFilterVoiceNote= 8;
+		SearchInfosFilterPhotoAndVideo searchInfosFilterPhotoAndVideo= 9;
+		SearchInfosFilterURL searchInfosFilterURL= 10;
+		SearchInfosFilterChatPhoto searchInfosFilterChatPhoto= 11;
+		SearchInfosFilterCall searchInfosFilterCall= 12;
+		SearchInfosFilterMissedCall searchInfosFilterMissedCall= 13;
+		SearchInfosFilterVideoNote searchInfosFilterVideoNote= 14;
+		SearchInfosFilterVoiceAndVideoNote searchInfosFilterVoiceAndVideoNote= 15;
+		SearchInfosFilterMention searchInfosFilterMention= 16;
+		SearchInfosFilterUnreadMention searchInfosFilterUnreadMention= 17;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExySeconds 枚举
+enum ExySeconds { 
+	EVVSeconds = 0;
+}
+
+
+message SecondsAbsClass { 
+  ExySeconds type = 1;
+    oneof value { 
+		Seconds seconds= 2;
+    }
+}
+
+
+
+// ExySecretChat 枚举
+enum ExySecretChat { 
+	EVVSecretChat = 0;
+}
+
+
+message SecretChatAbsClass { 
+  ExySecretChat type = 1;
+    oneof value { 
+		SecretChat secretChat= 2;
+    }
+}
+
+
+
+// ExySecretChatState 枚举
+enum ExySecretChatState { 
+	EVVSecretChatStatePending = 0;
+	EVVSecretChatStateReady = 1;
+	EVVSecretChatStateClosed = 2;
+}
+
+
+message SecretChatStateAbsClass { 
+  ExySecretChatState type = 1;
+    oneof value { 
+		SecretChatStatePending secretChatStatePending= 2;
+		SecretChatStateReady secretChatStateReady= 3;
+		SecretChatStateClosed secretChatStateClosed= 4;
+    }
+}
+
+
+
+
+
+
+// ExySession 枚举
+enum ExySession { 
+	EVVSession = 0;
+}
+
+
+message SessionAbsClass { 
+  ExySession type = 1;
+    oneof value { 
+		Session session= 2;
+    }
+}
+
+
+
+// ExySessions 枚举
+enum ExySessions { 
+	EVVSessions = 0;
+}
+
+
+message SessionsAbsClass { 
+  ExySessions type = 1;
+    oneof value { 
+		Sessions sessions= 2;
+    }
+}
+
+
+
+// ExyShippingOption 枚举
+enum ExyShippingOption { 
+	EVVShippingOption = 0;
+}
+
+
+message ShippingOptionAbsClass { 
+  ExyShippingOption type = 1;
+    oneof value { 
+		ShippingOption shippingOption= 2;
+    }
+}
+
+
+
+// ExySticker 枚举
+enum ExySticker { 
+	EVVSticker = 0;
+}
+
+
+message StickerAbsClass { 
+  ExySticker type = 1;
+    oneof value { 
+		Sticker sticker= 2;
+    }
+}
+
+
+
+// ExyStickerEmojis 枚举
+enum ExyStickerEmojis { 
+	EVVStickerEmojis = 0;
+}
+
+
+message StickerEmojisAbsClass { 
+  ExyStickerEmojis type = 1;
+    oneof value { 
+		StickerEmojis stickerEmojis= 2;
+    }
+}
+
+
+
+// ExyStickerSet 枚举
+enum ExyStickerSet { 
+	EVVStickerSet = 0;
+}
+
+
+message StickerSetAbsClass { 
+  ExyStickerSet type = 1;
+    oneof value { 
+		StickerSet stickerSet= 2;
+    }
+}
+
+
+
+// ExyStickerSetInfo 枚举
+enum ExyStickerSetInfo { 
+	EVVStickerSetInfo = 0;
+}
+
+
+message StickerSetInfoAbsClass { 
+  ExyStickerSetInfo type = 1;
+    oneof value { 
+		StickerSetInfo stickerSetInfo= 2;
+    }
+}
+
+
+
+// ExyStickerSets 枚举
+enum ExyStickerSets { 
+	EVVStickerSets = 0;
+}
+
+
+message StickerSetsAbsClass { 
+  ExyStickerSets type = 1;
+    oneof value { 
+		StickerSets stickerSets= 2;
+    }
+}
+
+
+
+// ExyStickers 枚举
+enum ExyStickers { 
+	EVVStickers = 0;
+}
+
+
+message StickersAbsClass { 
+  ExyStickers type = 1;
+    oneof value { 
+		Stickers stickers= 2;
+    }
+}
+
+
+
+// ExyStorageStatistics 枚举
+enum ExyStorageStatistics { 
+	EVVStorageStatistics = 0;
+}
+
+
+message StorageStatisticsAbsClass { 
+  ExyStorageStatistics type = 1;
+    oneof value { 
+		StorageStatistics storageStatistics= 2;
+    }
+}
+
+
+
+// ExyStorageStatisticsByChat 枚举
+enum ExyStorageStatisticsByChat { 
+	EVVStorageStatisticsByChat = 0;
+}
+
+
+message StorageStatisticsByChatAbsClass { 
+  ExyStorageStatisticsByChat type = 1;
+    oneof value { 
+		StorageStatisticsByChat storageStatisticsByChat= 2;
+    }
+}
+
+
+
+// ExyStorageStatisticsByFileType 枚举
+enum ExyStorageStatisticsByFileType { 
+	EVVStorageStatisticsByFileType = 0;
+}
+
+
+message StorageStatisticsByFileTypeAbsClass { 
+  ExyStorageStatisticsByFileType type = 1;
+    oneof value { 
+		StorageStatisticsByFileType storageStatisticsByFileType= 2;
+    }
+}
+
+
+
+// ExyStorageStatisticsFast 枚举
+enum ExyStorageStatisticsFast { 
+	EVVStorageStatisticsFast = 0;
+}
+
+
+message StorageStatisticsFastAbsClass { 
+  ExyStorageStatisticsFast type = 1;
+    oneof value { 
+		StorageStatisticsFast storageStatisticsFast= 2;
+    }
+}
+
+
+
+// ExySupergroup 枚举
+enum ExySupergroup { 
+	EVVSupergroup = 0;
+}
+
+
+message SupergroupAbsClass { 
+  ExySupergroup type = 1;
+    oneof value { 
+		Supergroup supergroup= 2;
+    }
+}
+
+
+
+// ExySupergroupFullInfo 枚举
+enum ExySupergroupFullInfo { 
+	EVVSupergroupFullInfo = 0;
+}
+
+
+message SupergroupFullInfoAbsClass { 
+  ExySupergroupFullInfo type = 1;
+    oneof value { 
+		SupergroupFullInfo supergroupFullInfo= 2;
+    }
+}
+
+
+
+// ExySupergroupMembersFilter 枚举
+enum ExySupergroupMembersFilter { 
+	EVVSupergroupMembersFilterRecent = 0;
+	EVVSupergroupMembersFilterAdministrators = 1;
+	EVVSupergroupMembersFilterSearch = 2;
+	EVVSupergroupMembersFilterRestricted = 3;
+	EVVSupergroupMembersFilterBanned = 4;
+	EVVSupergroupMembersFilterBots = 5;
+}
+
+
+message SupergroupMembersFilterAbsClass { 
+  ExySupergroupMembersFilter type = 1;
+    oneof value { 
+		SupergroupMembersFilterRecent supergroupMembersFilterRecent= 2;
+		SupergroupMembersFilterAdministrators supergroupMembersFilterAdministrators= 3;
+		SupergroupMembersFilterSearch supergroupMembersFilterSearch= 4;
+		SupergroupMembersFilterRestricted supergroupMembersFilterRestricted= 5;
+		SupergroupMembersFilterBanned supergroupMembersFilterBanned= 6;
+		SupergroupMembersFilterBots supergroupMembersFilterBots= 7;
+    }
+}
+
+
+
+
+
+
+
+
+
+// ExyTMeURL 枚举
+enum ExyTMeURL { 
+	EVVTMeURL = 0;
+}
+
+
+message TMeURLAbsClass { 
+  ExyTMeURL type = 1;
+    oneof value { 
+		TMeURL tMeURL= 2;
+    }
+}
+
+
+
+// ExyTMeURLType 枚举
+enum ExyTMeURLType { 
+	EVVTMeURLTypeUser = 0;
+	EVVTMeURLTypeSupergroup = 1;
+	EVVTMeURLTypeChatInvite = 2;
+	EVVTMeURLTypeStickerSet = 3;
+}
+
+
+message TMeURLTypeAbsClass { 
+  ExyTMeURLType type = 1;
+    oneof value { 
+		TMeURLTypeUser tMeURLTypeUser= 2;
+		TMeURLTypeSupergroup tMeURLTypeSupergroup= 3;
+		TMeURLTypeChatInvite tMeURLTypeChatInvite= 4;
+		TMeURLTypeStickerSet tMeURLTypeStickerSet= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyTMeUrls 枚举
+enum ExyTMeUrls { 
+	EVVTMeUrls = 0;
+}
+
+
+message TMeUrlsAbsClass { 
+  ExyTMeUrls type = 1;
+    oneof value { 
+		TMeUrls tMeUrls= 2;
+    }
+}
+
+
+
+// ExyTdlibParameters 枚举
+enum ExyTdlibParameters { 
+	EVVTdlibParameters = 0;
+}
+
+
+message TdlibParametersAbsClass { 
+  ExyTdlibParameters type = 1;
+    oneof value { 
+		TdlibParameters tdlibParameters= 2;
+    }
+}
+
+
+
+// ExyTemporaryPasswordState 枚举
+enum ExyTemporaryPasswordState { 
+	EVVTemporaryPasswordState = 0;
+}
+
+
+message TemporaryPasswordStateAbsClass { 
+  ExyTemporaryPasswordState type = 1;
+    oneof value { 
+		TemporaryPasswordState temporaryPasswordState= 2;
+    }
+}
+
+
+
+// ExyTermsOfService 枚举
+enum ExyTermsOfService { 
+	EVVTermsOfService = 0;
+}
+
+
+message TermsOfServiceAbsClass { 
+  ExyTermsOfService type = 1;
+    oneof value { 
+		TermsOfService termsOfService= 2;
+    }
+}
+
+
+
+// ExyTestBytes 枚举
+enum ExyTestBytes { 
+	EVVTestBytes = 0;
+}
+
+
+message TestBytesAbsClass { 
+  ExyTestBytes type = 1;
+    oneof value { 
+		TestBytes testBytes= 2;
+    }
+}
+
+
+
+// ExyTestInt 枚举
+enum ExyTestInt { 
+	EVVTestInt = 0;
+}
+
+
+message TestIntAbsClass { 
+  ExyTestInt type = 1;
+    oneof value { 
+		TestInt testInt= 2;
+    }
+}
+
+
+
+// ExyTestString 枚举
+enum ExyTestString { 
+	EVVTestString = 0;
+}
+
+
+message TestStringAbsClass { 
+  ExyTestString type = 1;
+    oneof value { 
+		TestString testString= 2;
+    }
+}
+
+
+
+// ExyTestVectorInt 枚举
+enum ExyTestVectorInt { 
+	EVVTestVectorInt = 0;
+}
+
+
+message TestVectorIntAbsClass { 
+  ExyTestVectorInt type = 1;
+    oneof value { 
+		TestVectorInt testVectorInt= 2;
+    }
+}
+
+
+
+// ExyTestVectorIntObject 枚举
+enum ExyTestVectorIntObject { 
+	EVVTestVectorIntObject = 0;
+}
+
+
+message TestVectorIntObjectAbsClass { 
+  ExyTestVectorIntObject type = 1;
+    oneof value { 
+		TestVectorIntObject testVectorIntObject= 2;
+    }
+}
+
+
+
+// ExyTestVectorString 枚举
+enum ExyTestVectorString { 
+	EVVTestVectorString = 0;
+}
+
+
+message TestVectorStringAbsClass { 
+  ExyTestVectorString type = 1;
+    oneof value { 
+		TestVectorString testVectorString= 2;
+    }
+}
+
+
+
+// ExyTestVectorStringObject 枚举
+enum ExyTestVectorStringObject { 
+	EVVTestVectorStringObject = 0;
+}
+
+
+message TestVectorStringObjectAbsClass { 
+  ExyTestVectorStringObject type = 1;
+    oneof value { 
+		TestVectorStringObject testVectorStringObject= 2;
+    }
+}
+
+
+
+// ExyText 枚举
+enum ExyText { 
+	EVVText = 0;
+}
+
+
+message TextAbsClass { 
+  ExyText type = 1;
+    oneof value { 
+		Text text= 2;
+    }
+}
+
+
+
+// ExyTextEntities 枚举
+enum ExyTextEntities { 
+	EVVTextEntities = 0;
+}
+
+
+message TextEntitiesAbsClass { 
+  ExyTextEntities type = 1;
+    oneof value { 
+		TextEntities textEntities= 2;
+    }
+}
+
+
+
+// ExyTextEntity 枚举
+enum ExyTextEntity { 
+	EVVTextEntity = 0;
+}
+
+
+message TextEntityAbsClass { 
+  ExyTextEntity type = 1;
+    oneof value { 
+		TextEntity textEntity= 2;
+    }
+}
+
+
+
+// ExyTextEntityType 枚举
+enum ExyTextEntityType { 
+	EVVTextEntityTypeMention = 0;
+	EVVTextEntityTypeHashtag = 1;
+	EVVTextEntityTypeCashtag = 2;
+	EVVTextEntityTypeBotCommand = 3;
+	EVVTextEntityTypeURL = 4;
+	EVVTextEntityTypeEmailAddress = 5;
+	EVVTextEntityTypeBold = 6;
+	EVVTextEntityTypeItalic = 7;
+	EVVTextEntityTypeCode = 8;
+	EVVTextEntityTypePre = 9;
+	EVVTextEntityTypePreCode = 10;
+	EVVTextEntityTypeTextURL = 11;
+	EVVTextEntityTypeMentionName = 12;
+	EVVTextEntityTypePhoneNumber = 13;
+}
+
+
+message TextEntityTypeAbsClass { 
+  ExyTextEntityType type = 1;
+    oneof value { 
+		TextEntityTypeMention textEntityTypeMention= 2;
+		TextEntityTypeHashtag textEntityTypeHashtag= 3;
+		TextEntityTypeCashtag textEntityTypeCashtag= 4;
+		TextEntityTypeBotCommand textEntityTypeBotCommand= 5;
+		TextEntityTypeURL textEntityTypeURL= 6;
+		TextEntityTypeEmailAddress textEntityTypeEmailAddress= 7;
+		TextEntityTypeBold textEntityTypeBold= 8;
+		TextEntityTypeItalic textEntityTypeItalic= 9;
+		TextEntityTypeCode textEntityTypeCode= 10;
+		TextEntityTypePre textEntityTypePre= 11;
+		TextEntityTypePreCode textEntityTypePreCode= 12;
+		TextEntityTypeTextURL textEntityTypeTextURL= 13;
+		TextEntityTypeMentionName textEntityTypeMentionName= 14;
+		TextEntityTypePhoneNumber textEntityTypePhoneNumber= 15;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyTextParseMode 枚举
+enum ExyTextParseMode { 
+	EVVTextParseModeMarkdown = 0;
+	EVVTextParseModeHTML = 1;
+}
+
+
+message TextParseModeAbsClass { 
+  ExyTextParseMode type = 1;
+    oneof value { 
+		TextParseModeMarkdown textParseModeMarkdown= 2;
+		TextParseModeHTML textParseModeHTML= 3;
+    }
+}
+
+
+
+
+
+// ExyTopChatCategory 枚举
+enum ExyTopChatCategory { 
+	EVVTopChatCategoryUsers = 0;
+	EVVTopChatCategoryBots = 1;
+	EVVTopChatCategoryGroups = 2;
+	EVVTopChatCategorySuperGroupV1s = 3;
+	EVVTopChatCategoryInlineBots = 4;
+	EVVTopChatCategoryCalls = 5;
+}
+
+
+message TopChatCategoryAbsClass { 
+  ExyTopChatCategory type = 1;
+    oneof value { 
+		TopChatCategoryUsers topChatCategoryUsers= 2;
+		TopChatCategoryBots topChatCategoryBots= 3;
+		TopChatCategoryGroups topChatCategoryGroups= 4;
+		TopChatCategorySuperGroupV1s topChatCategorySuperGroupV1s= 5;
+		TopChatCategoryInlineBots topChatCategoryInlineBots= 6;
+		TopChatCategoryCalls topChatCategoryCalls= 7;
+    }
+}
+
+
+
+
+
+
+
+
+
+// ExyUpdate 枚举
+enum ExyUpdate { 
+	EVVUpdateAuthState = 0;
+	EVVUpdateNewInfo = 1;
+	EVVUpdateInfoSendAcknowledged = 2;
+	EVVUpdateInfoSendSucceeded = 3;
+	EVVUpdateInfoSendFailed = 4;
+	EVVUpdateInfoContent = 5;
+	EVVUpdateInfoEdited = 6;
+	EVVUpdateInfoViews = 7;
+	EVVUpdateInfoContentOpened = 8;
+	EVVUpdateInfoMentionRead = 9;
+	EVVUpdateNewChat = 10;
+	EVVUpdateChatTitle = 11;
+	EVVUpdateChatPhoto = 12;
+	EVVUpdateChatLastInfo = 13;
+	EVVUpdateChatOrder = 14;
+	EVVUpdateChatIsPinned = 15;
+	EVVUpdateChatIsMarkedAsUnread = 16;
+	EVVUpdateChatIsSponsored = 17;
+	EVVUpdateChatDefaultDisableNotification = 18;
+	EVVUpdateChatReadInbox = 19;
+	EVVUpdateChatReadOutbox = 20;
+	EVVUpdateChatUnreadMentionCount = 21;
+	EVVUpdateChatNotificationSettings = 22;
+	EVVUpdateScopeNotificationSettings = 23;
+	EVVUpdateChatReplyMarkup = 24;
+	EVVUpdateChatDraftInfo = 25;
+	EVVUpdateDeleteInfos = 26;
+	EVVUpdateUserChatDoit = 27;
+	EVVUpdateUserStatus = 28;
+	EVVUpdateUser = 29;
+	EVVUpdateBasicGroup = 30;
+	EVVUpdateSupergroup = 31;
+	EVVUpdateSecretChat = 32;
+	EVVUpdateUserFullInfo = 33;
+	EVVUpdateBasicGroupFullInfo = 34;
+	EVVUpdateSupergroupFullInfo = 35;
+	EVVUpdateServiceNotification = 36;
+	EVVUpdateFile = 37;
+	EVVUpdateFileGenerationStart = 38;
+	EVVUpdateFileGenerationStop = 39;
+	EVVUpdateCall = 40;
+	EVVUpdateUserPrivacySettingRules = 41;
+	EVVUpdateUnreadInfoCount = 42;
+	EVVUpdateUnreadChatCount = 43;
+	EVVUpdateOption = 44;
+	EVVUpdateInstalledStickerSets = 45;
+	EVVUpdateTrendingStickerSets = 46;
+	EVVUpdateRecentStickers = 47;
+	EVVUpdateFavoriteStickers = 48;
+	EVVUpdateSavedAnimations = 49;
+	EVVUpdateLanguagePackStrings = 50;
+	EVVUpdateConnectionState = 51;
+	EVVUpdateTermsOfService = 52;
+	EVVUpdateNewInlineQuery = 53;
+	EVVUpdateNewChosenInlineResult = 54;
+	EVVUpdateNewCallbackQuery = 55;
+	EVVUpdateNewInlineCallbackQuery = 56;
+	EVVUpdateNewShippingQuery = 57;
+	EVVUpdateNewPreCheckoutQuery = 58;
+	EVVUpdateNewCustomEvent = 59;
+	EVVUpdateNewCustomQuery = 60;
+}
+
+
+message UpdateAbsClass { 
+  ExyUpdate type = 1;
+    oneof value { 
+		UpdateAuthState updateAuthState= 2;
+		UpdateNewInfo updateNewInfo= 3;
+		UpdateInfoSendAcknowledged updateInfoSendAcknowledged= 4;
+		UpdateInfoSendSucceeded updateInfoSendSucceeded= 5;
+		UpdateInfoSendFailed updateInfoSendFailed= 6;
+		UpdateInfoContent updateInfoContent= 7;
+		UpdateInfoEdited updateInfoEdited= 8;
+		UpdateInfoViews updateInfoViews= 9;
+		UpdateInfoContentOpened updateInfoContentOpened= 10;
+		UpdateInfoMentionRead updateInfoMentionRead= 11;
+		UpdateNewChat updateNewChat= 12;
+		UpdateChatTitle updateChatTitle= 13;
+		UpdateChatPhoto updateChatPhoto= 14;
+		UpdateChatLastInfo updateChatLastInfo= 15;
+		UpdateChatOrder updateChatOrder= 16;
+		UpdateChatIsPinned updateChatIsPinned= 17;
+		UpdateChatIsMarkedAsUnread updateChatIsMarkedAsUnread= 18;
+		UpdateChatIsSponsored updateChatIsSponsored= 19;
+		UpdateChatDefaultDisableNotification updateChatDefaultDisableNotification= 20;
+		UpdateChatReadInbox updateChatReadInbox= 21;
+		UpdateChatReadOutbox updateChatReadOutbox= 22;
+		UpdateChatUnreadMentionCount updateChatUnreadMentionCount= 23;
+		UpdateChatNotificationSettings updateChatNotificationSettings= 24;
+		UpdateScopeNotificationSettings updateScopeNotificationSettings= 25;
+		UpdateChatReplyMarkup updateChatReplyMarkup= 26;
+		UpdateChatDraftInfo updateChatDraftInfo= 27;
+		UpdateDeleteInfos updateDeleteInfos= 28;
+		UpdateUserChatDoit updateUserChatDoit= 29;
+		UpdateUserStatus updateUserStatus= 30;
+		UpdateUser updateUser= 31;
+		UpdateBasicGroup updateBasicGroup= 32;
+		UpdateSupergroup updateSupergroup= 33;
+		UpdateSecretChat updateSecretChat= 34;
+		UpdateUserFullInfo updateUserFullInfo= 35;
+		UpdateBasicGroupFullInfo updateBasicGroupFullInfo= 36;
+		UpdateSupergroupFullInfo updateSupergroupFullInfo= 37;
+		UpdateServiceNotification updateServiceNotification= 38;
+		UpdateFile updateFile= 39;
+		UpdateFileGenerationStart updateFileGenerationStart= 40;
+		UpdateFileGenerationStop updateFileGenerationStop= 41;
+		UpdateCall updateCall= 42;
+		UpdateUserPrivacySettingRules updateUserPrivacySettingRules= 43;
+		UpdateUnreadInfoCount updateUnreadInfoCount= 44;
+		UpdateUnreadChatCount updateUnreadChatCount= 45;
+		UpdateOption updateOption= 46;
+		UpdateInstalledStickerSets updateInstalledStickerSets= 47;
+		UpdateTrendingStickerSets updateTrendingStickerSets= 48;
+		UpdateRecentStickers updateRecentStickers= 49;
+		UpdateFavoriteStickers updateFavoriteStickers= 50;
+		UpdateSavedAnimations updateSavedAnimations= 51;
+		UpdateLanguagePackStrings updateLanguagePackStrings= 52;
+		UpdateConnectionState updateConnectionState= 53;
+		UpdateTermsOfService updateTermsOfService= 54;
+		UpdateNewInlineQuery updateNewInlineQuery= 55;
+		UpdateNewChosenInlineResult updateNewChosenInlineResult= 56;
+		UpdateNewCallbackQuery updateNewCallbackQuery= 57;
+		UpdateNewInlineCallbackQuery updateNewInlineCallbackQuery= 58;
+		UpdateNewShippingQuery updateNewShippingQuery= 59;
+		UpdateNewPreCheckoutQuery updateNewPreCheckoutQuery= 60;
+		UpdateNewCustomEvent updateNewCustomEvent= 61;
+		UpdateNewCustomQuery updateNewCustomQuery= 62;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ExyUser 枚举
+enum ExyUser { 
+	EVVUser = 0;
+}
+
+
+message UserAbsClass { 
+  ExyUser type = 1;
+    oneof value { 
+		User user= 2;
+    }
+}
+
+
+
+// ExyUserFullInfo 枚举
+enum ExyUserFullInfo { 
+	EVVUserFullInfo = 0;
+}
+
+
+message UserFullInfoAbsClass { 
+  ExyUserFullInfo type = 1;
+    oneof value { 
+		UserFullInfo userFullInfo= 2;
+    }
+}
+
+
+
+// ExyUserPrivacySetting 枚举
+enum ExyUserPrivacySetting { 
+	EVVUserPrivacySettingShowStatus = 0;
+	EVVUserPrivacySettingAllowChatInvites = 1;
+	EVVUserPrivacySettingAllowCalls = 2;
+}
+
+
+message UserPrivacySettingAbsClass { 
+  ExyUserPrivacySetting type = 1;
+    oneof value { 
+		UserPrivacySettingShowStatus userPrivacySettingShowStatus= 2;
+		UserPrivacySettingAllowChatInvites userPrivacySettingAllowChatInvites= 3;
+		UserPrivacySettingAllowCalls userPrivacySettingAllowCalls= 4;
+    }
+}
+
+
+
+
+
+
+// ExyUserPrivacySettingRule 枚举
+enum ExyUserPrivacySettingRule { 
+	EVVUserPrivacySettingRuleAllowAll = 0;
+	EVVUserPrivacySettingRuleAllowContacts = 1;
+	EVVUserPrivacySettingRuleAllowUsers = 2;
+	EVVUserPrivacySettingRuleRestrictAll = 3;
+	EVVUserPrivacySettingRuleRestrictContacts = 4;
+	EVVUserPrivacySettingRuleRestrictUsers = 5;
+}
+
+
+message UserPrivacySettingRuleAbsClass { 
+  ExyUserPrivacySettingRule type = 1;
+    oneof value { 
+		UserPrivacySettingRuleAllowAll userPrivacySettingRuleAllowAll= 2;
+		UserPrivacySettingRuleAllowContacts userPrivacySettingRuleAllowContacts= 3;
+		UserPrivacySettingRuleAllowUsers userPrivacySettingRuleAllowUsers= 4;
+		UserPrivacySettingRuleRestrictAll userPrivacySettingRuleRestrictAll= 5;
+		UserPrivacySettingRuleRestrictContacts userPrivacySettingRuleRestrictContacts= 6;
+		UserPrivacySettingRuleRestrictUsers userPrivacySettingRuleRestrictUsers= 7;
+    }
+}
+
+
+
+
+
+
+
+
+
+// ExyUserPrivacySettingRules 枚举
+enum ExyUserPrivacySettingRules { 
+	EVVUserPrivacySettingRules = 0;
+}
+
+
+message UserPrivacySettingRulesAbsClass { 
+  ExyUserPrivacySettingRules type = 1;
+    oneof value { 
+		UserPrivacySettingRules userPrivacySettingRules= 2;
+    }
+}
+
+
+
+// ExyUserProfilePhotos 枚举
+enum ExyUserProfilePhotos { 
+	EVVUserProfilePhotos = 0;
+}
+
+
+message UserProfilePhotosAbsClass { 
+  ExyUserProfilePhotos type = 1;
+    oneof value { 
+		UserProfilePhotos userProfilePhotos= 2;
+    }
+}
+
+
+
+// ExyUserStatus 枚举
+enum ExyUserStatus { 
+	EVVUserStatusOnline = 0;
+	EVVUserStatusOffline = 1;
+}
+
+
+message UserStatusAbsClass { 
+  ExyUserStatus type = 1;
+    oneof value { 
+		UserStatusOnline userStatusOnline= 2;
+		UserStatusOffline userStatusOffline= 3;
+    }
+}
+
+
+
+
+
+// ExyUserType 枚举
+enum ExyUserType { 
+	EVVUserTypeRegular = 0;
+	EVVUserTypeDeleted = 1;
+	EVVUserTypeBot = 2;
+	EVVUserTypeUnknown = 3;
+}
+
+
+message UserTypeAbsClass { 
+  ExyUserType type = 1;
+    oneof value { 
+		UserTypeRegular userTypeRegular= 2;
+		UserTypeDeleted userTypeDeleted= 3;
+		UserTypeBot userTypeBot= 4;
+		UserTypeUnknown userTypeUnknown= 5;
+    }
+}
+
+
+
+
+
+
+
+// ExyUsers 枚举
+enum ExyUsers { 
+	EVVUsers = 0;
+}
+
+
+message UsersAbsClass { 
+  ExyUsers type = 1;
+    oneof value { 
+		Users users= 2;
+    }
+}
+
+
+
+// ExyValidatedOrderInfo 枚举
+enum ExyValidatedOrderInfo { 
+	EVVValidatedOrderInfo = 0;
+}
+
+
+message ValidatedOrderInfoAbsClass { 
+  ExyValidatedOrderInfo type = 1;
+    oneof value { 
+		ValidatedOrderInfo validatedOrderInfo= 2;
+    }
+}
+
+
+
+// ExyVenue 枚举
+enum ExyVenue { 
+	EVVVenue = 0;
+}
+
+
+message VenueAbsClass { 
+  ExyVenue type = 1;
+    oneof value { 
+		Venue venue= 2;
+    }
+}
+
+
+
+// ExyVideo 枚举
+enum ExyVideo { 
+	EVVVideo = 0;
+}
+
+
+message VideoAbsClass { 
+  ExyVideo type = 1;
+    oneof value { 
+		Video video= 2;
+    }
+}
+
+
+
+// ExyVideoNote 枚举
+enum ExyVideoNote { 
+	EVVVideoNote = 0;
+}
+
+
+message VideoNoteAbsClass { 
+  ExyVideoNote type = 1;
+    oneof value { 
+		VideoNote videoNote= 2;
+    }
+}
+
+
+
+// ExyVoiceNote 枚举
+enum ExyVoiceNote { 
+	EVVVoiceNote = 0;
+}
+
+
+message VoiceNoteAbsClass { 
+  ExyVoiceNote type = 1;
+    oneof value { 
+		VoiceNote voiceNote= 2;
+    }
+}
+
+
+
+// ExyWallpaper 枚举
+enum ExyWallpaper { 
+	EVVWallpaper = 0;
+}
+
+
+message WallpaperAbsClass { 
+  ExyWallpaper type = 1;
+    oneof value { 
+		Wallpaper wallpaper= 2;
+    }
+}
+
+
+
+// ExyWallpapers 枚举
+enum ExyWallpapers { 
+	EVVWallpapers = 0;
+}
+
+
+message WallpapersAbsClass { 
+  ExyWallpapers type = 1;
+    oneof value { 
+		Wallpapers wallpapers= 2;
+    }
+}
+
+
+
+// ExyWebPage 枚举
+enum ExyWebPage { 
+	EVVWebPage = 0;
+}
+
+
+message WebPageAbsClass { 
+  ExyWebPage type = 1;
+    oneof value { 
+		WebPage webPage= 2;
+    }
+}
+
+
+
+// ExyWebPageInstantView 枚举
+enum ExyWebPageInstantView { 
+	EVVWebPageInstantView = 0;
+}
+
+
+message WebPageInstantViewAbsClass { 
+  ExyWebPageInstantView type = 1;
+    oneof value { 
+		WebPageInstantView webPageInstantView= 2;
+    }
+}
+
+
+

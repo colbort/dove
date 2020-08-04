@@ -1,0 +1,8 @@
+package proto_pkt
+
+import (
+	pkt "server/core/common/pkt"
+	pb "github.com/gogo/protobuf/proto"
+)
+
+/*register_message*/

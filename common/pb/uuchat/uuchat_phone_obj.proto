@@ -1,0 +1,32 @@
+// Package phone AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message PhonePhoneCall 定义 
+message PhonePhoneCall {  
+	PhoneCallAbsClass phoneCall = 1;	//PhoneCallAbsClass 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+
+
+
+// ExyPhonePhoneCall 枚举
+enum ExyPhonePhoneCall { 
+	EVVPhonePhoneCall = 0;
+}
+
+
+message PhonePhoneCallAbsClass { 
+  ExyPhonePhoneCall type = 1;
+    oneof value { 
+		PhonePhoneCall phonePhoneCall= 2;
+    }
+}
+
+
+

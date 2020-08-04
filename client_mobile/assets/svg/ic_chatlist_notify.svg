@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="16px" viewBox="0 0 14 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Atongzhi</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-对话列表" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="对话列表" transform="translate(-281.000000, -146.000000)" fill="#FFFFFF">
+            <g id="编组-13" transform="translate(264.000000, 126.000000)">
+                <g id="A-通知" transform="translate(16.000000, 20.000000)">
+                    <g id="通知">
+                        <rect id="矩形" fill-rule="nonzero" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M3,11.5 L3,6.5 C3,4.081 4.718,2.0635 7,1.6 L7,1 C7,0.4475 7.4475,0 8,0 C8.5525,0 9,0.4475 9,1 L9,1.6 C11.282,2.0635 13,4.081 13,6.5 L13,11.5 L13.5015,11.5 C14.053,11.5 14.5,11.944 14.5,12.5 C14.5,13.0525 14.0525,13.5 13.5015,13.5 L2.4985,13.5 C1.947,13.5 1.5,13.056 1.5,12.5 C1.5,11.9475 1.9475,11.5 2.4985,11.5 L3,11.5 Z M9.5,14.5 C9.5,15.3285 8.8285,16 8,16 C7.1715,16 6.5,15.3285 6.5,14.5 L9.5,14.5 Z" id="形状" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

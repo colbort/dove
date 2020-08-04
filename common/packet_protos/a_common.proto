@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package pkt;
+
+enum TLError {
+  tl_ok = 0;
+
+  // AuthKey 无效
+  tl_authKeyInvalid = 3691;
+}
+enum TLVersion {
+  tlInit = 0;
+  tlVersionStart = 10001;
+  tlVersionEnd = 10003;
+}
+
+message Packet {
+  int64 authKeyId = 1;
+  bytes key = 2;
+  bytes payload = 3;
+
+  // for enum TLError
+  int32 tlError = 4;
+}
+
+/*
+    if authKeyId == 0 {
+        // desearialize payload
+    } else {
+        // decode payload => plain data
+        //
+
+    }
+
+*/
+
+message LangItem {
+  string value = 1;
+  string manyValue = 2;
+}
+
+message LangPackBase {
+  string code = 1;
+  string name = 2;
+  int32 version = 3;
+  map<string, LangItem> langs = 4;
+}
+
+message LangItemInfo {
+  string code = 1;
+  string name = 2;
+  int32 version = 3;
+}
+
+message Langs {
+  map<string, LangItemInfo> langsInfo = 1;
+  string deflang = 2;
+  int32 version = 3;
+}

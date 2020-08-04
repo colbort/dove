@@ -1,0 +1,637 @@
+// Package xyproto AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+
+
+package pb_xyproto;
+
+
+// message BadMsgNotification 定义 
+message BadMsgNotification {  
+	int64 badMsgID = 1;	//int64 
+	int32 badMsgSeqno = 2;	//int32 
+	int32 errorCode = 3;	//int32
+}
+
+// message BadServerSalt 定义 
+message BadServerSalt {  
+	int64 badMsgID = 1;	//int64 
+	int32 badMsgSeqno = 2;	//int32 
+	int32 errorCode = 3;	//int32 
+	int64 newServerSalt = 4;	//int64
+}
+
+// message BindAuthKeyInner 定义 
+message BindAuthKeyInner {  
+	int64 nonce = 1;	//int64 
+	int64 tempAuthKeyID = 2;	//int64 
+	int64 permAuthKeyID = 3;	//int64 
+	int64 tempSessionID = 4;	//int64 
+	int32 expiresAt = 5;	//int32
+}
+
+// message ClientDHInnerData 定义 
+message ClientDHInnerData {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	int64 retryID = 3;	//int64 
+	bytes gB = 4;	//core.Bytes
+}
+
+// message DestroySessionOk 定义 
+message DestroySessionOk {  
+	int64 sessionID = 1;	//int64
+}
+
+// message DestroySessionNone 定义 
+message DestroySessionNone {  
+	int64 sessionID = 1;	//int64
+}
+
+// message FutureSalt 定义 
+message FutureSalt {  
+	int32 validSince = 1;	//int32 
+	int32 validUntil = 2;	//int32 
+	int64 salt = 3;	//int64
+}
+
+// message FutureSalts 定义 
+message FutureSalts {  
+	int64 reqMsgID = 1;	//int64 
+	int32 now = 2;	//int32 
+	repeated FutureSalt salts = 3;	//[]FutureSalt
+}
+
+// message GzipPacked 定义 
+message GzipPacked {  
+	bytes packedData = 1;	//core.Bytes
+}
+
+// message DummyHTTPWait 定义 
+message DummyHTTPWait { 
+}
+
+// message MsgDetailedInfo 定义 
+message MsgDetailedInfo {  
+	int64 msgID = 1;	//int64 
+	int64 answerMsgID = 2;	//int64 
+	int32 bytes = 3;	//int32 
+	int32 status = 4;	//int32
+}
+
+// message MsgNewDetailedInfo 定义 
+message MsgNewDetailedInfo {  
+	int64 answerMsgID = 1;	//int64 
+	int32 bytes = 2;	//int32 
+	int32 status = 3;	//int32
+}
+
+// message MsgResendAnsReq 定义 
+message MsgResendAnsReq {  
+	repeated int64 msgIds = 1;	//[]int64
+}
+
+// message MsgResendReq 定义 
+message MsgResendReq {  
+	repeated int64 msgIds = 1;	//[]int64
+}
+
+// message MsgsAck 定义 
+message MsgsAck {  
+	repeated int64 msgIds = 1;	//[]int64
+}
+
+// message MsgsAllInfo 定义 
+message MsgsAllInfo {  
+	repeated int64 msgIds = 1;	//[]int64 
+	bytes info = 2;	//core.Bytes
+}
+
+// message MsgsStateInfo 定义 
+message MsgsStateInfo {  
+	int64 reqMsgID = 1;	//int64 
+	bytes info = 2;	//core.Bytes
+}
+
+// message MsgsStateReq 定义 
+message MsgsStateReq {  
+	repeated int64 msgIds = 1;	//[]int64
+}
+
+// message NewSessionCreated 定义 
+message NewSessionCreated {  
+	int64 firstMsgID = 1;	//int64 
+	int64 uniqueID = 2;	//int64 
+	int64 serverSalt = 3;	//int64
+}
+
+// message PQInnerDataDc 定义 
+message PQInnerDataDc {  
+	bytes pq = 1;	//core.Bytes 
+	bytes p = 2;	//core.Bytes 
+	bytes q = 3;	//core.Bytes 
+	bytes nonce = 4;	//core.Int128 
+	bytes serverNonce = 5;	//core.Int128 
+	bytes newNonce = 6;	//core.Int256 
+	int32 dc = 7;	//int32
+}
+
+// message PQInnerDataTempDc 定义 
+message PQInnerDataTempDc {  
+	bytes pq = 1;	//core.Bytes 
+	bytes p = 2;	//core.Bytes 
+	bytes q = 3;	//core.Bytes 
+	bytes nonce = 4;	//core.Int128 
+	bytes serverNonce = 5;	//core.Int128 
+	bytes newNonce = 6;	//core.Int256 
+	int32 dc = 7;	//int32 
+	int32 expiresIn = 8;	//int32
+}
+
+// message Pong 定义 
+message Pong {  
+	int64 msgID = 1;	//int64 
+	int64 pingID = 2;	//int64
+}
+
+// message RsaPublicKey 定义 
+message RsaPublicKey {  
+	bytes n = 1;	//core.Bytes 
+	bytes e = 2;	//core.Bytes
+}
+
+// message ResPQ 定义 
+message ResPQ {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	bytes pq = 3;	//core.Bytes 
+	repeated int64 serverPublicKeyFingerprints = 4;	//[]int64
+}
+
+// message RPCAnswerUnknown 定义 
+message RPCAnswerUnknown { 
+}
+
+// message RPCAnswerDroppedRunning 定义 
+message RPCAnswerDroppedRunning { 
+}
+
+// message RPCAnswerDropped 定义 
+message RPCAnswerDropped {  
+	int64 msgID = 1;	//int64 
+	int32 seqNo = 2;	//int32 
+	int32 bytes = 3;	//int32
+}
+
+// message RPCError 定义 
+message RPCError {  
+	int32 errorCode = 1;	//int32 
+	bytes errorInfo = 2;	//core.Bytes
+}
+
+// message ServerDHParamsFail 定义 
+message ServerDHParamsFail {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	bytes newNonceHash = 3;	//core.Int128
+}
+
+// message ServerDHParamsOk 定义 
+message ServerDHParamsOk {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	bytes encryptedAnswer = 3;	//core.Bytes
+}
+
+// message ServerDHInnerData 定义 
+message ServerDHInnerData {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	int32 g = 3;	//int32 
+	bytes dhPrime = 4;	//core.Bytes 
+	bytes gA = 5;	//core.Bytes 
+	int32 serverTime = 6;	//int32
+}
+
+// message DhGenOk 定义 
+message DhGenOk {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	bytes newNonceHash1 = 3;	//core.Int128
+}
+
+// message DhGenRetry 定义 
+message DhGenRetry {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	bytes newNonceHash2 = 3;	//core.Int128
+}
+
+// message DhGenFail 定义 
+message DhGenFail {  
+	bytes nonce = 1;	//core.Int128 
+	bytes serverNonce = 2;	//core.Int128 
+	bytes newNonceHash3 = 3;	//core.Int128
+}
+
+
+
+
+// ExyBadMsgNotification 枚举
+enum ExyBadMsgNotification { 
+	EVVBadMsgNotification = 0;
+	EVVBadServerSalt = 1;
+}
+
+
+message BadMsgNotificationAbsClass { 
+  ExyBadMsgNotification type = 1;
+    oneof value { 
+		BadMsgNotification badMsgNotification= 2;
+		BadServerSalt badServerSalt= 3;
+    }
+}
+
+
+
+
+
+// ExyBindAuthKeyInner 枚举
+enum ExyBindAuthKeyInner { 
+	EVVBindAuthKeyInner = 0;
+}
+
+
+message BindAuthKeyInnerAbsClass { 
+  ExyBindAuthKeyInner type = 1;
+    oneof value { 
+		BindAuthKeyInner bindAuthKeyInner= 2;
+    }
+}
+
+
+
+// ExyClientDHInnerData 枚举
+enum ExyClientDHInnerData { 
+	EVVClientDHInnerData = 0;
+}
+
+
+message ClientDHInnerDataAbsClass { 
+  ExyClientDHInnerData type = 1;
+    oneof value { 
+		ClientDHInnerData clientDHInnerData= 2;
+    }
+}
+
+
+
+// ExyDestroySessionRes 枚举
+enum ExyDestroySessionRes { 
+	EVVDestroySessionOk = 0;
+	EVVDestroySessionNone = 1;
+}
+
+
+message DestroySessionResAbsClass { 
+  ExyDestroySessionRes type = 1;
+    oneof value { 
+		DestroySessionOk destroySessionOk= 2;
+		DestroySessionNone destroySessionNone= 3;
+    }
+}
+
+
+
+
+
+// ExyFutureSalt 枚举
+enum ExyFutureSalt { 
+	EVVFutureSalt = 0;
+}
+
+
+message FutureSaltAbsClass { 
+  ExyFutureSalt type = 1;
+    oneof value { 
+		FutureSalt futureSalt= 2;
+    }
+}
+
+
+
+// ExyFutureSalts 枚举
+enum ExyFutureSalts { 
+	EVVFutureSalts = 0;
+}
+
+
+message FutureSaltsAbsClass { 
+  ExyFutureSalts type = 1;
+    oneof value { 
+		FutureSalts futureSalts= 2;
+    }
+}
+
+
+
+// ExyGzipPacked 枚举
+enum ExyGzipPacked { 
+	EVVGzipPacked = 0;
+}
+
+
+message GzipPackedAbsClass { 
+  ExyGzipPacked type = 1;
+    oneof value { 
+		GzipPacked gzipPacked= 2;
+    }
+}
+
+
+
+// ExyHTTPWait 枚举
+enum ExyHTTPWait { 
+	EVVDummyHTTPWait = 0;
+}
+
+
+message HTTPWaitAbsClass { 
+  ExyHTTPWait type = 1;
+    oneof value { 
+		DummyHTTPWait dummyHTTPWait= 2;
+    }
+}
+
+
+
+// ExyMsgDetailedInfo 枚举
+enum ExyMsgDetailedInfo { 
+	EVVMsgDetailedInfo = 0;
+	EVVMsgNewDetailedInfo = 1;
+}
+
+
+message MsgDetailedInfoAbsClass { 
+  ExyMsgDetailedInfo type = 1;
+    oneof value { 
+		MsgDetailedInfo msgDetailedInfo= 2;
+		MsgNewDetailedInfo msgNewDetailedInfo= 3;
+    }
+}
+
+
+
+
+
+// ExyMsgResendReq 枚举
+enum ExyMsgResendReq { 
+	EVVMsgResendAnsReq = 0;
+	EVVMsgResendReq = 1;
+}
+
+
+message MsgResendReqAbsClass { 
+  ExyMsgResendReq type = 1;
+    oneof value { 
+		MsgResendAnsReq msgResendAnsReq= 2;
+		MsgResendReq msgResendReq= 3;
+    }
+}
+
+
+
+
+
+// ExyMsgsAck 枚举
+enum ExyMsgsAck { 
+	EVVMsgsAck = 0;
+}
+
+
+message MsgsAckAbsClass { 
+  ExyMsgsAck type = 1;
+    oneof value { 
+		MsgsAck msgsAck= 2;
+    }
+}
+
+
+
+// ExyMsgsAllInfo 枚举
+enum ExyMsgsAllInfo { 
+	EVVMsgsAllInfo = 0;
+}
+
+
+message MsgsAllInfoAbsClass { 
+  ExyMsgsAllInfo type = 1;
+    oneof value { 
+		MsgsAllInfo msgsAllInfo= 2;
+    }
+}
+
+
+
+// ExyMsgsStateInfo 枚举
+enum ExyMsgsStateInfo { 
+	EVVMsgsStateInfo = 0;
+}
+
+
+message MsgsStateInfoAbsClass { 
+  ExyMsgsStateInfo type = 1;
+    oneof value { 
+		MsgsStateInfo msgsStateInfo= 2;
+    }
+}
+
+
+
+// ExyMsgsStateReq 枚举
+enum ExyMsgsStateReq { 
+	EVVMsgsStateReq = 0;
+}
+
+
+message MsgsStateReqAbsClass { 
+  ExyMsgsStateReq type = 1;
+    oneof value { 
+		MsgsStateReq msgsStateReq= 2;
+    }
+}
+
+
+
+// ExyNewSession 枚举
+enum ExyNewSession { 
+	EVVNewSessionCreated = 0;
+}
+
+
+message NewSessionAbsClass { 
+  ExyNewSession type = 1;
+    oneof value { 
+		NewSessionCreated newSessionCreated= 2;
+    }
+}
+
+
+
+// ExyPQInnerData 枚举
+enum ExyPQInnerData { 
+	EVVPQInnerDataDc = 0;
+	EVVPQInnerDataTempDc = 1;
+}
+
+
+message PQInnerDataAbsClass { 
+  ExyPQInnerData type = 1;
+    oneof value { 
+		PQInnerDataDc pQInnerDataDc= 2;
+		PQInnerDataTempDc pQInnerDataTempDc= 3;
+    }
+}
+
+
+
+
+
+// ExyPong 枚举
+enum ExyPong { 
+	EVVPong = 0;
+}
+
+
+message PongAbsClass { 
+  ExyPong type = 1;
+    oneof value { 
+		Pong pong= 2;
+    }
+}
+
+
+
+// ExyRSAPublicKey 枚举
+enum ExyRSAPublicKey { 
+	EVVRsaPublicKey = 0;
+}
+
+
+message RSAPublicKeyAbsClass { 
+  ExyRSAPublicKey type = 1;
+    oneof value { 
+		RsaPublicKey rsaPublicKey= 2;
+    }
+}
+
+
+
+// ExyResPQ 枚举
+enum ExyResPQ { 
+	EVVResPQ = 0;
+}
+
+
+message ResPQAbsClass { 
+  ExyResPQ type = 1;
+    oneof value { 
+		ResPQ resPQ= 2;
+    }
+}
+
+
+
+// ExyRPCDropAnswer 枚举
+enum ExyRPCDropAnswer { 
+	EVVRPCAnswerUnknown = 0;
+	EVVRPCAnswerDroppedRunning = 1;
+	EVVRPCAnswerDropped = 2;
+}
+
+
+message RPCDropAnswerAbsClass { 
+  ExyRPCDropAnswer type = 1;
+    oneof value { 
+		RPCAnswerUnknown rPCAnswerUnknown= 2;
+		RPCAnswerDroppedRunning rPCAnswerDroppedRunning= 3;
+		RPCAnswerDropped rPCAnswerDropped= 4;
+    }
+}
+
+
+
+
+
+
+// ExyRPCError 枚举
+enum ExyRPCError { 
+	EVVRPCError = 0;
+}
+
+
+message RPCErrorAbsClass { 
+  ExyRPCError type = 1;
+    oneof value { 
+		RPCError rPCError= 2;
+    }
+}
+
+
+
+// ExyServerDHParams 枚举
+enum ExyServerDHParams { 
+	EVVServerDHParamsFail = 0;
+	EVVServerDHParamsOk = 1;
+}
+
+
+message ServerDHParamsAbsClass { 
+  ExyServerDHParams type = 1;
+    oneof value { 
+		ServerDHParamsFail serverDHParamsFail= 2;
+		ServerDHParamsOk serverDHParamsOk= 3;
+    }
+}
+
+
+
+
+
+// ExyServerDHInnerData 枚举
+enum ExyServerDHInnerData { 
+	EVVServerDHInnerData = 0;
+}
+
+
+message ServerDHInnerDataAbsClass { 
+  ExyServerDHInnerData type = 1;
+    oneof value { 
+		ServerDHInnerData serverDHInnerData= 2;
+    }
+}
+
+
+
+// ExySetClientDHParamsAnswer 枚举
+enum ExySetClientDHParamsAnswer { 
+	EVVDhGenOk = 0;
+	EVVDhGenRetry = 1;
+	EVVDhGenFail = 2;
+}
+
+
+message SetClientDHParamsAnswerAbsClass { 
+  ExySetClientDHParamsAnswer type = 1;
+    oneof value { 
+		DhGenOk dhGenOk= 2;
+		DhGenRetry dhGenRetry= 3;
+		DhGenFail dhGenFail= 4;
+    }
+}
+
+
+
+
+
+

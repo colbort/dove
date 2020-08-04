@@ -1,0 +1,65 @@
+// Package langpack AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+service langpackServer { 
+    rpc LangpackGetDifference (LangpackGetDifferenceReq) returns (LangpackGetDifferenceResp) {} 
+    rpc LangpackGetLangPack (LangpackGetLangPackReq) returns (LangpackGetLangPackResp) {} 
+    rpc LangpackGetLanguages (LangpackGetLanguagesReq) returns (LangpackGetLanguagesResp) {} 
+    rpc LangpackGetStrings (LangpackGetStringsReq) returns (LangpackGetStringsResp) {} 
+}
+
+// message req
+message LangpackGetDifferenceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 fromVersion = 2 ;
+		
+}
+
+message LangpackGetLangPackReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string langPack = 2 ;
+		  string langCode = 3 ;
+		
+}
+
+message LangpackGetLanguagesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string langPack = 2 ;
+		
+}
+
+message LangpackGetStringsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string langPack = 2 ;
+		  string langCode = 3 ;
+		  repeated string keys = 4 ;
+		
+}
+
+
+// message resp
+message LangpackGetDifferenceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	LangPackDifference langPackDifference = 2;
+}
+
+message LangpackGetLangPackResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	LangPackDifference langPackDifference = 2;
+}
+
+message LangpackGetLanguagesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated LangPackLanguage langPackLanguage = 2;
+}
+
+message LangpackGetStringsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated LangPackStringAbsClass langPackStringAbsClass = 2;
+}
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>downloadFail</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M22.8786797,31.8786797 C24.0502525,30.7071068 25.9497475,30.7071068 27.1213203,31.8786797 C28.2928932,33.0502525 28.2928932,34.9497475 27.1213203,36.1213203 C25.9497475,37.2928932 24.0502525,37.2928932 22.8786797,36.1213203 C21.7071068,34.9497475 21.7071068,33.0502525 22.8786797,31.8786797 Z M25,10 C26.6568542,10 28,11.3431458 28,13 L28,13 L28,25 C28,26.6568542 26.6568542,28 25,28 C23.3431458,28 22,26.6568542 22,25 L22,25 L22,13 C22,11.3431458 23.3431458,10 25,10 Z" id="path-1"></path>
+    </defs>
+    <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="消息类型标示icon" transform="translate(-1541.000000, -174.000000)">
+            <g id="下载失败" transform="translate(1538.000000, 172.000000)">
+                <g>
+                    <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="50" height="50"></rect>
+                    <path d="M25,44 C36.045695,44 45,35.045695 45,24 C45,12.954305 36.045695,4 25,4 C13.954305,4 5,12.954305 5,24 C5,35.045695 13.954305,44 25,44 Z" id="Oval" stroke="#333333" stroke-width="4" fill-rule="nonzero"></path>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#333333" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

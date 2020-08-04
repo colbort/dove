@@ -1,0 +1,268 @@
+// Package Acct AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message AcctAuthForm 定义 
+message AcctAuthForm {   
+	repeated SecureRequiredTypeAbsClass requiredTypes = 1;	//[]SecureRequiredTypeAbsClass 
+	repeated SecureValue values = 2;	//[]SecureValue 
+	repeated SecureValueErrorAbsClass errors = 3;	//[]SecureValueErrorAbsClass 
+	repeated UserAbsClass users = 4;	//[]UserAbsClass 
+	string privacyPolicyURL = 5;	//string
+}
+
+// message AcctAuth 定义 
+message AcctAuth {  
+	repeated Auth authorizations = 1;	//[]Auth
+}
+
+// message AcctTwoStep 定义 
+message AcctTwoStep { 
+}
+
+// message AcctResetPassword 定义 
+message AcctResetPassword { 
+}
+
+// message AcctUpdatePassword 定义 
+message AcctUpdatePassword { 
+}
+
+// message AcctPassword 定义 
+message AcctPassword {   
+	bool hasRecovery = 1;	//bool 
+	bool hasSecureValues = 2;	//bool 
+	bool hasPassword = 3;	//bool 
+	PasswordKdfAlgoAbsClass currentAlgo = 4;	//PasswordKdfAlgoAbsClass 
+	bytes srpB = 5;	//core.Bytes 
+	int64 srpID = 6;	//int64 
+	string hint = 7;	//string 
+	string emailUnconfirmedPattern = 8;	//string 
+	PasswordKdfAlgoAbsClass newAlgo = 9;	//PasswordKdfAlgoAbsClass 
+	SecurePasswordKdfAlgoAbsClass newSecureAlgo = 10;	//SecurePasswordKdfAlgoAbsClass 
+	bytes secureRandom = 11;	//core.Bytes
+}
+
+// message AcctPasswordInputSettings 定义 
+message AcctPasswordInputSettings {   
+	PasswordKdfAlgoAbsClass newAlgo = 1;	//PasswordKdfAlgoAbsClass 
+	bytes newPasswordHash = 2;	//core.Bytes 
+	string hint = 3;	//string 
+	string email = 4;	//string 
+	SecureSecretSettings newSecureSettings = 5;	//SecureSecretSettings
+}
+
+// message AcctPasswordSettings 定义 
+message AcctPasswordSettings {   
+	string email = 1;	//string 
+	SecureSecretSettings secureSettings = 2;	//SecureSecretSettings
+}
+
+// message AcctPrivacyRules 定义 
+message AcctPrivacyRules {  
+	repeated PrivacyRuleAbsClass rules = 1;	//[]PrivacyRuleAbsClass 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+// message AcctSentEmailCode 定义 
+message AcctSentEmailCode {  
+	string emailPattern = 1;	//string 
+	int32 length = 2;	//int32
+}
+
+// message AcctTakeout 定义 
+message AcctTakeout {  
+	int64 iD = 1;	//int64
+}
+
+// message AcctTmpPassword 定义 
+message AcctTmpPassword {  
+	bytes tmpPassword = 1;	//core.Bytes 
+	int32 validUntil = 2;	//int32
+}
+
+// message AcctWebAuth 定义 
+message AcctWebAuth {  
+	repeated WebAuth authorizations = 1;	//[]WebAuth 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+
+
+
+// ExyAcctAuthForm 枚举
+enum ExyAcctAuthForm { 
+	EVVAcctAuthForm = 0;
+}
+
+
+message AcctAuthFormAbsClass { 
+  ExyAcctAuthForm type = 1;
+    oneof value { 
+		AcctAuthForm AcctAuthForm= 2;
+    }
+}
+
+
+
+// ExyAcctAuth 枚举
+enum ExyAcctAuth { 
+	EVVAcctAuth = 0;
+}
+
+
+message AcctAuthAbsClass { 
+  ExyAcctAuth type = 1;
+    oneof value { 
+		AcctAuth AcctAuth= 2;
+    }
+}
+
+
+
+// ExyAcctMailType 枚举
+enum ExyAcctMailType { 
+	EVVAcctTwoStep = 0;
+	EVVAcctResetPassword = 1;
+	EVVAcctUpdatePassword = 2;
+}
+
+
+message AcctMailTypeAbsClass { 
+  ExyAcctMailType type = 1;
+    oneof value { 
+		AcctTwoStep AcctTwoStep= 2;
+		AcctResetPassword AcctResetPassword= 3;
+		AcctUpdatePassword AcctUpdatePassword= 4;
+    }
+}
+
+
+
+
+
+
+// ExyAcctPassword 枚举
+enum ExyAcctPassword { 
+	EVVAcctPassword = 0;
+}
+
+
+message AcctPasswordAbsClass { 
+  ExyAcctPassword type = 1;
+    oneof value { 
+		AcctPassword AcctPassword= 2;
+    }
+}
+
+
+
+// ExyAcctPasswordInputSettings 枚举
+enum ExyAcctPasswordInputSettings { 
+	EVVAcctPasswordInputSettings = 0;
+}
+
+
+message AcctPasswordInputSettingsAbsClass { 
+  ExyAcctPasswordInputSettings type = 1;
+    oneof value { 
+		AcctPasswordInputSettings AcctPasswordInputSettings= 2;
+    }
+}
+
+
+
+// ExyAcctPasswordSettings 枚举
+enum ExyAcctPasswordSettings { 
+	EVVAcctPasswordSettings = 0;
+}
+
+
+message AcctPasswordSettingsAbsClass { 
+  ExyAcctPasswordSettings type = 1;
+    oneof value { 
+		AcctPasswordSettings AcctPasswordSettings= 2;
+    }
+}
+
+
+
+// ExyAcctPrivacyRules 枚举
+enum ExyAcctPrivacyRules { 
+	EVVAcctPrivacyRules = 0;
+}
+
+
+message AcctPrivacyRulesAbsClass { 
+  ExyAcctPrivacyRules type = 1;
+    oneof value { 
+		AcctPrivacyRules AcctPrivacyRules= 2;
+    }
+}
+
+
+
+// ExyAcctSentEmailCode 枚举
+enum ExyAcctSentEmailCode { 
+	EVVAcctSentEmailCode = 0;
+}
+
+
+message AcctSentEmailCodeAbsClass { 
+  ExyAcctSentEmailCode type = 1;
+    oneof value { 
+		AcctSentEmailCode AcctSentEmailCode= 2;
+    }
+}
+
+
+
+// ExyAcctTakeout 枚举
+enum ExyAcctTakeout { 
+	EVVAcctTakeout = 0;
+}
+
+
+message AcctTakeoutAbsClass { 
+  ExyAcctTakeout type = 1;
+    oneof value { 
+		AcctTakeout AcctTakeout= 2;
+    }
+}
+
+
+
+// ExyAcctTmpPassword 枚举
+enum ExyAcctTmpPassword { 
+	EVVAcctTmpPassword = 0;
+}
+
+
+message AcctTmpPasswordAbsClass { 
+  ExyAcctTmpPassword type = 1;
+    oneof value { 
+		AcctTmpPassword AcctTmpPassword= 2;
+    }
+}
+
+
+
+// ExyAcctWebAuth 枚举
+enum ExyAcctWebAuth { 
+	EVVAcctWebAuth = 0;
+}
+
+
+message AcctWebAuthAbsClass { 
+  ExyAcctWebAuth type = 1;
+    oneof value { 
+		AcctWebAuth AcctWebAuth= 2;
+    }
+}
+
+
+

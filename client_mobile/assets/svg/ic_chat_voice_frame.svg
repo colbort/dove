@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="207px" height="32px" viewBox="0 0 207 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-好友对话" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="对话框-发送语音/播放发送的语音-接收语音/播放接收的语音消息" transform="translate(-74.000000, -721.000000)" fill="#FFFFFF" stroke="#999999" stroke-width="0.5">
+            <g id="对话框-底部输入栏-按住说话-新" transform="translate(0.000000, 714.000000)">
+                <rect id="Rectangle" x="74.25" y="7.25" width="206.5" height="31.5" rx="15.75"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,157 @@
+// Package upload AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_upload_obj.proto";
+
+package pb_uuchat;
+
+service uploadServer { 
+    rpc UploadGetCdnFile (UploadGetCdnFileReq) returns (UploadGetCdnFileResp) {} 
+    rpc UploadGetCdnFileHashes (UploadGetCdnFileHashesReq) returns (UploadGetCdnFileHashesResp) {} 
+    rpc UploadGetFile (UploadGetFileReq) returns (UploadGetFileResp) {} 
+    rpc UploadGetFileHashes (UploadGetFileHashesReq) returns (UploadGetFileHashesResp) {} 
+    rpc UploadGetWebFile (UploadGetWebFileReq) returns (UploadGetWebFileResp) {} 
+    rpc UploadReuploadCdnFile (UploadReuploadCdnFileReq) returns (UploadReuploadCdnFileResp) {} 
+    rpc UploadSaveBigFilePart (UploadSaveBigFilePartReq) returns (UploadSaveBigFilePartResp) {} 
+    rpc UploadSaveFilePart (UploadSaveFilePartReq) returns (UploadSaveFilePartResp) {} 
+    rpc UploadSaveFilePartLyr86 (UploadSaveFilePartLyr86Req) returns (UploadSaveFilePartLyr86Resp) {} 
+    rpc UploadSaveFileSlice (UploadSaveFileSliceReq) returns (UploadSaveFileSliceResp) {} 
+}
+
+// message req
+message UploadGetCdnFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes fileToken = 2 ;
+		  int32 offset = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message UploadGetCdnFileHashesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes fileToken = 2 ;
+		  int32 offset = 3 ;
+		
+}
+
+message UploadGetFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileLocationAbsClass location = 2 ;  int32 offset = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message UploadGetFileHashesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputFileLocationAbsClass location = 2 ;  int32 offset = 3 ;
+		
+}
+
+message UploadGetWebFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputWebFileLocationAbsClass location = 2 ;  int32 offset = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message UploadReuploadCdnFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes fileToken = 2 ;
+		  bytes requestToken = 3 ;
+		
+}
+
+message UploadSaveBigFilePartReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 fileID = 2 ;
+		  int32 filePart = 3 ;
+		  int32 fileTotalParts = 4 ;
+		  bytes bytes = 5 ;
+		
+}
+
+message UploadSaveFilePartReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 fileID = 2 ;
+		  int32 filePart = 3 ;
+		  bytes bytes = 4 ;
+		
+}
+
+message UploadSaveFilePartLyr86Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   int32 parts = 2 ;
+		  string md5 = 3 ;
+		  int64 fileID = 4 ;
+		  int32 filePart = 5 ;
+		  bytes bytes = 6 ;
+		
+}
+
+message UploadSaveFileSliceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   int64 fileID = 2 ;
+		  int32 filePart = 3 ;
+		  bytes bytes = 4 ;
+		  bytes md5 = 5 ;
+		  bytes totalMd5 = 6 ;
+		
+}
+
+
+// message resp
+message UploadGetCdnFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UploadCdnFileAbsClass uploadCdnFileAbsClass = 2;
+}
+
+message UploadGetCdnFileHashesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated FileHash fileHash = 2;
+}
+
+message UploadGetFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UploadFileAbsClass uploadFileAbsClass = 2;
+}
+
+message UploadGetFileHashesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated FileHash fileHash = 2;
+}
+
+message UploadGetWebFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UploadWebFile uploadWebFile = 2;
+}
+
+message UploadReuploadCdnFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated FileHash fileHash = 2;
+}
+
+message UploadSaveBigFilePartResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message UploadSaveFilePartResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message UploadSaveFilePartLyr86Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message UploadSaveFileSliceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+

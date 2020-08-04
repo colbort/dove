@@ -1,0 +1,56 @@
+// Package updates AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+service updatesServer { 
+    rpc UpdatesGetSuperGroupV1Difference (UpdatesGetSuperGroupV1DifferenceReq) returns (UpdatesGetSuperGroupV1DifferenceResp) {} 
+    rpc UpdatesGetDifference (UpdatesGetDifferenceReq) returns (UpdatesGetDifferenceResp) {} 
+    rpc UpdatesGetState (UpdatesGetStateReq) returns (UpdatesGetStateResp) {} 
+}
+
+// message req
+message UpdatesGetSuperGroupV1DifferenceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool force = 2 ;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 3 ;   
+		SuperGroupV1InfosFilterAbsClass filter = 4 ;  int32 pts = 5 ;
+		  int32 limit = 6 ;
+		
+}
+
+message UpdatesGetDifferenceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   int32 pts = 2 ;
+		  int32 ptsTotalLimit = 3 ;
+		  int32 date = 4 ;
+		  int32 qts = 5 ;
+		
+}
+
+message UpdatesGetStateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+
+// message resp
+message UpdatesGetSuperGroupV1DifferenceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesSuperGroupV1DifferenceAbsClass updatesSuperGroupV1DifferenceAbsClass = 2;
+}
+
+message UpdatesGetDifferenceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesDifferenceAbsClass updatesDifferenceAbsClass = 2;
+}
+
+message UpdatesGetStateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesState updatesState = 2;
+}
+

@@ -1,0 +1,473 @@
+_name_: English
+
+
+key: 
+  value: 英文单数
+  manyValue: 英文复数
+app_title: Dove
+sigin: Sign-in
+login_phone_hint: Please enter the phone number/e-mail/username
+register_phone_hint: Please enter the phone number
+change_phone_hint: Enter the  new phone number
+sigin_emial_hint: E-mail address/username
+sigin_pwd_hint: Please enter your password
+sigin_emial: Please use the e-mail/username to login
+sigin_phone: Using phone number to login
+now_register: Sign up now.
+forgot_pwd: Forgot your password?
+sigin_descript: By clicking sign up,you've read and agreed to our terms.
+service_protol: Service agreetment
+agree_service_protol: I have read and agreed to the terms and conditions.
+agree_service_protol_register: I have read and agreed.
+service_protol_register: Service agreetment
+sigup: Sign up
+sigup_with_phone: Phone
+sigup_with_email: E-mail
+sigup_nickname: Please set a nickname.
+sigup_verification_code: Please enter the SMS code.
+sigup_pwd: Set the passcode.
+sigup_confirm_pwd: Confirm your passcode.
+sigup_phone: Sign up by phone number
+sigup_emial: Sign up by e-mail address
+sigup_emial_hint: Please enter the e-mail account.
+sigup_get_verification_code: Get SMS .
+please_agree_service_protol: Please agree to service agreetment
+password_error: Enter a combination of numbers and letters,at least 6-32 digitals.
+account_repeat_error: This account has been registered!
+code_error: The SMS code is incorrect!
+unknown_error: Unknown server error, please try again later!
+invalid_phone: Phone number is invalid!
+invalid_email: E-mail address  is invalid!
+country_code_error: Please enter the country code!
+sigup_empty: Please complete the basic registered information.
+account_empty: Please enter the phone number/e-mail address.
+persional_data: Personal profile
+modify_phone_num: Change phone number
+personal_account: Personal account
+my_collection: My favorite
+expression_management: Sticker sets
+recent_call: Recent calls
+privacy_and_security: Privacy and Security
+publish_update: Version update
+region: Region
+sex: Gender
+system_settings: Settings
+notice_and_voice: Notifications and Sounds
+account_and_security: Account and Security
+data_and_storage: Data and Storage
+help_and_support: Help and Support
+language: Language
+update_version: Update
+get_service: Contact us
+persional_settings: Settings
+guide_bind_phone: Bounded with a mobile number.
+guide_bind_email: Bounded with a email-address.
+guide_jumpover: Skip
+guide_bind: Immediate Binding
+guide_description: For the security of  your account,please bind with the e-mail account.If you forget the password,you can only retrieve the password by your e-mail account.
+qrcode_hint: Scan the QRcode above to add as friends.
+qrcode_save_btn: Save
+qrcode_share_btn: Share
+profile_setting_language: Language
+portrait_camera: Camara
+portrait_select_doc: Choose the file.
+portrait_network: Internet research
+portrait_preview: Photos preview
+portrait_delete: Remove the image
+portrait_cancle: Cancel
+forward_msg: Forward
+delete: Delete
+cancel: Cancel
+save: Save
+delete_success: Delete successfully
+delete_failed: Delete failed
+edit_failed: Edit failed
+user_onlien: Online
+user_offlien: Offline
+search: Search
+complete: Finish
+make_sure: Confirm
+edit: Edit
+add_success: Add successfully
+add_failed: Add failed
+blacklist: Blacklist
+cancel_blacklist: Cancel from the Blacklist
+add_blacklist: Add in the Blacklist
+cancel_blacklist_success: Cancel from the Blacklist
+add_blacklist_success: You've succed to add in the Blacklist
+notice: Notifications
+refer_friend: Recommanded friends
+change: Change
+remark_limit: Please enter the remarks within 12 letters.
+remark_in: Please enter a note.
+name_limit: Do not over 12 letters in the name.
+people_sum: Group members
+not_disturb: Do Not Disturb
+message_preview: message preview
+sound: Sound
+shock: vibration
+notityMessage: notification
+remind: remind
+Message_preview: Message_preview
+exception: exception
+notice_and_voice_tip1: You can define notifications for specific users on their profile page settings
+Group_notification: Group_notification
+notice_and_voice_tip12: You can define notifications for specific group rents on their profile page
+In-app_notifications: In-app_notifications
+In-app_preview: In-app_preview
+Reset_all_notifications: Reset_all_notifications
+notice_and_voice_tip3: Undo notification settings for all your contacts and groups
+unread_message_button: unread message button
+toggle_message_preview: toggle message preview
+hiha_notice: hiha notification
+hiha_notice_config: Adjust notification sound and vibration settings during hiha used
+toggle_guide_button: Show or hide to  guide  you  view unread button.
+email_empty_error: Mailbox can't be empty!
+code_empty_error: Verification code must be filled!
+code_format_error: Verification code format is incorrect!
+pwd_empty_error: Password can't be blank!
+confirm_pwd_empty_error: Confirmed password can't be blank!
+pwd_inconsistent: Password inconsistent!
+modified_success: Successfully modified!
+email_or_code_error: Email or verification code incorrect!
+old_pwd: Original password
+original_pwd: Please enter the original password
+set_new_pwd: New password
+new_pwd: Please enter new password
+confirm_set_new_pwd: Confirm new password
+confirm_new_pwd: Please confirm new password
+change_pwd: Change password
+modify_email: Modify email
+sign_out: Sign out
+set_black_user: Set black of user.
+blacklist_tips: User you blacked will not be able to send you messages or invite you to join groups. They cannot see your profile, online status, and the last online time.
+get_code_failed: get verification code failed
+pwd_wrong: Wrong password
+failed_edit: Edit failed, please try again.
+failed_edit_username: Edit failed, the usersname has been used.
+set_new_email: Please enter new email
+set_phone: Phone number setting
+set_signature: Please make your personal signature
+signature: Personal signature
+sex_man: Male
+sex_women: Female
+secret: Secret
+change_nickname: Change your nickname
+input_nickname: Please enter nickname
+nickname_limit: Nickname can not exceed 32 characters
+input_username: Please enter the username
+avaliable_username: The username is available
+username_tips: Username consists of letters, numbers or underscores and must start from the alphabet
+invalid_username: The username is invalid.
+username_empty: The username can not be blank.
+no_set: No setting yet
+email: Email address
+business_qr_code: QR code
+unregister_other_devices: Logout all of the device
+unregister_other_logged_devices: In addition to this equipment, other logged devices will be logout.
+other_devices: Other devices
+loading: Loading
+all_people: All
+my_friend: My friends
+no_one: No one allowed
+two_step_verification: Two step verification password
+pwd: Password
+enter_pwd_again: Please re-enter password
+set_safe_pwd: Please enter a new password to protect your data
+add_pwd_protection: Add password protection
+enter_pwd_twice: This password is required in addition to the SMS verification code when the new device is logged in
+is_dismiss_group: Delete and dismiss this group?
+exit_confirmation: Delete and exit?
+dismiss_tips: You are now an admin, the group will dismissed by this operation
+dismiss_info: You will not receive this group of messages after logout
+come_write_something: Come and write something!
+week_monday: Monday
+week_tuesday: Tuesday
+week_wednesday: Wednesday
+week_thursday: Thursday
+week_friday: Friday
+week_saturday: Saturday
+week_sunday: Sunday
+voice_tips: Hold to record the voice
+voice_send_cancel: Slide up to cancel sending
+end_release: End of release
+release_finger_cancel: Release your finger to cancel sending
+send_cancel: Cancel sending
+repeat_modify: Repeat modification!
+not_friend_tips: You are not a friend of the party, it may not receive your message, please add the party as a friend
+image: Image
+select_region: Select region
+return: Return
+my_emoji_name: My emoji name
+emoji_desc: Emoji description
+delete_conversation: Delete conversation
+self: Myself
+scan_code: Scan QR code
+search_user_msg: Search for a user or message
+forward: Forward
+more: More
+kopy: Copy
+msg_from_stranger: Message from a stranger
+temporary_conversation: Temporary conversation
+group_chat: Group chat session
+nice_meet_you: Nice to meet you, let's make a friend!
+not_find: Not found
+typing: Typing...
+recording_video: Recording video
+uploading_video: Uploading video
+recording_voice: Recording voice
+uploading_voice: Uploading voice
+open_notification: Show notifications
+revoke: Delete
+creat_new_session: Start a new chat
+forward_my_favorites: Forward to my favorite
+no_this_group: No group found
+no_this_firend: No contacts found
+email_recovery_pwd: Finding password through e-mail
+enter_email: Please enter the e-mail account.
+set_login_pwd: Please set the login password.
+confirm_account_correct: Please confirm the new account.
+code_failed_reason: Please type the reason why receiving SMS code failed.
+enter_username_pwd: Please enter the username and password.
+try_later: Please try it later.
+username_pwd_err: Username or password is invalid.
+register_account: Register account
+update_immediately: Update
+continue_update: Continue updating
+install_immediately: Install
+downloading_update_package: Downloading the new version.
+software_version: Software version V
+update_tips: Tips
+select_reg: Select an area
+add_friend_by_code: Scan th QRcode above to  add as contacts.
+add_group_by_code: Scan th QRcode above to  apply to join the group.
+my_name: My name
+currently_online: online
+is_dialog_delete_sure: Are you sure to delete?
+delete_other_devices_sure: Are you sure to delete these device data?
+active_session: Chats
+current_session: Chats
+privicy: Privacy
+last_online: Last seen
+voice_calls: Voice call
+phone: Mobile number
+change_who_can_join_you: Change the name who can join you to the group.
+find_me_by: You can find me through these ways.
+safety: Security
+lock_code: Passcode Lock
+delete_my_account: Delete my account
+if_leave: If leave
+delete_account_all: Your account and all of your groups,messages,and contact will be deleted if you don't login the account in this time.
+who_can_see_my_last_online: Who can see my last online
+who_can_invite_me_voice: Who can invite me to join the voice call.
+who_can_see_my_phone: Who can see my phone number.
+who_can_see_my_username: Who can see my username.
+who_can_see_my_email: Who can see my e-mail.
+who_can_join_me: Who can invite me to join the group.
+privacy_settine: Privacy settings
+currently_offline: Currently offline
+recently_online: Recently online
+last_week_online: last seen a week ago
+last_month_online: last seen one month ago
+long_offline: last seen a long time ago
+has_been_send: Send
+resend: Resend
+search_current_session: Search the current session
+voice_message: voice message
+file_massage: file massage
+point_the_code: Please focus the camera to the QRcode.
+can_use: Available
+sorry_invalid_name: Sorry,the username is invalid.
+set_username_tips: User name is combinded with letters,numbers or underline.And start with a letter.
+no_country_found: No country found
+no_recommend_friend: No recommend friend
+pinned_message: Pinned messages
+refused_receive: Message blocked
+created_group_chat: created group chat
+delete_group_chat: delete group chat
+add_group_chat: has joined the group chat
+quit_group_chat: left the group chat
+kicked_out_group_chat: got kicked out of the group
+modify_group_name_to: named the group chat as
+become_new_owner: became the new group owner
+become_new_admin: became the new admin
+disqualified_admin: Dismiss as admin
+pinned_one_message: pinned a message
+net_err: No internet connection
+linking: Connecting...
+link_succeeded: Connected successfully
+last_seen: Last seen
+just_now: Last seen just now
+hours_ago: hours ago
+minutes_ago: minutes ago
+sticky: Pin
+unpin: Unpin
+none: None
+image_desc: Image description
+wellcome: Make the connection easier !
+file: file
+error_msg: Error message
+come_soon: Coming soon
+last_version: Latest version
+dialog_title: Tips
+dialog_delete_message: Are you sure to delete %s?
+dialog_delete_sure: Delete
+dialog_delete_cancel: Cancel
+dialog_go_setting: Setting
+dialog_await_setting: Later
+dialog_voice_hint: Would like to Access Your Microphone
+dialog_voice_title: Ask for peermission
+chatlist_title: Conversation
+chatlist_search: Search for messages or users
+chatlist_set_unread: Unread
+chatlist_delete_cancel: Cancel
+chatlist_delete_yourself: Delete just for me
+chatlist_delete_target: Delete for both
+chatlist_isme: Me
+chatlist_msg_image: "[Image]"
+chatlist_msg_file: "[File]"
+chatlist_msg_audio: "[Voice]"
+chatlist_msg_video: "[Video]"
+chatlist_msg_other: "[Other]"
+friend_list: Friends
+friend_search: Search for Friends
+friend_group: My group chat
+greet_title: Say hi
+greet_empty: None greeting
+greet_check: Check
+greet_verify: Waiting for verify
+greet_expired: Expired
+friendinfo_unknown: Unknown
+friendinfo_username: Nickname
+friendinfo_remarks: Remarks
+friendinfo_account: Username
+friendinfo_phone: Phone Number
+friendinfo_address: Address
+friendinfo_shield: Block
+friendinfo_chat: Chat
+friendinfo_voice: Voice
+friendinfo_mute: Mute
+friendinfo_delete_friend: Delete Friend
+friendinfo_addfriend: Add Friend
+friendinfo_complaint: Report
+friendinfo_accept: Accepted
+friendinfo_report: Being harassed ? Report this user
+friendinfo_apply_ok: Applied Successfully
+friendinfo_apply_failed: Applied Failed
+friendinfo_apply_double: Apply Again
+friendinfo_apply_exist: You are Friends
+friendinfo_add_succ: Added Successfully
+friendinfo_add_failed: Added Failed
+friendinfo_edit_remarks: Edit remarks
+addfriend_title: Add Friend
+addfriend_search: Insert Phone Number/Account/Email
+addfriend_search_empty: No Users Found
+grouplist_title: My groups
+grouplist_creatgroup: Create
+grouplist_search: Insert group name to search
+creatgroup_title: Create new group
+groupinfo_takephoto: Take Photo
+groupinfo_photos: Photo Albums
+groupinfo_modifyname: Rename group chat
+groupinfo_modifynickname: Rename group chat nickname
+groupinfo_modify_hittext: Insert your group chat nickname
+groupinfo_invate: Invite
+groupinfo_voice: Voice
+groupinfo_video: Videos
+groupinfo_mute: Mute
+groupinfo_mygroupname: My group chat nickname
+groupinfo_medias: Shared files
+groupinfo_manager: Group Manager
+groupinfo_deletemem: Remove member
+groupinfo_disband: Delete group
+groupinfo_quitgroup: Delete and Quit the group
+groupinfo_admin: Admins
+groupinfo_owner: Group Owner
+groupinfo_members: Group members
+groupinfo_name_error: Group name cannot exceed 64 characters
+groupinfo_me: Me
+managergroup_setadmin: Make Admin
+managergroup_chatauth: Permission
+managergroup_translate: Transfer group
+setadmin_all: Make all members as admins
+setadmin_descript: Only admins can remove members
+chatauth_admin: Admins
+chatauth_admin_invate: Invite members
+chatauth_admin_delete: Remove members
+chatauth_admin_modify: Edit group info
+chatauth_admin_msgtop: Pin message
+chatauth_member: Simple member
+chatauth_member_invate: Invite members
+chatauth_member_modify: Edit group info
+chatauth_member_msgtop: Pin message
+transgroup_title: Choose New Admin
+deletemem_title: Remove members
+sticker_mystickers: My Stickers
+sticker_stor: Sort
+sticker_addemoji: Add an emoji
+sticker_added_stickers: A sticker sets
+sticker_add_history: Sticker sets added history
+sticker_delete: Remove
+sticker_added: Added
+sticker_add: Add
+sticker_use: Use
+sticker_collection_stickers: Saved
+sticker_move_forward: Move foward
+sticker_delete_warning: Delete cannot be undone, still delete?
+sticker_select_num: Selected %s stickers
+search_empty: No search found
+search_user: No result found
+search_message_title: chat history
+search_message_more: More chat history
+search_friend_title: Contact
+search_friend_more: More contact
+search_group_title: Groups
+search_group_more: More groups
+text_input_file: Files
+text_input_pictures: Albums
+text_input_video: Videos
+text_input_location: Location
+text_input_phone: Phone
+text_input_card: Name card
+qrcode_tip: QR Code
+qrcode_lighting: Flashlight
+qrcode_pictures: Albums
+reconnect_desc: Connecting...
+update_downlaoding: Loading...
+update_desc: The update package is ready, and the experience will be better after the update!
+update_title: version update？
+chatlist_msg_empty: You don't have any chat yet.
+chatlist_msg_hint_1: Click on the contact below  to start a chat or group chat.
+chatlist_msg_hint_2: Click on the top right botton to start a chat or group chat.
+friendlist_empty: You don't have any contact now.
+friendlist_hint_1: Click on the top right botton to add friends.
+grouplist_empty: You don't have any group chat yet.
+grouplist_hint_1: Click on the top botton to start a group chat.
+agreement: |
+  By signing up for Dove Messenger, you accept our Privacy Policy and agree not to:
+  Use our service to send spam or scam users.
+  Promote violence on publically viewable Telegram channels, bots, etc.
+  Post illegal pornographic content on publically viewable Telegram channels, bots, etc.
+  We reserve the right to update these Terms of Service later.
+  Citizens of EU countries and the United Kingdom must be at least 16 years old to sign up.
+contact: Contacts
+add_group: Apply for membership
+app_name: Dove
+launch_descript: Join Dove for most secure chat ever
+welcome: Welcome to Dove
+lang_chenged_failed: Language switch failed!
+update_notify: Find new version, go to update!
+
+open_permission: to enable permissions
+photos: photos
+storage: storage
+micphone: microphone
+address: location
+permission_ask: Do you want to to allow Dove to get the %s Authority？
+permission_info_photos: Includes：photos and videos in phone memory and SD card
+permission_info_micphone: Includes：use microphone to record audio
+permission_info_camera: Including：taking photos or recording videos
+permission_info_address: Includes：access to exact location (location via GPS and network), access to approximate location (location via Ethernet)
+permission_info_contacts: Includes：Reading Contacts
+permission_info_storage: Including：read phone storage, modify, delete phone storage
+yesterday: Yesterday

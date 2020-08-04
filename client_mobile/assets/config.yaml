@@ -1,0 +1,21 @@
+# for develop
+dongfeng_url : ws://20.20.84.80:8448/test
+lingdong_url : ws://60.60.60.109:443/test
+luyou_url    : ws://20.20.84.82:8445/test
+huafeng_url  : ws://20.20.84.83:8445/test
+
+# 测试环境/debug包
+test_url     : ws://192.168.1.19:8443/test
+
+# 预上线/灰度:保证三方sdk正式，推送正式/包是release，只是user数据库和online不一样
+prod_url     : ws://154.223.71.12:8445/test
+
+# 正式环境：release包
+# online_url   : wss://sdg.drqpyx.com:443/test 
+online_url   : wss://agf.drqpyx.com:443/test
+
+# 具体激活哪个url
+active: online_url
+
+detector_active: true
+

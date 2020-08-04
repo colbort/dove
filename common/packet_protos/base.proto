@@ -1,0 +1,493 @@
+syntax = "proto3";
+
+package pkt;
+
+import "user.proto";
+import "chat.proto";
+import "a_rpc.proto";
+import "a_media.proto";
+import "sticker.proto";
+
+// import "friend.proto";
+
+// 消息类
+
+// MessageTypingAction 用户输入状态...
+enum MessageTypingAction {
+  MessageTypingActionCancel = 0;      // 取消或结束
+  MessageTypingActionMessage = 1;     // 发送消息
+  MessageTypingActionRecordVideo = 2; // 录像
+  MessageTypingActionUploadVideo = 3; // 发送视频
+  MessageTypingActionRecordAudio = 4; // 录音
+  MessageTypingActionUPloadAudio = 5; // 发送录音
+}
+
+// Dialog 用户会话信息
+message Dialog {
+  bool pinned = 1; // 会话是否是置顶dialog
+  bool silent = 2; //
+  bool unread = 13;
+  // 已读 未读标记 --标记未读:，上报标记未读， 该标签置未true，
+  // 通知多端，进去上报一次readhistory；标记已读,直接上报readhistory
+  int64 id = 3;                  // 会话id
+  int32 unreadCount = 4;         // 未读条数
+  int32 unreadMentionsCount = 5; // @自己的未读条数
+  string draft = 6;              // 草稿
+  Message message = 7;
+  User user = 8;
+  ChatBase chat = 9;
+  int32 dialogType = 10;
+  int32 date = 11;
+  int32 pinnedMessageId = 12; // (如果是群)被置顶的消息id会话
+}
+
+// MessageType 消息类型
+enum MessageType {
+  MessageTypeText = 0;
+  MessageTypeAudio = 1;
+  MessageTypeVideo = 2;
+  MessageTypeImage = 3;
+  MessageTypeFile = 4;
+  MessageTypePhoneCall = 5;
+  MessageTypeMeidaCall = 6;
+  MessageTypeNotify = 7;
+  MessageTypeRefence = 8;
+  MessageTypeForward = 9;
+  MessageTypeEdit = 10;
+  MessageTypeSticker = 11;
+  MessageTypeSystemNotify = 12;
+}
+
+// NotifyMessageType 提示类消息类型
+enum NotifyMessageType {
+  NotifyMessageTypeInit = 0;      // 初始化
+  NotifyMessageTypeNotFriend = 1; // 仅发送方有效 对端不是好友
+  NotifyMessageTypePeerRefuse = 2; // 仅发送方有效 对端不允许陌生人发消息
+  NotifyMessageTypeChatCreate = 3;        // From创建群
+  NotifyMessageTypeChatDelete = 4;        // From删除群
+  NotifyMessageTypeChatAddMember = 5;     // From加入群
+  NotifyMessageTypeChatQuitMember = 6;    // From退出群
+  NotifyMessageTypeChatKickOutMember = 7; // from被xxx踢出群
+  NotifyMessageTypeChatModifyName = 8;    // from修改群名称(message)
+  NotifyMessageTypeChatChangeAdmin = 9;   // from成为新群主
+  NotifyMessageTypeChatAddManger = 10;    // from成为管理员
+  NotifyMessageTypeChatDelManger = 11;    // from被取消管理员
+  NotifyMessageTypeChatPinned = 12;       // from置顶了message
+}
+
+enum SystemNotifyType {
+  SystemNotifyTypeInit = 0;           // 初始化
+  SystemNotifyTypeLogin = 1;          // 登录通知
+  SystemNotifyTypeChangePassword = 2; // 密码修改
+  SystemNotifyTypeBindEmail = 3;      // 绑定邮箱
+  SystemNotifyTypeChangeEmail = 4;    // 邮箱修改
+  SystemNotifyTypeBindPhone = 5;      // 手机号绑定
+  SystemNotifyTypeChangePhone = 6;    // 手机号修改
+  SystemNotifyTypeSignUp = 7;         // 注册
+}
+// MessageState 消息状态 按位复合状态
+// 发送状态只有一个存在，其余是消息的属性状态
+enum MessageState {
+  MessageInit = 0x00000000;
+  MessageSending = 0x00000001;     //消息发送中   xxxx 0000 0001
+  MessageSendFailed = 0x00000002;  //消息发送失败   xxx 0000 0010
+  MessageSendSuccess = 0x00000004; //消息发送成功   xxx 0000 0100
+  MessageSendRead = 0x00000008;    // 消息已读 xxx 0000 1000
+  MessageDelete = 0x00000010;      // 消息是否被删除
+  MessageRefuse = 0x00000020;      // 消息被对端拒绝
+  MessageNotFriend = 0x00000040;   // 对端好友验证
+  MessageChat = 0x00000080;        // 是否是群消息
+  MessageMentioned = 0x00000100;   //@消息
+  MessageSilent = 0x00000200;      // 静音
+  MessageSendMask = 0x0000000f;    // 发送状态掩码 xxx 0000 1111
+}
+
+// Message 消息
+message Message {
+  int32 msgState = 1;                 // 消息状态
+  MessageType msgType = 2;            // 消息类型
+  NotifyMessageType notifyType = 3;   // notify类型子类型
+  int32 msgId = 4;                    // 消息id
+  int32 fromId = 5;                   // 消息发送方用户id
+  int64 dialogId = 6;                 // 会话id
+  int32 date = 7;                     // 操作时间
+  string msg = 8;                     // 消息内容
+  MessageMediaInterface media = 9;    // 媒体内容
+  int64 refDialogId = 10;             // 转发消息会话id
+  int32 refMsgId = 11;                // 转发,回复消息id
+  MessageType refMsgType = 13;        // 转发,回复消息类型
+  SystemNotifyType systemNotify = 14; // 系统通知
+  bool showtime = 15;                 // 是否显现date
+}
+
+message FutureSalts {
+  int32 validSince = 1;
+  int32 validUntil = 2;
+  int64 salt = 3;
+}
+
+message C2SPingReq { int64 id = 1; }
+message S2CPingResp { int64 id = 1; }
+
+// S2CNewSessionPush 创建新的session
+message S2CNewSessionPush {
+  int64 msgId = 1;
+  int64 sessionId = 2;
+  int64 salt = 3;
+}
+
+// C2SGetFutureSaltsReq 获取salts
+message C2SGetFutureSaltsReq { int32 num = 1; }
+
+message S2CGetFutureSaltsResp {
+  int32 now = 1;
+  repeated FutureSalts salts = 2;
+}
+
+message C2SRpcDropAnswerReq { int64 msgId = 1; }
+
+message RpcDropAnswerUnknow {}
+
+message RpcDropAnswerDroppedRunning {}
+
+message RpcDropAnswerDropped {
+  int64 msgId = 1;
+  int64 seqNo = 2;
+  int32 len = 3;
+}
+
+message S2CRpcDropAnswerResp {
+  int64 msgId = 1;
+  oneof result {
+    RpcDropAnswerUnknow unknow = 2;
+    RpcDropAnswerDroppedRunning droppedRunning = 3;
+    RpcDropAnswerDropped droped = 4;
+  }
+}
+
+message C2SDestroySessionReq { int64 sessionId = 1; }
+message S2CDestroySessionResp {
+  bool result = 1;
+  int64 sessionId = 2;
+}
+
+// Update 服务器主动通知
+message Update {
+
+  UpdateType type = 1;
+  int32 pts = 100;
+  oneof message {
+
+    // 消息相关
+    MessageUpdate msg = 2; // 消息更新(转发，回复，编辑，图片)
+    MessageDelUpdate msgDel = 3;                  // 消息删除更新
+    MessageDraftUpdate draft = 4;                 // 输入框草稿
+    MessageTypingUpdate typing = 5;               // 输入状态
+    MessageDeleteHistoryUpdate deleteHistory = 6; // 删除消息
+    MessageReadHistoryUpdate readHistory = 7;     // 读取消息
+    MessagePinnedUpdate pinned = 8;               // 消息置顶
+    MessageDialogPinnedUpdate dialogPinned = 9;   // 对话框置顶
+    MessageDialogUnreadUpdate unread = 10;        // 对话框标记未读
+
+    UserUpdate userInfo = 20;
+    UserStickerUpdate userStickerUpdate = 21; // 用户sticker更新
+    UserOnlineUpdate onlineInfo = 22; // 用户在线状态变更(不产生pts)
+    UserPrivacyUpdate privacy = 23;   // 用户隐私变更(不产生pts)
+    // 好友更新
+    FriendUpdateAddFriend addFriend = 30;     // 添加好友
+    FriendUpdateDelFriend delFriend = 31;     // 删除好友
+    FriendUpdateAddStranger addStranger = 32; // 添加陌生人
+    FriendUpdateDelStranger delStranger = 33; // 删除陌生人
+    FriendUpdateEditFriend editFriend = 34;   // 编辑好友
+
+    // 聊天室更新
+    ChatUpdateCreateChat chatCreate = 40;         // 创建聊天室
+    ChatUpdateDisbandChat chatDisband = 41;       // 解散聊天室
+    ChatUpdateAddMember chatAddMember = 42;       // 添加成员
+    ChatUpdateDelMember chatDelMember = 43;       // 删除成员
+    ChatUpdateModifyChat chatModifyChat = 44;     // 修改群信息
+    ChatUpdateTransLead chatTransLead = 45;       //  转让群主
+    ChatUpdateLeadSetAdmin chatLeadSetAdmin = 46; //  群主设置管理员
+    ChatUpdateLeadCancelAdmin chatLeadCancelAdmin = 47; //  群主取消管理员
+    ChatUpdateLeadSetAuth chatLeadSetAuth = 48;     //  群主设置权限管理
+    ChatUpdateMemberSetAuth chatMemberSetAuth = 49; //  成员设置权限
+    ChatUpdateModifyRemarks modifyRemarks = 50;     //  成员设置昵称
+    // 黑名单
+    BlackUpdateAddBlacks addBlacks = 60; //  添加黑名单
+    BlackUpdateDelBlacks delBlacks = 61; //  删除黑名单
+  }
+}
+
+enum UpdateType {
+  TypeMessageBegin = 0;
+  TypeMessageUpdate = 2;
+  TypeMessageUpdateDel = 3;
+  TypeMessageDraft = 4;
+  TypeMessageTyping = 5;
+  TypeMessageDeleteHistory = 6;
+  TypeMessageReadHistory = 7;
+  TypeMessagePinned = 8;
+  TypeMessageDialogPinned = 9;
+  TypeMessageDialogUnread = 10;
+
+  // 用户
+  TypeUserUpdate = 20;        // 用户信息变更
+  TypeUserStickerUpdate = 21; // 用户sticker 更新
+  TypeUserOnlineUpdate = 22;  // 用户在线状态更新
+  TypeUserPrivacyUpdate = 23; // 用户隐私变更
+  // 好友
+  TypeFriendAddFriend = 30;   // 添加好友
+  TypeFriendDelFriend = 31;   // 删除好友
+  TypeFriendAddStranger = 32; // 添加陌生人
+  TypeFriendDelStranger = 33; // 删除陌生人
+  TypeFriendEditFriend = 34;  // 编辑好友
+
+  // 聊天室
+  TypeChatCreate = 40;          // 创建
+  TypeChatDisband = 41;         // 解散
+  TypeChatAddMember = 42;       // 添加成员
+  TypeChatDelMember = 43;       // 删除成员
+  TypeChatModifyChat = 44;      // 修改群信息
+  TypeChatTransLead = 45;       //  转让群主
+  TypeChatLeadSetAdmin = 46;    //  群主设置管理员
+  TypeChatLeadCancelAdmin = 47; //  群主取消管理员
+  TypeChatLeadSetAuth = 48;     //  群主设置权限管理
+  TypeChatMemberSetAuth = 49;   //  成员设置权限
+  TypeChatModifyRemarks = 50;   //  成员设置昵称
+  // 黑名单
+  TypeBlackAddBlacks = 60; //  添加黑名单
+  TypeBlackDelBlacks = 61; //  删除黑名单
+}
+
+// MessageSendUpdate
+message MessageUpdate {
+  int32 msgState = 1; // 消息状态 @MessageState
+  // int32 pts = 2;                      // 用户更新版本
+  int64 dialogId = 3;                 // 会话id
+  int32 msgId = 4;                    // 消息id
+  int32 fromId = 5;                   // 消息发送方用户id
+  int32 date = 6;                     // 操作时间
+  MessageType msgType = 7;            // 消息类型
+  NotifyMessageType notifyType = 8;   // notify类型子类型
+  string msg = 9;                     // 消息内容
+  MessageMediaInterface media = 10;   // 媒体内容
+  int64 refDialogId = 11;             // 转发,回复消息会话id
+  int32 refMsgId = 12;                // 转发,回复消息id
+  MessageType refMsgType = 13;        // 转发,回复消息类型
+  SystemNotifyType systemNotify = 14; // 系统通知
+  bool showtime = 15;                 // 是否显现date
+}
+
+// MessageDelUpdate
+message MessageDelUpdate {
+  // int32 pts = 1; // 本次删除产生的更新id
+  int64 dialogId = 2;
+  repeated int32 msgs = 3; // 删除消息id
+}
+
+// MessageDraftUpdate 用户草稿是多端同步
+message MessageDraftUpdate {
+  // int32 pts = 1;
+  int64 dialogId = 2; // 对话框对象（dialog）
+  bool delete = 3;    // true则删除
+  string draft = 4;   // 草稿内容
+  int32 replyToMsgId = 5;
+}
+
+// MessageTypingUpdate 用户输入状态多端同步
+message MessageTypingUpdate {
+  int32 userId = 1; // 用户
+  int64 dialogId = 2;
+  MessageTypingAction action = 3; // 动作
+}
+
+// MessageUpdateDeleteHistoryUpdate 删除历史消息
+message MessageDeleteHistoryUpdate {
+  // int32 pts = 1; // 最新pts
+  int64 dialogId = 2;
+  int32 maxMsgId = 3; // 该字段不为空，表示清除改id之前的消息
+}
+
+// MessageUpdateReadHistoryUpdate 历史消息已读
+message MessageReadHistoryUpdate {
+  // int32 pts = 1;      // 最新pts
+  bool out = 2;       // 是否是发送方
+  int64 dialogId = 3; // 对端信息
+  int32 maxId = 4;    // 已读最大消息id
+  int32 fromId = 5;   // 最大消息 发送者
+}
+
+message MessageEditUpdate {
+  int32 fromId = 1;   // 消息发送方用户id
+  int64 dialogId = 2; // 接收对象
+  // int32 pts = 3;      // 最新pts
+  int32 date = 4; // 操作时间
+  Message edit = 5;
+}
+
+message MessagePinnedUpdate {
+  int32 pinnedId = 1;  // 0 取消
+  int64 dialogId = 2;  // 会话id
+  Message message = 3; // 置顶消息id
+}
+
+message MessageDialogPinnedUpdate {
+  // int32 pts = 1;      // 最新pts
+  int64 dialogId = 2; // 会话id
+  bool pinned = 3;    // true 置顶 false 取消
+}
+
+message MessageDialogUnreadUpdate {
+  // int32 pts = 1;      // 最新pts
+  int64 dialogId = 2; // 会话id
+  bool unread = 3;    // false 标记未读， true 标记已读
+}
+
+message UserUpdate {
+  // int32 pts = 1; // 最新pts
+  User user = 2;
+}
+
+message UserStickerUpdate {
+  // int32 pts = 1;                     // 最新pts
+  EditStickerType type = 2;          // 操作类型
+  Sticker addSticker = 3;            // 类型为新增时才有意义
+  repeated int64 userStickerIds = 4; // 用户更新的收藏表情列表
+}
+
+message UserOnlineUpdate { UserOnlineStatus status = 1; }
+
+message UserPrivacyUpdate { repeated PrivacyRule rules = 1; }
+// 聊天室
+// ChatUpdateCreateChat  创建聊天室
+message ChatUpdateCreateChat {
+  // int32 pts = 1; // 最新pts
+  ChatBase chat = 2;               // 聊天室信息
+  repeated ChatUser chatUsers = 3; // 聊天室用户
+}
+
+// ChatUpdateDisband  解散聊天室
+message ChatUpdateDisbandChat {
+  // int32 pts = 1; // 最新pts
+  int32 chatId = 2; // 聊天室编号
+}
+
+// ChatUpdateAddMember  添加成员
+message ChatUpdateAddMember {
+  // int32 pts = 1; // 最新pts
+  int32 chatId = 2;                // 聊天室编号
+  repeated ChatUser chatUsers = 3; // 聊天室用户
+}
+
+// ChatUpdateDelMember 删除成员
+message ChatUpdateDelMember {
+  // int32 pts = 1; // 最新pts
+  int32 chatId = 2;           // 聊天室编号
+  repeated int32 userIds = 3; // 删除成员ID
+}
+
+// ChatUpdateModifyChat 修改群信息
+message ChatUpdateModifyChat {
+  // int32 pts = 1; // 最新pts
+
+  ChatBase chat = 2; // 聊天室信息
+}
+
+// ChatUpdateTransLead 转让群主
+message ChatUpdateTransLead {
+  // int32 pts = 1;           // 最新pts
+  int32 chatId = 2;        // 聊天室ID
+  int32 LeadUserId = 3;    // 群主用户Id
+  int32 oldLeadUserId = 4; // 旧群主Id
+}
+
+// ChatUpdateLeadSetAdmin 群主设置管理员
+message ChatUpdateLeadSetAdmin {
+  // int32 pts = 1; // 最新pts
+
+  int32 chatId = 2;           // 聊天室ID
+  repeated int32 userIds = 3; // 用户ID列表
+}
+
+// ChatUpdateLeadCancelAdmin 群主取消管理员
+message ChatUpdateLeadCancelAdmin {
+  // int32 pts = 1; // 最新pts
+  int32 chatId = 2;           // 聊天室ID
+  repeated int32 userIds = 3; // 用户ID列表
+}
+
+// ChatUpdateLeadSetAuth 群主设置权限管理
+message ChatUpdateLeadSetAuth {
+  // int32 pts = 1;         // 最新pts
+  int32 chatId = 2;      // 聊天室ID
+  ChatAuth chatAuth = 3; // 权限
+}
+
+// ChatUpdateMemberSetAuth 设置静音
+message ChatUpdateMemberSetAuth {
+  // int32 pts = 1; // 最新pts
+  int32 chatId = 2; // 聊天室ID
+  bool setMute = 3; // 设置静音
+}
+
+// ChatUpdateModifyRemarks 设置静音
+message ChatUpdateModifyRemarks {
+  // int32 pts = 1;     // 最新pts
+  int32 chatId = 2;  // 聊天室ID
+  ChatUser user = 3; // 昵称变更用户
+}
+
+// 好友(更新)
+// FriendUpdateAddFriend   添加好友
+message FriendUpdateAddFriend {
+  // int32 pts = 1; // 最新pts
+  User user = 2; // 好友信息
+}
+
+// FriendUpdateDelFriend   删除好友
+message FriendUpdateDelFriend {
+  int32 pts = 1; // 最新pts
+
+  PeerUser peerUser = 2; // 对端用户id
+}
+
+// FriendUpdateAddStranger   添加陌生人
+message FriendUpdateAddStranger {
+  // int32 pts = 1; // 最新pts
+  Stranger stranger = 4; //陌生人
+}
+
+// FriendUpdateDelStranger   删除陌生人
+message FriendUpdateDelStranger {
+  // int32 pts = 1; // 最新pts
+  PeerUser peerUser = 2; // 对端用户id
+}
+
+// FriendUpdateEditFriend   编辑好友
+message FriendUpdateEditFriend {
+  // int32 pts = 1; // 最新pts
+  User user = 2; // 用户信息
+}
+
+message BlackUpdateAddBlacks {
+  // int32 pts = 1;           // 最新pts
+  repeated User users = 2; // 加入成员ID
+}
+
+message BlackUpdateDelBlacks {
+  // int32 pts = 1; // 最新pts
+
+  repeated int32 userIds = 2; // 删除成员ID
+}
+
+message C2SUpdateDifferenceReq {
+  int32 pts = 1;
+  int32 limit = 2;
+}
+
+message S2CUpdateDifferenceResp {
+  ErrorCode code = 1;
+  int32 nowPts = 2;
+  int32 result = 3; // 0 表示全部返回， 1:表示分片 2:空,不能通过pts拉取
+  repeated Update updates = 4;
+}

@@ -1,0 +1,92 @@
+// Package payments AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_payments_obj.proto";
+
+package pb_uuchat;
+
+service paymentsServer { 
+    rpc PaymentsClearSavedInfo (PaymentsClearSavedInfoReq) returns (PaymentsClearSavedInfoResp) {} 
+    rpc PaymentsGetPaymentForm (PaymentsGetPaymentFormReq) returns (PaymentsGetPaymentFormResp) {} 
+    rpc PaymentsGetPaymentReceipt (PaymentsGetPaymentReceiptReq) returns (PaymentsGetPaymentReceiptResp) {} 
+    rpc PaymentsGetSavedInfo (PaymentsGetSavedInfoReq) returns (PaymentsGetSavedInfoResp) {} 
+    rpc PaymentsSendPaymentForm (PaymentsSendPaymentFormReq) returns (PaymentsSendPaymentFormResp) {} 
+    rpc PaymentsValidateReqedInfo (PaymentsValidateReqedInfoReq) returns (PaymentsValidateReqedInfoResp) {} 
+}
+
+// message req
+message PaymentsClearSavedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool credentials = 2 ;
+		  bool info = 3 ;
+		
+}
+
+message PaymentsGetPaymentFormReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 msgID = 2 ;
+		
+}
+
+message PaymentsGetPaymentReceiptReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 msgID = 2 ;
+		
+}
+
+message PaymentsGetSavedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message PaymentsSendPaymentFormReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   int32 msgID = 2 ;
+		  string requestedInfoID = 3 ;
+		  string shippingOptionID = 4 ;
+		   
+		InputPaymentCredentialsAbsClass credentials = 5 ;
+}
+
+message PaymentsValidateReqedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool save = 2 ;
+		  int32 msgID = 3 ;
+		  PaymentReqedInfo info = 4 ;
+		
+}
+
+
+// message resp
+message PaymentsClearSavedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message PaymentsGetPaymentFormResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentsPaymentForm paymentsPaymentForm = 2;
+}
+
+message PaymentsGetPaymentReceiptResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentsPaymentReceipt paymentsPaymentReceipt = 2;
+}
+
+message PaymentsGetSavedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentsSavedInfo paymentsSavedInfo = 2;
+}
+
+message PaymentsSendPaymentFormResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentsPaymentResultAbsClass paymentsPaymentResultAbsClass = 2;
+}
+
+message PaymentsValidateReqedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PaymentsValidatedReqedInfo paymentsValidatedReqedInfo = 2;
+}
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="40px" viewBox="0 0 44 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>email</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M41,5 C44.3045695,5 47,6.56635135 47,10.2380952 L47,40.031835 L47,40.031835 C47,43.7035789 44.3045695,45 41,45 L9,45 C5.6954305,45 3,43.7035789 3,40.031835 L3,10.2380952 L3,10.2380952 C3,6.56635135 5.6954305,5 9,5 L41,5 Z M6.999,18.702 L7,38.6659108 C7,39.9327352 7.9045695,40.978836 9,40.978836 L41,40.978836 C42.0954305,40.978836 43,39.9327352 43,38.6659108 L42.999,18.703 L26.1469247,30.5624769 C25.5041937,31.014769 24.6629118,31.0449218 23.9937073,30.6529353 L23.8530753,30.5624769 L6.999,18.702 Z M41,8.9238674 L9,8.9238674 C7.9045695,8.9238674 7,9.96996818 7,11.2367926 L6.999,13.794 L25,26.4611158 L42.999,13.795 L43,11.2367926 C43,9.96996818 42.0954305,8.9238674 41,8.9238674 Z" id="path-1"></path>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="好友主页icon" transform="translate(-1712.000000, -181.000000)">
+            <g id="邮箱" transform="translate(1709.000000, 176.000000)">
+                <g>
+                    <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="50" height="50"></rect>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

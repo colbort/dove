@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message ServerSalt {
+  int64 salt = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+}
+
+message AuthData {
+  int64 id = 1;
+  int32 userId = 2;
+  bytes data = 3;
+  repeated ServerSalt salts = 4;
+}
+
+message AuthDatas {
+  // AuthData list
+  repeated AuthData datas = 1;
+}

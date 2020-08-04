@@ -1,0 +1,292 @@
+// Package phone AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_phone_obj.proto";
+
+package pb_uuchat;
+
+service phoneServer { 
+    rpc PhoneAcceptCall (PhoneAcceptCallReq) returns (PhoneAcceptCallResp) {} 
+    rpc PhoneAcceptGroupCall (PhoneAcceptGroupCallReq) returns (PhoneAcceptGroupCallResp) {} 
+    rpc PhoneAcceptGroupCallInvite (PhoneAcceptGroupCallInviteReq) returns (PhoneAcceptGroupCallInviteResp) {} 
+    rpc PhoneAddGroupCall (PhoneAddGroupCallReq) returns (PhoneAddGroupCallResp) {} 
+    rpc PhoneConfirmCall (PhoneConfirmCallReq) returns (PhoneConfirmCallResp) {} 
+    rpc PhoneConfirmGroupCall (PhoneConfirmGroupCallReq) returns (PhoneConfirmGroupCallResp) {} 
+    rpc PhoneDiscardCall (PhoneDiscardCallReq) returns (PhoneDiscardCallResp) {} 
+    rpc PhoneDiscardGroupCall (PhoneDiscardGroupCallReq) returns (PhoneDiscardGroupCallResp) {} 
+    rpc PhoneGetCallConfig (PhoneGetCallConfigReq) returns (PhoneGetCallConfigResp) {} 
+    rpc PhoneGetGroupCallMemberInfo (PhoneGetGroupCallMemberInfoReq) returns (PhoneGetGroupCallMemberInfoResp) {} 
+    rpc PhoneGroupCallUpdataHeartStatus (PhoneGroupCallUpdataHeartStatusReq) returns (PhoneGroupCallUpdataHeartStatusResp) {} 
+    rpc PhoneQuitGroupCall (PhoneQuitGroupCallReq) returns (PhoneQuitGroupCallResp) {} 
+    rpc PhoneReceivedCall (PhoneReceivedCallReq) returns (PhoneReceivedCallResp) {} 
+    rpc PhoneReceivedGroupCall (PhoneReceivedGroupCallReq) returns (PhoneReceivedGroupCallResp) {} 
+    rpc PhoneReqCall (PhoneReqCallReq) returns (PhoneReqCallResp) {} 
+    rpc PhoneReqGroupCall (PhoneReqGroupCallReq) returns (PhoneReqGroupCallResp) {} 
+    rpc PhoneSaveCallDebug (PhoneSaveCallDebugReq) returns (PhoneSaveCallDebugResp) {} 
+    rpc PhoneSaveGroupCallDebug (PhoneSaveGroupCallDebugReq) returns (PhoneSaveGroupCallDebugResp) {} 
+    rpc PhoneSetCallRating (PhoneSetCallRatingReq) returns (PhoneSetCallRatingResp) {} 
+    rpc PhoneStartGroupCall (PhoneStartGroupCallReq) returns (PhoneStartGroupCallResp) {} 
+}
+
+// message req
+message PhoneAcceptCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  bytes gB = 3 ;
+		  PhoneCallProtocol protocol = 4 ;
+		
+}
+
+message PhoneAcceptGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  bytes gB = 3 ;
+		  PhoneCallProtocol protocol = 4 ;
+		  int64 roomid = 5 ;
+		
+}
+
+message PhoneAcceptGroupCallInviteReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 groupID = 2 ;
+		  int64 callRoomID = 3 ;
+		
+}
+
+message PhoneAddGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 groupID = 2 ;
+		  int64 callRoomID = 3 ;
+		
+}
+
+message PhoneConfirmCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  bytes gA = 3 ;
+		  int64 keyFingerprint = 4 ;
+		  PhoneCallProtocol protocol = 5 ;
+		
+}
+
+message PhoneConfirmGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  bytes gA = 3 ;
+		  int64 keyFingerprint = 4 ;
+		  PhoneCallProtocol protocol = 5 ;
+		  int64 roomid = 6 ;
+		
+}
+
+message PhoneDiscardCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  int32 duration = 3 ;
+		   
+		PhoneCallDiscardReasonAbsClass reason = 4 ;  int64 connectionID = 5 ;
+		
+}
+
+message PhoneDiscardGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  int32 duration = 3 ;
+		   
+		PhoneCallDiscardReasonAbsClass reason = 4 ;  int64 connectionID = 5 ;
+		  int64 roomid = 6 ;
+		
+}
+
+message PhoneGetCallConfigReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message PhoneGetGroupCallMemberInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 groupID = 2 ;
+		
+}
+
+message PhoneGroupCallUpdataHeartStatusReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  PhoneGroupCallHeartStatus phoneGroupCallHeartStatus = 2 ;
+		
+}
+
+message PhoneQuitGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 groupID = 2 ;
+		  int64 callRoomID = 3 ;
+		  int32 duration = 4 ;
+		   
+		GroupCallQuitReasonAbsClass reason = 5 ;
+}
+
+message PhoneReceivedCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		
+}
+
+message PhoneReceivedGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  int64 roomid = 3 ;
+		
+}
+
+message PhoneReqCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass userID = 2 ;  int32 randomID = 3 ;
+		  bytes gAHash = 4 ;
+		  PhoneCallProtocol protocol = 5 ;
+		
+}
+
+message PhoneReqGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass userID = 2 ;  int32 randomID = 3 ;
+		  bytes gAHash = 4 ;
+		  PhoneCallProtocol protocol = 5 ;
+		  int64 roomid = 6 ;
+		
+}
+
+message PhoneSaveCallDebugReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  DataJSON debug = 3 ;
+		
+}
+
+message PhoneSaveGroupCallDebugReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  DataJSON debug = 3 ;
+		  int64 roomid = 4 ;
+		
+}
+
+message PhoneSetCallRatingReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputPhoneCall peer = 2 ;
+		  int32 rating = 3 ;
+		  string comment = 4 ;
+		
+}
+
+message PhoneStartGroupCallReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 groupID = 2 ;
+		  repeated int32 partnerID = 3 ;
+		
+}
+
+
+// message resp
+message PhoneAcceptCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhonePhoneCall phonePhoneCall = 2;
+}
+
+message PhoneAcceptGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhonePhoneCall phonePhoneCall = 2;
+}
+
+message PhoneAcceptGroupCallInviteResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhoneAcceptGroupCallStatus phoneAcceptGroupCallStatus = 2;
+}
+
+message PhoneAddGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhoneAddGroupCallStatus phoneAddGroupCallStatus = 2;
+}
+
+message PhoneConfirmCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhonePhoneCall phonePhoneCall = 2;
+}
+
+message PhoneConfirmGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhonePhoneCall phonePhoneCall = 2;
+}
+
+message PhoneDiscardCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message PhoneDiscardGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message PhoneGetCallConfigResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	DataJSON dataJSON = 2;
+}
+
+message PhoneGetGroupCallMemberInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	GetGroupCallMemberInfoResult getGroupCallMemberInfoResult = 2;
+}
+
+message PhoneGroupCallUpdataHeartStatusResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message PhoneQuitGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message PhoneReceivedCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message PhoneReceivedGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message PhoneReqCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhonePhoneCall phonePhoneCall = 2;
+}
+
+message PhoneReqGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhonePhoneCall phonePhoneCall = 2;
+}
+
+message PhoneSaveCallDebugResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message PhoneSaveGroupCallDebugResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message PhoneSetCallRatingResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message PhoneStartGroupCallResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PhoneStartGroupCallStatus phoneStartGroupCallStatus = 2;
+}
+

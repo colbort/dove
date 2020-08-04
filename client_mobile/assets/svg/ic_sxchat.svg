@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="25px" viewBox="0 0 128 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>doveMessengerChat</title>
+    <desc>Created with Sketch.</desc>
+    <g id="登录" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Helvetica-Bold, Helvetica" font-size="32" font-weight="bold" letter-spacing="3.2">
+        <g id="1.0.登录启动页" transform="translate(-114.000000, -121.000000)" fill="#1890FF">
+            <text id="SXChat">
+                <tspan x="113" y="145">SXChat</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

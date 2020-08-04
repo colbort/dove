@@ -1,0 +1,592 @@
+// Package Acct AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_account_obj.proto";
+import "pb/uuchat/uuchat_auth_obj.proto";
+package pb_uuchat;
+
+service AcctServer { 
+    rpc AcctAcceptAuth (AcctAcceptAuthReq) returns (AcctAcceptAuthResp) {} 
+    rpc AcctChangePhone (AcctChangePhoneReq) returns (AcctChangePhoneResp) {} 
+    rpc AcctCheckUsername (AcctCheckUsernameReq) returns (AcctCheckUsernameResp) {} 
+    rpc AcctConfirmPhone (AcctConfirmPhoneReq) returns (AcctConfirmPhoneResp) {} 
+    rpc AcctDeleteAcct (AcctDeleteAcctReq) returns (AcctDeleteAcctResp) {} 
+    rpc AcctDeleteSecureValue (AcctDeleteSecureValueReq) returns (AcctDeleteSecureValueResp) {} 
+    rpc AcctFinishTakeoutSession (AcctFinishTakeoutSessionReq) returns (AcctFinishTakeoutSessionResp) {} 
+    rpc AcctGetAcctTTL (AcctGetAcctTTLReq) returns (AcctGetAcctTTLResp) {} 
+    rpc AcctGetAllSecureValues (AcctGetAllSecureValuesReq) returns (AcctGetAllSecureValuesResp) {} 
+    rpc AcctGetAuthForm (AcctGetAuthFormReq) returns (AcctGetAuthFormResp) {} 
+    rpc AcctGetAuth (AcctGetAuthReq) returns (AcctGetAuthResp) {} 
+    rpc AcctGetNotifySettings (AcctGetNotifySettingsReq) returns (AcctGetNotifySettingsResp) {} 
+    rpc AcctGetPassword (AcctGetPasswordReq) returns (AcctGetPasswordResp) {} 
+    rpc AcctGetPasswordSettings (AcctGetPasswordSettingsReq) returns (AcctGetPasswordSettingsResp) {} 
+    rpc AcctGetPrivacy (AcctGetPrivacyReq) returns (AcctGetPrivacyResp) {} 
+    rpc AcctGetSecureValue (AcctGetSecureValueReq) returns (AcctGetSecureValueResp) {} 
+    rpc AcctGetTmpPassword (AcctGetTmpPasswordReq) returns (AcctGetTmpPasswordResp) {} 
+    rpc AcctGetWallPapers (AcctGetWallPapersReq) returns (AcctGetWallPapersResp) {} 
+    rpc AcctGetWebAuth (AcctGetWebAuthReq) returns (AcctGetWebAuthResp) {} 
+    rpc AcctInitTakeoutSession (AcctInitTakeoutSessionReq) returns (AcctInitTakeoutSessionResp) {} 
+    rpc AcctRegisterDevice (AcctRegisterDeviceReq) returns (AcctRegisterDeviceResp) {} 
+    rpc AcctRegisterDeviceLyr5 (AcctRegisterDeviceLyr5Req) returns (AcctRegisterDeviceLyr5Resp) {} 
+    rpc AcctReportPeer (AcctReportPeerReq) returns (AcctReportPeerResp) {} 
+    rpc AcctResetAuth (AcctResetAuthReq) returns (AcctResetAuthResp) {} 
+    rpc AcctResetNotifySettings (AcctResetNotifySettingsReq) returns (AcctResetNotifySettingsResp) {} 
+    rpc AcctResetWebAuth (AcctResetWebAuthReq) returns (AcctResetWebAuthResp) {} 
+    rpc AcctResetWebAuths (AcctResetWebAuthsReq) returns (AcctResetWebAuthsResp) {} 
+    rpc AcctSaveSecureValue (AcctSaveSecureValueReq) returns (AcctSaveSecureValueResp) {} 
+    rpc AcctSendChangePhoneCode (AcctSendChangePhoneCodeReq) returns (AcctSendChangePhoneCodeResp) {} 
+    rpc AcctSendConfirmPhoneCode (AcctSendConfirmPhoneCodeReq) returns (AcctSendConfirmPhoneCodeResp) {} 
+    rpc AcctSendVerifyEmailCode (AcctSendVerifyEmailCodeReq) returns (AcctSendVerifyEmailCodeResp) {} 
+    rpc AcctSendVerifyEmailCodeType (AcctSendVerifyEmailCodeTypeReq) returns (AcctSendVerifyEmailCodeTypeResp) {} 
+    rpc AcctSendVerifyPhoneCode (AcctSendVerifyPhoneCodeReq) returns (AcctSendVerifyPhoneCodeResp) {} 
+    rpc AcctSetAcctTTL (AcctSetAcctTTLReq) returns (AcctSetAcctTTLResp) {} 
+    rpc AcctSetPrivacy (AcctSetPrivacyReq) returns (AcctSetPrivacyResp) {} 
+    rpc AcctUnregisterDevice (AcctUnregisterDeviceReq) returns (AcctUnregisterDeviceResp) {} 
+    rpc AcctUpdateDeviceLocked (AcctUpdateDeviceLockedReq) returns (AcctUpdateDeviceLockedResp) {} 
+    rpc AcctUpdateNotifySettings (AcctUpdateNotifySettingsReq) returns (AcctUpdateNotifySettingsResp) {} 
+    rpc AcctUpdatePasswordSettings (AcctUpdatePasswordSettingsReq) returns (AcctUpdatePasswordSettingsResp) {} 
+    rpc AcctUpdateProfile (AcctUpdateProfileReq) returns (AcctUpdateProfileResp) {} 
+    rpc AcctUpdateStatus (AcctUpdateStatusReq) returns (AcctUpdateStatusResp) {} 
+    rpc AcctUpdateUsername (AcctUpdateUsernameReq) returns (AcctUpdateUsernameResp) {} 
+    rpc AcctVerifyEmail (AcctVerifyEmailReq) returns (AcctVerifyEmailResp) {} 
+    rpc AcctVerifyEmailType (AcctVerifyEmailTypeReq) returns (AcctVerifyEmailTypeResp) {} 
+    rpc AcctVerifyPhone (AcctVerifyPhoneReq) returns (AcctVerifyPhoneResp) {} 
+}
+
+// message req
+message AcctAcceptAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 botID = 2 ;
+		  string scope = 3 ;
+		  string publicKey = 4 ;
+		  repeated SecureValueHash valueHashes = 5 ;
+		  SecureCredentialsEncrypted credentials = 6 ;
+		
+}
+
+message AcctChangePhoneReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  string phoneCodeHash = 3 ;
+		  string phoneCode = 4 ;
+		
+}
+
+message AcctCheckUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string username = 2 ;
+		
+}
+
+message AcctConfirmPhoneReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneCodeHash = 2 ;
+		  string phoneCode = 3 ;
+		
+}
+
+message AcctDeleteAcctReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string reason = 2 ;
+		
+}
+
+message AcctDeleteSecureValueReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated SecureValueTypeAbsClass types = 2 ;
+		
+}
+
+message AcctFinishTakeoutSessionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool success = 2 ;
+		
+}
+
+message AcctGetAcctTTLReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctGetAllSecureValuesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctGetAuthFormReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 botID = 2 ;
+		  string scope = 3 ;
+		  string publicKey = 4 ;
+		
+}
+
+message AcctGetAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctGetNotifySettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputNotifyPeerAbsClass peer = 2 ;
+}
+
+message AcctGetPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctGetPasswordSettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputCheckPasswordSRPAbsClass password = 2 ;
+}
+
+message AcctGetPrivacyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPrivacyKeyAbsClass key = 2 ;
+}
+
+message AcctGetSecureValueReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated SecureValueTypeAbsClass types = 2 ;
+		
+}
+
+message AcctGetTmpPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputCheckPasswordSRPAbsClass password = 2 ;  int32 period = 3 ;
+		
+}
+
+message AcctGetWallPapersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctGetWebAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctInitTakeoutSessionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool contacts = 2 ;
+		  bool messageUsers = 3 ;
+		  bool messageChats = 4 ;
+		  bool messageMegagroups = 5 ;
+		  bool messageSuperGroupV1s = 6 ;
+		  bool files = 7 ;
+		  int32 fileMaxSize = 8 ;
+		
+}
+
+message AcctRegisterDeviceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 tokenType = 2 ;
+		  string token = 3 ;
+		  bool appSandbox = 4 ;
+		  bytes secret = 5 ;
+		  repeated int32 otherUids = 6 ;
+		
+}
+
+message AcctRegisterDeviceLyr5Req{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 tokenType = 2 ;
+		  string token = 3 ;
+		  bool appSandbox = 4 ;
+		  repeated int32 otherUids = 5 ;
+		
+}
+
+message AcctReportPeerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;   
+		ReportReasonAbsClass reason = 3 ;
+}
+
+message AcctResetAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 hash = 2 ;
+		
+}
+
+message AcctResetNotifySettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctResetWebAuthsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 hash = 2 ;
+		
+}
+
+message AcctResetWebAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AcctSaveSecureValueReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputSecureValue value = 2 ;
+		  int64 secureSecretID = 3 ;
+		
+}
+
+message AcctSendChangePhoneCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool allowFlashcall = 2 ;
+		  string phoneNumber = 3 ;
+		  bool currentNumber = 4 ;
+		
+}
+
+message AcctSendConfirmPhoneCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool allowFlashcall = 2 ;
+		  string hash = 3 ;
+		  bool currentNumber = 4 ;
+		
+}
+
+message AcctSendVerifyEmailCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string email = 2 ;
+		
+}
+
+message AcctSendVerifyEmailCodeTypeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		AcctMailTypeAbsClass typ = 2 ;  string email = 3 ;
+		
+}
+
+message AcctSendVerifyPhoneCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool allowFlashcall = 2 ;
+		  string phoneNumber = 3 ;
+		  bool currentNumber = 4 ;
+		
+}
+
+message AcctSetAcctTTLReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  AcctDaysTTL tTL = 2 ;
+		
+}
+
+message AcctSetPrivacyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPrivacyKeyAbsClass key = 2 ;  repeated InputPrivacyRuleAbsClass rules = 3 ;
+		
+}
+
+message AcctUnregisterDeviceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 tokenType = 2 ;
+		  string token = 3 ;
+		  repeated int32 otherUids = 4 ;
+		
+}
+
+message AcctUpdateDeviceLockedReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 period = 2 ;
+		
+}
+
+message AcctUpdateNotifySettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputNotifyPeerAbsClass peer = 2 ;  InputPeerNotifySettings settings = 3 ;
+		
+}
+
+message AcctUpdatePasswordSettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputCheckPasswordSRPAbsClass password = 2 ;  AcctPasswordInputSettings newSettings = 3 ;
+		
+}
+
+message AcctUpdateProfileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   string firstName = 2 ;
+		  string lastName = 3 ;
+		  string about = 4 ;
+		  int32 gender = 5 ;
+		
+}
+
+message AcctUpdateStatusReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bool offline = 2 ;
+		
+}
+
+message AcctUpdateUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string username = 2 ;
+		
+}
+
+message AcctVerifyEmailReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string email = 2 ;
+		  string code = 3 ;
+		
+}
+
+message AcctVerifyEmailTypeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		AcctMailTypeAbsClass typ = 2 ;  string email = 3 ;
+		  string code = 4 ;
+		
+}
+
+message AcctVerifyPhoneReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  string phoneCodeHash = 3 ;
+		  string phoneCode = 4 ;
+		
+}
+
+
+// message resp
+message AcctAcceptAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctChangePhoneResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserAbsClass userAbsClass = 2;
+}
+
+message AcctCheckUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctConfirmPhoneResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctDeleteAcctResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctDeleteSecureValueResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctFinishTakeoutSessionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctGetAcctTTLResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctDaysTTL AcctDaysTTL = 2;
+}
+
+message AcctGetAllSecureValuesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated SecureValue secureValue = 2;
+}
+
+message AcctGetAuthFormResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctAuthForm AcctAuthForm = 2;
+}
+
+message AcctGetAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctAuth AcctAuth = 2;
+}
+
+message AcctGetNotifySettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PeerNotifySettings peerNotifySettings = 2;
+}
+
+message AcctGetPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctPassword AcctPassword = 2;
+}
+
+message AcctGetPasswordSettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctPasswordSettings AcctPasswordSettings = 2;
+}
+
+message AcctGetPrivacyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctPrivacyRules AcctPrivacyRules = 2;
+}
+
+message AcctGetSecureValueResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated SecureValue secureValue = 2;
+}
+
+message AcctGetTmpPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctTmpPassword AcctTmpPassword = 2;
+}
+
+message AcctGetWallPapersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated WallPaperAbsClass wallPaperAbsClass = 2;
+}
+
+message AcctGetWebAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctWebAuth AcctWebAuth = 2;
+}
+
+message AcctInitTakeoutSessionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctTakeout AcctTakeout = 2;
+}
+
+message AcctRegisterDeviceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctRegisterDeviceLyr5Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctReportPeerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctResetAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctResetNotifySettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctResetWebAuthsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctResetWebAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctSaveSecureValueResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	SecureValue secureValue = 2;
+}
+
+message AcctSendChangePhoneCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthSentCode authSentCode = 2;
+}
+
+message AcctSendConfirmPhoneCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthSentCode authSentCode = 2;
+}
+
+message AcctSendVerifyEmailCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctSentEmailCode AcctSentEmailCode = 2;
+}
+
+message AcctSendVerifyEmailCodeTypeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctSendVerifyPhoneCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthSentCode authSentCode = 2;
+}
+
+message AcctSetAcctTTLResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctSetPrivacyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AcctPrivacyRules AcctPrivacyRules = 2;
+}
+
+message AcctUnregisterDeviceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctUpdateDeviceLockedResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctUpdateNotifySettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctUpdatePasswordSettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctUpdateProfileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserAbsClass userAbsClass = 2;
+}
+
+message AcctUpdateStatusResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctUpdateUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserAbsClass userAbsClass = 2;
+}
+
+message AcctVerifyEmailResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctVerifyEmailTypeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AcctVerifyPhoneResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+

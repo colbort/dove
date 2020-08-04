@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package pkt;
+
+import "user.proto";
+import "chat.proto";
+import "sticker.proto";
+
+// 保存所有已经登录的用户的信息
+message LoginUsers {
+  int32 uid = 1;
+  map<int32, User> users = 2;
+}
+
+message GroupInfo {
+  ChatBase chats = 1;
+  map<int32, ChatUser> users = 2;
+  bool mute = 3;
+}
+
+message ClientUserInfo {
+  User user = 1;
+  string displayName = 2;
+}
+
+// 保存所有已经登录的用户的信息
+message SiginUsers {
+  int32 uid = 1;
+  map<int32, ClientUserInfo> users = 2;
+}
+
+//
+message LocalSticker {
+  string path = 1;
+  bool update = 2;
+  Sticker sticker = 3;
+}
+message CollectionSticker {
+  uint32 version = 1;
+  repeated LocalSticker stickers = 2;
+}
+
+message LocalStickerGroup {
+  string path = 1; /// 使用组id作为文件夹的名称
+  bool update = 2;
+  StickerGroup stickers = 3;
+}
+
+message LocalStickerGroups {
+  uint32 stickerGroupVersion = 1; // 当前sticker group 版本号
+  repeated LocalStickerGroup userStickerGroups =
+      2; // 有序用户添加的官方表情包组列表
+}
+
+// 保存所有的群组信息
+message ClientGroups { map<int32, GroupInfo> chats = 1; }

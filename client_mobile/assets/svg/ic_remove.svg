@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>remove</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-设置" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="最后上线-从不共享-编辑" transform="translate(-16.000000, -148.000000)" fill="#F5222D" fill-rule="nonzero">
+            <g id="移除" transform="translate(16.000000, 148.000000)">
+                <rect id="矩形" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                <path d="M8,0.8 C11.968,0.8 15.2,4.032 15.2,8 C15.2,11.968 11.968,15.2 8,15.2 C4.032,15.2 0.8,11.968 0.8,8 C0.8,4.032 4.032,0.8 8,0.8 M8,-5.68434189e-14 C3.584,-5.57331958e-14 0,3.584 0,8 C0,12.416 3.584,16 8,16 C12.416,16 16,12.416 16,8 C16,3.584 12.416,-5.57331958e-14 8,-5.68434189e-14 Z" id="形状"></path>
+                <path d="M3.824,8.448 L12.08,8.448 C12.304,8.448 12.48,8.272 12.48,8.048 C12.48,7.824 12.304,7.648 12.08,7.648 L3.824,7.648 C3.6,7.648 3.424,7.824 3.424,8.048 C3.424,8.272 3.608,8.448 3.824,8.448 Z" id="路径"></path>
+            </g>
+        </g>
+    </g>
+</svg>

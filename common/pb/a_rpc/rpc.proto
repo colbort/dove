@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb_rpc;
+
+message Context {
+    int32 UserID = 1;
+    int64 ConnID = 2;
+    int64 AuthKeyID = 3;
+    string phone = 4;
+    int64 fromID = 5;
+    string gwID = 6;
+    uint32 reqID = 7;
+    int32 ApiID = 8;
+}
+
+message RespContext {
+    string Error = 1;
+}

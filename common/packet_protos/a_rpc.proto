@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package pkt;
+
+// rpc调用错误妈
+enum ErrorCode {
+  ok = 0;
+  failed = 1;
+  parameterError = 2;
+  friendInviteExist = 4;
+  friendInviteSucc = 5;
+  friendInviteDouble = 6;
+  signinDouble = 10;
+  signinCodeError = 11;
+  userIsLogin = 12;
+  userNotLogin = 13;
+  passwdError = 14;
+  searchNotFound = 16;
+  userNotSign = 17;
+  uploadFileError = 18;
+}
+
+// Context  rpc调用上下文传递参数
+message Context {
+  int32 userId = 1;
+  int64 connId = 2;
+  int64 authKeyId = 3;
+  int64 fromId = 5;
+  string gwId = 6;
+  int32 apiId = 7;
+}
+
+// RespContext rpc调用上下文返回值
+message RespContext {
+  ErrorCode code = 1;
+  string describe = 2;
+}
+
+// RespContext rpc调用上下文返回值
+message ResultContext {
+  bool result = 1; // 结果
+}

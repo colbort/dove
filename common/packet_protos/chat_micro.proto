@@ -1,0 +1,134 @@
+// Package auth AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+import "chat.proto";
+
+service ChatService {
+
+  // 聊天室
+  rpc ServerChatGetAllChats(ServerChatGetAllChatsRequest) returns (RespContext);
+  rpc ServerChatGetChatFull(ServerChatGetChatFullRequest) returns (RespContext);
+  rpc ServerChatCreate(ServerChatCreateRequest) returns (RespContext);
+  rpc ServerChatDisband(ServerChatDisbandRequest) returns (RespContext);
+  rpc ServerChatAddMember(ServerChatAddMemberRequest) returns (RespContext);
+  rpc ServerChatDelMember(ServerChatDelMemberRequest) returns (RespContext);
+  rpc ServerChatMemberQuit(ServerChatMemberQuitRequest) returns (RespContext);
+
+  rpc ServerChatModifyTitle(ServerChatModifyTitleRequest) returns (RespContext);
+  rpc ServerChatModifyPhoto(ServerChatModifyPhotoRequest) returns (RespContext);
+  rpc ServerChatTransLead(ServerChatTransLeadRequest) returns (RespContext);
+  rpc ServerChatLeadSetAdmin(ServerChatLeadSetAdminRequest)
+      returns (RespContext);
+  rpc ServerChatLeadCancelAdmin(ServerChatLeadCancelAdminRequest)
+      returns (RespContext);
+  rpc ServerChatLeadSetAuth(ServerChatLeadSetAuthRequest) returns (RespContext);
+  rpc ServerChatMemberSetAuth(ServerChatMemberSetAuthRequest)
+      returns (RespContext);
+
+  rpc ServerChatApplyJoin(ServerChatApplyJoinRequest) returns (RespContext);
+  rpc ServerGetChatInfo(ServerGetChatInfoRequest) returns (RespContext);
+
+  rpc ServerChatModifyRemarks(ServerChatModifyRemarksRequest)
+      returns (RespContext);
+
+  rpc InsideGetChatBase(InsideGetChatRequest) returns (InsideGetChatResp);
+  rpc InsideGetChatMember(InsideGetChatMemberRequest)
+      returns (InsideGetChatMemberResp);
+}
+
+// 聊天室
+message ServerChatGetAllChatsRequest {
+  Context ctx = 1;
+  C2SChatGetAllChatsReq from = 2;
+}
+
+message ServerChatGetChatFullRequest {
+  Context ctx = 1;
+  C2SChatGetChatFullReq from = 2;
+}
+
+message ServerChatCreateRequest {
+  Context ctx = 1;
+  C2SChatCreateReq from = 2;
+}
+
+message ServerChatDisbandRequest {
+  Context ctx = 1;
+  C2SChatDisbandReq from = 2;
+}
+
+message ServerChatAddMemberRequest {
+  Context ctx = 1;
+  C2SChatAddMemberReq from = 2;
+}
+
+message ServerChatDelMemberRequest {
+  Context ctx = 1;
+  C2SChatDelMemberReq from = 2;
+}
+
+message ServerChatMemberQuitRequest {
+  Context ctx = 1;
+  C2SChatMemberQuitReq from = 2;
+}
+
+/////////////////////////////////
+message ServerChatModifyTitleRequest {
+  Context ctx = 1;
+  C2SChatModifyTitleReq from = 2;
+}
+
+message ServerChatModifyPhotoRequest {
+  Context ctx = 1;
+  C2SChatModifyPhotoReq from = 2;
+}
+
+message ServerChatTransLeadRequest {
+  Context ctx = 1;
+  C2SChatTransLeadReq from = 2;
+}
+
+message ServerChatLeadSetAdminRequest {
+  Context ctx = 1;
+  C2SChatLeadSetAdminReq from = 2;
+}
+
+message ServerChatLeadCancelAdminRequest {
+  Context ctx = 1;
+  C2SChatLeadCancelAdminReq from = 2;
+}
+
+message ServerChatLeadSetAuthRequest {
+  Context ctx = 1;
+  C2SChatLeadSetAuthReq from = 2;
+}
+
+message ServerChatMemberSetAuthRequest {
+  Context ctx = 1;
+  C2SChatMemberSetAuthReq from = 2;
+}
+message ServerChatModifyRemarksRequest {
+  Context ctx = 1;
+  C2SChatModifyRemarksReq from = 2;
+}
+
+message ServerChatApplyJoinRequest {
+  Context ctx = 1;
+  C2SChatApplyJoinReq from = 2;
+}
+
+message ServerGetChatInfoRequest {
+  Context ctx = 1;
+  C2SGetChatInfoReq from = 2;
+}
+
+message InsideGetChatRequest { int32 chatId = 1; }
+
+message InsideGetChatResp { ChatBase chat = 1; }
+
+message InsideGetChatMemberRequest { int32 userId = 1; }
+
+message InsideGetChatMemberResp { repeated int32 chatIds = 1; }

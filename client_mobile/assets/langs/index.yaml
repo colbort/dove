@@ -1,0 +1,11 @@
+langs:
+  - 
+    code: zh_cn
+    name: 简体中文
+    version: 4
+  - 
+    code: en_us
+    name: English
+    version: 6
+deflang: zh_cn
+version: 3

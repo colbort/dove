@@ -1,0 +1,125 @@
+import 'dart:typed_data';
+
+import '../assets/assets.dart';
+import 'package:flutter/services.dart';
+
+var _emojisPic = {
+  0: AssetsEmojis.U1F605,
+  1: AssetsEmojis.U1F601,
+  2: AssetsEmojis.U1F923,
+  3: AssetsEmojis.U1F602,
+  4: AssetsEmojis.U1F609,
+  5: AssetsEmojis.U1F60A,
+  6: AssetsEmojis.U1F60D,
+  7: AssetsEmojis.U1F618,
+  8: AssetsEmojis.U263A,
+  9: AssetsEmojis.U263A,
+  10: AssetsEmojis.U1F607,
+  11: AssetsEmojis.U1F92D,
+  12: AssetsEmojis.U1F92B,
+  13: AssetsEmojis.U1F910,
+  14: AssetsEmojis.U1F600,
+  15: AssetsEmojis.U1F643,
+  16: AssetsEmojis.U1F9D0,
+  17: AssetsEmojis.U1F629,
+  18: AssetsEmojis.U1F623,
+  19: AssetsEmojis.U1F613,
+  20: AssetsEmojis.U1F929,
+  21: AssetsEmojis.U1F60B,
+  22: AssetsEmojis.U1F61D,
+  23: AssetsEmojis.U1F92A,
+  24: AssetsEmojis.U1F911,
+  25: AssetsEmojis.U1F914,
+  26: AssetsEmojis.U1F917,
+  27: AssetsEmojis.U1F60F,
+  28: AssetsEmojis.U1F612,
+  29: AssetsEmojis.U1F644,
+  30: AssetsEmojis.U1F636,
+  31: AssetsEmojis.U1F925,
+  32: AssetsEmojis.U1F60C,
+  33: AssetsEmojis.U1F915,
+  34: AssetsEmojis.U1F92E,
+  35: AssetsEmojis.U1F92E,
+  36: AssetsEmojis.U2639,
+  37: AssetsEmojis.U1F62F,
+  38: AssetsEmojis.U1F606,
+  39: AssetsEmojis.U1F616,
+  40: AssetsEmojis.U1F62C,
+  41: AssetsEmojis.U1F60C,
+  42: AssetsEmojis.U1F92C,
+  43: AssetsEmojis.U1F62A,
+  44: AssetsEmojis.U1F634,
+  45: AssetsEmojis.U1F637,
+  46: AssetsEmojis.U1F912,
+  47: AssetsEmojis.U1F922,
+  48: AssetsEmojis.U1F92E,
+  49: AssetsEmojis.U1F927,
+  50: AssetsEmojis.U1F635,
+  51: AssetsEmojis.U1F60E,
+  52: AssetsEmojis.U1F913,
+  53: AssetsEmojis.U1F633,
+  54: AssetsEmojis.U1F630,
+  55: AssetsEmojis.U1F62D,
+  56: AssetsEmojis.U1F631,
+  57: AssetsEmojis.U1F621,
+  58: AssetsEmojis.U1F476,
+  59: AssetsEmojis.U1F624,
+  60: AssetsEmojis.U1F47F,
+  61: AssetsEmojis.U1F480,
+  62: AssetsEmojis.U1F478,
+  63: AssetsEmojis.U1F36D,
+  64: AssetsEmojis.U1F37A,
+  65: AssetsEmojis.U1F3E0,
+  66: AssetsEmojis.U1F69,
+  67: AssetsEmojis.U2708,
+  68: AssetsEmojis.U1F31D,
+  69: AssetsEmojis.U1F319,
+  70: AssetsEmojis.U1F4A9,
+  71: AssetsEmojis.U1F47B,
+  72: AssetsEmojis.U1F48B,
+  73: AssetsEmojis.U1F494,
+  74: AssetsEmojis.U2764,
+  75: AssetsEmojis.U1F4A3,
+  76: AssetsEmojis.U1F44B,
+  77: AssetsEmojis.U1F44C,
+  78: AssetsEmojis.U270C,
+  79: AssetsEmojis.U1F91F,
+  80: AssetsEmojis.U1F338,
+  81: AssetsEmojis.U1F332,
+  82: AssetsEmojis.U1F33E,
+  83: AssetsEmojis.U1F335,
+  84: AssetsEmojis.U1F340,
+  85: AssetsEmojis.U1F341,
+  86: AssetsEmojis.U1F347,
+  87: AssetsEmojis.U1F34A,
+  88: AssetsEmojis.U1F440,
+  89: AssetsEmojis.U1F4AA,
+  90: AssetsEmojis.U1F44D,
+  91: AssetsEmojis.U1F44E,
+  92: AssetsEmojis.U270A,
+  93: AssetsEmojis.U1F437,
+  94: AssetsEmojis.U1F648,
+  95: AssetsEmojis.U261D,
+  96: AssetsEmojis.U1F44F,
+  97: AssetsEmojis.U1F64C,
+  98: AssetsEmojis.U1F450,
+  99: AssetsEmojis.U1F64F,
+  100: AssetsEmojis.U1F412,
+};
+
+class ManagerData {
+  static List<Uint8List> _emoji = [];
+  static List<Uint8List> get emoji => _emoji;
+
+  ManagerData.init() {
+    _emojisPic.forEach((k, v) async {
+      var buffer = await rootBundle.load(v);
+      _emoji.add(buffer.buffer.asUint8List());
+    });
+  }
+
+  static void dispose(){
+    _emoji.clear();
+    _emoji = null;
+  }
+}

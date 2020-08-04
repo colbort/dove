@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "notify.proto";
+import "a_rpc.proto";
+
+package pkt;
+
+message ServerNotifyUploadDeviceTokenRequest {
+  Context ctx = 1;
+  C2SNotifyUploadDeviceTokenReq from = 2;
+}
+
+message ServerNotifyUserOnlineStatusRequest {
+  Context ctx = 1;
+  C2SNotifyUserOnlineStatusReq from = 2;
+}
+
+message ServerNotifyMessageRequest {
+  Context ctx = 1;
+  S2CNotifyMessageReq from = 2;
+}
+
+service MessagePushService {
+  rpc ServerUploadDeviceToken(ServerNotifyUploadDeviceTokenRequest)
+      returns (RespContext);
+  rpc ServerNotifyUserOnlineStatus(ServerNotifyUserOnlineStatusRequest)
+      returns (RespContext);
+  rpc ServerNotifyMessage(ServerNotifyMessageRequest) returns (RespContext);
+}

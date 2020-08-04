@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="26px" viewBox="0 0 50 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>guanyongguanbi</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="all-icon" transform="translate(-171.000000, -1010.000000)">
+            <g id="关" transform="translate(171.000000, 998.000000)">
+                <g>
+                    <rect id="矩形备份-9" x="0" y="0" width="50" height="50"></rect>
+                    <g id="关闭" transform="translate(0.000000, 12.000000)">
+                        <rect id="矩形" fill="#C1C6D0" x="0" y="0" width="50" height="25.5" rx="12.6984127"></rect>
+                        <ellipse id="椭圆形" fill="#FFFFFF" cx="12.6984127" cy="12.75" rx="11.1111111" ry="11.15625"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

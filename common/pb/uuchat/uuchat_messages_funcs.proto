@@ -1,0 +1,1629 @@
+// Package messages AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+service messagesServer { 
+    rpc InfosAcceptEncryption (InfosAcceptEncryptionReq) returns (InfosAcceptEncryptionResp) {} 
+    rpc InfosAddChatUser (InfosAddChatUserReq) returns (InfosAddChatUserResp) {} 
+    rpc InfosCheckChatInvite (InfosCheckChatInviteReq) returns (InfosCheckChatInviteResp) {} 
+    rpc InfosClearAllDrafts (InfosClearAllDraftsReq) returns (InfosClearAllDraftsResp) {} 
+    rpc InfosClearRecentStickers (InfosClearRecentStickersReq) returns (InfosClearRecentStickersResp) {} 
+    rpc InfosCreateChat (InfosCreateChatReq) returns (InfosCreateChatResp) {} 
+    rpc InfosDeleteChatUser (InfosDeleteChatUserReq) returns (InfosDeleteChatUserResp) {} 
+    rpc InfosDeleteHistory (InfosDeleteHistoryReq) returns (InfosDeleteHistoryResp) {} 
+    rpc InfosDeleteInfos (InfosDeleteInfosReq) returns (InfosDeleteInfosResp) {} 
+    rpc InfosDiscardEncryption (InfosDiscardEncryptionReq) returns (InfosDiscardEncryptionResp) {} 
+    rpc InfosEditChatAdmin (InfosEditChatAdminReq) returns (InfosEditChatAdminResp) {} 
+    rpc InfosEditChatPhoto (InfosEditChatPhotoReq) returns (InfosEditChatPhotoResp) {} 
+    rpc InfosEditChatTitle (InfosEditChatTitleReq) returns (InfosEditChatTitleResp) {} 
+    rpc InfosEditInlineBotInfo (InfosEditInlineBotInfoReq) returns (InfosEditInlineBotInfoResp) {} 
+    rpc InfosEditInfo (InfosEditInfoReq) returns (InfosEditInfoResp) {} 
+    rpc InfosExportChatInvite (InfosExportChatInviteReq) returns (InfosExportChatInviteResp) {} 
+    rpc InfosFaveSticker (InfosFaveStickerReq) returns (InfosFaveStickerResp) {} 
+    rpc InfosForwardInfos (InfosForwardInfosReq) returns (InfosForwardInfosResp) {} 
+    rpc InfosGetAllChats (InfosGetAllChatsReq) returns (InfosGetAllChatsResp) {} 
+    rpc InfosGetAllDrafts (InfosGetAllDraftsReq) returns (InfosGetAllDraftsResp) {} 
+    rpc InfosGetAllStickers (InfosGetAllStickersReq) returns (InfosGetAllStickersResp) {} 
+    rpc InfosGetArchivedStickers (InfosGetArchivedStickersReq) returns (InfosGetArchivedStickersResp) {} 
+    rpc InfosGetAttachedStickers (InfosGetAttachedStickersReq) returns (InfosGetAttachedStickersResp) {} 
+    rpc InfosGetBotCallbackAnswer (InfosGetBotCallbackAnswerReq) returns (InfosGetBotCallbackAnswerResp) {} 
+    rpc InfosGetChatInfos (InfosGetChatInfosReq) returns (InfosGetChatInfosResp) {} 
+    rpc InfosGetChatPinnedInfo (InfosGetChatPinnedInfoReq) returns (InfosGetChatPinnedInfoResp) {} 
+    rpc InfosGetChats (InfosGetChatsReq) returns (InfosGetChatsResp) {} 
+    rpc InfosGetCommonChats (InfosGetCommonChatsReq) returns (InfosGetCommonChatsResp) {} 
+    rpc InfosGetDhConfig (InfosGetDhConfigReq) returns (InfosGetDhConfigResp) {} 
+    rpc InfosGetDialogUnreadMarks (InfosGetDialogUnreadMarksReq) returns (InfosGetDialogUnreadMarksResp) {} 
+    rpc InfosGetDialogs (InfosGetDialogsReq) returns (InfosGetDialogsResp) {} 
+    rpc InfosGetDialogsLyr61 (InfosGetDialogsLyr61Req) returns (InfosGetDialogsLyr61Resp) {} 
+    rpc InfosGetDocumentByHash (InfosGetDocumentByHashReq) returns (InfosGetDocumentByHashResp) {} 
+    rpc InfosGetFavedStickers (InfosGetFavedStickersReq) returns (InfosGetFavedStickersResp) {} 
+    rpc InfosGetFeaturedStickers (InfosGetFeaturedStickersReq) returns (InfosGetFeaturedStickersResp) {} 
+    rpc InfosGetFullChat (InfosGetFullChatReq) returns (InfosGetFullChatResp) {} 
+    rpc InfosGetGameHighScores (InfosGetGameHighScoresReq) returns (InfosGetGameHighScoresResp) {} 
+    rpc InfosGetHistory (InfosGetHistoryReq) returns (InfosGetHistoryResp) {} 
+    rpc InfosGetHistoryLyr86 (InfosGetHistoryLyr86Req) returns (InfosGetHistoryLyr86Resp) {} 
+    rpc InfosGetInlineBotResults (InfosGetInlineBotResultsReq) returns (InfosGetInlineBotResultsResp) {} 
+    rpc InfosGetInlineGameHighScores (InfosGetInlineGameHighScoresReq) returns (InfosGetInlineGameHighScoresResp) {} 
+    rpc InfosGetMaskStickers (InfosGetMaskStickersReq) returns (InfosGetMaskStickersResp) {} 
+    rpc InfosGetInfoEditData (InfosGetInfoEditDataReq) returns (InfosGetInfoEditDataResp) {} 
+    rpc InfosGetInfos (InfosGetInfosReq) returns (InfosGetInfosResp) {} 
+    rpc InfosGetInfosViews (InfosGetInfosViewsReq) returns (InfosGetInfosViewsResp) {} 
+    rpc InfosGetPeerDialogs (InfosGetPeerDialogsReq) returns (InfosGetPeerDialogsResp) {} 
+    rpc InfosGetPeerSettings (InfosGetPeerSettingsReq) returns (InfosGetPeerSettingsResp) {} 
+    rpc InfosGetPinnedDialogs (InfosGetPinnedDialogsReq) returns (InfosGetPinnedDialogsResp) {} 
+    rpc InfosGetRecentLocations (InfosGetRecentLocationsReq) returns (InfosGetRecentLocationsResp) {} 
+    rpc InfosGetRecentLocationsLyr72 (InfosGetRecentLocationsLyr72Req) returns (InfosGetRecentLocationsLyr72Resp) {} 
+    rpc InfosGetRecentStickers (InfosGetRecentStickersReq) returns (InfosGetRecentStickersResp) {} 
+    rpc InfosGetSavedGifs (InfosGetSavedGifsReq) returns (InfosGetSavedGifsResp) {} 
+    rpc InfosGetSplitRanges (InfosGetSplitRangesReq) returns (InfosGetSplitRangesResp) {} 
+    rpc InfosGetStickerSet (InfosGetStickerSetReq) returns (InfosGetStickerSetResp) {} 
+    rpc InfosGetStickers (InfosGetStickersReq) returns (InfosGetStickersResp) {} 
+    rpc InfosGetStrangerInfoDialogs (InfosGetStrangerInfoDialogsReq) returns (InfosGetStrangerInfoDialogsResp) {} 
+    rpc InfosGetStrangerInfoDialogsSource (InfosGetStrangerInfoDialogsSourceReq) returns (InfosGetStrangerInfoDialogsSourceResp) {} 
+    rpc InfosGetUnreadMentions (InfosGetUnreadMentionsReq) returns (InfosGetUnreadMentionsResp) {} 
+    rpc InfosGetWebPage (InfosGetWebPageReq) returns (InfosGetWebPageResp) {} 
+    rpc InfosGetWebPagePreview (InfosGetWebPagePreviewReq) returns (InfosGetWebPagePreviewResp) {} 
+    rpc InfosHideReportSpam (InfosHideReportSpamReq) returns (InfosHideReportSpamResp) {} 
+    rpc InfosImportChatInvite (InfosImportChatInviteReq) returns (InfosImportChatInviteResp) {} 
+    rpc InfosInstallStickerSet (InfosInstallStickerSetReq) returns (InfosInstallStickerSetResp) {} 
+    rpc InfosLoadInfos (InfosLoadInfosReq) returns (InfosLoadInfosResp) {} 
+    rpc InfosMarkDialogUnread (InfosMarkDialogUnreadReq) returns (InfosMarkDialogUnreadResp) {} 
+    rpc InfosMigrateChat (InfosMigrateChatReq) returns (InfosMigrateChatResp) {} 
+    rpc InfosReadEncryptedHistory (InfosReadEncryptedHistoryReq) returns (InfosReadEncryptedHistoryResp) {} 
+    rpc InfosReadFeaturedStickers (InfosReadFeaturedStickersReq) returns (InfosReadFeaturedStickersResp) {} 
+    rpc InfosReadHistory (InfosReadHistoryReq) returns (InfosReadHistoryResp) {} 
+    rpc InfosReadHistoryLyr24 (InfosReadHistoryLyr24Req) returns (InfosReadHistoryLyr24Resp) {} 
+    rpc InfosReadMentions (InfosReadMentionsReq) returns (InfosReadMentionsResp) {} 
+    rpc InfosReadInfoContents (InfosReadInfoContentsReq) returns (InfosReadInfoContentsResp) {} 
+    rpc InfosReceivedInfos (InfosReceivedInfosReq) returns (InfosReceivedInfosResp) {} 
+    rpc InfosReceivedQueue (InfosReceivedQueueReq) returns (InfosReceivedQueueResp) {} 
+    rpc InfosReorderPinnedDialogs (InfosReorderPinnedDialogsReq) returns (InfosReorderPinnedDialogsResp) {} 
+    rpc InfosReorderStickerSets (InfosReorderStickerSetsReq) returns (InfosReorderStickerSetsResp) {} 
+    rpc InfosReport (InfosReportReq) returns (InfosReportResp) {} 
+    rpc InfosReportEncryptedSpam (InfosReportEncryptedSpamReq) returns (InfosReportEncryptedSpamResp) {} 
+    rpc InfosReportSpam (InfosReportSpamReq) returns (InfosReportSpamResp) {} 
+    rpc InfosReqEncryption (InfosReqEncryptionReq) returns (InfosReqEncryptionResp) {} 
+    rpc InfosSaveDraft (InfosSaveDraftReq) returns (InfosSaveDraftResp) {} 
+    rpc InfosSaveGif (InfosSaveGifReq) returns (InfosSaveGifResp) {} 
+    rpc InfosSaveRecentSticker (InfosSaveRecentStickerReq) returns (InfosSaveRecentStickerResp) {} 
+    rpc InfosSaveRecentStickerLyr54 (InfosSaveRecentStickerLyr54Req) returns (InfosSaveRecentStickerLyr54Resp) {} 
+    rpc InfosSearch (InfosSearchReq) returns (InfosSearchResp) {} 
+    rpc InfosSearchGifs (InfosSearchGifsReq) returns (InfosSearchGifsResp) {} 
+    rpc InfosSearchGlobal (InfosSearchGlobalReq) returns (InfosSearchGlobalResp) {} 
+    rpc InfosSearchLyr70 (InfosSearchLyr70Req) returns (InfosSearchLyr70Resp) {} 
+    rpc InfosSearchStickerSets (InfosSearchStickerSetsReq) returns (InfosSearchStickerSetsResp) {} 
+    rpc InfosSendEncrypted (InfosSendEncryptedReq) returns (InfosSendEncryptedResp) {} 
+    rpc InfosSendEncryptedFile (InfosSendEncryptedFileReq) returns (InfosSendEncryptedFileResp) {} 
+    rpc InfosSendEncryptedService (InfosSendEncryptedServiceReq) returns (InfosSendEncryptedServiceResp) {} 
+    rpc InfosSendInlineBotResult (InfosSendInlineBotResultReq) returns (InfosSendInlineBotResultResp) {} 
+    rpc InfosSendMedia (InfosSendMediaReq) returns (InfosSendMediaResp) {} 
+    rpc InfosSendInfo (InfosSendInfoReq) returns (InfosSendInfoResp) {} 
+    rpc InfosSendMultiMedia (InfosSendMultiMediaReq) returns (InfosSendMultiMediaResp) {} 
+    rpc InfosSendScreenshotNotification (InfosSendScreenshotNotificationReq) returns (InfosSendScreenshotNotificationResp) {} 
+    rpc InfosSendStrangeInfo (InfosSendStrangeInfoReq) returns (InfosSendStrangeInfoResp) {} 
+    rpc InfosSetBotCallbackAnswer (InfosSetBotCallbackAnswerReq) returns (InfosSetBotCallbackAnswerResp) {} 
+    rpc InfosSetBotPrecheckoutResults (InfosSetBotPrecheckoutResultsReq) returns (InfosSetBotPrecheckoutResultsResp) {} 
+    rpc InfosSetBotShippingResults (InfosSetBotShippingResultsReq) returns (InfosSetBotShippingResultsResp) {} 
+    rpc InfosSetEncryptedTyping (InfosSetEncryptedTypingReq) returns (InfosSetEncryptedTypingResp) {} 
+    rpc InfosSetGameScore (InfosSetGameScoreReq) returns (InfosSetGameScoreResp) {} 
+    rpc InfosSetInlineBotResults (InfosSetInlineBotResultsReq) returns (InfosSetInlineBotResultsResp) {} 
+    rpc InfosSetInlineGameScore (InfosSetInlineGameScoreReq) returns (InfosSetInlineGameScoreResp) {} 
+    rpc InfosSetTyping (InfosSetTypingReq) returns (InfosSetTypingResp) {} 
+    rpc InfosStartBot (InfosStartBotReq) returns (InfosStartBotResp) {} 
+    rpc InfosToggleChatAdmins (InfosToggleChatAdminsReq) returns (InfosToggleChatAdminsResp) {} 
+    rpc InfosToggleDialogPin (InfosToggleDialogPinReq) returns (InfosToggleDialogPinResp) {} 
+    rpc InfosTransportToPeer (InfosTransportToPeerReq) returns (InfosTransportToPeerResp) {} 
+    rpc InfosTransportToStrangerPeer (InfosTransportToStrangerPeerReq) returns (InfosTransportToStrangerPeerResp) {} 
+    rpc InfosUninstallStickerSet (InfosUninstallStickerSetReq) returns (InfosUninstallStickerSetResp) {} 
+    rpc InfosUpdatePinnedInfo (InfosUpdatePinnedInfoReq) returns (InfosUpdatePinnedInfoResp) {} 
+    rpc InfosUploadEncryptedFile (InfosUploadEncryptedFileReq) returns (InfosUploadEncryptedFileResp) {} 
+    rpc InfosUploadMedia (InfosUploadMediaReq) returns (InfosUploadMediaResp) {} 
+}
+
+// message req
+message InfosAcceptEncryptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		  bytes gB = 3 ;
+		  int64 keyFingerprint = 4 ;
+		
+}
+
+message InfosAddChatUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		   
+		InputUserAbsClass userID = 3 ;  int32 fwdLimit = 4 ;
+		
+}
+
+message InfosCheckChatInviteReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string hash = 2 ;
+		
+}
+
+message InfosClearAllDraftsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message InfosClearRecentStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool attached = 2 ;
+		
+}
+
+message InfosCreateChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputUserAbsClass users = 2 ;
+		  string title = 3 ;
+		
+}
+
+message InfosDeleteChatUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		   
+		InputUserAbsClass userID = 3 ;
+}
+
+message InfosDeleteHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool justClear = 2 ;
+		   
+		InputPeerAbsClass peer = 3 ;  int32 maxID = 4 ;
+		
+}
+
+message InfosDeleteInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool revoke = 2 ;
+		  repeated int32 iD = 3 ;
+		
+}
+
+message InfosDiscardEncryptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		
+}
+
+message InfosEditChatAdminReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		   
+		InputUserAbsClass userID = 3 ;  bool isAdmin = 4 ;
+		
+}
+
+message InfosEditChatPhotoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		   
+		InputChatPhotoAbsClass photo = 3 ;
+}
+
+message InfosEditChatTitleReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		  string title = 3 ;
+		
+}
+
+message InfosEditInlineBotInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool noWebpage = 2 ;
+		  bool stopGeoLive = 3 ;
+		  InputBotInlineInfoID iD = 4 ;
+		  string message = 5 ;
+		   
+		InputMediaAbsClass media = 6 ;   
+		ReplyMarkupAbsClass replyMarkup = 7 ;  repeated InfoEntityAbsClass entities = 8 ;
+		   
+		InputGeoPointAbsClass geoPoint = 9 ;
+}
+
+message InfosEditInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool noWebpage = 2 ;
+		  bool stopGeoLive = 3 ;
+		   
+		InputPeerAbsClass peer = 4 ;  int32 iD = 5 ;
+		  string message = 6 ;
+		   
+		InputMediaAbsClass media = 7 ;   
+		ReplyMarkupAbsClass replyMarkup = 8 ;  repeated InfoEntityAbsClass entities = 9 ;
+		   
+		InputGeoPointAbsClass geoPoint = 10 ;
+}
+
+message InfosExportChatInviteReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		
+}
+
+message InfosFaveStickerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputDocumentAbsClass iD = 2 ;  bool unfave = 3 ;
+		
+}
+
+message InfosForwardInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool silent = 2 ;
+		  bool background = 3 ;
+		  bool withMyScore = 4 ;
+		  bool grouped = 5 ;
+		   
+		InputPeerAbsClass fromPeer = 6 ;  repeated int32 iD = 7 ;
+		  repeated int64 randomID = 8 ;
+		   
+		InputPeerAbsClass toPeer = 9 ;
+}
+
+message InfosGetAllChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 exceptIds = 2 ;
+		
+}
+
+message InfosGetAllDraftsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message InfosGetAllStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message InfosGetArchivedStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool masks = 2 ;
+		  int64 offsetID = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message InfosGetAttachedStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputStickeredMediaAbsClass media = 2 ;
+}
+
+message InfosGetBotCallbackAnswerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool game = 2 ;
+		   
+		InputPeerAbsClass peer = 3 ;  int32 msgID = 4 ;
+		  bytes data = 5 ;
+		
+}
+
+message InfosGetChatInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputChatAbsClass chat = 2 ;  repeated InputInfoAbsClass iD = 3 ;
+		
+}
+
+message InfosGetChatPinnedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		
+}
+
+message InfosGetChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 iD = 2 ;
+		
+}
+
+message InfosGetCommonChatsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass userID = 2 ;  int32 maxID = 3 ;
+		  int32 limit = 4 ;
+		
+}
+
+message InfosGetDhConfigReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 version = 2 ;
+		  int32 randomLength = 3 ;
+		
+}
+
+message InfosGetDialogUnreadMarksReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message InfosGetDialogsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool excludePinned = 2 ;
+		  int32 offsetDate = 3 ;
+		  int32 offsetID = 4 ;
+		   
+		InputPeerAbsClass offsetPeer = 5 ;  int32 limit = 6 ;
+		  int32 hash = 7 ;
+		
+}
+
+message InfosGetDialogsLyr61Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool excludePinned = 2 ;
+		  int32 offsetDate = 3 ;
+		  int32 offsetID = 4 ;
+		   
+		InputPeerAbsClass offsetPeer = 5 ;  int32 limit = 6 ;
+		
+}
+
+message InfosGetDocumentByHashReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes sha256 = 2 ;
+		  int32 size = 3 ;
+		  string mimeType = 4 ;
+		
+}
+
+message InfosGetFavedStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message InfosGetFeaturedStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message InfosGetFullChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		
+}
+
+message InfosGetGameHighScoresReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 iD = 3 ;
+		   
+		InputUserAbsClass userID = 4 ;
+}
+
+message InfosGetHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 offsetID = 3 ;
+		  int32 offsetDate = 4 ;
+		  int32 addOffset = 5 ;
+		  int32 limit = 6 ;
+		  int32 maxID = 7 ;
+		  int32 minID = 8 ;
+		  int32 hash = 9 ;
+		
+}
+
+message InfosGetHistoryLyr86Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 offsetID = 3 ;
+		  int32 offsetDate = 4 ;
+		  int32 addOffset = 5 ;
+		  int32 limit = 6 ;
+		  int32 maxID = 7 ;
+		  int32 minID = 8 ;
+		
+}
+
+message InfosGetInlineBotResultsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		    
+		InputUserAbsClass bot = 2 ;   
+		InputPeerAbsClass peer = 3 ;   
+		InputGeoPointAbsClass geoPoint = 4 ;  string query = 5 ;
+		  string offset = 6 ;
+		
+}
+
+message InfosGetInlineGameHighScoresReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputBotInlineInfoID iD = 2 ;
+		   
+		InputUserAbsClass userID = 3 ;
+}
+
+message InfosGetMaskStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message InfosGetInfoEditDataReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 iD = 3 ;
+		
+}
+
+message InfosGetInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputInfoAbsClass iD = 2 ;
+		
+}
+
+message InfosGetInfosViewsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  repeated int32 iD = 3 ;
+		  bool increment = 4 ;
+		
+}
+
+message InfosGetPeerDialogsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputDialogPeer peers = 2 ;
+		
+}
+
+message InfosGetPeerSettingsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;
+}
+
+message InfosGetPinnedDialogsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message InfosGetRecentLocationsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 limit = 3 ;
+		  int32 hash = 4 ;
+		
+}
+
+message InfosGetRecentLocationsLyr72Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 limit = 3 ;
+		
+}
+
+message InfosGetRecentStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool attached = 2 ;
+		  int32 hash = 3 ;
+		
+}
+
+message InfosGetSavedGifsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message InfosGetSplitRangesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message InfosGetStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputStickerSetAbsClass stickerset = 2 ;
+}
+
+message InfosGetStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string emoticon = 2 ;
+		  int32 hash = 3 ;
+		
+}
+
+message InfosGetStrangerInfoDialogsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool excludePinned = 2 ;
+		  int32 offsetDate = 3 ;
+		  int32 offsetID = 4 ;
+		   
+		InputPeerAbsClass offsetPeer = 5 ;  int32 limit = 6 ;
+		
+}
+
+message InfosGetStrangerInfoDialogsSourceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool excludePinned = 2 ;
+		  int32 offsetDate = 3 ;
+		  int32 offsetID = 4 ;
+		   
+		InputPeerAbsClass offsetPeer = 5 ;  int32 limit = 6 ;
+		
+}
+
+message InfosGetUnreadMentionsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 offsetID = 3 ;
+		  int32 addOffset = 4 ;
+		  int32 limit = 5 ;
+		  int32 maxID = 6 ;
+		  int32 minID = 7 ;
+		
+}
+
+message InfosGetWebPageReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string uRL = 2 ;
+		  int32 hash = 3 ;
+		
+}
+
+message InfosGetWebPagePreviewReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   string message = 2 ;
+		  repeated InfoEntityAbsClass entities = 3 ;
+		
+}
+
+message InfosHideReportSpamReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;
+}
+
+message InfosImportChatInviteReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string hash = 2 ;
+		
+}
+
+message InfosInstallStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputStickerSetAbsClass stickerset = 2 ;  bool archived = 3 ;
+		
+}
+
+message InfosLoadInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 iD = 2 ;
+		
+}
+
+message InfosMarkDialogUnreadReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool unread = 2 ;
+		  InputDialogPeer peer = 3 ;
+		
+}
+
+message InfosMigrateChatReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		
+}
+
+message InfosReadEncryptedHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		  int32 maxDate = 3 ;
+		
+}
+
+message InfosReadFeaturedStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int64 iD = 2 ;
+		
+}
+
+message InfosReadHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 maxID = 3 ;
+		
+}
+
+message InfosReadHistoryLyr24Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 maxID = 3 ;
+		  int32 offset = 4 ;
+		
+}
+
+message InfosReadMentionsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;
+}
+
+message InfosReadInfoContentsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 iD = 2 ;
+		
+}
+
+message InfosReceivedInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 maxID = 2 ;
+		
+}
+
+message InfosReceivedQueueReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 maxQts = 2 ;
+		
+}
+
+message InfosReorderPinnedDialogsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool force = 2 ;
+		  repeated InputDialogPeer order = 3 ;
+		
+}
+
+message InfosReorderStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool masks = 2 ;
+		  repeated int64 order = 3 ;
+		
+}
+
+message InfosReportReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  repeated int32 iD = 3 ;
+		   
+		ReportReasonAbsClass reason = 4 ;
+}
+
+message InfosReportEncryptedSpamReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		
+}
+
+message InfosReportSpamReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;
+}
+
+message InfosReqEncryptionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass userID = 2 ;  int32 randomID = 3 ;
+		  bytes gA = 4 ;
+		
+}
+
+message InfosSaveDraftReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool noWebpage = 2 ;
+		  int32 replyToMsgID = 3 ;
+		   
+		InputPeerAbsClass peer = 4 ;  string message = 5 ;
+		  repeated InfoEntityAbsClass entities = 6 ;
+		
+}
+
+message InfosSaveGifReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputDocumentAbsClass iD = 2 ;  bool unsave = 3 ;
+		
+}
+
+message InfosSaveRecentStickerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool attached = 2 ;
+		   
+		InputDocumentAbsClass iD = 3 ;  bool unsave = 4 ;
+		
+}
+
+message InfosSaveRecentStickerLyr54Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputDocumentAbsClass iD = 2 ;  bool unsave = 3 ;
+		
+}
+
+message InfosSearchReq{ 
+		pb_rpc.Context reqCtx = 1;
+		    
+		InputPeerAbsClass peer = 2 ;  string q = 3 ;
+		   
+		InputUserAbsClass fromID = 4 ;   
+		InfosFilterAbsClass filter = 5 ;  int32 minDate = 6 ;
+		  int32 maxDate = 7 ;
+		  int32 offsetID = 8 ;
+		  int32 addOffset = 9 ;
+		  int32 limit = 10 ;
+		  int32 maxID = 11 ;
+		  int32 minID = 12 ;
+		  int32 hash = 13 ;
+		
+}
+
+message InfosSearchGifsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string q = 2 ;
+		  int32 offset = 3 ;
+		
+}
+
+message InfosSearchGlobalReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string q = 2 ;
+		  int32 offsetDate = 3 ;
+		   
+		InputPeerAbsClass offsetPeer = 4 ;  int32 offsetID = 5 ;
+		  int32 limit = 6 ;
+		
+}
+
+message InfosSearchLyr70Req{ 
+		pb_rpc.Context reqCtx = 1;
+		    
+		InputPeerAbsClass peer = 2 ;  string q = 3 ;
+		   
+		InputUserAbsClass fromID = 4 ;   
+		InfosFilterAbsClass filter = 5 ;  int32 minDate = 6 ;
+		  int32 maxDate = 7 ;
+		  int32 offset = 8 ;
+		  int32 maxID = 9 ;
+		  int32 limit = 10 ;
+		
+}
+
+message InfosSearchStickerSetsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool excludeFeatured = 2 ;
+		  string q = 3 ;
+		  int32 hash = 4 ;
+		
+}
+
+message InfosSendEncryptedReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		  int64 randomID = 3 ;
+		  bytes data = 4 ;
+		
+}
+
+message InfosSendEncryptedFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		  int64 randomID = 3 ;
+		  bytes data = 4 ;
+		   
+		InputEncryptedFileAbsClass file = 5 ;
+}
+
+message InfosSendEncryptedServiceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		  int64 randomID = 3 ;
+		  bytes data = 4 ;
+		
+}
+
+message InfosSendInlineBotResultReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool silent = 2 ;
+		  bool background = 3 ;
+		  bool clearDraft = 4 ;
+		   
+		InputPeerAbsClass peer = 5 ;  int32 replyToMsgID = 6 ;
+		  int64 randomID = 7 ;
+		  int64 queryID = 8 ;
+		  string iD = 9 ;
+		
+}
+
+message InfosSendMediaReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool silent = 2 ;
+		  bool background = 3 ;
+		  bool clearDraft = 4 ;
+		   
+		InputPeerAbsClass peer = 5 ;  int32 replyToMsgID = 6 ;
+		   
+		InputMediaAbsClass media = 7 ;  string message = 8 ;
+		  int64 randomID = 9 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 10 ;  repeated InfoEntityAbsClass entities = 11 ;
+		
+}
+
+message InfosSendInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool noWebpage = 2 ;
+		  bool silent = 3 ;
+		  bool background = 4 ;
+		  bool clearDraft = 5 ;
+		   
+		InputPeerAbsClass peer = 6 ;  int32 replyToMsgID = 7 ;
+		  string message = 8 ;
+		  int64 randomID = 9 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 10 ;  repeated InfoEntityAbsClass entities = 11 ;
+		
+}
+
+message InfosSendMultiMediaReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool silent = 2 ;
+		  bool background = 3 ;
+		  bool clearDraft = 4 ;
+		   
+		InputPeerAbsClass peer = 5 ;  int32 replyToMsgID = 6 ;
+		  repeated InputSingleMedia multiMedia = 7 ;
+		
+}
+
+message InfosSendScreenshotNotificationReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;  int32 replyToMsgID = 3 ;
+		  int64 randomID = 4 ;
+		
+}
+
+message InfosSendStrangeInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool noWebpage = 2 ;
+		  bool silent = 3 ;
+		  bool background = 4 ;
+		  bool clearDraft = 5 ;
+		  bool start = 6 ;
+		  bool source = 7 ;
+		   
+		StrangerFromAbsClass from = 8 ;   
+		InputPeerAbsClass peer = 9 ;  int32 replyToMsgID = 10 ;
+		  string message = 11 ;
+		  int64 randomID = 12 ;
+		   
+		ReplyMarkupAbsClass replyMarkup = 13 ;  repeated InfoEntityAbsClass entities = 14 ;
+		
+}
+
+message InfosSetBotCallbackAnswerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool alert = 2 ;
+		  int64 queryID = 3 ;
+		  string message = 4 ;
+		  string uRL = 5 ;
+		  int32 cacheTime = 6 ;
+		
+}
+
+message InfosSetBotPrecheckoutResultsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool success = 2 ;
+		  int64 queryID = 3 ;
+		  string error = 4 ;
+		
+}
+
+message InfosSetBotShippingResultsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   int64 queryID = 2 ;
+		  string error = 3 ;
+		  repeated ShippingOption shippingOptions = 4 ;
+		
+}
+
+message InfosSetEncryptedTypingReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		  bool typing = 3 ;
+		
+}
+
+message InfosSetGameScoreReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool editInfo = 2 ;
+		  bool force = 3 ;
+		   
+		InputPeerAbsClass peer = 4 ;  int32 iD = 5 ;
+		   
+		InputUserAbsClass userID = 6 ;  int32 score = 7 ;
+		
+}
+
+message InfosSetInlineBotResultsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool gallery = 2 ;
+		  bool private = 3 ;
+		  int64 queryID = 4 ;
+		  repeated InputBotInlineResultAbsClass results = 5 ;
+		  int32 cacheTime = 6 ;
+		  string nextOffset = 7 ;
+		  InlineBotSwitchPM switchPm = 8 ;
+		
+}
+
+message InfosSetInlineGameScoreReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool editInfo = 2 ;
+		  bool force = 3 ;
+		  InputBotInlineInfoID iD = 4 ;
+		   
+		InputUserAbsClass userID = 5 ;  int32 score = 6 ;
+		
+}
+
+message InfosSetTypingReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;   
+		SendInfoDoitAbsClass action = 3 ;
+}
+
+message InfosStartBotReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass bot = 2 ;   
+		InputPeerAbsClass peer = 3 ;  int64 randomID = 4 ;
+		  string startParam = 5 ;
+		
+}
+
+message InfosToggleChatAdminsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 chatID = 2 ;
+		  bool enabled = 3 ;
+		
+}
+
+message InfosToggleDialogPinReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool pinned = 2 ;
+		  InputDialogPeer peer = 3 ;
+		
+}
+
+message InfosTransportToPeerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated ToPeerMsg msgs = 2 ;
+		  int32 peerID = 3 ;
+		  int32 chatID = 4 ;
+		  int64 groupID = 5 ;
+		   
+		TransportToPeerTypeAbsClass typ = 6 ;  repeated int32 otherID = 7 ;
+		
+}
+
+message InfosTransportToStrangerPeerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated ToPeerMsg msgs = 2 ;
+		  int32 peerID = 3 ;
+		  bool source = 4 ;
+		   
+		StrangerFromAbsClass from = 5 ;  int64 groupID = 6 ;
+		  int64 typ = 7 ;
+		
+}
+
+message InfosUninstallStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputStickerSetAbsClass stickerset = 2 ;
+}
+
+message InfosUpdatePinnedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool silent = 2 ;
+		   
+		InputChatAbsClass chat = 3 ;  int32 iD = 4 ;
+		
+}
+
+message InfosUploadEncryptedFileReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  InputEncryptedChat peer = 2 ;
+		   
+		InputEncryptedFileAbsClass file = 3 ;
+}
+
+message InfosUploadMediaReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;   
+		InputMediaAbsClass media = 3 ;
+}
+
+
+// message resp
+message InfosAcceptEncryptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	EncryptedChatAbsClass encryptedChatAbsClass = 2;
+}
+
+message InfosAddChatUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosCheckChatInviteResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ChatInviteAbsClass chatInviteAbsClass = 2;
+}
+
+message InfosClearAllDraftsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosClearRecentStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosCreateChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosDeleteChatUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosDeleteHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedHistory messagesAffectedHistory = 2;
+}
+
+message InfosDeleteInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedInfos messagesAffectedInfos = 2;
+}
+
+message InfosDiscardEncryptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosEditChatAdminResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosEditChatPhotoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosEditChatTitleResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosEditInlineBotInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosEditInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosExportChatInviteResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ExportedChatInviteAbsClass exportedChatInviteAbsClass = 2;
+}
+
+message InfosFaveStickerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosForwardInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosGetAllChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatsAbsClass messagesChatsAbsClass = 2;
+}
+
+message InfosGetAllDraftsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosGetAllStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAllStickersAbsClass messagesAllStickersAbsClass = 2;
+}
+
+message InfosGetArchivedStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosArchivedStickers messagesArchivedStickers = 2;
+}
+
+message InfosGetAttachedStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated StickerSetCoveredAbsClass stickerSetCoveredAbsClass = 2;
+}
+
+message InfosGetBotCallbackAnswerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosBotCallbackAnswer messagesBotCallbackAnswer = 2;
+}
+
+message InfosGetChatInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosGetChatPinnedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatMsgID messagesChatMsgID = 2;
+}
+
+message InfosGetChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatsAbsClass messagesChatsAbsClass = 2;
+}
+
+message InfosGetCommonChatsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatsAbsClass messagesChatsAbsClass = 2;
+}
+
+message InfosGetDhConfigResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosDhConfigAbsClass messagesDhConfigAbsClass = 2;
+}
+
+message InfosGetDialogUnreadMarksResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated DialogPeer dialogPeer = 2;
+}
+
+message InfosGetDialogsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosDialogsAbsClass messagesDialogsAbsClass = 2;
+}
+
+message InfosGetDialogsLyr61Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosDialogsAbsClass messagesDialogsAbsClass = 2;
+}
+
+message InfosGetDocumentByHashResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	DocumentAbsClass documentAbsClass = 2;
+}
+
+message InfosGetFavedStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosFavedStickersAbsClass messagesFavedStickersAbsClass = 2;
+}
+
+message InfosGetFeaturedStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosFeaturedStickersAbsClass messagesFeaturedStickersAbsClass = 2;
+}
+
+message InfosGetFullChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatFull messagesChatFull = 2;
+}
+
+message InfosGetGameHighScoresResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosHighScores messagesHighScores = 2;
+}
+
+message InfosGetHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosGetHistoryLyr86Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosGetInlineBotResultsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosBotResults messagesBotResults = 2;
+}
+
+message InfosGetInlineGameHighScoresResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosHighScores messagesHighScores = 2;
+}
+
+message InfosGetMaskStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAllStickersAbsClass messagesAllStickersAbsClass = 2;
+}
+
+message InfosGetInfoEditDataResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfoEditData messagesInfoEditData = 2;
+}
+
+message InfosGetInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosGetInfosViewsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated int32 int32 = 2;
+}
+
+message InfosGetPeerDialogsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosPeerDialogs messagesPeerDialogs = 2;
+}
+
+message InfosGetPeerSettingsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	PeerSettings peerSettings = 2;
+}
+
+message InfosGetPinnedDialogsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosPeerDialogs messagesPeerDialogs = 2;
+}
+
+message InfosGetRecentLocationsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosGetRecentLocationsLyr72Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosGetRecentStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosRecentStickersAbsClass messagesRecentStickersAbsClass = 2;
+}
+
+message InfosGetSavedGifsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosSavedGifsAbsClass messagesSavedGifsAbsClass = 2;
+}
+
+message InfosGetSplitRangesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated InfoRange messageRange = 2;
+}
+
+message InfosGetStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosStickerSet messagesStickerSet = 2;
+}
+
+message InfosGetStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosStickersAbsClass messagesStickersAbsClass = 2;
+}
+
+message InfosGetStrangerInfoDialogsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosDialogsAbsClass messagesDialogsAbsClass = 2;
+}
+
+message InfosGetStrangerInfoDialogsSourceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosDialogsAbsClass messagesDialogsAbsClass = 2;
+}
+
+message InfosGetUnreadMentionsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosGetWebPageResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	WebPageAbsClass webPageAbsClass = 2;
+}
+
+message InfosGetWebPagePreviewResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfoMediaAbsClass messageMediaAbsClass = 2;
+}
+
+message InfosHideReportSpamResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosImportChatInviteResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosInstallStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosStickerSetInstallResultAbsClass messagesStickerSetInstallResultAbsClass = 2;
+}
+
+message InfosLoadInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosMarkDialogUnreadResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosMigrateChatResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosReadEncryptedHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosReadFeaturedStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosReadHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedInfos messagesAffectedInfos = 2;
+}
+
+message InfosReadHistoryLyr24Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedInfos messagesAffectedInfos = 2;
+}
+
+message InfosReadMentionsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedHistory messagesAffectedHistory = 2;
+}
+
+message InfosReadInfoContentsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedInfos messagesAffectedInfos = 2;
+}
+
+message InfosReceivedInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated ReceivedNotifyInfo receivedNotifyInfo = 2;
+}
+
+message InfosReceivedQueueResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated int64 int64 = 2;
+}
+
+message InfosReorderPinnedDialogsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosReorderStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosReportResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosReportEncryptedSpamResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosReportSpamResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosReqEncryptionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	EncryptedChatAbsClass encryptedChatAbsClass = 2;
+}
+
+message InfosSaveDraftResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSaveGifResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSaveRecentStickerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSaveRecentStickerLyr54Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSearchResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosSearchGifsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosFoundGifs messagesFoundGifs = 2;
+}
+
+message InfosSearchGlobalResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosSearchLyr70Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message InfosSearchStickerSetsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosFoundStickerSetsAbsClass messagesFoundStickerSetsAbsClass = 2;
+}
+
+message InfosSendEncryptedResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosSentEncryptedInfoAbsClass messagesSentEncryptedInfoAbsClass = 2;
+}
+
+message InfosSendEncryptedFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosSentEncryptedInfoAbsClass messagesSentEncryptedInfoAbsClass = 2;
+}
+
+message InfosSendEncryptedServiceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosSentEncryptedInfoAbsClass messagesSentEncryptedInfoAbsClass = 2;
+}
+
+message InfosSendInlineBotResultResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosSendMediaResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosSendInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosSendMultiMediaResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosSendScreenshotNotificationResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosSendStrangeInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosSetBotCallbackAnswerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSetBotPrecheckoutResultsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSetBotShippingResultsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSetEncryptedTypingResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSetGameScoreResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosSetInlineBotResultsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSetInlineGameScoreResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosSetTypingResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosStartBotResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosToggleChatAdminsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosToggleDialogPinResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosTransportToPeerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosTransportToStrangerPeerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosUninstallStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message InfosUpdatePinnedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message InfosUploadEncryptedFileResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	EncryptedFileAbsClass encryptedFileAbsClass = 2;
+}
+
+message InfosUploadMediaResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfoMediaAbsClass messageMediaAbsClass = 2;
+}
+

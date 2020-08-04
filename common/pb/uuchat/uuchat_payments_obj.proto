@@ -1,0 +1,141 @@
+// Package payments AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message PaymentsPaymentForm 定义 
+message PaymentsPaymentForm {   
+	bool canSaveCredentials = 1;	//bool 
+	bool passwordMissing = 2;	//bool 
+	int32 botID = 3;	//int32 
+	Invoice invoice = 4;	//Invoice 
+	int32 providerID = 5;	//int32 
+	string uRL = 6;	//string 
+	string nativeProvider = 7;	//string 
+	DataJSON nativeParams = 8;	//DataJSON 
+	PaymentReqedInfo savedInfo = 9;	//PaymentReqedInfo 
+	PaymentSavedCredentialsAbsClass savedCredentials = 10;	//PaymentSavedCredentialsAbsClass 
+	repeated UserAbsClass users = 11;	//[]UserAbsClass
+}
+
+// message PaymentsPaymentReceipt 定义 
+message PaymentsPaymentReceipt {   
+	int32 date = 1;	//int32 
+	int32 botID = 2;	//int32 
+	Invoice invoice = 3;	//Invoice 
+	int32 providerID = 4;	//int32 
+	PaymentReqedInfo info = 5;	//PaymentReqedInfo 
+	ShippingOption shipping = 6;	//ShippingOption 
+	string currency = 7;	//string 
+	int64 totalAmount = 8;	//int64 
+	string credentialsTitle = 9;	//string 
+	repeated UserAbsClass users = 10;	//[]UserAbsClass
+}
+
+// message PaymentsPaymentResult 定义 
+message PaymentsPaymentResult {  
+	UpdatesAbsClass updates = 1;	//UpdatesAbsClass
+}
+
+// message PaymentsPaymentVerficationNeeded 定义 
+message PaymentsPaymentVerficationNeeded {  
+	string uRL = 1;	//string
+}
+
+// message PaymentsSavedInfo 定义 
+message PaymentsSavedInfo {   
+	bool hasSavedCredentials = 1;	//bool 
+	PaymentReqedInfo savedInfo = 2;	//PaymentReqedInfo
+}
+
+// message PaymentsValidatedReqedInfo 定义 
+message PaymentsValidatedReqedInfo {   
+	string iD = 1;	//string 
+	repeated ShippingOption shippingOptions = 2;	//[]ShippingOption
+}
+
+
+
+
+// ExyPaymentsPaymentForm 枚举
+enum ExyPaymentsPaymentForm { 
+	EVVPaymentsPaymentForm = 0;
+}
+
+
+message PaymentsPaymentFormAbsClass { 
+  ExyPaymentsPaymentForm type = 1;
+    oneof value { 
+		PaymentsPaymentForm paymentsPaymentForm= 2;
+    }
+}
+
+
+
+// ExyPaymentsPaymentReceipt 枚举
+enum ExyPaymentsPaymentReceipt { 
+	EVVPaymentsPaymentReceipt = 0;
+}
+
+
+message PaymentsPaymentReceiptAbsClass { 
+  ExyPaymentsPaymentReceipt type = 1;
+    oneof value { 
+		PaymentsPaymentReceipt paymentsPaymentReceipt= 2;
+    }
+}
+
+
+
+// ExyPaymentsPaymentResult 枚举
+enum ExyPaymentsPaymentResult { 
+	EVVPaymentsPaymentResult = 0;
+	EVVPaymentsPaymentVerficationNeeded = 1;
+}
+
+
+message PaymentsPaymentResultAbsClass { 
+  ExyPaymentsPaymentResult type = 1;
+    oneof value { 
+		PaymentsPaymentResult paymentsPaymentResult= 2;
+		PaymentsPaymentVerficationNeeded paymentsPaymentVerficationNeeded= 3;
+    }
+}
+
+
+
+
+
+// ExyPaymentsSavedInfo 枚举
+enum ExyPaymentsSavedInfo { 
+	EVVPaymentsSavedInfo = 0;
+}
+
+
+message PaymentsSavedInfoAbsClass { 
+  ExyPaymentsSavedInfo type = 1;
+    oneof value { 
+		PaymentsSavedInfo paymentsSavedInfo= 2;
+    }
+}
+
+
+
+// ExyPaymentsValidatedReqedInfo 枚举
+enum ExyPaymentsValidatedReqedInfo { 
+	EVVPaymentsValidatedReqedInfo = 0;
+}
+
+
+message PaymentsValidatedReqedInfoAbsClass { 
+  ExyPaymentsValidatedReqedInfo type = 1;
+    oneof value { 
+		PaymentsValidatedReqedInfo paymentsValidatedReqedInfo= 2;
+    }
+}
+
+
+

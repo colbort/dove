@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package pkt;
+
+/*import_protos*/
+
+message Payload {
+  OType op = 1;
+  oneof pkt {
+/*packet_payloads*/
+  }
+}
+
+message Payloads { repeated Payload payloads = 1; }
+
+message Msg {
+  int64 sessionId = 1;
+  int64 salt = 2;
+  int64 msgId = 3;
+  int32 seqId = 4;
+  int64 fromId = 5;
+  Payload payload = 6;
+  repeated int64 acks = 7;
+  // random padding: 7-199 bytes
+  bytes randBytes = 8;
+}

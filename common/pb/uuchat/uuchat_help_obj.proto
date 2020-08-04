@@ -1,0 +1,275 @@
+// Package help AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message HelpAppUpdate 定义 
+message HelpAppUpdate {   
+	bool popup = 1;	//bool 
+	int32 iD = 2;	//int32 
+	string version = 3;	//string 
+	string text = 4;	//string 
+	repeated InfoEntityAbsClass entities = 5;	//[]InfoEntityAbsClass 
+	DocumentAbsClass document = 6;	//DocumentAbsClass 
+	string uRL = 7;	//string
+}
+
+// message HelpNoAppUpdate 定义 
+message HelpNoAppUpdate { 
+}
+
+// message HelpConfigSimple 定义 
+message HelpConfigSimple {  
+	int32 date = 1;	//int32 
+	int32 expires = 2;	//int32 
+	repeated AccessPointRule rules = 3;	//[]AccessPointRule
+}
+
+// message HelpDeepLinkInfoEmpty 定义 
+message HelpDeepLinkInfoEmpty { 
+}
+
+// message HelpDeepLinkInfo 定义 
+message HelpDeepLinkInfo {   
+	bool updateApp = 1;	//bool 
+	string message = 2;	//string 
+	repeated InfoEntityAbsClass entities = 3;	//[]InfoEntityAbsClass
+}
+
+// message HelpInviteText 定义 
+message HelpInviteText {  
+	string message = 1;	//string
+}
+
+// message HelpPassportConfigNotModified 定义 
+message HelpPassportConfigNotModified { 
+}
+
+// message HelpPassportConfig 定义 
+message HelpPassportConfig {  
+	int32 hash = 1;	//int32 
+	DataJSON countriesLangs = 2;	//DataJSON
+}
+
+// message HelpProxyDataEmpty 定义 
+message HelpProxyDataEmpty {  
+	int32 expires = 1;	//int32
+}
+
+// message HelpProxyDataPromo 定义 
+message HelpProxyDataPromo {  
+	int32 expires = 1;	//int32 
+	PeerAbsClass peer = 2;	//PeerAbsClass 
+	repeated ChatAbsClass chats = 3;	//[]ChatAbsClass 
+	repeated UserAbsClass users = 4;	//[]UserAbsClass
+}
+
+// message HelpRecentMeUrls 定义 
+message HelpRecentMeUrls {  
+	repeated RecentMeURLAbsClass urls = 1;	//[]RecentMeURLAbsClass 
+	repeated ChatAbsClass chats = 2;	//[]ChatAbsClass 
+	repeated UserAbsClass users = 3;	//[]UserAbsClass
+}
+
+// message HelpSupport 定义 
+message HelpSupport {  
+	string phoneNumber = 1;	//string 
+	UserAbsClass user = 2;	//UserAbsClass
+}
+
+// message HelpTermsOfService 定义 
+message HelpTermsOfService {   
+	bool popup = 1;	//bool 
+	DataJSON iD = 2;	//DataJSON 
+	string text = 3;	//string 
+	repeated InfoEntityAbsClass entities = 4;	//[]InfoEntityAbsClass 
+	int32 minAgeConfirm = 5;	//int32
+}
+
+// message HelpTermsOfServiceUpdateEmpty 定义 
+message HelpTermsOfServiceUpdateEmpty {  
+	int32 expires = 1;	//int32
+}
+
+// message HelpTermsOfServiceUpdate 定义 
+message HelpTermsOfServiceUpdate {  
+	int32 expires = 1;	//int32 
+	HelpTermsOfService termsOfService = 2;	//Help.TermsOfService
+}
+
+
+
+
+// ExyHelpAppUpdate 枚举
+enum ExyHelpAppUpdate { 
+	EVVHelpAppUpdate = 0;
+	EVVHelpNoAppUpdate = 1;
+}
+
+
+message HelpAppUpdateAbsClass { 
+  ExyHelpAppUpdate type = 1;
+    oneof value { 
+		HelpAppUpdate helpAppUpdate= 2;
+		HelpNoAppUpdate helpNoAppUpdate= 3;
+    }
+}
+
+
+
+
+
+// ExyHelpConfigSimple 枚举
+enum ExyHelpConfigSimple { 
+	EVVHelpConfigSimple = 0;
+}
+
+
+message HelpConfigSimpleAbsClass { 
+  ExyHelpConfigSimple type = 1;
+    oneof value { 
+		HelpConfigSimple helpConfigSimple= 2;
+    }
+}
+
+
+
+// ExyHelpDeepLinkInfo 枚举
+enum ExyHelpDeepLinkInfo { 
+	EVVHelpDeepLinkInfoEmpty = 0;
+	EVVHelpDeepLinkInfo = 1;
+}
+
+
+message HelpDeepLinkInfoAbsClass { 
+  ExyHelpDeepLinkInfo type = 1;
+    oneof value { 
+		HelpDeepLinkInfoEmpty helpDeepLinkInfoEmpty= 2;
+		HelpDeepLinkInfo helpDeepLinkInfo= 3;
+    }
+}
+
+
+
+
+
+// ExyHelpInviteText 枚举
+enum ExyHelpInviteText { 
+	EVVHelpInviteText = 0;
+}
+
+
+message HelpInviteTextAbsClass { 
+  ExyHelpInviteText type = 1;
+    oneof value { 
+		HelpInviteText helpInviteText= 2;
+    }
+}
+
+
+
+// ExyHelpPassportConfig 枚举
+enum ExyHelpPassportConfig { 
+	EVVHelpPassportConfigNotModified = 0;
+	EVVHelpPassportConfig = 1;
+}
+
+
+message HelpPassportConfigAbsClass { 
+  ExyHelpPassportConfig type = 1;
+    oneof value { 
+		HelpPassportConfigNotModified helpPassportConfigNotModified= 2;
+		HelpPassportConfig helpPassportConfig= 3;
+    }
+}
+
+
+
+
+
+// ExyHelpProxyData 枚举
+enum ExyHelpProxyData { 
+	EVVHelpProxyDataEmpty = 0;
+	EVVHelpProxyDataPromo = 1;
+}
+
+
+message HelpProxyDataAbsClass { 
+  ExyHelpProxyData type = 1;
+    oneof value { 
+		HelpProxyDataEmpty helpProxyDataEmpty= 2;
+		HelpProxyDataPromo helpProxyDataPromo= 3;
+    }
+}
+
+
+
+
+
+// ExyHelpRecentMeUrls 枚举
+enum ExyHelpRecentMeUrls { 
+	EVVHelpRecentMeUrls = 0;
+}
+
+
+message HelpRecentMeUrlsAbsClass { 
+  ExyHelpRecentMeUrls type = 1;
+    oneof value { 
+		HelpRecentMeUrls helpRecentMeUrls= 2;
+    }
+}
+
+
+
+// ExyHelpSupport 枚举
+enum ExyHelpSupport { 
+	EVVHelpSupport = 0;
+}
+
+
+message HelpSupportAbsClass { 
+  ExyHelpSupport type = 1;
+    oneof value { 
+		HelpSupport helpSupport= 2;
+    }
+}
+
+
+
+// ExyHelpTermsOfService 枚举
+enum ExyHelpTermsOfService { 
+	EVVHelpTermsOfService = 0;
+}
+
+
+message HelpTermsOfServiceAbsClass { 
+  ExyHelpTermsOfService type = 1;
+    oneof value { 
+		HelpTermsOfService helpTermsOfService= 2;
+    }
+}
+
+
+
+// ExyHelpTermsOfServiceUpdate 枚举
+enum ExyHelpTermsOfServiceUpdate { 
+	EVVHelpTermsOfServiceUpdateEmpty = 0;
+	EVVHelpTermsOfServiceUpdate = 1;
+}
+
+
+message HelpTermsOfServiceUpdateAbsClass { 
+  ExyHelpTermsOfServiceUpdate type = 1;
+    oneof value { 
+		HelpTermsOfServiceUpdateEmpty helpTermsOfServiceUpdateEmpty= 2;
+		HelpTermsOfServiceUpdate helpTermsOfServiceUpdate= 3;
+    }
+}
+
+
+
+
+

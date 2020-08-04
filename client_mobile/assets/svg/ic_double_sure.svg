@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>gouweidu</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-对话列表" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="对话列表" transform="translate(-329.000000, -159.000000)">
+            <g id="对话列表-好友-对话列表-置顶-新" transform="translate(-48.000000, 127.000000)">
+                <g id="A-消息列表-已读" transform="translate(376.000000, 30.000000)">
+                    <g id="编组-2">
+                        <g id="勾" fill="#21A1E8" fill-rule="nonzero">
+                            <rect id="矩形" opacity="0" x="0" y="0" width="12.6419753" height="16"></rect>
+                            <path d="M5.79128771,13.2 C5.64823991,13.2 5.51272095,13.144 5.40731732,13.048 L1.1234124,9.208 C0.995422268,9.096 0.980364605,8.896 1.08576824,8.76 C1.19117188,8.624 1.37939266,8.608 1.50738279,8.72 L5.79128771,12.56 L13.1243692,2.92 C13.2297729,2.784 13.4179937,2.76 13.5459838,2.872 C13.6739739,2.984 13.6965604,3.184 13.5911568,3.32 L6.25807524,12.96 C6.1526716,13.096 6.00962381,13.176 5.84398952,13.192 C5.82893186,13.2 5.80634537,13.2 5.79128771,13.2 Z" id="路径"></path>
+                        </g>
+                        <polyline id="形状结合" stroke="#21A1E8" stroke-width="0.7" stroke-linecap="square" points="8.88888889 12.7668393 12.563336 7.80633567 15.9754365 3.2"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

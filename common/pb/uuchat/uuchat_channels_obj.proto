@@ -1,0 +1,84 @@
+// Package superGroupV1s AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message SuperGroupV1sAdminLogResults 定义 
+message SuperGroupV1sAdminLogResults {  
+	repeated SuperGroupV1AdminLogEvent events = 1;	//[]SuperGroupV1AdminLogEvent 
+	repeated ChatAbsClass chats = 2;	//[]ChatAbsClass 
+	repeated UserAbsClass users = 3;	//[]UserAbsClass
+}
+
+// message SuperGroupV1sSuperGroupV1Participant 定义 
+message SuperGroupV1sSuperGroupV1Participant {  
+	SuperGroupV1ParticipantAbsClass participant = 1;	//SuperGroupV1ParticipantAbsClass 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+// message SuperGroupV1sSuperGroupV1Participants 定义 
+message SuperGroupV1sSuperGroupV1Participants {  
+	int32 count = 1;	//int32 
+	repeated SuperGroupV1ParticipantAbsClass participants = 2;	//[]SuperGroupV1ParticipantAbsClass 
+	repeated UserAbsClass users = 3;	//[]UserAbsClass
+}
+
+// message SuperGroupV1sSuperGroupV1ParticipantsNotModified 定义 
+message SuperGroupV1sSuperGroupV1ParticipantsNotModified { 
+}
+
+
+
+
+// ExySuperGroupV1sAdminLogResults 枚举
+enum ExySuperGroupV1sAdminLogResults { 
+	EVVSuperGroupV1sAdminLogResults = 0;
+}
+
+
+message SuperGroupV1sAdminLogResultsAbsClass { 
+  ExySuperGroupV1sAdminLogResults type = 1;
+    oneof value { 
+		SuperGroupV1sAdminLogResults superGroupV1sAdminLogResults= 2;
+    }
+}
+
+
+
+// ExySuperGroupV1sSuperGroupV1Participant 枚举
+enum ExySuperGroupV1sSuperGroupV1Participant { 
+	EVVSuperGroupV1sSuperGroupV1Participant = 0;
+}
+
+
+message SuperGroupV1sSuperGroupV1ParticipantAbsClass { 
+  ExySuperGroupV1sSuperGroupV1Participant type = 1;
+    oneof value { 
+		SuperGroupV1sSuperGroupV1Participant superGroupV1sSuperGroupV1Participant= 2;
+    }
+}
+
+
+
+// ExySuperGroupV1sSuperGroupV1Participants 枚举
+enum ExySuperGroupV1sSuperGroupV1Participants { 
+	EVVSuperGroupV1sSuperGroupV1Participants = 0;
+	EVVSuperGroupV1sSuperGroupV1ParticipantsNotModified = 1;
+}
+
+
+message SuperGroupV1sSuperGroupV1ParticipantsAbsClass { 
+  ExySuperGroupV1sSuperGroupV1Participants type = 1;
+    oneof value { 
+		SuperGroupV1sSuperGroupV1Participants superGroupV1sSuperGroupV1Participants= 2;
+		SuperGroupV1sSuperGroupV1ParticipantsNotModified superGroupV1sSuperGroupV1ParticipantsNotModified= 3;
+    }
+}
+
+
+
+
+

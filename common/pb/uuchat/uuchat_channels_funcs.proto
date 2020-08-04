@@ -1,0 +1,450 @@
+// Package superGroupV1s AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_superGroupV1s_obj.proto";
+
+package pb_uuchat;
+
+service superGroupV1sServer { 
+    rpc SuperGroupV1sCheckUsername (SuperGroupV1sCheckUsernameReq) returns (SuperGroupV1sCheckUsernameResp) {} 
+    rpc SuperGroupV1sCreateSuperGroupV1 (SuperGroupV1sCreateSuperGroupV1Req) returns (SuperGroupV1sCreateSuperGroupV1Resp) {} 
+    rpc SuperGroupV1sDeleteSuperGroupV1 (SuperGroupV1sDeleteSuperGroupV1Req) returns (SuperGroupV1sDeleteSuperGroupV1Resp) {} 
+    rpc SuperGroupV1sDeleteHistory (SuperGroupV1sDeleteHistoryReq) returns (SuperGroupV1sDeleteHistoryResp) {} 
+    rpc SuperGroupV1sDeleteInfos (SuperGroupV1sDeleteInfosReq) returns (SuperGroupV1sDeleteInfosResp) {} 
+    rpc SuperGroupV1sDeleteUserHistory (SuperGroupV1sDeleteUserHistoryReq) returns (SuperGroupV1sDeleteUserHistoryResp) {} 
+    rpc SuperGroupV1sEditAbout (SuperGroupV1sEditAboutReq) returns (SuperGroupV1sEditAboutResp) {} 
+    rpc SuperGroupV1sEditAdmin (SuperGroupV1sEditAdminReq) returns (SuperGroupV1sEditAdminResp) {} 
+    rpc SuperGroupV1sEditBanned (SuperGroupV1sEditBannedReq) returns (SuperGroupV1sEditBannedResp) {} 
+    rpc SuperGroupV1sEditPhoto (SuperGroupV1sEditPhotoReq) returns (SuperGroupV1sEditPhotoResp) {} 
+    rpc SuperGroupV1sEditTitle (SuperGroupV1sEditTitleReq) returns (SuperGroupV1sEditTitleResp) {} 
+    rpc SuperGroupV1sExportInvite (SuperGroupV1sExportInviteReq) returns (SuperGroupV1sExportInviteResp) {} 
+    rpc SuperGroupV1sExportInfoLink (SuperGroupV1sExportInfoLinkReq) returns (SuperGroupV1sExportInfoLinkResp) {} 
+    rpc SuperGroupV1sGetAdminLog (SuperGroupV1sGetAdminLogReq) returns (SuperGroupV1sGetAdminLogResp) {} 
+    rpc SuperGroupV1sGetAdminedPublicSuperGroupV1s (SuperGroupV1sGetAdminedPublicSuperGroupV1sReq) returns (SuperGroupV1sGetAdminedPublicSuperGroupV1sResp) {} 
+    rpc SuperGroupV1sGetSuperGroupV1s (SuperGroupV1sGetSuperGroupV1sReq) returns (SuperGroupV1sGetSuperGroupV1sResp) {} 
+    rpc SuperGroupV1sGetFullSuperGroupV1 (SuperGroupV1sGetFullSuperGroupV1Req) returns (SuperGroupV1sGetFullSuperGroupV1Resp) {} 
+    rpc SuperGroupV1sGetLeftSuperGroupV1s (SuperGroupV1sGetLeftSuperGroupV1sReq) returns (SuperGroupV1sGetLeftSuperGroupV1sResp) {} 
+    rpc SuperGroupV1sGetInfos (SuperGroupV1sGetInfosReq) returns (SuperGroupV1sGetInfosResp) {} 
+    rpc SuperGroupV1sGetParticipant (SuperGroupV1sGetParticipantReq) returns (SuperGroupV1sGetParticipantResp) {} 
+    rpc SuperGroupV1sGetParticipants (SuperGroupV1sGetParticipantsReq) returns (SuperGroupV1sGetParticipantsResp) {} 
+    rpc SuperGroupV1sInviteToSuperGroupV1 (SuperGroupV1sInviteToSuperGroupV1Req) returns (SuperGroupV1sInviteToSuperGroupV1Resp) {} 
+    rpc SuperGroupV1sJoinSuperGroupV1 (SuperGroupV1sJoinSuperGroupV1Req) returns (SuperGroupV1sJoinSuperGroupV1Resp) {} 
+    rpc SuperGroupV1sLeaveSuperGroupV1 (SuperGroupV1sLeaveSuperGroupV1Req) returns (SuperGroupV1sLeaveSuperGroupV1Resp) {} 
+    rpc SuperGroupV1sReadHistory (SuperGroupV1sReadHistoryReq) returns (SuperGroupV1sReadHistoryResp) {} 
+    rpc SuperGroupV1sReadInfoContents (SuperGroupV1sReadInfoContentsReq) returns (SuperGroupV1sReadInfoContentsResp) {} 
+    rpc SuperGroupV1sReportSpam (SuperGroupV1sReportSpamReq) returns (SuperGroupV1sReportSpamResp) {} 
+    rpc SuperGroupV1sSetStickers (SuperGroupV1sSetStickersReq) returns (SuperGroupV1sSetStickersResp) {} 
+    rpc SuperGroupV1sToggleInvites (SuperGroupV1sToggleInvitesReq) returns (SuperGroupV1sToggleInvitesResp) {} 
+    rpc SuperGroupV1sTogglePreHistoryHidden (SuperGroupV1sTogglePreHistoryHiddenReq) returns (SuperGroupV1sTogglePreHistoryHiddenResp) {} 
+    rpc SuperGroupV1sToggleSignatures (SuperGroupV1sToggleSignaturesReq) returns (SuperGroupV1sToggleSignaturesResp) {} 
+    rpc SuperGroupV1sUpdatePinnedInfo (SuperGroupV1sUpdatePinnedInfoReq) returns (SuperGroupV1sUpdatePinnedInfoResp) {} 
+    rpc SuperGroupV1sUpdateUsername (SuperGroupV1sUpdateUsernameReq) returns (SuperGroupV1sUpdateUsernameResp) {} 
+}
+
+// message req
+message SuperGroupV1sCheckUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  string username = 3 ;
+		
+}
+
+message SuperGroupV1sCreateSuperGroupV1Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool broadcast = 2 ;
+		  bool megagroup = 3 ;
+		  string title = 4 ;
+		  string about = 5 ;
+		
+}
+
+message SuperGroupV1sDeleteSuperGroupV1Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;
+}
+
+message SuperGroupV1sDeleteHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  int32 maxID = 3 ;
+		
+}
+
+message SuperGroupV1sDeleteInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  repeated int32 iD = 3 ;
+		
+}
+
+message SuperGroupV1sDeleteUserHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		InputUserAbsClass userID = 3 ;
+}
+
+message SuperGroupV1sEditAboutReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  string about = 3 ;
+		
+}
+
+message SuperGroupV1sEditAdminReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		InputUserAbsClass userID = 3 ;  SuperGroupV1AdminRights adminRights = 4 ;
+		
+}
+
+message SuperGroupV1sEditBannedReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		InputUserAbsClass userID = 3 ;  SuperGroupV1BannedRights bannedRights = 4 ;
+		
+}
+
+message SuperGroupV1sEditPhotoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		InputChatPhotoAbsClass photo = 3 ;
+}
+
+message SuperGroupV1sEditTitleReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  string title = 3 ;
+		
+}
+
+message SuperGroupV1sExportInviteReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;
+}
+
+message SuperGroupV1sExportInfoLinkReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  int32 iD = 3 ;
+		  bool grouped = 4 ;
+		
+}
+
+message SuperGroupV1sGetAdminLogReq{ 
+		pb_rpc.Context reqCtx = 1;
+		    
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  string q = 3 ;
+		  SuperGroupV1AdminLogEventsFilter eventsFilter = 4 ;
+		  repeated InputUserAbsClass admins = 5 ;
+		  int64 maxID = 6 ;
+		  int64 minID = 7 ;
+		  int32 limit = 8 ;
+		
+}
+
+message SuperGroupV1sGetAdminedPublicSuperGroupV1sReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message SuperGroupV1sGetSuperGroupV1sReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputSuperGroupV1AbsClass iD = 2 ;
+		
+}
+
+message SuperGroupV1sGetFullSuperGroupV1Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;
+}
+
+message SuperGroupV1sGetLeftSuperGroupV1sReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 offset = 2 ;
+		
+}
+
+message SuperGroupV1sGetInfosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  repeated InputInfoAbsClass iD = 3 ;
+		
+}
+
+message SuperGroupV1sGetParticipantReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		InputUserAbsClass userID = 3 ;
+}
+
+message SuperGroupV1sGetParticipantsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		SuperGroupV1ParticipantsFilterAbsClass filter = 3 ;  int32 offset = 4 ;
+		  int32 limit = 5 ;
+		  int32 hash = 6 ;
+		
+}
+
+message SuperGroupV1sInviteToSuperGroupV1Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  repeated InputUserAbsClass users = 3 ;
+		
+}
+
+message SuperGroupV1sJoinSuperGroupV1Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;
+}
+
+message SuperGroupV1sLeaveSuperGroupV1Req{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;
+}
+
+message SuperGroupV1sReadHistoryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  int32 maxID = 3 ;
+		
+}
+
+message SuperGroupV1sReadInfoContentsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  repeated int32 iD = 3 ;
+		
+}
+
+message SuperGroupV1sReportSpamReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		InputUserAbsClass userID = 3 ;  repeated int32 iD = 4 ;
+		
+}
+
+message SuperGroupV1sSetStickersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;   
+		InputStickerSetAbsClass stickerset = 3 ;
+}
+
+message SuperGroupV1sToggleInvitesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  bool enabled = 3 ;
+		
+}
+
+message SuperGroupV1sTogglePreHistoryHiddenReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  bool enabled = 3 ;
+		
+}
+
+message SuperGroupV1sToggleSignaturesReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  bool enabled = 3 ;
+		
+}
+
+message SuperGroupV1sUpdatePinnedInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool silent = 2 ;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 3 ;  int32 iD = 4 ;
+		
+}
+
+message SuperGroupV1sUpdateUsernameReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputSuperGroupV1AbsClass superGroupV1 = 2 ;  string username = 3 ;
+		
+}
+
+
+// message resp
+message SuperGroupV1sCheckUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message SuperGroupV1sCreateSuperGroupV1Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sDeleteSuperGroupV1Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sDeleteHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message SuperGroupV1sDeleteInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedInfos messagesAffectedInfos = 2;
+}
+
+message SuperGroupV1sDeleteUserHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosAffectedHistory messagesAffectedHistory = 2;
+}
+
+message SuperGroupV1sEditAboutResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message SuperGroupV1sEditAdminResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sEditBannedResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sEditPhotoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sEditTitleResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sExportInviteResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ExportedChatInviteAbsClass exportedChatInviteAbsClass = 2;
+}
+
+message SuperGroupV1sExportInfoLinkResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ExportedInfoLink exportedInfoLink = 2;
+}
+
+message SuperGroupV1sGetAdminLogResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	SuperGroupV1sAdminLogResults superGroupV1sAdminLogResults = 2;
+}
+
+message SuperGroupV1sGetAdminedPublicSuperGroupV1sResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatsAbsClass messagesChatsAbsClass = 2;
+}
+
+message SuperGroupV1sGetSuperGroupV1sResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatsAbsClass messagesChatsAbsClass = 2;
+}
+
+message SuperGroupV1sGetFullSuperGroupV1Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatFull messagesChatFull = 2;
+}
+
+message SuperGroupV1sGetLeftSuperGroupV1sResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatsAbsClass messagesChatsAbsClass = 2;
+}
+
+message SuperGroupV1sGetInfosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosInfosAbsClass messagesInfosAbsClass = 2;
+}
+
+message SuperGroupV1sGetParticipantResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	SuperGroupV1sSuperGroupV1Participant superGroupV1sSuperGroupV1Participant = 2;
+}
+
+message SuperGroupV1sGetParticipantsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	SuperGroupV1sSuperGroupV1ParticipantsAbsClass superGroupV1sSuperGroupV1ParticipantsAbsClass = 2;
+}
+
+message SuperGroupV1sInviteToSuperGroupV1Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sJoinSuperGroupV1Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sLeaveSuperGroupV1Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sReadHistoryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message SuperGroupV1sReadInfoContentsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message SuperGroupV1sReportSpamResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message SuperGroupV1sSetStickersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message SuperGroupV1sToggleInvitesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sTogglePreHistoryHiddenResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sToggleSignaturesResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sUpdatePinnedInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message SuperGroupV1sUpdateUsernameResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+

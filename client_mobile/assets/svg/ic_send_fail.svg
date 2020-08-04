@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>gantanhao</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M50,64 C53.8659932,64 57,67.1340068 57,71 C57,74.8659932 53.8659932,78 50,78 C46.1340068,78 43,74.8659932 43,71 C43,67.1340068 46.1340068,64 50,64 Z M50,24 C54.7169697,24 58.5408292,27.8238595 58.5408292,32.5408292 C58.5408292,32.9882486 58.5056715,33.4349763 58.4356808,33.8768874 L54.8599934,56.4532663 C54.4452534,59.0718754 52.1877154,61 49.5364661,61 C46.9011806,61 44.6729586,59.0491407 44.3246885,56.4369697 L41.3215649,33.9122886 C40.6825382,29.1193213 44.0499724,24.71582 48.8429397,24.0767933 C49.2265057,24.025654 49.61304,24 50,24 Z" id="path-1"></path>
+    </defs>
+    <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标/原型/感叹号">
+            <g id="感叹号">
+                <circle id="椭圆形" fill="#FF2654" cx="50" cy="50" r="50"></circle>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

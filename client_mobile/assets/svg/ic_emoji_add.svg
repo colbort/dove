@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bianzu</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="表情管理-收藏的表情详情页面" transform="translate(-10.000000, -89.000000)">
+            <g id="编组-3" transform="translate(10.000000, 89.000000)">
+                <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="52" height="52"></rect>
+                <g id="加" transform="translate(10.000000, 10.000000)" fill="#333333" fill-opacity="0.5" fill-rule="nonzero">
+                    <rect id="矩形" opacity="0" x="0" y="0" width="32" height="32"></rect>
+                    <path d="M2.73963637,16.7425455 L29.3774545,16.7425455 L29.3774545,18.1970909 L2.73963637,18.1970909 L2.73963637,16.7425455 Z M15.3309091,4.15054547 L16.7854545,4.15054547 L16.7854545,30.7876364 L15.3309091,30.7876364 L15.3309091,4.15054547 Z" id="形状"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

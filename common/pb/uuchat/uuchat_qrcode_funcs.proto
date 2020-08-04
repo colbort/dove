@@ -1,0 +1,51 @@
+// Package qrcode AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_qrcode_obj.proto";
+
+package pb_uuchat;
+
+service qrcodeServer { 
+    rpc QrcodeDecodeQrCode (QrcodeDecodeQrCodeReq) returns (QrcodeDecodeQrCodeResp) {} 
+    rpc QrcodeGetQr (QrcodeGetQrReq) returns (QrcodeGetQrResp) {} 
+    rpc QrcodeResetQr (QrcodeResetQrReq) returns (QrcodeResetQrResp) {} 
+}
+
+// message req
+message QrcodeDecodeQrCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  QrcodeDecodeQr content = 2 ;
+		
+}
+
+message QrcodeGetQrReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		QrInputAbsClass code = 2 ;
+}
+
+message QrcodeResetQrReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		QrInputAbsClass recode = 2 ;
+}
+
+
+// message resp
+message QrcodeDecodeQrCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	QrcodeDecode qrcodeDecode = 2;
+}
+
+message QrcodeGetQrResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	QrcodeCode qrcodeCode = 2;
+}
+
+message QrcodeResetQrResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	QrcodeCode qrcodeCode = 2;
+}
+

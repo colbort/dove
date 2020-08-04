@@ -1,0 +1,71 @@
+// Package qrcode AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message QrcodeCode 定义 
+message QrcodeCode {  
+	bytes code = 1;	//core.Bytes
+}
+
+// message QrcodeDecode 定义 
+message QrcodeDecode {  
+	QrPeerAbsClass peer = 1;	//QrPeerAbsClass
+}
+
+// message QrcodeDecodeQr 定义 
+message QrcodeDecodeQr {  
+	string qr = 1;	//string
+}
+
+
+
+
+// ExyQrcodeCode 枚举
+enum ExyQrcodeCode { 
+	EVVQrcodeCode = 0;
+}
+
+
+message QrcodeCodeAbsClass { 
+  ExyQrcodeCode type = 1;
+    oneof value { 
+		QrcodeCode qrcodeCode= 2;
+    }
+}
+
+
+
+// ExyQrcodeDecode 枚举
+enum ExyQrcodeDecode { 
+	EVVQrcodeDecode = 0;
+}
+
+
+message QrcodeDecodeAbsClass { 
+  ExyQrcodeDecode type = 1;
+    oneof value { 
+		QrcodeDecode qrcodeDecode= 2;
+    }
+}
+
+
+
+// ExyQrcodeDecodeQr 枚举
+enum ExyQrcodeDecodeQr { 
+	EVVQrcodeDecodeQr = 0;
+}
+
+
+message QrcodeDecodeQrAbsClass { 
+  ExyQrcodeDecodeQr type = 1;
+    oneof value { 
+		QrcodeDecodeQr qrcodeDecodeQr= 2;
+    }
+}
+
+
+

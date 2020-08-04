@@ -1,0 +1,240 @@
+// Package help AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_help_obj.proto";
+
+package pb_uuchat;
+
+service helpServer { 
+    rpc HelpAcceptTermsOfService (HelpAcceptTermsOfServiceReq) returns (HelpAcceptTermsOfServiceResp) {} 
+    rpc HelpGetAppChangelog (HelpGetAppChangelogReq) returns (HelpGetAppChangelogResp) {} 
+    rpc HelpGetAppUpdate (HelpGetAppUpdateReq) returns (HelpGetAppUpdateResp) {} 
+    rpc HelpGetCdnConfig (HelpGetCdnConfigReq) returns (HelpGetCdnConfigResp) {} 
+    rpc HelpGetConfig (HelpGetConfigReq) returns (HelpGetConfigResp) {} 
+    rpc HelpGetConfigForIos (HelpGetConfigForIosReq) returns (HelpGetConfigForIosResp) {} 
+    rpc HelpGetConfigV2 (HelpGetConfigV2Req) returns (HelpGetConfigV2Resp) {} 
+    rpc HelpGetDeepLinkInfo (HelpGetDeepLinkInfoReq) returns (HelpGetDeepLinkInfoResp) {} 
+    rpc HelpGetInviteText (HelpGetInviteTextReq) returns (HelpGetInviteTextResp) {} 
+    rpc HelpGetInviteTextLyr61 (HelpGetInviteTextLyr61Req) returns (HelpGetInviteTextLyr61Resp) {} 
+    rpc HelpGetNearestDc (HelpGetNearestDcReq) returns (HelpGetNearestDcResp) {} 
+    rpc HelpGetPassportConfig (HelpGetPassportConfigReq) returns (HelpGetPassportConfigResp) {} 
+    rpc HelpGetProxyData (HelpGetProxyDataReq) returns (HelpGetProxyDataResp) {} 
+    rpc HelpGetRecentMeUrls (HelpGetRecentMeUrlsReq) returns (HelpGetRecentMeUrlsResp) {} 
+    rpc HelpGetSupport (HelpGetSupportReq) returns (HelpGetSupportResp) {} 
+    rpc HelpGetTermsOfServiceUpdate (HelpGetTermsOfServiceUpdateReq) returns (HelpGetTermsOfServiceUpdateResp) {} 
+    rpc HelpReviewLog (HelpReviewLogReq) returns (HelpReviewLogResp) {} 
+    rpc HelpSaveAppLog (HelpSaveAppLogReq) returns (HelpSaveAppLogResp) {} 
+    rpc HelpSetBotUpdatesStatus (HelpSetBotUpdatesStatusReq) returns (HelpSetBotUpdatesStatusResp) {} 
+}
+
+// message req
+message HelpAcceptTermsOfServiceReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  DataJSON iD = 2 ;
+		
+}
+
+message HelpGetAppChangelogReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string prevAppVersion = 2 ;
+		
+}
+
+message HelpGetAppUpdateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string source = 2 ;
+		
+}
+
+message HelpGetCdnConfigReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message HelpGetConfigReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message HelpGetConfigForIosReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string bundleID = 2 ;
+		
+}
+
+message HelpGetConfigV2Req{ 
+		pb_rpc.Context reqCtx = 1;
+		  string deviceModel = 2 ;
+		  int32 aPIID = 3 ;
+		  string appVersion = 4 ;
+		
+}
+
+message HelpGetDeepLinkInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string path = 2 ;
+		
+}
+
+message HelpGetInviteTextReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message HelpGetInviteTextLyr61Req{ 
+		pb_rpc.Context reqCtx = 1;
+		  string langCode = 2 ;
+		
+}
+
+message HelpGetNearestDcReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message HelpGetPassportConfigReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message HelpGetProxyDataReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message HelpGetRecentMeUrlsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string referer = 2 ;
+		
+}
+
+message HelpGetSupportReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message HelpGetTermsOfServiceUpdateReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message HelpReviewLogReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		PeerAbsClass toPeer = 2 ;   
+		InfoAbsClass message = 3 ;
+}
+
+message HelpSaveAppLogReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputAppEvent events = 2 ;
+		
+}
+
+message HelpSetBotUpdatesStatusReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 pendingUpdatesCount = 2 ;
+		  string message = 3 ;
+		
+}
+
+
+// message resp
+message HelpAcceptTermsOfServiceResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message HelpGetAppChangelogResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message HelpGetAppUpdateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpAppUpdateAbsClass helpAppUpdateAbsClass = 2;
+}
+
+message HelpGetCdnConfigResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	CdnConfig cdnConfig = 2;
+}
+
+message HelpGetConfigResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Config config = 2;
+}
+
+message HelpGetConfigForIosResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Config config = 2;
+}
+
+message HelpGetConfigV2Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Config config = 2;
+}
+
+message HelpGetDeepLinkInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpDeepLinkInfoAbsClass helpDeepLinkInfoAbsClass = 2;
+}
+
+message HelpGetInviteTextResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpInviteText helpInviteText = 2;
+}
+
+message HelpGetInviteTextLyr61Resp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpInviteText helpInviteText = 2;
+}
+
+message HelpGetNearestDcResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	NearestDc nearestDc = 2;
+}
+
+message HelpGetPassportConfigResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpPassportConfigAbsClass helpPassportConfigAbsClass = 2;
+}
+
+message HelpGetProxyDataResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpProxyDataAbsClass helpProxyDataAbsClass = 2;
+}
+
+message HelpGetRecentMeUrlsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpRecentMeUrls helpRecentMeUrls = 2;
+}
+
+message HelpGetSupportResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpSupport helpSupport = 2;
+}
+
+message HelpGetTermsOfServiceUpdateResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HelpTermsOfServiceUpdateAbsClass helpTermsOfServiceUpdateAbsClass = 2;
+}
+
+message HelpReviewLogResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message HelpSaveAppLogResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message HelpSetBotUpdatesStatusResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+

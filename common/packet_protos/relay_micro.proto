@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+import "a_payload.proto";
+
+// relayMsgEvent 消息中继事件
+message relayMsgEvent {
+  int32 relayType =
+      1; // 0:用户消息（默认）  1:群信息  2:设备消息(设备下线)  3:活动状态
+  int64 connId = 2;        // 连接id
+  int32 userId = 3;        // 用户id
+  Payload payload = 4;     // 发送数据
+  int64 exConnId = 5;      // 排除id, 不用推送消息
+  bool noAck = 6;          // 是否需要ack
+  string gatewayTopic = 7; // 网关信息
+  int64 fromId = 8;        // 主要用于消息响应，请求id
+  int32 chatId = 9;
+}
+
+message GetUsersGateWayRequest { repeated int32 userIds = 1; }
+
+message Result { map<int64, string> gateways = 1; }
+
+message GetUsersGateWayResponse { map<int32, Result> results = 1; }
+
+message GetKeyIDGateWayRequest { repeated int64 keyIds = 1; }
+
+// AuthKeyGateResult 返回authkey对应的连接和用户 key为connid value用户
+message AuthKeyGateResult {
+  map<int64, int32> conns = 1; // connID--userID
+}
+
+message AuthKeyResult {
+  map<string, string> gateways = 1;
+  map<string, AuthKeyGateResult> details = 2;
+}
+
+message GetKeyIDGateWayResponse { map<int64, AuthKeyResult> authKeyResult = 1; }
+
+message GetUserConnnectsCountRequest { int32 userId = 1; }
+
+message GetUserConnnectsCountResponse { int32 count = 1; }
+
+service RelayService {
+  rpc RelayMsg(relayMsgEvent) returns (RespContext) {}
+  rpc RelayMsgByConnId(relayMsgEvent) returns (RespContext) {}
+  rpc RelayMsgByChatId(relayMsgEvent) returns (RespContext) {}
+  rpc GetUsersGateWay(GetUsersGateWayRequest)
+      returns (GetUsersGateWayResponse) {}
+  rpc GetKeyIDGateWay(GetKeyIDGateWayRequest)
+      returns (GetKeyIDGateWayResponse) {}
+  rpc GetUserConnnectsCount(GetUserConnnectsCountRequest)
+      returns (GetUserConnnectsCountResponse) {}
+}
+
+// userGateWayPubMsg 用户上下线消息推送
+message userGateWayPubMsg {
+  int64 connId = 1;        // 连接id
+  int32 userId = 2;        // 用户id
+  string gatewayTopic = 3; // 网关信息
+  bool logout = 4;         // true表示登出   false（默认）登录
+  int64 keyId = 5;         // authkey 对应一个终端设备
+}

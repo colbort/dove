@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>sendFile</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="输入框icon" transform="translate(-627.000000, -173.000000)">
+            <g id="发送文件" transform="translate(627.000000, 173.000000)">
+                <g>
+                    <rect id="矩形" fill="#000000" fill-rule="nonzero" opacity="0" x="0" y="0" width="50" height="50"></rect>
+                    <circle id="椭圆形" fill="#FFFFFF" cx="25" cy="25" r="25"></circle>
+                    <path d="M22.893875,13 C24.1245608,13 25.1901014,13.8466574 25.45675,15.0366667 L25.583625,15.6 L36.375,15.6 C37.8247475,15.6 39,16.7640597 39,18.2 L39,36.4 C39,37.8359403 37.8247475,39 36.375,39 L13.625,39 C12.1752525,39 11,37.8359403 11,36.4 L11,15.6 C11,14.1640597 12.1752525,13 13.625,13 L22.893875,13 Z M22.893875,15.6 L13.625,15.6 L13.625,36.4 L36.375,36.4 L36.375,22.5333333 L24.4505,22.5333333 L22.893875,15.6 Z M34.625,31.2 L34.625,33.8 L15.375,33.8 L15.375,31.2 L34.625,31.2 Z M36.375,18.2 L26.166375,18.2 L26.55575,19.9333333 L36.375,19.9333333 L36.375,18.2 L36.375,18.2 Z" id="形状" fill="#000000" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

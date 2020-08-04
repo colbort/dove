@@ -1,0 +1,94 @@
+// Package storage AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message StorageFileUnknown 定义 
+message StorageFileUnknown { 
+}
+
+// message StorageFilePartial 定义 
+message StorageFilePartial { 
+}
+
+// message StorageFileJpeg 定义 
+message StorageFileJpeg { 
+}
+
+// message StorageFileGif 定义 
+message StorageFileGif { 
+}
+
+// message StorageFilePng 定义 
+message StorageFilePng { 
+}
+
+// message StorageFilePdf 定义 
+message StorageFilePdf { 
+}
+
+// message StorageFileMp3 定义 
+message StorageFileMp3 { 
+}
+
+// message StorageFileMov 定义 
+message StorageFileMov { 
+}
+
+// message StorageFileMp4 定义 
+message StorageFileMp4 { 
+}
+
+// message StorageFileWebp 定义 
+message StorageFileWebp { 
+}
+
+
+
+
+// ExyStorageFileType 枚举
+enum ExyStorageFileType { 
+	EVVStorageFileUnknown = 0;
+	EVVStorageFilePartial = 1;
+	EVVStorageFileJpeg = 2;
+	EVVStorageFileGif = 3;
+	EVVStorageFilePng = 4;
+	EVVStorageFilePdf = 5;
+	EVVStorageFileMp3 = 6;
+	EVVStorageFileMov = 7;
+	EVVStorageFileMp4 = 8;
+	EVVStorageFileWebp = 9;
+}
+
+
+message StorageFileTypeAbsClass { 
+  ExyStorageFileType type = 1;
+    oneof value { 
+		StorageFileUnknown storageFileUnknown= 2;
+		StorageFilePartial storageFilePartial= 3;
+		StorageFileJpeg storageFileJpeg= 4;
+		StorageFileGif storageFileGif= 5;
+		StorageFilePng storageFilePng= 6;
+		StorageFilePdf storageFilePdf= 7;
+		StorageFileMp3 storageFileMp3= 8;
+		StorageFileMov storageFileMov= 9;
+		StorageFileMp4 storageFileMp4= 10;
+		StorageFileWebp storageFileWebp= 11;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

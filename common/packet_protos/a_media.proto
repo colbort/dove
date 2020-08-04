@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package pkt;
+
+import "file.proto";
+import "sticker.proto";
+
+//****Media Message*************/
+//--------start----------------//
+//未知文件类型消息请求/返回
+message MessageMediaEmpty {
+  FileInfo fileInfo = 1; // 文件信息
+  string fileName = 2;   //文件名
+}
+//----------stop--------------//
+
+//---------start---------------//
+enum EnumPhotoLayout {
+  EnumValuePhotoLayoutSquare = 0; //正方形布局
+  EnumValuePhotoLayoutRound = 1;  //圆形布局
+}
+// 图片类型请求/返回
+message MessageMediaPhoto {
+  EnumPhotoLayout ennumPhotoLayout = 1;
+  repeated FileInfo fileVolumeIds = 2;    // 最清晰图
+  repeated FileInfo minThumbnail = 3;     // 最小缩略图
+  repeated FileInfo LargestThumbnail = 4; // 最大缩略图
+}
+//------------stop------------//
+//-----------start-------------//
+// message MessageMediaStickerReq {}
+// 贴图类型请求/返回
+message MessageMediaSticker {
+  Sticker sticker = 1; // sticker 信息
+}
+//-----------stop-------------//
+
+//-----------start-------------//
+// 音频类型请求/返回
+message MessageMediaAudio {
+  FileInfo audioFile = 1; // 音频文件
+  string duration = 2;
+}
+//------------------------//
+
+//-----------start-------------//
+// 视频类型请求/返回
+message MessagemediaVedio {
+  FileInfo coverPicture = 1;
+  FileInfo vedioFile = 2; // 视频文件
+  string duration = 3;
+}
+//-----------stop-------------//
+
+//-----------start-------------//
+// 地理位置类型请求返回体
+message MessageMediaGeo {
+  double lat = 1;  // 经度
+  double long = 2; // 纬度
+}
+//-----------stop-------------//
+
+//-----------start-------------//
+// 联系人类型请求/返回
+message MessageMediaContact {
+  string phoneNumber = 1; // string
+  string firstName = 2;   // string
+  string lastName = 3;    // string
+  string vcard = 4;       // string
+  int32 userID = 5;       // int32
+}
+//-----------stop-------------//
+
+//-----------start-------------//
+// 文档类型请求/返回
+message MessageMediaDocument {
+  FileInfo fileInfo = 1; // 文档信息
+  string fileName = 2;   //文档名
+}
+//-----------stop-------------//
+
+// message GeoPointInterface {}
+
+// EnumMessageMedia 枚举
+enum EnumMessageMedia {
+  EnumValueMessageMediaEmpty = 0;    // 空类型
+  EnumValueMessageMediaPhoto = 1;    // 图片类型FileInfo
+  EnumValueMessageMediaSticker = 2;  // 贴图类型FileInfo
+  EnumValueMessageMediaAudio = 3;    // 音频类型
+  EnumValueMessageMediaVideo = 4;    // 视频类型
+  EnumValueMessageMediaGeo = 5;      // 地理位置类型
+  EnumValueMessageMediaContact = 6;  // 联系人类型
+  EnumValueMessageMediaDocument = 7; // 文档类型
+}
+
+message MessageMediaInterface {
+  EnumMimeType mimeType = 10;
+  EnumMessageMedia type = 1;
+  oneof value {
+    MessageMediaEmpty messageMediaEmpty = 2;
+    MessageMediaPhoto messageMediaPhoto = 3;
+    MessageMediaSticker messageMediaSticker = 4;
+    MessageMediaAudio messageMediaAudio = 5;
+    MessagemediaVedio messageMediaVideo = 6;
+    MessageMediaGeo messageMediaGeo = 7;
+    MessageMediaContact messageMediaContact = 8;
+    MessageMediaDocument messageMediaDocument = 9;
+  }
+}
+//****Media Message*************/

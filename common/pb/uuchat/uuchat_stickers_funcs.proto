@@ -1,0 +1,68 @@
+// Package stickers AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+service stickersServer { 
+    rpc StickersAddStickerToSet (StickersAddStickerToSetReq) returns (StickersAddStickerToSetResp) {} 
+    rpc StickersChangeStickerPosition (StickersChangeStickerPositionReq) returns (StickersChangeStickerPositionResp) {} 
+    rpc StickersCreateStickerSet (StickersCreateStickerSetReq) returns (StickersCreateStickerSetResp) {} 
+    rpc StickersRemoveStickerFromSet (StickersRemoveStickerFromSetReq) returns (StickersRemoveStickerFromSetResp) {} 
+}
+
+// message req
+message StickersAddStickerToSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputStickerSetAbsClass stickerset = 2 ;  InputStickerSetItem sticker = 3 ;
+		
+}
+
+message StickersChangeStickerPositionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputDocumentAbsClass sticker = 2 ;  int32 position = 3 ;
+		
+}
+
+message StickersCreateStickerSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool masks = 2 ;
+		   
+		InputUserAbsClass userID = 3 ;  string title = 4 ;
+		  string shortName = 5 ;
+		  repeated InputStickerSetItem stickers = 6 ;
+		
+}
+
+message StickersRemoveStickerFromSetReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputDocumentAbsClass sticker = 2 ;
+}
+
+
+// message resp
+message StickersAddStickerToSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosStickerSet messagesStickerSet = 2;
+}
+
+message StickersChangeStickerPositionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosStickerSet messagesStickerSet = 2;
+}
+
+message StickersCreateStickerSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosStickerSet messagesStickerSet = 2;
+}
+
+message StickersRemoveStickerFromSetResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosStickerSet messagesStickerSet = 2;
+}
+

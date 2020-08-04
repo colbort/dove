@@ -1,0 +1,265 @@
+// Package auth AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_auth_obj.proto";
+
+package pb_uuchat;
+
+service authServer { 
+    rpc AuthBindTempAuthKey (AuthBindTempAuthKeyReq) returns (AuthBindTempAuthKeyResp) {} 
+    rpc AuthCancelCode (AuthCancelCodeReq) returns (AuthCancelCodeResp) {} 
+    rpc AuthCheckPassword (AuthCheckPasswordReq) returns (AuthCheckPasswordResp) {} 
+    rpc AuthCheckPhone (AuthCheckPhoneReq) returns (AuthCheckPhoneResp) {} 
+    rpc AuthCompleteUserInfo (AuthCompleteUserInfoReq) returns (AuthCompleteUserInfoResp) {} 
+    rpc AuthDropTempAuthKeys (AuthDropTempAuthKeysReq) returns (AuthDropTempAuthKeysResp) {} 
+    rpc AuthExportAuth (AuthExportAuthReq) returns (AuthExportAuthResp) {} 
+    rpc AuthImportAuth (AuthImportAuthReq) returns (AuthImportAuthResp) {} 
+    rpc AuthImportBotAuth (AuthImportBotAuthReq) returns (AuthImportBotAuthResp) {} 
+    rpc AuthLogIn (AuthLogInReq) returns (AuthLogInResp) {} 
+    rpc AuthLogOut (AuthLogOutReq) returns (AuthLogOutResp) {} 
+    rpc AuthRecoverPassword (AuthRecoverPasswordReq) returns (AuthRecoverPasswordResp) {} 
+    rpc AuthReqPasswordRecovery (AuthReqPasswordRecoveryReq) returns (AuthReqPasswordRecoveryResp) {} 
+    rpc AuthResendCode (AuthResendCodeReq) returns (AuthResendCodeResp) {} 
+    rpc AuthResetAuth (AuthResetAuthReq) returns (AuthResetAuthResp) {} 
+    rpc AuthSendCode (AuthSendCodeReq) returns (AuthSendCodeResp) {} 
+    rpc AuthSendCodeForiOS (AuthSendCodeForiOSReq) returns (AuthSendCodeForiOSResp) {} 
+    rpc AuthSignIn (AuthSignInReq) returns (AuthSignInResp) {} 
+    rpc AuthSignUp (AuthSignUpReq) returns (AuthSignUpResp) {} 
+}
+
+// message req
+message AuthBindTempAuthKeyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 permAuthKeyID = 2 ;
+		  int64 nonce = 3 ;
+		  int32 expiresAt = 4 ;
+		  bytes encryptedInfo = 5 ;
+		
+}
+
+message AuthCancelCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  string phoneCodeHash = 3 ;
+		
+}
+
+message AuthCheckPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputCheckPasswordSRPAbsClass password = 2 ;
+}
+
+message AuthCheckPhoneReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		
+}
+
+message AuthCompleteUserInfoReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   string nickName = 2 ;
+		  bytes photo = 3 ;
+		
+}
+
+message AuthDropTempAuthKeysReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int64 exceptAuthKeys = 2 ;
+		
+}
+
+message AuthExportAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 dcID = 2 ;
+		
+}
+
+message AuthImportAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 iD = 2 ;
+		  bytes bytes = 3 ;
+		
+}
+
+message AuthImportBotAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   int32 aPIID = 2 ;
+		  string aPIHash = 3 ;
+		  string botAuthToken = 4 ;
+		
+}
+
+message AuthLogInReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  string phoneCodeHash = 3 ;
+		  string phoneCode = 4 ;
+		
+}
+
+message AuthLogOutReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AuthRecoverPasswordReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string code = 2 ;
+		
+}
+
+message AuthReqPasswordRecoveryReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AuthResendCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  string phoneCodeHash = 3 ;
+		
+}
+
+message AuthResetAuthReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message AuthSendCodeReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool allowFlashcall = 2 ;
+		  string phoneNumber = 3 ;
+		  bool currentNumber = 4 ;
+		  int32 aPIID = 5 ;
+		  string aPIHash = 6 ;
+		
+}
+
+message AuthSendCodeForiOSReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   string phoneNumber = 2 ;
+		  bool currentNumber = 3 ;
+		  int32 aPIID = 4 ;
+		  string aPIHash = 5 ;
+		  string langCode = 6 ;
+		
+}
+
+message AuthSignInReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  string phoneCodeHash = 3 ;
+		  string phoneCode = 4 ;
+		
+}
+
+message AuthSignUpReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  string phoneNumber = 2 ;
+		  string phoneCodeHash = 3 ;
+		  string phoneCode = 4 ;
+		  string firstName = 5 ;
+		  string lastName = 6 ;
+		
+}
+
+
+// message resp
+message AuthBindTempAuthKeyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AuthCancelCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AuthCheckPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+
+message AuthCheckPhoneResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthCheckedPhone authCheckedPhone = 2;
+}
+
+message AuthCompleteUserInfoResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+
+message AuthDropTempAuthKeysResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AuthExportAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthExportedAuth authExportedAuth = 2;
+}
+
+message AuthImportAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+
+message AuthImportBotAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+
+message AuthLogInResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+
+message AuthLogOutResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AuthRecoverPasswordResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+
+message AuthReqPasswordRecoveryResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthPasswordRecovery authPasswordRecovery = 2;
+}
+
+message AuthResendCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthSentCode authSentCode = 2;
+}
+
+message AuthResetAuthResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message AuthSendCodeResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthSentCode authSentCode = 2;
+}
+
+message AuthSendCodeForiOSResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthSentCode authSentCode = 2;
+}
+
+message AuthSignInResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+
+message AuthSignUpResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	AuthAuth authAuth = 2;
+}
+

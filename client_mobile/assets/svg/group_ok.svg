@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="88px" viewBox="0 0 87 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>编组@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M23.1278328,0.644365081 C23.9869862,1.48442622 24.0024636,2.86191181 23.1624024,3.72106525 C23.1510091,3.73271758 23.1394851,3.74424153 23.1278328,3.75563492 L10.3999107,16.2007143 C9.51550705,17.0654645 8.10233387,17.0654645 7.2179302,16.2007143 L7.15368898,16.1356978 C6.99384292,16.0428408 6.84286231,15.9289019 6.70477272,15.7938809 L0.659009742,9.88246825 C-0.2001437,9.0424071 -0.215621066,7.66492152 0.624440077,6.80576808 C0.635833465,6.79411575 0.647357414,6.7825918 0.659009742,6.77119841 C1.54341341,5.90644816 2.95658659,5.90644816 3.84099026,6.77119841 L8.76,11.581 L19.9458523,0.644365081 C20.8302559,-0.220385174 22.2434291,-0.220385174 23.1278328,0.644365081 Z" id="path-1"></path>
+        <filter x="-269.0%" y="-332.5%" width="638.1%" height="859.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="8" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0782099185 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="IM-对话列表" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="组建群聊01备份" transform="translate(-273.000000, -165.000000)">
+            <g id="编组" transform="translate(290.000000, 170.000000)">
+                <rect id="矩形备份" fill="#5CDBD3" x="0" y="0" width="59" height="59" rx="29.5"></rect>
+                <g id="图标/原型/确定" transform="translate(7.000000, 8.000000)">
+                    <ellipse id="椭圆形" cx="22.5" cy="22" rx="22.5" ry="22"></ellipse>
+                    <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(10.800000, 14.080000)">
+                        <g id="形状结合" fill-rule="nonzero">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

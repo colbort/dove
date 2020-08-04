@@ -1,0 +1,5 @@
+# 本地内置调度地址
+dispatchers:
+  - https://gsa.drqpyx.com:8443/dispatcher
+  - https://gsa.drqpyx.com:8443/dispatcher
+  - https://gsa.drqpyx.com:8443/dispatcher

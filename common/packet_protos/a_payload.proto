@@ -1,0 +1,235 @@
+syntax = "proto3";
+
+package pkt;
+
+import "account.proto";
+import "auth.proto";
+import "base.proto";
+import "chat.proto";
+import "file.proto";
+import "friend.proto";
+import "help.proto";
+import "message.proto";
+import "notify.proto";
+import "object_type.proto";
+import "sticker.proto";
+import "user.proto";
+
+message Payload {
+  OType op = 1;
+  oneof pkt {
+    // OTypeNoop
+    Msg msg = 100;
+    Payloads payloads = 101;
+
+    // OTypeC2SStart
+    C2SPingReq c2SPingReq = 1001;
+    C2SGetFutureSaltsReq c2SGetFutureSaltsReq = 1003;
+    C2SRpcDropAnswerReq c2SRpcDropAnswerReq = 1004;
+    C2SDestroySessionReq c2SDestroySessionReq = 1005;
+
+    // OTypeC2SNonAuthStart
+    C2SGetPqReq c2SGetPqReq = 1102;
+    C2SGetDhReq c2SGetDhReq = 1103;
+    C2SSetClientDhReq c2SSetClientDhReq = 1104;
+    C2SGetConfigReq c2SGetConfigReq = 1105;
+    C2SGetLangsReq c2SGetLangsReq = 1106;
+    C2SGetLangPackReq c2SGetLangPackReq = 1107;
+    C2SGetLastVerReq c2SGetLastVerReq = 1108;
+    // OTypeC2SNonAuthEnd
+
+    // OTypeC2SAuthedStart
+    C2SSignUpReq c2SSignUpReq = 2001;
+    C2SUpdateAccountReq c2SUpdateAccountReq = 2002;
+    C2SLoginReq c2SLoginReq = 2003;
+    C2SUpdatePasswordReq c2SUpdatePasswordReq = 2004;
+    C2SSendPhoneCodeReq c2SSendPhoneCodeReq = 2005;
+    C2SSendEmailCodeReq c2SSendEmailCodeReq = 2006;
+    C2SLogoutReq c2SLogoutReq = 2007;
+    C2SUserSearchReq c2SUserSearchReq = 2008;
+    C2SFindPasswordReq c2SFindPasswordReq = 2009;
+    C2SUpdateProfileReq c2SUpdateProfileReq = 2010;
+    C2SGetFullUserReq c2SGetFullUserReq = 2012;
+    C2SUpdateProfilePhotoReq c2SUpdateProfilePhotoReq = 2013;
+    C2SReportOnlineStatusReq c2SReportOnlineStatusReq = 2014;
+    C2SGetOnlineStatusReq c2SGetOnlineStatusReq = 2015;
+    C2SUpdateDifferenceReq c2SUpdateDifferenceReq = 2016;
+    C2SUpdateUserRegionReq c2SUpdateUserRegionReq = 2200;
+    C2SInitDeviceReq c2SInitDeviceReq = 2201;
+    C2SGetUserDeviceReq c2SGetUserDeviceReq = 2202;
+    C2SDeleteUserDeviceReq c2SDeleteUserDeviceReq = 2203;
+    C2SGetUserPrivacyReq c2SGetUserPrivacyReq = 2204;
+    C2SModifyUserPrivacyReq c2SModifyUserPrivacyReq = 2205;
+    C2SGetUsersPrivacyByTypeReq c2SGetUsersPrivacyByTypeReq = 2206;
+    C2SGetQRCodeValueReq c2SGetQRCodeValueReq = 2207;
+    C2SQRCodeDecodeReq c2SQRCodeDecodeReq = 2208;
+    C2SResetQRCodeValueReq c2SResetQRCodeValueReq = 2209;
+    C2SUserGetBlackReq c2SUserGetBlackReq = 2017;
+    C2SUserAddBlackReq c2SUserAddBlackReq = 2018;
+    C2SUserDelBlackReq c2SUserDelBlackReq = 2019;
+    C2SFriendGetFriendsReq c2SFriendGetFriendsReq = 2020;
+    C2SFriendDelFriendReq c2SFriendDelFriendReq = 2021;
+    C2SFriendGetStrangersReq c2SFriendGetStrangersReq = 2022;
+    C2SFriendDelStrangerReq c2SFriendDelStrangerReq = 2023;
+    C2SFriendAcceptStrangerReq c2SFriendAcceptStrangerReq = 2024;
+    C2SFriendEditFriendReq c2SFriendEditFriendReq = 2026;
+    C2SFriendInviteStrangerReq c2SFriendInviteStrangerReq = 2027;
+    C2SChatGetAllChatsReq c2SChatGetAllChatsReq = 2030;
+    C2SChatGetChatFullReq c2SChatGetChatFullReq = 2031;
+    C2SChatCreateReq c2SChatCreateReq = 2032;
+    C2SChatDisbandReq c2SChatDisbandReq = 2033;
+    C2SChatAddMemberReq c2SChatAddMemberReq = 2034;
+    C2SChatDelMemberReq c2SChatDelMemberReq = 2035;
+    C2SChatMemberQuitReq c2SChatMemberQuitReq = 2036;
+    C2SChatModifyTitleReq c2SChatModifyTitleReq = 2037;
+    C2SChatModifyPhotoReq c2SChatModifyPhotoReq = 2038;
+    C2SChatTransLeadReq c2SChatTransLeadReq = 2039;
+    C2SChatLeadSetAdminReq c2SChatLeadSetAdminReq = 2040;
+    C2SChatLeadCancelAdminReq c2SChatLeadCancelAdminReq = 2041;
+    C2SChatLeadSetAuthReq c2SChatLeadSetAuthReq = 2042;
+    C2SChatMemberSetAuthReq c2SChatMemberSetAuthReq = 2043;
+    C2SChatApplyJoinReq c2SChatApplyJoinReq = 2044;
+    C2SGetChatInfoReq c2SGetChatInfoReq = 2045;
+    C2SMessageSendMessageReq c2SMessageSendMessageReq = 2101;
+    C2SMessageDelMessagesReq c2SMessageDelMessagesReq = 2102;
+    C2SMessageSaveDraftReq c2SMessageSaveDraftReq = 2103;
+    C2SMessageSetTypingReq c2SMessageSetTypingReq = 2104;
+    C2SMessageLoadMessagesReq c2SMessageLoadMessagesReq = 2105;
+    C2SMessageGetPinnedDialogsReq c2SMessageGetPinnedDialogsReq = 2106;
+    C2SMessageGetPeerDialogsReq c2SMessageGetPeerDialogsReq = 2107;
+    C2SMessageGetDialogsReq c2SMessageGetDialogsReq = 2108;
+    C2SMessageDeleteHistoryReq c2SMessageDeleteHistoryReq = 2109;
+    C2SMessageGetHistoryReq c2SMessageGetHistoryReq = 2110;
+    C2SMessageReadHistoryReq c2SMessageReadHistoryReq = 2111;
+    C2SMessageEditReq c2SMessageEditReq = 2113;
+    C2SMessageNewDialogReq c2SMessageNewDialogReq = 2114;
+    C2SChatModifyRemarksReq c2SChatModifyRemarksReq = 2115;
+    C2SMessagePinned c2SMessagePinned = 2116;
+    C2SDialogPinned c2SDialogPinned = 2117;
+    C2SDialogUnread c2SDialogUnread = 2118;
+    C2SFileUploadReq c2SFileUploadReq = 3001;
+    C2SFileDownloadReq c2SFileDownloadReq = 3002;
+    C2SFindFileReq c2SFindFileReq = 3003;
+    C2SGetUserFavoriteStickersReq c2SGetUserFavoriteStickersReq = 3010;
+    C2SEditUserFavoriteStickersReq c2SEditUserFavoriteStickersReq = 3011;
+    C2SGetUserStickerGroupsReq c2SGetUserStickerGroupsReq = 3012;
+    C2SEditUserStickerGroupsReq c2SEditUserStickerGroupsReq = 3013;
+    C2SGetUserStoreStickerGroupsReq c2SGetUserStoreStickerGroupsReq = 3014;
+    C2SGetUserStoreStickerGroupReq c2SGetUserStoreStickerGroupReq = 3015;
+    C2SNotifyUploadDeviceTokenReq c2SNotifyUploadDeviceTokenReq = 4001;
+    C2SNotifyUserOnlineStatusReq c2SNotifyUserOnlineStatusReq = 4002;
+    // OTypeC2SAuthedEnd
+
+    // OTypeC2SEnd
+
+    // OTypeS2CStart
+    S2CPingResp s2CPingResp = 5001;
+    S2CGetPqResp s2CGetPqResp = 5002;
+    S2CGetDhResp s2CGetDhResp = 5003;
+    S2CSetClientDhResp s2CSetClientDhResp = 5004;
+    S2CNewSessionPush s2CNewSessionPush = 5005;
+    S2CGetFutureSaltsResp s2CGetFutureSaltsResp = 5007;
+    S2CRpcDropAnswerResp s2CRpcDropAnswerResp = 5008;
+    S2CDestroySessionResp s2CDestroySessionResp = 5009;
+    S2CGetConfigResp s2CGetConfigResp = 5010;
+    S2CGetLangsResp s2CGetLangsResp = 5011;
+    S2CGetLangPackResp s2CGetLangPackResp = 5012;
+    S2CGetLastVerResp s2CGetLastVerResp = 5013;
+    S2CSignUpResp s2CSignUpResp = 6001;
+    S2CUpdateAccountResp s2CUpdateAccountResp = 6002;
+    S2CLoginResp s2CLoginResp = 6003;
+    S2CUpdatePasswordResp s2CUpdatePasswordResp = 6004;
+    S2CSendPhoneCodeResp s2CSendPhoneCodeResp = 6005;
+    S2CSendEmailCodeResp s2CSendEmailCodeResp = 6006;
+    S2CLogoutResp s2CLogoutResp = 6007;
+    S2CFindPasswordResp s2CFindPasswordResp = 6008;
+    S2CUserSearchResp s2CUserSearchResp = 6009;
+    S2CUpdateProfileResp s2CUpdateProfileResp = 6010;
+    S2CGetFullUserResp s2CGetFullUserResp = 6012;
+    S2CUpdateProfilePhotoResp s2CUpdateProfilePhotoResp = 6013;
+    S2CUpdateUserRegionResp s2CUpdateUserRegionResp = 6014;
+    S2CInitDeviceResp s2CInitDeviceResp = 6200;
+    S2CGetUserDeviceResp s2CGetUserDeviceResp = 6201;
+    S2CDeleteUserDeviceResp s2CDeleteUserDeviceResp = 6202;
+    S2CGetUserPrivacyResp s2CGetUserPrivacyResp = 6203;
+    S2CModifyUserPrivacyResp s2CModifyUserPrivacyResp = 6204;
+    S2CGetUsersPrivacyByTypeResp s2CGetUsersPrivacyByTypeResp = 6205;
+    S2CGetQRCodeValueResp s2CGetQRCodeValueResp = 6206;
+    S2CQRCodeDecodeResp s2CQRCodeDecodeResp = 6207;
+    S2CResetQRCodeValueResp s2CResetQRCodeValueResp = 6208;
+    S2CFileUploadResp s2CFileUploadResp = 6015;
+    S2CFileDownloadResp s2CFileDownloadResp = 6016;
+    S2CFindFileResp s2CFindFileResp = 6017;
+    S2CReportOnlineStatusResp s2CReportOnlineStatusResp = 6018;
+    S2CGetOnlineStatusResp s2CGetOnlineStatusResp = 6019;
+    S2CUpdateDifferenceResp s2CUpdateDifferenceResp = 6020;
+    S2CUserGetBlackResp s2CUserGetBlackResp = 6021;
+    S2CUserAddBlackResp s2CUserAddBlackResp = 6022;
+    S2CFriendDelBlackResp s2CFriendDelBlackResp = 6023;
+    S2CFriendGetFriendsResp s2CFriendGetFriendsResp = 6040;
+    S2CFriendDelFriendResp s2CFriendDelFriendResp = 6041;
+    S2CFriendGetStrangersResp s2CFriendGetStrangersResp = 6042;
+    S2CFriendDelStrangerResp s2CFriendDelStrangerResp = 6043;
+    S2CFriendAcceptStrangerResp s2CFriendAcceptStrangerResp = 6046;
+    S2CFriendEditFriendResp s2CFriendEditFriendResp = 6048;
+    S2CFriendInviteStrangerResp s2CFriendInviteStrangerResp = 6049;
+    S2CChatGetAllChatsResp s2CChatGetAllChatsResp = 6050;
+    S2CChatGetChatFullResp s2CChatGetChatFullResp = 6051;
+    S2CChatCreateResp s2CChatCreateResp = 6052;
+    S2CChatDisbandResp s2CChatDisbandResp = 6053;
+    S2CChatAddMemberResp s2CChatAddMemberResp = 6054;
+    S2CChatDelMemberResp s2CChatDelMemberResp = 6055;
+    S2CChatMemberQuitResp s2CChatMemberQuitResp = 6056;
+    S2CChatModifyTitleResp s2CChatModifyTitleResp = 6057;
+    S2CChatModifyPhotoResp s2CChatModifyPhotoResp = 6058;
+    S2CChatTransLeadResp s2CChatTransLeadResp = 6059;
+    S2CChatLeadSetAdminResp s2CChatLeadSetAdminResp = 6060;
+    S2CChatLeadCancelAdminResp s2CChatLeadCancelAdminResp = 6061;
+    S2CChatLeadSetAuthResp s2CChatLeadSetAuthResp = 6062;
+    S2CChatMemberSetAuthResp s2CChatMemberSetAuthResp = 6063;
+    S2CChatModifyRemarksResp s2CChatModifyRemarksResp = 6064;
+    S2CChatApplyJoinResp s2CChatApplyJoinResp = 6065;
+    S2CGetChatInfoResp s2CGetChatInfoResp = 6066;
+    S2CMessageSendMessageResp s2CMessageSendMessageResp = 6101;
+    S2CMessageDelMessageResp s2CMessageDelMessageResp = 6102;
+    S2CMessageSaveDraftResp s2CMessageSaveDraftResp = 6103;
+    S2CMessageSetTypingResp s2CMessageSetTypingResp = 6104;
+    S2CMessageLoadMessagesResp s2CMessageLoadMessagesResp = 6105;
+    S2CMessageGetPinnedDialogsResp s2CMessageGetPinnedDialogsResp = 6106;
+    S2CMessageGetPeerDialogsResp s2CMessageGetPeerDialogsResp = 6107;
+    S2CMessageGetDialogsResp s2CMessageGetDialogsResp = 6108;
+    S2CMessageDeleteHistoryResp s2CMessageDeleteHistoryResp = 6109;
+    S2CMessageGetHistoryResp s2CMessageGetHistoryResp = 6110;
+    S2CMessageReadHistoryResp s2CMessageReadHistoryResp = 6111;
+    S2CMessageEditResp s2CMessageEditResp = 6113;
+    S2CMessageNewDialogResp s2CMessageNewDialogResp = 6114;
+    S2CMessagePinnedResp s2CMessagePinnedResp = 6115;
+    S2CDialogPinnedResp s2CDialogPinnedResp = 6116;
+    S2CDialogUnreadResp s2CDialogUnreadResp = 6117;
+    S2CGetUserFavoriteStickersResp s2CGetUserFavoriteStickersResp = 6150;
+    S2CEditUserFavoriteStickersResp s2CEditUserFavoriteStickersResp = 6151;
+    S2CGetUserStickerGroupsResp s2CGetUserStickerGroupsResp = 6152;
+    S2CEditUserStickerGroupsResp s2CEditUserStickerGroupsResp = 6153;
+    S2CGetUserStoreStickerGroupsResp s2CGetUserStoreStickerGroupsResp = 6154;
+    S2CGetUserStoreStickerGroupResp s2CGetUserStoreStickerGroupResp = 6155;
+    // OTypeS2CEnd
+
+    // OTypeUpdateStart
+    Update update = 9001;
+    // OTypeUpdateEnd
+  }
+}
+
+message Payloads { repeated Payload payloads = 1; }
+
+message Msg {
+  int64 sessionId = 1;
+  int64 salt = 2;
+  int64 msgId = 3;
+  int32 seqId = 4;
+  int64 fromId = 5;
+  Payload payload = 6;
+  repeated int64 acks = 7;
+  // random padding: 7-199 bytes
+  bytes randBytes = 8;
+}

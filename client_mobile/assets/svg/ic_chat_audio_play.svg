@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M22.7207253,17.3052334 L33.2207253,24.5028129 C34.2597582,25.2150531 34.2597582,26.7849469 33.2207253,27.4971871 L22.7207253,34.6947666 C21.5577546,35.4919642 20,34.634748 20,33.1975796 L20,18.8024204 C20,17.365252 21.5577546,16.5080358 22.7207253,17.3052334 Z" id="path-1"></path>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="消息类型标示icon" transform="translate(-1705.000000, -175.000000)">
+            <g id="播放" transform="translate(1702.000000, 172.000000)">
+                <g>
+                    <rect id="矩形备份-9" x="0" y="0" width="50" height="50"></rect>
+                    <path d="M25,5 C13.9736146,5 5,13.9739244 5,25 C5,36.0256805 13.9743195,45 25,45 C36.0256805,45 45,36.0256805 45,25 C45,13.9743195 36.0256805,5 25,5 Z" id="路径" stroke="#1A1919" stroke-width="4" fill-rule="nonzero"></path>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

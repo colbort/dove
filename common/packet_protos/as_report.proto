@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package pkt;
+
+message AlogBase {
+  uint64 id = 1;          // 日志id
+  int32 apiId = 2;        // 0:iphone 1:android 2:win 3:mac
+  int64 logTime = 3;      // 时间
+  string channelName = 4; // 渠道名
+  string appVersion = 5;  // app版本
+  string bundleId = 6;    // bundleId
+  string deviceName = 7;  // 设备名
+}
+
+message ChannelLog {
+  int32 count = 1;                        // 渠道在线设备总数
+  map<string, VersionLog> versionLog = 2; // 渠道下多个版本 key:版本
+}
+
+message VersionLog {
+  int32 count = 1;                      // 版本在线设备总数
+  map<string, DeviceLog> deviceLog = 2; // 版本下多个设备 key:设备名
+}
+
+message DeviceLog {
+  int32 count = 1; // 在线设备总数
+}
+
+// 在线用户日志 (relay 定时上报   总用户数 日志)
+message AlogOnileUser {
+  uint64 id = 1;     // 日志id
+  int32 count = 2;   // 在线用户总数
+  int64 logTime = 3; // 时间
+}
+
+// 在线设备日志（gateway 定时上报 网关 在线设备总数 日志）
+message AlogDeviceOnline {
+  uint64 id = 1;                          // 日志id
+  int32 count = 2;                        // 网关在线设备总数
+  string gatewayId = 3;                   // 上报网关id
+  int64 logTime = 4;                      // 时间
+  map<string, ChannelLog> channelLog = 5; // 渠道包含信息 key:渠道名
+}
+
+// 用户登录 (gateway  主连接连接上就上报用户login 日志)
+message AlogUserLogIn {
+  AlogBase base = 1;   // 基本信息
+  int32 userId = 2;    // 登陆用户id
+  int64 authKeyId = 3; // authkeyId
+}
+
+// 用户登出 (gateway  主连接断开就上报用户logout 日志)
+message AlogUserLogOut {
+  AlogBase base = 1;   // 基本信息
+  int32 userId = 2;    // 登出用户id
+  int64 authKeyId = 3; // authkeyId
+}
+
+// 用户注册 (gateway  接口行为 调用注册接口就上报singup 日志)
+message AlogUserSignUp {
+  AlogBase base = 1;   // 基本信息
+  int32 userId = 2;    // 注册用户id
+  int64 authKeyId = 3; // authkeyId
+}
+
+// 用户登录 (gateway  接口行为级别 调用登陆接口就上报singin 日志)
+message AlogUserSignIn {
+  AlogBase base = 1;   // 基本信息
+  int32 userId = 2;    // 登陆用户id
+  int64 authKeyId = 3; // authkeyId
+}
+
+// 用户登出 (gateway 接口行为级别 调用singout接口就上报singout 日志)
+message AlogUserSignOut {
+  AlogBase base = 1;   // 基本信息
+  int32 userId = 2;    // 登陆用户id
+  int64 authKeyId = 3; // authkeyId
+}

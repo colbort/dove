@@ -1,0 +1,28 @@
+// Package mail AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_mail_obj.proto";
+
+package pb_uuchat;
+
+service mailServer { 
+    rpc MailSendMail (MailSendMailReq) returns (MailSendMailResp) {} 
+}
+
+// message req
+message MailSendMailReq{ 
+			pb_rpc.Context reqCtx = 1;
+		   
+		MailMailTypeAbsClass typ = 2 ;  string code = 3 ;
+		  string mail = 4 ;
+		
+}
+
+
+// message resp
+message MailSendMailResp{ 
+	bool bool = 1;
+}
+

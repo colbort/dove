@@ -1,0 +1,144 @@
+// Package xyproto AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/xyproto/xyproto_obj.proto";
+
+package pb_xyproto;
+
+service xyprotoServer { 
+    rpc DestroySession (DestroySessionReq) returns (DestroySessionResp) {} 
+    rpc GetFutureSalts (GetFutureSaltsReq) returns (GetFutureSaltsResp) {} 
+    rpc HTTPWait (HTTPWaitReq) returns (HTTPWaitResp) {} 
+    rpc Ping (PingReq) returns (PingResp) {} 
+    rpc PingDelayDisconnect (PingDelayDisconnectReq) returns (PingDelayDisconnectResp) {} 
+    rpc ReqDHParams (ReqDHParamsReq) returns (ReqDHParamsResp) {} 
+    rpc ReqPq (ReqPqReq) returns (ReqPqResp) {} 
+    rpc ReqPqMulti (ReqPqMultiReq) returns (ReqPqMultiResp) {} 
+    rpc RPCDropAnswer (RPCDropAnswerReq) returns (RPCDropAnswerResp) {} 
+    rpc SetClientDHParams (SetClientDHParamsReq) returns (SetClientDHParamsResp) {} 
+}
+
+// message req
+message DestroySessionReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 sessionID = 2 ;
+		
+}
+
+message GetFutureSaltsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 num = 2 ;
+		
+}
+
+message HTTPWaitReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 maxDelay = 2 ;
+		  int32 waitAfter = 3 ;
+		  int32 maxWait = 4 ;
+		
+}
+
+message PingReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 pingID = 2 ;
+		
+}
+
+message PingDelayDisconnectReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 pingID = 2 ;
+		  int32 disconnectDelay = 3 ;
+		
+}
+
+message ReqDHParamsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes nonce = 2 ;
+		  bytes serverNonce = 3 ;
+		  bytes p = 4 ;
+		  bytes q = 5 ;
+		  int64 publicKeyFingerprint = 6 ;
+		  bytes encryptedData = 7 ;
+		
+}
+
+message ReqPqReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes nonce = 2 ;
+		
+}
+
+message ReqPqMultiReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes nonce = 2 ;
+		
+}
+
+message RPCDropAnswerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int64 reqMsgID = 2 ;
+		
+}
+
+message SetClientDHParamsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  bytes nonce = 2 ;
+		  bytes serverNonce = 3 ;
+		  bytes encryptedData = 4 ;
+		
+}
+
+
+// message resp
+message DestroySessionResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	DestroySessionResAbsClass destroySessionResAbsClass = 2;
+}
+
+message GetFutureSaltsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	FutureSalts futureSalts = 2;
+}
+
+message HTTPWaitResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	HTTPWaitAbsClass hTTPWaitAbsClass = 2;
+}
+
+message PingResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Pong pong = 2;
+}
+
+message PingDelayDisconnectResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	Pong pong = 2;
+}
+
+message ReqDHParamsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ServerDHParamsAbsClass serverDHParamsAbsClass = 2;
+}
+
+message ReqPqResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ResPQ resPQ = 2;
+}
+
+message ReqPqMultiResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	ResPQ resPQ = 2;
+}
+
+message RPCDropAnswerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	RPCDropAnswerAbsClass rPCDropAnswerAbsClass = 2;
+}
+
+message SetClientDHParamsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	SetClientDHParamsAnswerAbsClass setClientDHParamsAnswerAbsClass = 2;
+}
+

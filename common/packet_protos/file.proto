@@ -1,0 +1,169 @@
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+
+message FileLocation {
+  string volumeId = 1;  //文件唯一卷ID
+  bytes accessHash = 2; //文件hash
+}
+
+message FileInfo {
+  FileLocation fileLocation = 1;
+  uint64 fileSize = 2;       //文件大小
+  EnumMimeType mimeType = 3; //文件类型
+  bytes fileMd5 = 4;         //文件MD5
+  bool isUpload = 5;         //是否已上传
+}
+
+message C2SFileUploadReq {
+  FileInfo fileInfo = 1;
+  int32 filePart = 2;      //上传文件的第几个分片
+  bytes data = 3;          //上传文件当前片的文件内容
+  bytes md5 = 4;           //上传文件当前片的 md5
+  bytes fileMd5 = 5;       //全文件的fileMd5
+  int32 totalFilepart = 6; //上传文件的总分片数
+}
+// message C2SFileUploadReq2 {
+//   string volumeId = 1; //文件唯一卷ID
+//   bytes data = 2;      //上传文件当前片的文件内容
+//   bytes md5 = 3;       //上传文件当前片的 md5
+//   uint64 offset = 4;   //开始上传偏移量
+//   uint64 limit = 5;    //当前需要上传量截止位置
+//   //（例如：offset=0  limit = 99就是上传0-99位置的文件内容）
+//   //（例如：offset=100  limit = 199就是上传100-199位置的文件内容）
+// }
+// message S2CFileUploadResp2 {
+//   ErrorCode code = 1;  //返回码
+//   string volumeId = 2; //文件唯一卷ID
+//   uint64 offset = 3;   //开始上传偏移量
+//   uint64 limit = 4;    //当前需要上传量截止位置
+// }
+
+message S2CFileUploadResp {
+  ErrorCode code = 1;    //返回码
+  int32 filePart = 2;    //那个分片
+  FileInfo fileInfo = 3; //文件信息
+}
+
+message C2SFileDownloadReq {
+  FileLocation location = 1;
+  int32 offset = 2; //开始下载偏移量
+  int32 limit = 3;  //当前需要下载量截止位置
+  //（例如：offset=0  limit = 99就是下载0-99位置的文件）
+  //（例如：offset=100  limit = 199就是下载100-199位置的文件）
+}
+
+message S2CFileDownloadResp {
+  ErrorCode code = 1;
+  FileInfo fielInfo = 2;
+  int32 offset = 3;
+  int32 limit = 4;
+  bytes data = 5;
+}
+
+message C2SFindFileReq {
+  bytes fileMd5 = 1;         // 文件的Md5
+  bytes accessHash = 2;      // 文件的Sha1
+  uint64 fileSize = 3;       // 文件的大小
+  EnumMimeType mimeType = 4; // 文件类型
+  string volumeId = 5;       // 文件卷id
+}
+
+message S2CFindFileResp {
+  ErrorCode code = 1;
+  FileInfo file = 2;      //文件信息
+  string temVolumeId = 3; //临时空卷ID
+}
+
+// 媒体类型
+// 0-49     文档文件类型
+// 50-99    压缩文件类型的
+// 100-149  文字类型
+// 150-199  图片类型的
+// 200-249  音频文件类型的
+// 250-300  视频文件类型的
+
+enum EnumMimeType {
+  // 文档文件 类型start
+  EnumValueMimeTypeAi = 0;   //.ai         application/postscript
+  EnumValueMimeTypeEps = 1;  //.eps        application/postscript
+  EnumValueMimeTypeExe = 2;  //.exe        application/octet-stream
+  EnumValueMimeTypeDoc = 3;  //.doc        application/vnd.ms-word
+  EnumValueMimeTypeXls = 4;  //.xls        application/vnd.ms-excel
+  EnumValueMimeTypePpt = 5;  //.ppt        application/vnd.ms-powerpoint
+  EnumValueMimeTypePps = 6;  //.pps        application/vnd.ms-powerpoint
+  EnumValueMimeTypePdf = 7;  //.pdf        application/pdf
+  EnumValueMimeTypeXml = 8;  //.xml        application/xml
+  EnumValueMimeTypeOdt = 9;  //.odt application/vnd.oasis.opendocument.text
+  EnumValueMimeTypeSwf = 10; //.swf        application/x-shockwave-flash
+  // 文档文件 类型stop
+
+  // 压缩文件 类型start
+  EnumValueMimeTypeGz = 50;  //.gz         application/x-gzip
+  EnumValueMimeTypeTgz = 51; //.tgz        application/x-gzip
+  EnumValueMimeTypeBz = 52;  //.bz         application/x-bzip2
+  EnumValueMimeTypeBz2 = 53; //.bz2        application/x-bzip2
+  EnumValueMimeTypeTbz = 54; //.tbz        application/x-bzip2
+  EnumValueMimeTypeZip = 55; //.zip        application/zip
+  EnumValueMimeTypeRar = 56; //.rar        application/x-rar
+  EnumValueMimeTypeTar = 57; //.tar        application/x-tar
+  EnumValueMimeType7z = 58;  //.7z         application/x-7z-compressed
+  EnumValueMimeTypeApk = 59; //.apk        application/x-apk-compressed
+  // 压缩文件 类型stop
+
+  // 文字 类型start
+  EnumValueMimeTypeTxt = 100;  //.txt        text/plain
+  EnumValueMimeTypePhp = 101;  //.php        text/x-php
+  EnumValueMimeTypeHtml = 102; //.html       text/html
+  EnumValueMimeTypeHtm = 103;  //.htm        text/html
+  EnumValueMimeTypeJs = 104;   //.js         text/javascript
+  EnumValueMimeTypeCss = 105;  //.css        text/css
+  EnumValueMimeTypeRtf = 106;  //.rtf        text/rtf
+  EnumValueMimeTypeRtfd = 107; //.rtfd       text/rtfd
+  EnumValueMimeTypePy = 108;   //.py         text/x-python
+  EnumValueMimeTypeJava = 109; //.java       text/x-java-source
+  EnumValueMimeTypeRb = 110;   //.rb         text/x-ruby
+  EnumValueMimeTypeSh = 111;   //.sh         text/x-shellscript
+  EnumValueMimeTypePl = 112;   //.pl         text/x-perl
+  EnumValueMimeTypeSql = 113;  //.sql        text/x-sql
+  // 文字 类型stop
+
+  // 图片 类型start
+  EnumValueMimeTypeBmp = 150;  //.bmp        image/x-ms-bmp
+  EnumValueMimeTypeJpg = 151;  //.jpg        image/jpeg
+  EnumValueMimeTypeJpeg = 152; //.jpeg       image/jpeg
+  EnumValueMimeTypeGif = 153;  //.gif        image/gif
+  EnumValueMimeTypePng = 154;  //.png        image/png
+  EnumValueMimeTypeTif = 155;  //.tif        image/tiff
+  EnumValueMimeTypeTiff = 156; //.tiff       image/tiff
+  EnumValueMimeTypeTga = 157;  //.tga        image/x-targa
+  EnumValueMimeTypePsd = 158;  //.psd        image/vnd.adobe.photoshop
+  EnumValueMimeTypeSvg = 159;  //.svg        image/svg
+
+  // 图片 类型start
+
+  // 音频文件 类型start
+  EnumValueMimeTypeMp3 = 200;  //.mp3        audio/mpeg
+  EnumValueMimeTypeMid = 201;  //.mid        audio/midi
+  EnumValueMimeTypeOgg = 202;  //.ogg        audio/ogg
+  EnumValueMimeTypeMp4a = 203; //.mp4a       audio/mp4
+  EnumValueMimeTypeWav = 204;  //.wav        audio/wav
+  EnumValueMimeTypeWma = 205;  //.wma        audio/x-ms-wma
+  EnumValueMimeTypeAc3 = 206;  //.ac3       audio/x-ms-wma
+  EnumValueMimeTypeAcc = 207;  //.acc       audio/x-ms-wma
+  // 音频文件 类型stop
+
+  //视频文件 类型start
+  EnumValueMimeTypeAvi = 250;  //.avi        video/x-msvideo
+  EnumValueMimeTypeDv = 251;   //.dv         video/x-dv
+  EnumValueMimeTypeMp4 = 252;  //.mp4        video/mp4
+  EnumValueMimeTypeMpeg = 253; //.mpeg       video/mpeg
+  EnumValueMimeTypeMpg = 254;  //.mpg        video/mpeg
+  EnumValueMimeTypeMov = 255;  //.mov        video/quicktime
+  EnumValueMimeTypeWm = 256;   //.wm         video/x-ms-wmv
+  EnumValueMimeTypeFlv = 257;  //.flv        video/x-flv
+  EnumValueMimeTypeMkv = 258;  //.mkv        video/x-matroska
+  //视频文件 类型stop
+}

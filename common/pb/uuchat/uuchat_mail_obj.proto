@@ -1,0 +1,38 @@
+// Package mail AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message MailTwoSteps 定义 
+message MailTwoSteps { 
+}
+
+// message MailRetrieve 定义 
+message MailRetrieve { 
+}
+
+
+
+
+// ExyMailMailType 枚举
+enum ExyMailMailType { 
+	EVVMailTwoSteps = 0;
+	EVVMailRetrieve = 1;
+}
+
+
+message MailMailTypeAbsClass { 
+  ExyMailMailType type = 1;
+    oneof value { 
+		MailTwoSteps mailTwoSteps= 2;
+		MailRetrieve mailRetrieve= 3;
+    }
+}
+
+
+
+
+

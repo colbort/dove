@@ -1,0 +1,82 @@
+// Package auth AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+package pkt;
+
+import "a_rpc.proto";
+import "user.proto";
+
+message CreateAuthDataRequest {
+  int64 KeyID = 1;
+  bytes KeyData = 2;
+  int64 Salt = 3;
+}
+
+message CreateAuthDataResponse {
+  ErrorCode code = 1;
+  AuthData AuthData = 2;
+}
+
+message UpdateAuthDataRequest { AuthData AuthData = 1; }
+
+message UpdateAuthDataResponse {
+  ErrorCode code = 1;
+  AuthData AuthData = 2;
+}
+
+message GetAuthDataRequest { int64 KeyID = 1; }
+
+message GetAuthDataResponse {
+  ErrorCode code = 1;
+  AuthData Data = 2;
+}
+
+message UpdateSaltsRequest {
+  int64 DataID = 1;
+  int32 FutureSalts = 2;
+}
+
+message UpdateSaltsResponse {
+  ErrorCode code = 1;
+  repeated ServerSalt Salts = 2;
+}
+
+message ResetAuthKeyRequest { int64 authkey = 1; }
+
+message ResetAuthKeyResponse {
+  ErrorCode code = 1;
+  int64 keyID = 2;
+}
+
+service AuthDataService {
+  rpc CreateAuthData(CreateAuthDataRequest) returns (CreateAuthDataResponse);
+  rpc UpdateAuthData(UpdateAuthDataRequest) returns (UpdateAuthDataResponse);
+  rpc GetAuthData(GetAuthDataRequest) returns (GetAuthDataResponse);
+  rpc UpdateSalts(UpdateSaltsRequest) returns (UpdateSaltsResponse);
+  rpc ResetAuthKey(ResetAuthKeyRequest) returns (ResetAuthKeyResponse);
+  rpc UpdateDeviceInfo(UpdateDeviceInfoRequest)
+      returns (UpdateDeviceInfoResponse);
+  rpc GetDeviceInfos(GetDeviceInfosRequest) returns (GetDeviceInfosResponse);
+}
+
+message UpdateDeviceInfoRequest { DeviceInfo device = 1; }
+message UpdateDeviceInfoResponse { ErrorCode code = 1; }
+
+message GetDeviceInfosRequest { int32 userId = 1; }
+message GetDeviceInfosResponse {
+  ErrorCode code = 1;
+  repeated DeviceInfo devices = 2;
+}
+
+message ServerSalt {
+  int64 salt = 1;
+  int32 ValidSince = 2;
+  int32 ValidUntil = 3;
+}
+
+message AuthData {
+  int64 KeyID = 1;
+  bytes AuthKey = 2;
+  int32 UserID = 3;
+  repeated ServerSalt Salts = 4;
+}

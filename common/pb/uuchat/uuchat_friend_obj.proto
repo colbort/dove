@@ -1,0 +1,42 @@
+// Package friend AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message FriendFriends 定义 
+message FriendFriends {  
+	repeated int32 contacts = 1;	//[]int32 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+// message FriendPossibleFriends 定义 
+message FriendPossibleFriends {  
+	repeated PossibleReason contacts = 1;	//[]PossibleReason 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+
+
+
+// ExyFriendFriends 枚举
+enum ExyFriendFriends { 
+	EVVFriendFriends = 0;
+	EVVFriendPossibleFriends = 1;
+}
+
+
+message FriendFriendsAbsClass { 
+  ExyFriendFriends type = 1;
+    oneof value { 
+		FriendFriends friendFriends= 2;
+		FriendPossibleFriends friendPossibleFriends= 3;
+    }
+}
+
+
+
+
+

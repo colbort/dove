@@ -1,0 +1,62 @@
+// Package users AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+service usersServer { 
+    rpc UsersGetChatList (UsersGetChatListReq) returns (UsersGetChatListResp) {} 
+    rpc UsersGetFullUser (UsersGetFullUserReq) returns (UsersGetFullUserResp) {} 
+    rpc UsersGetUsers (UsersGetUsersReq) returns (UsersGetUsersResp) {} 
+    rpc UsersSetSecureValueErrors (UsersSetSecureValueErrorsReq) returns (UsersSetSecureValueErrorsResp) {} 
+}
+
+// message req
+message UsersGetChatListReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message UsersGetFullUserReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass iD = 2 ;
+}
+
+message UsersGetUsersReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputUserAbsClass iD = 2 ;
+		
+}
+
+message UsersSetSecureValueErrorsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputUserAbsClass iD = 2 ;  repeated SecureValueErrorAbsClass errors = 3 ;
+		
+}
+
+
+// message resp
+message UsersGetChatListResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	InfosChatsAbsClass messagesChatsAbsClass = 2;
+}
+
+message UsersGetFullUserResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UserFull userFull = 2;
+}
+
+message UsersGetUsersResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated UserAbsClass userAbsClass = 2;
+}
+
+message UsersSetSecureValueErrorsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+

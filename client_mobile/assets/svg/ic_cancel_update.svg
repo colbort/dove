@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="4.1-隐私设置" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="乘号，错误" transform="translate(-4.000000, -4.000000)" fill="#1890FF" fill-rule="nonzero">
+            <path d="M12,4 C7.6,4 4,7.6 4,12 C4,16.4 7.6,20 12,20 C16.4,20 20,16.4 20,12 C20,7.6 16.4,4 12,4 Z M12,19 C8.15,19 5,15.85 5,12 C5,8.15 8.15,5 12,5 C15.85,5 19,8.15 19,12 C19,15.85 15.85,19 12,19 Z M14.85,9.15 C14.65,8.95 14.35,8.95 14.15,9.15 L12,11.3 L9.9,9.2 C9.7,9 9.4,9 9.2,9.2 C9,9.4 9,9.7 9.2,9.9 L11.3,12 L9.15,14.15 C8.95,14.35 8.95,14.65 9.15,14.85 C9.35,15.05 9.65,15.05 9.85,14.85 L12,12.7 L14.1,14.8 C14.3,15 14.6,15 14.8,14.8 C15,14.6 15,14.3 14.8,14.1 L12.7,12 L14.85,9.85 C15.05,9.65 15.05,9.35 14.85,9.15 L14.85,9.15 Z" id="形状"></path>
+        </g>
+    </g>
+</svg>

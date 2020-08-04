@@ -1,0 +1,10 @@
+{
+    "go.inferGopath": false,
+    "workbench.editor.enablePreview": false,
+    "protoc": {
+        "clang-format.style": "google",
+        "options": [
+            "--proto_path=${workspaceRoot}/common/packet_protos",
+        ]
+    }
+}

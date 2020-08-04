@@ -1,0 +1,100 @@
+// Package upload AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_storage_obj.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message UploadCdnFileReuploadNeeded 定义 
+message UploadCdnFileReuploadNeeded {  
+	bytes requestToken = 1;	//core.Bytes
+}
+
+// message UploadCdnFile 定义 
+message UploadCdnFile {  
+	bytes bytes = 1;	//core.Bytes
+}
+
+// message UploadFile 定义 
+message UploadFile {  
+	StorageFileTypeAbsClass typ = 1;	//Storage.FileTypeAbsClass 
+	int32 mtime = 2;	//int32 
+	bytes bytes = 3;	//core.Bytes
+}
+
+// message UploadFileCdnRedirect 定义 
+message UploadFileCdnRedirect {  
+	int32 dcID = 1;	//int32 
+	bytes fileToken = 2;	//core.Bytes 
+	bytes encryptionKey = 3;	//core.Bytes 
+	bytes encryptionIv = 4;	//core.Bytes 
+	repeated FileHash fileHashes = 5;	//[]FileHash
+}
+
+// message UploadWebFile 定义 
+message UploadWebFile {  
+	int32 size = 1;	//int32 
+	string mimeType = 2;	//string 
+	StorageFileTypeAbsClass fileType = 3;	//Storage.FileTypeAbsClass 
+	int32 mtime = 4;	//int32 
+	bytes bytes = 5;	//core.Bytes
+}
+
+
+
+
+// ExyUploadCdnFile 枚举
+enum ExyUploadCdnFile { 
+	EVVUploadCdnFileReuploadNeeded = 0;
+	EVVUploadCdnFile = 1;
+}
+
+
+message UploadCdnFileAbsClass { 
+  ExyUploadCdnFile type = 1;
+    oneof value { 
+		UploadCdnFileReuploadNeeded uploadCdnFileReuploadNeeded= 2;
+		UploadCdnFile uploadCdnFile= 3;
+    }
+}
+
+
+
+
+
+// ExyUploadFile 枚举
+enum ExyUploadFile { 
+	EVVUploadFile = 0;
+	EVVUploadFileCdnRedirect = 1;
+}
+
+
+message UploadFileAbsClass { 
+  ExyUploadFile type = 1;
+    oneof value { 
+		UploadFile uploadFile= 2;
+		UploadFileCdnRedirect uploadFileCdnRedirect= 3;
+    }
+}
+
+
+
+
+
+// ExyUploadWebFile 枚举
+enum ExyUploadWebFile { 
+	EVVUploadWebFile = 0;
+}
+
+
+message UploadWebFileAbsClass { 
+  ExyUploadWebFile type = 1;
+    oneof value { 
+		UploadWebFile uploadWebFile= 2;
+    }
+}
+
+
+

@@ -1,0 +1,385 @@
+// Package auth AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "account.proto";
+
+import "friend.proto";
+import "user.proto";
+import "a_rpc.proto";
+import "base.proto";
+import "file.proto";
+
+package pkt;
+
+service UserService {
+  rpc ServerSignUp(ServerSignUpRequest) returns (ServerSignUpResponse);
+  rpc ServerSendPhoneCode(ServerSendPhoneCodeRequest) returns (RespContext);
+  rpc ServerUpdateAccount(ServerUpdateAccountRequest) returns (RespContext);
+  rpc ServerSendEmailCode(ServerSendEmailCodeRequest) returns (RespContext);
+  rpc ServerLogin(ServerLoginRequest) returns (ServerLoginResponse);
+  rpc ServerUpdatePassword(ServerUpdatePasswordRequest) returns (RespContext);
+  rpc ServerFindPassword(ServerFindPasswordRequest)
+      returns (ServerFindPasswordResp);
+
+  rpc ServerReportOnlineStatus(ServerReportOnlineStatusRequest)
+      returns (RespContext);
+  rpc ServerGetOnlineStatus(ServerGetOnlineStatusRequest) returns (RespContext);
+
+  rpc ServerUpdateDifference(ServerUpdateDifferenceRequest)
+      returns (RespContext);
+
+  rpc ServerGetQRCodeValue(ServerGetQRCodeValueReqest) returns (RespContext);
+  rpc ServerQRCodeDecode(ServerQRCodeDecodeReqest) returns (RespContext);
+  rpc ServerResetQRCodeValue(ServerResetQRCodeValueReqest)
+      returns (RespContext);
+
+  // 用户基本信息
+  rpc ServerUserSearch(ServerUserSearchRequest) returns (RespContext);
+  rpc ServerUpdateProfile(ServerUpdateProfileRequest) returns (RespContext);
+  rpc ServerGetFullUser(ServerGetFullUserRequest) returns (RespContext);
+  rpc ServerUpdateProfilePhoto(ServerUpdateProfilePhotoRequest)
+      returns (RespContext);
+  rpc SeverUpdateUserRegion(SeverUpdateUserRegionRequest) returns (RespContext);
+
+  // 黑名单
+  rpc ServerUserGetBlack(ServerUserGetBlackRequest) returns (RespContext);
+  rpc ServerUserAddBlack(ServerUserAddBlackRequest) returns (RespContext);
+  rpc ServerUserDelBlack(ServerUserDelBlackRequest) returns (RespContext);
+
+  // 隐私和安全
+  rpc ServerGetUserPrivacy(ServerGetUserPrivacyRequest) returns (RespContext);
+  rpc ServerModifyUserPrivacy(ServerModifyUserPrivacyRequest)
+      returns (RespContext);
+  rpc ServerGetUsersPrivacyByType(ServerGetUsersPrivacyByTypeRequest)
+      returns (RespContext);
+  // 好友
+  rpc ServerFriendGetFriends(ServerFriendGetFriendsRequest)
+      returns (RespContext);
+  rpc ServerFriendDelFriend(ServerFriendDelFriendRequest) returns (RespContext);
+  rpc ServerFriendGetStrangers(ServerFriendGetStrangersRequest)
+      returns (RespContext);
+  rpc ServerFriendDelStranger(ServerFriendDelStrangerRequest)
+      returns (RespContext);
+  rpc ServerFriendAcceptStranger(ServerFriendAcceptStrangerRequest)
+      returns (RespContext);
+  //  rpc ServerFriendShieldStranger (ServerFriendShieldStrangerRequest) returns
+  //  (RespContext);
+  rpc ServerFriendEditFriend(ServerFriendEditFriendRequest)
+      returns (RespContext);
+  rpc ServerFriendInviteStranger(ServerFriendInviteStrangerRequest)
+      returns (RespContext);
+
+  // 文件操作
+  rpc ServerFileFindOne(ServerFileReqest) returns (ServerFileResponse);
+  rpc ServerFileUpdate(ServerFileReqest) returns (ServerFileResponse);
+  rpc ServerFileInsert(ServerFileReqest) returns (ServerFileResponse);
+
+  // 内部grp 调用
+  rpc InsideGetUserInfo(InsideGetUserInfoRequst)
+      returns (InsideGetUserInfoResp);
+  rpc InsideAddUserUpdate(InsideAddUserUpdateRequst) returns (RespContext);
+  rpc InsideGetFriend(InsideGetFriendRequst) returns (InsideGetFriendResp);
+
+  // 好友内部RPC调用
+  rpc InsideFriendAcceptStrangerToPeer(InsideFriendAcceptStrangerToPeerRequst)
+      returns (RespContext);
+  //  rpc InsideFriendShieldStrangerToPeer
+  //  (InsideFriendShieldStrangerToPeerRequst) returns (RespContext);
+  rpc InsideFriendAddStrangerToPeer(InsideFriendAddStrangerToPeerRequst)
+      returns (RespContext);
+  rpc InsideFriendDelStrangerToPeer(InsideFriendDelStrangerToPeerRequst)
+      returns (RespContext);
+
+  rpc InsideGetStrangerRelation(InsideGetStrangerRelationRequst)
+      returns (InsideGetStrangerRelationResp);
+
+  rpc InsideAddStrangerBySendMessage(InsideAddStrangerBySendMessageRequst)
+      returns (RespContext);
+
+  // 聊天室内部RPC调用
+  rpc InsideFriendUpdateToPeer(InsideFriendUpdateRequst) returns (RespContext);
+  rpc InsideChatUpdateToPeer(InsideChatUpdateToPeerRequst)
+      returns (RespContext);
+
+  rpc InsideGetOnlineUserInfo(InsideGetOnlineUserInfoRequst)
+      returns (InsideGetOnlineUserInfoResp);
+}
+
+message SeverUpdateUserRegionRequest {
+  Context ctx = 1;
+  C2SUpdateUserRegionReq from = 2;
+}
+
+// 文件操作 start
+message ServerFileReqest {
+  Context ctx = 1;
+  FileInfo fileInfo = 2;
+}
+message ServerFileResponse {
+  RespContext ctx = 1;
+  FileInfo fileInfo = 2;
+}
+// 文件操作 stop
+
+message ServerSignUpRequest {
+  Context ctx = 1;
+  C2SSignUpReq from = 2;
+  UserProfilePhoto photo = 3; // 头像
+}
+
+message ServerSignUpResponse {
+  RespContext ctx = 1;
+  int32 userId = 2;
+  S2CSignUpResp resp = 3;
+}
+
+message ServerUpdateAccountRequest {
+  Context ctx = 1;
+  C2SUpdateAccountReq from = 2;
+}
+
+message ServerLoginRequest {
+  Context ctx = 1;
+  C2SLoginReq from = 2;
+}
+message ServerLoginResponse {
+  RespContext ctx = 1;
+  int32 userId = 2;
+  S2CLoginResp resp = 3;
+}
+
+message ServerSendPhoneCodeRequest {
+  Context ctx = 1;
+  C2SSendPhoneCodeReq from = 2;
+}
+
+message ServerSendEmailCodeRequest {
+  Context ctx = 1;
+  C2SSendEmailCodeReq from = 2;
+}
+
+message ServerUpdatePasswordRequest {
+  Context ctx = 1;
+  C2SUpdatePasswordReq from = 2;
+}
+
+message ServerFindPasswordRequest {
+  Context ctx = 1;
+  C2SFindPasswordReq from = 2;
+}
+
+message ServerFindPasswordResp {
+  RespContext ctx = 1;
+  S2CFindPasswordResp resp = 2;
+}
+
+// 好友
+message ServerFriendGetFriendsRequest {
+  Context ctx = 1;
+  C2SFriendGetFriendsReq from = 2;
+}
+
+message ServerFriendDelFriendRequest {
+  Context ctx = 1;
+  C2SFriendDelFriendReq from = 2;
+}
+
+message ServerFriendGetStrangersRequest {
+  Context ctx = 1;
+  C2SFriendGetStrangersReq from = 2;
+}
+
+message ServerFriendDelStrangerRequest {
+  Context ctx = 1;
+  C2SFriendDelStrangerReq from = 2;
+}
+
+message ServerFriendAcceptStrangerRequest {
+  Context ctx = 1;
+  C2SFriendAcceptStrangerReq from = 2;
+}
+
+// message ServerFriendShieldStrangerRequest {
+//  Context ctx = 1;
+//  C2SFriendShieldStrangerReq from = 2;
+//}
+
+message ServerFriendEditFriendRequest {
+  Context ctx = 1;
+  C2SFriendEditFriendReq from = 2;
+}
+
+message ServerFriendInviteStrangerRequest {
+  Context ctx = 1;
+  C2SFriendInviteStrangerReq from = 2;
+}
+
+// 用户请求
+message ServerUserSearchRequest {
+  Context ctx = 1;
+  C2SUserSearchReq from = 2;
+}
+
+message ServerUpdateProfileRequest {
+  Context ctx = 1;
+  C2SUpdateProfileReq from = 2;
+}
+
+message ServerGetFullUserRequest {
+  Context ctx = 1;
+  C2SGetFullUserReq from = 2;
+}
+
+message ServerUpdateProfilePhotoRequest {
+  Context ctx = 1;
+  C2SUpdateProfilePhotoReq from = 2;
+}
+
+message ServerUserGetBlackRequest {
+  Context ctx = 1;
+  C2SUserGetBlackReq from = 2;
+}
+
+message ServerUserAddBlackRequest {
+  Context ctx = 1;
+  C2SUserAddBlackReq from = 2;
+}
+
+message ServerUserDelBlackRequest {
+  Context ctx = 1;
+  C2SUserDelBlackReq from = 2;
+}
+
+message InsideGetUserInfoRequst { int32 userId = 1; }
+
+message InsideUser {
+  User user = 1;
+  repeated int32 blacks = 2;
+  repeated InsideFriend friends = 3;
+}
+message InsideGetUserInfoResp { InsideUser user = 1; }
+
+message InsideAddUserUpdateRequst {
+  int32 userId = 1;
+  Update update = 2;
+}
+
+message InsideGetFriendRequst {
+  int32 userId = 1;
+  int32 peerUserId = 2;
+}
+
+message InsideFriend {
+  int32 userId = 1;
+  string remarks = 2;
+}
+
+message InsideGetFriendResp { repeated InsideFriend friends = 1; }
+
+message InsideFriendUpdateRequst {
+  Context ctx = 1;
+  Update from = 2;
+}
+
+message ServerReportOnlineStatusRequest {
+  Context ctx = 1;
+  C2SReportOnlineStatusReq from = 2;
+}
+
+message ServerGetOnlineStatusRequest {
+  Context ctx = 1;
+  C2SGetOnlineStatusReq from = 2;
+}
+
+message ServerUpdateDifferenceRequest {
+  Context ctx = 1;
+  C2SUpdateDifferenceReq from = 2;
+}
+
+//// RPC内部使用
+// 好友内部RPC调用
+// 好友消息
+message InsideFriendAcceptStrangerToPeerRequst {
+  Context ctx = 1;
+  int32 peerUserId = 2; // 对端用户id
+  int32 nowTime = 3;    // 当前时间
+  // MsgFriendAcceptStranger from = 2;
+}
+
+// message InsideFriendShieldStrangerToPeerRequst {
+//  Context ctx = 1;
+//  int32 peerUserId = 2; // 对端用户id
+//  int32 nowTime = 3; // 当前时间
+//  // MsgFriendShieldStranger from = 2;
+//}
+
+message InsideFriendAddStrangerToPeerRequst {
+  Context ctx = 1;
+  int32 peerUserId = 2; // 对端用户id
+  int32 action = 3;
+  int32 nowtime = 4;
+  // MsgFriendAddStranger from = 2;
+}
+
+message InsideFriendDelStrangerToPeerRequst {
+  Context ctx = 1;
+  int32 peerUserId = 2; // 对端用户id
+  // MsgFriendDelStranger from = 2;
+}
+
+//
+message InsideChatUpdateToPeerRequst {
+  int32 userId = 1;
+  Update update = 2;
+}
+
+message InsideGetOnlineUserInfoRequst { int32 userId = 1; }
+
+message InsideGetOnlineUserInfoResp {
+  int32 userId = 1;
+  User user = 2;
+  UserOnlineStatus status = 3;
+  repeated int32 blacks = 4;
+  repeated InsideFriend friends = 5;
+  repeated PrivacyRule rules = 6;
+}
+
+message ServerGetUserPrivacyRequest {
+  Context ctx = 1;
+  C2SGetUserPrivacyReq from = 2;
+}
+message ServerModifyUserPrivacyRequest {
+  Context ctx = 1;
+  C2SModifyUserPrivacyReq from = 2;
+}
+
+message ServerGetUsersPrivacyByTypeRequest {
+  Context ctx = 1;
+  C2SGetUsersPrivacyByTypeReq from = 2;
+}
+
+message ServerGetQRCodeValueReqest {
+  Context ctx = 1;
+  C2SGetQRCodeValueReq from = 2;
+}
+
+message ServerQRCodeDecodeReqest {
+  Context ctx = 1;
+  C2SQRCodeDecodeReq from = 2;
+}
+
+message ServerResetQRCodeValueReqest {
+  Context ctx = 1;
+  C2SResetQRCodeValueReq from = 2;
+}
+
+message InsideGetStrangerRelationRequst {
+  int32 userId = 1;
+  int32 peerId = 2;
+}
+message InsideGetStrangerRelationResp { UserRelationStatus status = 1; }
+
+message InsideAddStrangerBySendMessageRequst {
+  int32 userId = 1;
+  int32 peerId = 2;
+}

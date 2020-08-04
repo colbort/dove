@@ -1,0 +1,64 @@
+// Package photos AUTO-GENARED  obj *.proto 
+syntax = "proto3";
+
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+
+// message PhotosPhoto 定义 
+message PhotosPhoto {  
+	PhotoAbsClass photo = 1;	//PhotoAbsClass 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+// message PhotosPhotos 定义 
+message PhotosPhotos {  
+	repeated PhotoAbsClass photos = 1;	//[]PhotoAbsClass 
+	repeated UserAbsClass users = 2;	//[]UserAbsClass
+}
+
+// message PhotosPhotosSlice 定义 
+message PhotosPhotosSlice {  
+	int32 count = 1;	//int32 
+	repeated PhotoAbsClass photos = 2;	//[]PhotoAbsClass 
+	repeated UserAbsClass users = 3;	//[]UserAbsClass
+}
+
+
+
+
+// ExyPhotosPhoto 枚举
+enum ExyPhotosPhoto { 
+	EVVPhotosPhoto = 0;
+}
+
+
+message PhotosPhotoAbsClass { 
+  ExyPhotosPhoto type = 1;
+    oneof value { 
+		PhotosPhoto photosPhoto= 2;
+    }
+}
+
+
+
+// ExyPhotosPhotos 枚举
+enum ExyPhotosPhotos { 
+	EVVPhotosPhotos = 0;
+	EVVPhotosPhotosSlice = 1;
+}
+
+
+message PhotosPhotosAbsClass { 
+  ExyPhotosPhotos type = 1;
+    oneof value { 
+		PhotosPhotos photosPhotos= 2;
+		PhotosPhotosSlice photosPhotosSlice= 3;
+    }
+}
+
+
+
+
+

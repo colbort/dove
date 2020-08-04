@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="38px" viewBox="0 0 22 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>getInto</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M29.1622867,25.0010858 L14.7950413,39.3683312 C13.7349862,40.4283863 13.7349862,42.1470752 14.7950413,43.2071302 C15.8550964,44.2671853 17.5737853,44.2671853 18.6338403,43.2071302 L34.9204853,26.9204853 C35.9805404,25.8604302 35.9805404,24.1417413 34.9204853,23.0816863 L18.6338403,6.79504131 C17.5737853,5.73498623 15.8550964,5.73498623 14.7950413,6.79504131 C13.7349862,7.85509639 13.7349862,9.57378526 14.7950413,10.6338403 L29.1622867,25.0010858 Z" id="path-1"></path>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="all-icon" transform="translate(-808.000000, -3006.000000)">
+            <g id="进入" transform="translate(794.000000, 3000.000000)">
+                <g>
+                    <rect id="矩形备份-9" x="0" y="0" width="50" height="50"></rect>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

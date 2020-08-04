@@ -1,0 +1,25 @@
+// Package uuchat AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+
+package pb_uuchat;
+
+service uuchatServer { 
+    rpc DestroyAuthKey (DestroyAuthKeyReq) returns (DestroyAuthKeyResp) {} 
+}
+
+// message req
+message DestroyAuthKeyReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+
+// message resp
+message DestroyAuthKeyResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	DestroyAuthKeyResAbsClass destroyAuthKeyResAbsClass = 2;
+}
+

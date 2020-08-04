@@ -1,0 +1,137 @@
+// Package friend AUTO-GENARED  funcs *.proto
+syntax = "proto3";
+
+import "pb/a_rpc/rpc.proto";
+import "pb/uuchat/uuchat_obj.proto";
+import "pb/uuchat/uuchat_friend_obj.proto";
+
+package pb_uuchat;
+
+service friendServer { 
+    rpc FriendAcceptAddFriend (FriendAcceptAddFriendReq) returns (FriendAcceptAddFriendResp) {} 
+    rpc FriendDeleteFriends (FriendDeleteFriendsReq) returns (FriendDeleteFriendsResp) {} 
+    rpc FriendDeletePossibleFriend (FriendDeletePossibleFriendReq) returns (FriendDeletePossibleFriendResp) {} 
+    rpc FriendDeleteStrangerDialogs (FriendDeleteStrangerDialogsReq) returns (FriendDeleteStrangerDialogsResp) {} 
+    rpc FriendEditFriend (FriendEditFriendReq) returns (FriendEditFriendResp) {} 
+    rpc FriendGetFriends (FriendGetFriendsReq) returns (FriendGetFriendsResp) {} 
+    rpc FriendGetPossibleFriend (FriendGetPossibleFriendReq) returns (FriendGetPossibleFriendResp) {} 
+    rpc FriendRefuseAddFriend (FriendRefuseAddFriendReq) returns (FriendRefuseAddFriendResp) {} 
+    rpc FriendTransportFriendStateToPeer (FriendTransportFriendStateToPeerReq) returns (FriendTransportFriendStateToPeerResp) {} 
+    rpc FriendUserSearchByParameter (FriendUserSearchByParameterReq) returns (FriendUserSearchByParameterResp) {} 
+}
+
+// message req
+message FriendAcceptAddFriendReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;
+}
+
+message FriendDeleteFriendsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated InputUserAbsClass iD = 2 ;
+		
+}
+
+message FriendDeletePossibleFriendReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  repeated int32 user = 2 ;
+		
+}
+
+message FriendDeleteStrangerDialogsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   bool source = 2 ;
+		  repeated int32 user = 3 ;
+		
+}
+
+message FriendEditFriendReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 userID = 2 ;
+		  string username = 3 ;
+		
+}
+
+message FriendGetFriendsReq{ 
+		pb_rpc.Context reqCtx = 1;
+		  int32 hash = 2 ;
+		
+}
+
+message FriendGetPossibleFriendReq{ 
+		pb_rpc.Context reqCtx = 1;
+		
+}
+
+message FriendRefuseAddFriendReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		InputPeerAbsClass peer = 2 ;
+}
+
+message FriendTransportFriendStateToPeerReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		AddFriendStateAbsClass state = 2 ;  int32 peerID = 3 ;
+		
+}
+
+message FriendUserSearchByParameterReq{ 
+		pb_rpc.Context reqCtx = 1;
+		   
+		UserSearchAbsClass input = 2 ;
+}
+
+
+// message resp
+message FriendAcceptAddFriendResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message FriendDeleteFriendsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message FriendDeletePossibleFriendResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message FriendDeleteStrangerDialogsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message FriendEditFriendResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	UpdatesAbsClass updatesAbsClass = 2;
+}
+
+message FriendGetFriendsResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	FriendFriendsAbsClass friendFriendsAbsClass = 2;
+}
+
+message FriendGetPossibleFriendResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	FriendFriendsAbsClass friendFriendsAbsClass = 2;
+}
+
+message FriendRefuseAddFriendResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message FriendTransportFriendStateToPeerResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	bool bool = 2;
+}
+
+message FriendUserSearchByParameterResp{ 
+	pb_rpc.RespContext respCtx = 1;
+	repeated UserAbsClass userAbsClass = 2;
+}
+

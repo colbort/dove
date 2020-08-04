@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>gouweidu</title>
+    <desc>Created with Sketch.</desc>
+    <g id="IM-对话列表" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="对话列表" transform="translate(-329.000000, -327.000000)" fill="#21A1E8">
+            <g id="对话列表-好友-对话列表-正在输入-新" transform="translate(-48.000000, 295.000000)">
+                <g id="A-勾-未读-16px" transform="translate(376.000000, 30.000000)">
+                    <g id="勾">
+                        <rect id="矩形" fill-rule="nonzero" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M6.36,13.2 C6.208,13.2 6.064,13.144 5.952,13.048 L1.4,9.208 C1.264,9.096 1.248,8.896 1.36,8.76 C1.472,8.624 1.672,8.608 1.808,8.72 L6.36,12.56 L14.152,2.92 C14.264,2.784 14.464,2.76 14.6,2.872 C14.736,2.984 14.76,3.184 14.648,3.32 L6.856,12.96 C6.744,13.096 6.592,13.176 6.416,13.192 C6.4,13.2 6.376,13.2 6.36,13.2 Z" id="路径" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
